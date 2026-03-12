@@ -1,0 +1,71 @@
+<!--@layout(/layout/basic/layout.html)-->
+<!--@js(/ogam/js/board.js)-->
+<!--@css(/ogam/css/shopinfo.css)-->
+<div class="memRegi mem_write">
+    <div class="section titleArea">
+        <h2>아레나 강사 등록</h2>
+    </div>
+    <picture><img src="/web/upload/Regi_banner2.png"></picture>
+    <div class="wid_content">
+        <div class="txt_wrap">
+            <h3>아레나 강사 멤버십 혜택</h3>
+            <p>아레나에 등록강사 인증을 하시면 수영강사만의 특별한 혜택을 누리실 수 있습니다</p>
+        </div>
+        <div class="benefit_list">
+            <ul>
+                <li>당해 등록강사만 할인 혜택 제공</li>
+                <li>강사 혜택은 등록일로부터 12월 31일까지 유효(이후 소멸)</li>
+                <li>신청 완료 시 등록강사 확인중 검토 후 인증 승인</li>
+                <li>혜택에 대한 자세한 내용은 승인 완료 후 마이페이지에서 확인 가능</li>
+            </ul>
+        </div>
+
+        <div class="txt_wrap">
+            <h3>정보입력 · 신청하기</h3>
+        </div>
+        <div class="Requirements">
+            <div class="section board-section" module="board_writePackage_19">
+                <!--@css(/css/module/board/writePackage_9.css)-->
+                <!--@css(/css/module/board/boardPackage.css)-->
+
+                <div module="board_write_19">
+                    <!--
+                        $login_page_url = /member/login.html
+                        $deny_access_url = /index.html
+                    -->
+
+                    <div class="layout_hidden">{$form.subject}{$form.writer}</div>
+
+                    <div class="member_name">
+                        <span>이름</span>
+                    </div>
+
+                    <div class="member_id">
+                        <span>아이디</span>
+                    </div>
+
+                    <div class="member_phone">
+                        <span>휴대폰</span>
+                    </div>
+
+
+                    <div class="regi_list1">
+                        <span>등록강사 확인증 </span>
+                        <span>{$form.attach_file}</span>
+                    </div>
+                    <div class="regi_list2">
+                        <span>가족관계증명서</span>
+                        <span>{$form.attach_file}</span>
+                    </div>
+
+                    <div class="btn_regi btn_blue">
+                        <!--<span class="{$config.is_admin|display}"><a href="#none" class="btnNormalFix sizeM" onclick="{$action_comment_admin}">관리자 답변보기</a></span>-->
+                        <a href="#none" onclick="{$action_write}">신청하기</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>

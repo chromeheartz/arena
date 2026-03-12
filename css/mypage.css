@@ -1,0 +1,2343 @@
+/* S :::COMMON :::S */
+
+
+.mypage-common-contents-wrapper {
+    max-width: unset;
+    width: 100%;
+    flex: 1;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    &.gap-0 {
+        gap: 0;
+    }
+
+    @media all and (max-width: 768px) {
+        width: 100%;
+        gap: 36px;
+    }
+}
+
+/* mypage tab menu */
+.ec-base-tab.typeNav {
+    .menu {
+        margin-bottom: 0 !important;
+
+        li {
+            border: 0 none;
+
+            &.selected {
+                a {
+                    background: #fff;
+                    color: #000;
+                    font-weight: 600;
+                    position: relative;
+
+                    &::after {
+                        content: '';
+                        display: block;
+                        width: 100%;
+                        height: 2px;
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        background: #000;
+                    }
+                }
+            }
+
+            a {
+                font-size: 14px;
+                font-weight: 400;
+                color: #909090;
+                padding: 18px 10px;
+            }
+        }
+    }
+
+    @media all and (max-width: 768px) {
+        .menu {
+            width: calc(100% + 32px);
+            position: relative;
+            left: -16px;
+
+            li {
+                width: auto;
+                flex: 1 1 auto;
+
+                &.selected {
+                    background: #fff;
+                    border-color: none;
+                }
+
+                a {
+                    font-size: 12px;
+                    padding: 16px 2px;
+                }
+            }
+        }
+    }
+}
+
+
+/* E :::COMMON :::E */
+
+/* S :::MYPAGE - COMMON  ::: S */
+.mypage-wrapper {
+    padding-top: 60px;
+
+    @media all and (max-width: 768px) {
+        padding-top: 20px;
+    }
+}
+
+.mypage-inner {
+    max-width: 1180px;
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+
+    @media all and (max-width:1180px) {
+        padding: 0 16px;
+    }
+}
+
+.mypage-contents-wrapper {
+    display: flex;
+    gap: 20px;
+
+}
+
+/* E :::MYPAGE - COMMON  ::: E */
+
+
+/* S ::: MYPAGE MAIN ::: S */
+.mypage-main-wrapper {
+
+    &.mypage-myshop-main-wrapper {
+        .mo-sub-menu {
+            display: none;
+        }
+
+        @media all and (max-width:1180px) {
+            .mypage-info-wrapper {
+                .mypage-user-wrap {
+                    flex-direction: column;
+                    gap: 20px;
+
+                    .user-wrap {
+                        width: 100%;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        gap: 16px;
+
+                        .user-info {
+                            gap: 6px;
+
+                            p {
+                                font-size: 12px;
+                            }
+
+                            h6 {
+                                font-size: 28px;
+                                line-height: 1.2;
+                            }
+                        }
+                    }
+
+                    .coupon-review-wrap {
+                        width: 100%;
+                        padding-top: 7px;
+                        border-top: 1px solid #3F3F3F;
+
+                        dl {
+                            width: 50%;
+                            padding-top: 12px;
+                            padding-bottom: 12px;
+                            gap: 4px;
+
+                            &:first-child {
+                                padding-left: 0;
+                                border-left: 0;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .mypage-delivery-wrap {
+                .delivery-wrap {
+                    flex-direction: column;
+                    gap: 8px;
+
+                    .cs-wrap {
+                        width: 100%;
+                        box-sizing: border-box;
+                        padding: 19px 0;
+                        flex-direction: row;
+                        justify-content: space-between;
+
+                        dl {
+                            padding: 0 !important;
+                            width: 33%;
+                            padding-bottom: 0 !important;
+                            flex-direction: column;
+                            border-bottom: 0 !important;
+                            gap: 4px;
+
+                            dd {
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        @media all and (max-width: 1024px) {
+            .subTitle {
+                h3 {
+                    font-size: 16px;
+                }
+            }
+            .mypage-info-wrapper {
+                .mypage-user-wrap {
+                    .user-wrap {
+                        .user-info {
+                            h6 {
+                                font-weight: 700;
+                            }
+                        }
+
+                    }
+                }
+            }
+
+            .mypage-inner {
+                padding: 0;
+            }
+
+            padding-top:0;
+
+            .sub-side-menu {
+                display: none;
+            }
+
+            .page-top-nav-wrap {
+                display: none;
+            }
+
+            .mypage-delivery-wrap {
+                padding: 0 16px;
+
+                .delivery-wrap {
+                    .cs-wrap {
+                        border-color: #F5F5F5;
+                    }
+                    .order-wrap {
+                        flex-wrap: wrap;
+                        padding: 16px;
+                        gap: 0;
+
+                        dl {
+                            width: 100%;
+                            padding: 13px 0;
+                            border-bottom: 1px solid #E9E9E9;
+                            flex-direction: row;
+                            min-width: 1px;
+                            align-items: center;
+                            justify-content: space-between;
+
+                            &:first-child {
+                                padding-top: 0;
+                            }
+
+                            &:last-child {
+                                padding-bottom: 0;
+                                border-bottom: 0;
+                            }
+
+                            dt {
+                                font-size: 14px;
+                                color: #3f3f3f;
+                            }
+
+                        }
+
+                        >span {
+                            display: none;
+                        }
+                    }
+                }
+            }
+
+            .mo-sub-menu {
+                display: flex;
+                padding: 0 16px;
+
+                .menu-wrapper {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 40px;
+                }
+
+                .menu-wrap {
+                    .subTitle {
+                        font-size: 16px;
+                        line-height: 1.3;
+                        font-weight: 700;
+                        color: #000;
+                        padding-bottom: 20px;
+                        border-bottom: 1px solid #000;
+                    }
+
+                    .menu {
+                        li {
+                            padding: 16px 0;
+                            border-bottom: 1px solid #F8F8F8;
+
+                            a {
+                                font-size: 14px;
+                                font-weight: 500;
+                                line-height: 1.6;
+                                color: #5d5d5d;
+                                position: relative;
+                                display: block;
+
+                                &::after {
+                                    content: '';
+                                    display: block;
+                                    width: 24px;
+                                    height: 24px;
+                                    background: url(https://arenakorea1.cafe24.com/web/2026-renewal/img/black-right-arrow.png) no-repeat center / cover;
+                                    position: absolute;
+                                    top: 50%;
+                                    right: 0;
+                                    transform: translateY(-50%);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .logout-wrap {
+                    a {
+                        font-size: 14px;
+                        width: 100%;
+                        height: 48px;
+                        font-weight: 700;
+                        color: #000;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border: 1px solid #e9e9e9;
+                        margin-top: 4px;
+                    }
+                }
+            }
+        }
+
+        @media all and (max-width: 768px) {
+            .mypage-info-wrapper {
+                .mypage-user-wrap {
+                    padding: 24px 20px;
+
+                    .coupon-review-wrap {
+                        dl {
+                            padding-left: 16px;
+                        }
+                    }
+                }
+
+                .mypage-membership-wrapper {
+                    .membership-btn {
+                        margin-top: 12px;
+                        justify-content: flex-start;
+                        padding-left: 16px;
+                    }
+                }
+            }
+
+        }
+
+    }
+}
+
+/* E ::: MYPAGE MAIN ::: E */
+
+
+.mypage-main-wrap {
+
+    @media all and (max-width: 1024px) {
+        .mypage-info-wrapper {
+            .mypage-membership-wrapper {
+                .membership-detail-wrap {
+                    justify-content: flex-start;
+                    padding-left: 16px;
+                }
+            }
+        }
+    }
+    .mypage-info-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        .mypage-user-wrap {
+            margin: 0;
+            width: 100%;
+            padding: 32px 28px;
+            background: #000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+            box-sizing: border-box;
+
+            .user-wrap {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex: 1;
+
+                .user-info {
+                    display: flex;
+                    flex-direction: column;
+
+                    p {
+                        font-size: 13px;
+                        line-height: 1.5;
+                        font-weight: 700;
+                        color: #fff;
+                    }
+
+                    h6 {
+                        font-size: 20px;
+                        line-height: 1.5;
+                        color: #fff;
+                        font-weight: 400;
+                    }
+                }
+
+                .user-period-wrap {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 2px;
+
+                    dl {
+                        display: flex;
+                        gap: 12px;
+
+                        dt {
+                            font-size: 12px;
+                            line-height: 1.5;
+                            min-width: 80px;
+                            color: #d4d4d4;
+                            font-weight: 600;
+                        }
+
+                        dd {
+                            font-size: 12px;
+                            line-height: 1.5;
+                            font-weight: 600;
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+
+            .coupon-review-wrap {
+                display: flex;
+                gap: 20px;
+
+                dl {
+                    min-width: 150px;
+                    padding-left: 30px;
+                    border-left: 1px solid #3f3f3f;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 2px;
+
+                    dt {
+                        font-size: 12px;
+                        line-height: 1.5;
+                        color: #909090;
+                    }
+
+                    dd {
+                        font-size: 16px;
+                        line-height: 1.6;
+                        color: #fff;
+                        font-weight: 700;
+                    }
+                }
+            }
+        }
+
+        .mypage-membership-wrapper {
+            .mypage-membership-wrap {
+
+                padding: 62px 20px 24px;
+                border: 1px solid #E9E9E9;
+
+                .membership-progress-wrap {}
+
+                .membership-accordion {
+                    padding: 17px 20px 0 20px;
+                    background: #F8F8F8;
+
+                    .membership-accordion-header {
+                        width: 100%;
+                        padding-bottom: 16px;
+                        cursor: pointer;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+
+                        &.active .arrow {
+                            transform: rotate(-180deg);
+                        }
+
+                        >p {
+                            font-size: 12px;
+                            line-height: 1.5;
+                            color: #000;
+                            font-weight: 600;
+
+                            .tablet-br {
+                                display: none;
+                            }
+
+                            .highlight {
+                                color: #00aced;
+                            }
+                        }
+                    }
+
+
+                    .arrow {
+                        width: 24px;
+                        height: 24px;
+                        background: url(https://arenakorea1.cafe24.com/web/2026-renewal/img/accordion-down-arrow.png) no-repeat center / cover;
+                        transition: all 0.3s linear;
+                    }
+
+
+                    .membership-accordion-body {
+                        display: none;
+                    }
+                }
+
+            }
+
+            .membership-btn {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                gap: 1px;
+                padding: 6px 0;
+                font-size: 12px;
+                font-weight: 500;
+                color: #3f3f3f;
+
+                i {
+                    display: block;
+                    width: 24px;
+                    height: 24px;
+                    background: url(https://arenakorea1.cafe24.com/web/2026-renewal/img/grey-right-arrow.png) no-repeat center / cover;
+                }
+            }
+        }
+    }
+
+    .mypage-delivery-wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        >p {
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 1.3;
+            color: #000;
+        }
+
+        .delivery-wrap {
+            display: flex;
+            gap: 8px;
+
+            .order-wrap {
+                background: #F7F7F7;
+                padding: 46px 40px;
+                flex: 1;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 36px;
+
+                >span {
+                    display: block;
+                    background: #E1E1E1;
+                    width: 1px;
+                    height: 60px;
+                }
+
+                dl {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 4px;
+                    min-width: 120px;
+
+                    dt {
+                        font-size: 12px;
+                        line-height: 1.5;
+                        color: #000;
+                    }
+
+                    dd {
+                        font-size: 16px;
+                        line-height: 1.6;
+                        color: #000;
+                        font-weight: 700;
+                    }
+                }
+            }
+
+            .cs-wrap {
+                width: 196px;
+                padding: 16px 20px;
+                border: 1px solid #E1E1E1;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+                dl {
+                    border-bottom: 1px solid #e1e1e1;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    &:first-child {
+                        padding-bottom: 12px;
+                    }
+
+                    &:nth-child(2) {
+                        padding: 12px 0;
+                    }
+
+                    &:last-child {
+                        border-bottom: 0 none;
+                        padding-top: 12px;
+                    }
+
+                    dt {
+                        font-size: 12px;
+                        line-height: 1.5;
+                        color: #3f3f3f;
+                    }
+
+                    dd {
+                        font-size: 13px;
+                        line-height: 1.5;
+                        font-weight: 700;
+                        color: #000;
+                    }
+                }
+            }
+        }
+    }
+
+    @media all and (max-width: 1024px) {
+        .mypage-info-wrapper {
+            gap: 24px;
+
+            .mypage-membership-wrapper {
+                .mypage-membership-wrap {
+                    padding: 0 16px;
+                    border: 0;
+
+                    .membership-accordion {
+                        padding: 0;
+
+                        .arrow {}
+
+                        .membership-accordion-header {
+                            padding: 16px;
+
+                            >p {
+                                font-size: 14px;
+                                line-height: 1.4;
+                                text-align: left;
+
+                                .light {
+                                    font-weight: 400;
+                                }
+
+                                .tablet-br {
+                                    display: block;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+
+/* S :::MYPAGE - 주문내역조회 (myshop/order/list.html) ::: S */
+.mypage-order-contents {
+    &.gap-0 {
+        .order-history-head{
+            >.form {
+                margin-top: 40px;
+                @media all and (max-width: 900px) {
+                    margin-top: 0;
+                }
+            }
+            .text-list {
+                margin-bottom: 0;
+            }
+        } 
+    }
+    .xans-myshop-orderhistorylistitem .order {
+        @media all and (max-width: 900px) {
+            margin-top: 36px;
+        }
+    }
+    .order-history-head {
+        >.form {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .period {
+                margin: 0;
+                display: flex;
+
+                a {
+                    width: 56px;
+                    height: 36px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 0;
+                    color: #909090;
+                    font-size: 12px;
+                    font-weight: 600;
+                    margin-right: 0;
+
+                    &.selected {
+                        color: #000;
+                        background-color: #fff;
+                        border-color: #000;
+                    }
+
+                    &:hover {
+                        color: #000;
+                        border-color: #000;
+                    }
+                }
+            }
+
+            .date {
+                display: flex;
+                align-items: center;
+                gap: 4px;
+
+                .ui-datepicker-trigger {
+                    width: 36px;
+                    height: 36px;
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    background: url(https://arenakorea1.cafe24.com/web/2026-renewal/img/icon-datepicker.png) no-repeat center / cover;
+                    margin: 0;
+
+                    img {
+                        opacity: 0;
+                    }
+                }
+
+                .btnSubmit {
+                    margin-top: 0;
+                    font-size: 14px;
+                    font-weight: 500;
+                    background: #000;
+                    color: #fff;
+                    margin-left: 0;
+                    padding: 0;
+                    width: 65px;
+                    height: 36px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    &:hover {
+                        background: #000;
+                        color: #fff;
+                    }
+                }
+
+                .datepicker {
+                    position: relative;
+                    .start, .end {
+                        width: fit-content;
+                        border: 0 none;
+                    }
+
+                    input {
+                        width: 165px;
+                        border-color: #E1E1E1;
+                        background: #fff;
+                        font-size: 12px;
+                        line-height: 1.5;
+                        color: #000;
+                        position: relative;
+                        padding-right: 36px;
+                        font-weight: 500;
+                        height: 36px;
+                    }
+                }
+
+                #history_start_date {
+                    margin-right: 4px;
+
+                    &+.ui-datepicker-trigger {
+                        left: 128px;
+                    }
+                }
+
+                #history_end_date {
+                    margin-left: 4px;
+
+                    &+.ui-datepicker-trigger {
+                        right: 0;
+                    }
+                }
+            }
+        }
+
+        .state-wrap {
+            margin-top: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #000000;
+
+            h6 {
+                font-size: 14px;
+                line-height: 1.4;
+                font-weight: 700;
+                color: #000;
+            }
+
+            .stateSelect {
+                margin-top: 0;
+
+                select {
+                    text-align: right;
+                    border: 0 none;
+                    font-size: 14px;
+                    line-height: 1.4;
+                    font-weight: 700;
+                    padding: 0 36px 0 10px;
+                }
+            }
+        }
+
+        .text-list {
+            margin: 12px 0;
+            padding: 12px 20px;
+            background: #F8F8F8;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            border-radius: 4px;
+
+            li {
+                font-size: 12px;
+                line-height: 1.5;
+                color: #3f3f3f;
+                padding-left: 16px;
+                position: relative;
+
+                &::after {
+                    content: '';
+                    display: block;
+                    width: 2px;
+                    height: 2px;
+                    border-radius: 2px;
+                    background: #3f3f3f;
+                    position: absolute;
+                    top: 7px;
+                    left: 5px;
+                }
+            }
+        }
+    }
+
+    @media all and (max-width: 900px) {
+        .order-history-head {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+
+            >.form {
+                order: 2;
+                flex-direction: column;
+                gap: 12px;
+
+                .period {
+                    width: 100%;
+
+                    a {
+                        width: 25%;
+                        height: 36px;
+                        font-weight: 500;
+
+                        &.selected {
+                            font-weight: 700;
+                        }
+                    }
+                }
+
+                .date {
+                    width: 100%;
+                    flex-direction: column;
+                    gap: 12px;
+
+                    #history_start_date {
+                        width: 100%;
+                        margin-right: 0;
+
+                        &+.ui-datepicker-trigger {
+                            left: calc(100% - 36px);
+                        }
+                    }
+
+                    #history_end_date {
+                        width: 100%;
+                        margin-left: 0;
+                    }
+
+                    .datepicker {
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                        gap: 2px;
+
+                        .start,
+                        .end {
+                            width: auto;
+                            flex: 1;
+                        }
+                    }
+
+                    .btnSubmit {
+                        width: 100%;
+                        height: 36px;
+                    }
+                }
+            }
+
+            .state-wrap {
+                order: 1;
+                margin-top: 0;
+                border-bottom: 0;
+                width: 100%;
+
+                .stateSelect {
+                    width: 100%;
+                    border: 1px solid #E9E9E9;
+
+                    select {
+                        text-align: left;
+                        width: 100%;
+                        height: 36px;
+                        padding: 8px 16px;
+                        font-size: 14px;
+                        font-weight: 400;
+                    }
+                }
+
+                h6 {
+                    display: none;
+                }
+            }
+
+            .text-list {
+                order: 3;
+                margin: 0;
+                margin-top: 24px;
+                padding: 16px 20px;
+
+                li {
+                    word-break: keep-all;
+                }
+            }
+        }
+    }
+}
+
+/* E :::MYPAGE - 주문내역조회 (myshop/order/list.html) ::: E */
+
+
+/* S :::MYPAGE - 적립금 내역 (myshop/mileage/historyList.html) ::: S */
+.mypage-mileage-contents {
+    .notranslate {
+        font-weight: 700;
+    }
+    @media all and (max-width: 1024px) {
+        .xans-myshop-historylist .item table th {
+            font-size: 12px;
+        }
+    }
+    .mypage-mileage-wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .summary-wrap {
+        background: #f8f8f8;
+        margin-bottom: 0;
+
+        ul {
+            display: flex;
+            align-items: center;
+            gap: 38px;
+
+            .bar {
+                display: block;
+                width: 1px;
+                height: 20px;
+                background: #efefef;
+            }
+
+            li {
+                width: calc(20% - (232px / 5));
+                margin-top: 0;
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+
+                strong {
+                    width: 100%;
+                    font-size: 12px;
+                    line-height: 1.5;
+                    color: #3f3f3f;
+                }
+
+                span {
+                    font-size: 14px;
+                    line-height: 1.4;
+                    font-weight: 700;
+                    color: #000;
+                }
+            }
+        }
+
+    }
+
+    @media all and (max-width: 768px) {
+        .mypage-mileage-wrap {
+            gap: 24px;
+        }
+
+        .summary-wrap {
+            padding: 0;
+
+            ul {
+                flex-direction: column;
+                gap: 0px;
+                padding: 17px 16px;
+                box-sizing: border-box;
+
+                .bar {
+                    display: none;
+                }
+
+                li {
+                    &:first-child {
+                        padding-top: 0;
+                    }
+
+                    &:last-child {
+                        padding-bottom: 0;
+                        border-bottom: 0;
+                    }
+
+                    width: 100%;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    padding: 12px 0;
+                    border-bottom: 1px solid #e9e9e9;
+
+                    strong {
+                        width: auto;
+                        font-size: 14px;
+                    }
+
+                    span {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* E :::MYPAGE - 적립금 내역 (myshop/mileage/historyList.html) ::: E */
+
+/* S :::MYPAGE - 쿠폰 내역 (myshop/coupon/coupon.html) ::: S */
+.mypage-coupon-contents {
+    .coupon-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+
+        .coupon_wrap {
+            margin: 0;
+            justify-content: flex-start;
+            gap: 4px;
+            input {
+                font-size: 14px;
+            }
+
+            #coupon_code {
+                width: 280px;
+                height: 48px;
+            }
+
+            .btn_black {
+                width: 80px;
+                height: 48px;
+                margin-left: 0;
+                font-size: 14px;
+                font-weight: 700;
+                line-height: 48px;
+                box-sizing: border-box;
+            }
+        }
+
+        .txtInfo {
+            font-size: 12px;
+            line-height: 1.5;
+            padding-left: 0;
+            color: #000;
+        }
+    }
+
+    #frmCouponlist {
+        margin-top: 0;
+
+        .couponList {
+            border-top: 1px solid #000;
+
+            table {
+                tr {
+                    margin-bottom: 0;
+
+                    &:first-child {
+                        margin-bottom: 0;
+                        padding: 19px 0;
+                        border-bottom: 1px solid #E9E9E9;
+                    }
+                }
+
+                .layer {
+                    width: auto;
+                    height: auto;
+
+                    >div {
+                        display: flex;
+                        align-items: center;
+                        gap: 4px;
+
+                        i {
+                            display: block;
+                            width: 20px;
+                            height: 20px;
+                            background: grey;
+                        }
+                    }
+
+                    &::after {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    .coupon-list-wrap {
+        border-top: 2px solid #000;
+
+
+        .accordion-trigger {
+            cursor: pointer;
+            padding: 18px 0;
+            gap: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            &.is-open {
+                .arrow-wrap {
+                    i {
+                        transform: rotate(-180deg)
+                    }
+                }
+            }
+
+            .coupon-title-wrap {
+                display: flex;
+                flex-direction: column;
+                gap: 2px;
+                flex: 1;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+
+
+                .sub-text-wrap {
+                    display: flex;
+                    align-items: center;
+                    gap: 12px;
+                    @media all and (max-width: 768px) {
+                        flex-direction: column;
+                        align-items: flex-start;
+                        gap: 2px;
+                    }
+
+                    span {
+                        font-size: 12px;
+                        line-height: 1.5;
+                        color: #909090;
+                    }
+                }
+            }
+
+            .coupon-name {
+                font-size: 16px;
+                line-height: 1.4;
+                font-weight: 700;
+                color: #000;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .arrow-wrap {
+                display: flex;
+                align-items: center;
+                gap: 4px;
+
+                .coupon-discount {
+                    font-size: 14px;
+                    line-height: 1.6;
+                    font-weight: 700;
+                    color: #000;
+                    width: 70px;
+                    text-align: right;
+                }
+
+                i {
+                    display: block;
+                    width: 20px;
+                    height: 20px;
+                    transition: all 0.3s linear;
+                }
+            }
+        }
+
+        .accordion-panel {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            border-bottom: 1px solid #E1E1E1;
+
+            ul {
+                padding-bottom: 24px;
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+
+                li {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    >* {
+                        font-size: 13px;
+                        color: #3F3F3F;
+                        line-height: 1.5;
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+
+    }
+
+    @media all and (max-width: 900px) {
+        .coupon-wrapper {
+            .coupon_wrap {
+                width: 100%;
+
+                #coupon_code {
+                    width: calc(100% - 84px);
+                }
+            }
+
+            .txtInfo {
+                word-break: keep-all;
+                padding-right: 0;
+            }
+        }
+    }
+}
+
+/* S :::MYPAGE - 쿠폰 내역 (myshop/coupon/coupon.html) ::: S */
+
+
+/* S :::MYPAGE - 배송지관리 (/myshop/addr/list.html) ::: S */
+
+.my-address-list-contents {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    border-top: 1px solid #000;
+
+    .my-address-list-wrap {
+
+        li {
+            padding: 16px 0;
+            border-bottom: 1px solid #F7F7F7;
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+
+            .check-text-wrap {
+                display: flex;
+                gap: 12px;
+
+                .text-wrap {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 6px;
+
+                    .title-text {
+                        display: flex;
+                        align-items: center;
+                        height: 18px;
+                        gap: 8px;
+
+                        h6 {
+                            span {
+                                font-size: 14px;
+                                line-height: 1.6;
+                                font-weight: 700;
+                                color: #000;
+                            }
+                        }
+
+                        >span {
+                            padding: 3px 7px;
+                            background: #F7F7F7;
+                            font-size: 12px;
+                            line-height: 1.5;
+                            font-weight: 500;
+                            color: #909090;
+                        }
+                    }
+
+                    .sub-text {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 2px;
+
+                        span {
+                            font-size: 13px;
+                            line-height: 1.5;
+                            color: #000;
+                        }
+                    }
+                }
+            }
+        }
+
+        .edit-btn {
+            line-height: 1;
+            font-size: 14px;
+            color: #000;
+            font-weight: 500;
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 2px;
+            border: 0 none;
+        }
+    }
+
+    .btn-wrap {
+        justify-content: center;
+        display: flex;
+        gap: 8px;
+
+        >a {
+            width: 240px;
+            height: 48px;
+            flex: none;
+            font-size: 14px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &.delete-btn {
+                color: #000;
+                background: #F8F8F8;
+                border: 0 none;
+            }
+
+            &.save-btn {
+                color: #fff;
+                background: #000;
+            }
+        }
+    }
+
+    .help-wrap {
+        margin-top: 40px;
+        padding: 16px 20px;
+        background: #F5F5F5;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        h3 {
+            font-size: 13px;
+            line-height: 1.5;
+            font-weight: 700;
+            color: #000;
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+
+            li {
+                color: #3F3F3F;
+                font-size: 12px;
+                line-height: 1.5;
+            }
+        }
+    }
+
+    @media all and (max-width: 768px) {
+        gap: 20px;
+
+        .my-address-list-wrap {
+            .edit-btn {
+                padding: 7px 0;
+            }
+
+            li {
+                .check-text-wrap {
+                    flex: 1;
+
+                    input {
+                        margin: 8px;
+                        margin-right: 0;
+                        min-width: 18px;
+                        min-height: 18px;
+                    }
+
+                    .text-wrap {
+                        padding: 8px 0;
+                    }
+                }
+            }
+        }
+
+        .help-text-wrap {
+            margin-top: 12px;
+            order: 1;
+        }
+
+        .btn-wrap {
+            a {
+                width: calc(50% - 4px);
+            }
+        }
+    }
+
+    @media all and (max-width: 500px) {
+        .btn-wrap {
+            flex-direction: column;
+            gap: 4px;
+
+            a {
+                width: 100%;
+            }
+        }
+    }
+}
+
+/* E :::MYPAGE - 배송지관리 (/myshop/addr/list.html) ::: E */
+
+/* S :::MYPAGE - 배송지 등록 (/myshop/addr/register.html) ::: S */
+.address-register-contents {
+    .save {
+        margin-top: 0;
+    }
+
+    .xans-myshop-addrmodify,
+    .address-form-wrap {
+        padding-top: 24px;
+        border-top: 1px solid #E1E1E1;
+
+        .title-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 24px;
+
+            h6 {
+                font-size: 16px;
+                font-weight: 700;
+                color: #000;
+                line-height: 1.3;
+            }
+
+            span {
+                display: flex;
+                align-items: center;
+                gap: 4px;
+
+                label {
+                    margin: 0;
+                    font-size: 14px;
+                    line-height: 1.6;
+                    font-weight: 600;
+                    color: #000;
+                }
+            }
+        }
+    }
+
+    .address-register-table {
+        tbody {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        tr {
+            display: flex;
+            flex-direction: row !important;
+            align-items: flex-start;
+            gap: 4px;
+            margin-bottom: 0 !important;
+
+            &.phone-tr {
+                td {
+                    font-size: 0;
+                    display: flex;
+                    gap: 4px;
+                }
+            }
+            th {
+                min-width: 120px;
+                font-size: 14px;
+                font-weight: 600;
+                color: #000;
+                line-height: 1.6;
+
+                span {
+                    position: relative;
+
+                    &::after {
+                        content: '';
+                        display: block;
+                        width: 4px;
+                        height: 4px;
+                        border-radius: 2px;
+                        background: #00ACED;
+                        position: absolute;
+                        top: -1px;
+                        right: -5px;
+                    }
+                }
+            }
+
+            td {
+                width: 720px;
+                max-width: 720px;
+                position: relative;
+                text-align: left;
+
+                input[type=text][readonly] {
+                    background: #f9f9f9;
+                }
+
+                select,
+                input[type=text] {
+                    font-size: 14px;
+                    height: 48px;
+                    margin-bottom: 0;
+
+                    &::placeholder {
+                        color: #909090 !important;
+                        font-weight: 400 !important;
+                        font-size: 14px !important;
+
+                    }
+                }
+
+                &.text {
+                    input[type=text] {
+                        width: 100%;
+                    }
+                }
+
+                .ec-address {
+                    #address_zip1 {
+                        width: 636px;
+                        margin-bottom: 0;
+                    }
+                }
+                
+                #ma_rcv_mobile_no1,
+                #ma_rcv_mobile_no2,
+                #ma_rcv_mobile_no3 {
+                    margin: 0 !important;
+                    width: calc(33.333% - (8px / 3));
+                }
+
+                #ma_rcv_mobile_no1 {
+                    margin-left: 0 !important;
+                }
+
+                #ma_rcv_mobile_no3 {
+                    margin-right: 0 !important;
+                }
+
+                .ec-address {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 8px;
+
+                    #address_addr1,
+                    #address_addr2 {
+                        width: 100%;
+                        margin-bottom: 0;
+                    }
+                }
+
+                .ec-address-zipcode {
+                    display: flex;
+                    gap: 4px !important;
+
+                    .btnBasic {
+                        width: 80px !important;
+                        height: 48px;
+                        background: #000;
+                        color: #fff;
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+
+    .btn-wrap {
+        justify-content: center;
+        display: flex;
+        gap: 8px;
+        margin-top: 0;
+
+        >a {
+            width: 240px;
+            height: 48px;
+            flex: none;
+            font-size: 14px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            margin: 0 !important;
+
+            &.cancel-btn {
+                color: #000;
+                background: #F8F8F8;
+                border: 0;
+            }
+
+            &.save-btn {
+                color: #fff;
+                background: #000;
+            }
+        }
+    }
+
+    @media all and (max-width: 900px) {
+
+        .xans-myshop-addrmodify,
+        .address-form-wrap {
+            .title-wrap {
+                h6 {
+                    font-size: 16px;
+                }
+
+                span {
+                    gap: 7px;
+
+                    input[type="checkbox"] {
+                        width: 18px;
+                        height: 18px;
+                    }
+                }
+            }
+        }
+
+        .address-register-table {
+            tbody {
+                gap: 28px;
+            }
+
+            tr {
+                flex-direction: column !important;
+
+                th {
+                    margin-bottom: 0;
+                }
+
+                td {
+                    width: 100%;
+                    max-width: 100%;
+
+                    #ma_rcv_mobile_no1,
+                    #ma_rcv_mobile_no2,
+                    #ma_rcv_mobile_no3 {
+                        margin: 0 4px;
+                        width: calc(33.333% - (29px / 3));
+                    }
+
+                    .ec-address {
+                        #address_zip1 {
+                            width: calc(100% - 84px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media all and (max-width: 768px) {
+        .btn-wrap {
+            a {
+                width: calc(50% - 4px);
+            }
+        }
+    }
+
+    @media all and (max-width: 500px) {
+        .btn-wrap {
+            flex-direction: column;
+            gap: 4px;
+
+            a {
+                width: 100%;
+
+                &.cancel-btn {
+                    background: #fff;
+                    border: 1px solid #E9E9E9;
+                }
+            }
+        }
+    }
+
+
+
+}
+
+/* E :::MYPAGE - 배송지 등록 (/myshop/addr/register.html) ::: E */
+
+/* S :::MYPAGE - 최근 본 상품 / 위시 리스트 (product/recent_view_product.html , /myshop/wish_list.html) ::: S */
+.mypage-product-contents {
+    border-top: 1px solid #000000;
+
+    .recent-wish-list {
+        >li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 24px;
+
+            .ec-base-prdInfo {
+                flex: 1;
+                padding: 0;
+                border-bottom: 0;
+
+                .prdBox {
+                    padding: 0;
+                    display: flex;
+                    gap: 16px;
+
+                    .thumbnail {
+                        width: 100px !important;
+                        height: 100px !important;
+                        margin-right: 0;
+                    }
+
+                    .description {
+                        >a {
+                            margin-bottom: 0;
+                            display: flex;
+                            flex-direction: column;
+                            gap: 8px;
+
+                            .title-wrap {
+                                display: flex;
+                                flex-direction: column;
+
+                                h6 {
+                                    font-size: 14px;
+                                    line-height: 1.4;
+                                    font-weight: 700;
+                                    color: #000;
+                                }
+                            }
+                        }
+
+                        li {
+                            line-height: 1;
+
+                            strong {
+                                line-height: 1.4;
+                                font-weight: 700;
+                            }
+                        }
+
+                        .strike {
+                            color: #909090;
+                        }
+                    }
+                }
+            }
+
+            .btn_apply_wrap {
+                margin-top: 0;
+                display: flex;
+                align-items: center;
+                gap: 32px;
+
+                .basket-order-wrap {
+                    margin-top: 0;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 5px;
+                    width: 200px;
+
+                    a {
+                        margin: 0 !important;
+                        padding: 0;
+                        width: 100%;
+                        height: 36px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        box-sizing: border-box;
+                        font-weight: 500;
+
+                        &:first-child {
+                            border-color: #E9E9E9;
+                        }
+                    }
+                }
+
+                .btn_recent_del,
+                .btnDelete {
+                    position: static;
+                    top: unset;
+                    right: unset;
+                    margin-left: 0;
+                    width: 24px;
+                    height: 24px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    img {
+                        width: 14px;
+                        height: 14px;
+                    }
+                }
+            }
+
+        }
+    }
+
+    @media all and (max-width: 768px) {
+        .recent-wish-list {
+            >li {
+                flex-direction: column;
+                padding-top: 28px;
+                gap: 12px;
+                position: relative;
+                padding-bottom: 20px;
+                border-bottom: 1px solid #E9E9E9;
+                &:last-of-type {
+                    border-bottom: 0 none;
+                }
+
+                .ec-base-prdInfo {
+                    width: 100%;
+                }
+
+                .btn_apply_wrap {
+                    width: 100%;
+
+                    .basket-order-wrap {
+                        width: 100%;
+                        flex-direction: row;
+                    }
+
+                    .btn_recent_del,
+                    .btnDelete {
+                        position: absolute;
+                        top: 26px;
+                        right: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* E :::MYPAGE - 최근 본 상품 / 위시 리스트 (product/recent_view_product.html , /myshop/wish_list.html) ::: E */
+
+
+/* S :::MYPAGE - 나의 게시글 (/myshop/board_list.html) ::: S */
+.mypage-board-contents {
+    .crema-reviews {
+        margin-left: 0 !important;
+    }
+
+    .mypage-board-list {
+        .mypage-board-ul {
+            li {
+                padding: 20px 0;
+                border-bottom: 1px solid #E9E9E9;
+
+                >a {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 4px;
+                }
+
+                .title-wrap {
+                    display: flex;
+                    align-items: center;
+                    gap: 4px;
+
+                    >p {
+                        font-size: 16px;
+                        font-weight: 500;
+                        color: #000;
+                        line-height: 1.5;
+                    }
+                }
+
+                .info-wrap {
+                    display: flex;
+                    align-items: center;
+                    gap: 12px;
+
+                    span {
+                        font-size: 14px;
+                        line-height: 1.4;
+                        color: #909090;
+                    }
+                }
+            }
+        }
+    }
+
+    .xans-myshop-boardlistsearch {
+        margin-top: 0;
+
+        .form {
+            position: relative;
+            width: fit-content;
+
+            #search_key {
+                width: 90px;
+                border: 0 none;
+                padding-left: 16px;
+                height: 48px;
+                background: #f8f8f8 url("//img.echosting.cafe24.com/skin/skin/common/ico_select.png") no-repeat right 10px center;
+                background-size: 14px 8px;
+            }
+
+            #search {
+                width: 262px;
+                font-size: 14px;
+                line-height: 1.4;
+                height: 48px;
+                margin: 0;
+                margin-left: 8px;
+            }
+
+            >a {
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 48px;
+                height: 48px;
+                line-height: 48px;
+                text-indent: -9999px;
+                background: url(https://arenakorea1.cafe24.com/web/2026-renewal/img/renewal-search.png) no-repeat center / cover;
+            }
+        }
+
+    }
+
+    .ManagingReviews {
+        padding: 0 !important;
+    }
+
+    @media all and (max-width: 1024px) {
+        .xans-myshop-boardlistsearch {
+            margin-top: 0;
+
+            .form {
+                flex-wrap: unset;
+
+                #search_key {
+                    width: 90px !important;
+                    height: 48px !important;
+                    background: #f8f8f8 url("//img.echosting.cafe24.com/skin/skin/common/ico_select.png") no-repeat right 10px center;
+                    background-size: 14px 8px !important;
+                }
+
+                #search {
+                    width: 262px !important;
+                    height: 48px !important;
+                    margin-left: 8px !important;
+                }
+
+                >a {
+                    width: 48px !important;
+                    height: 48px !important;
+                }
+            }
+
+        }
+    }
+
+    @media all and (max-width: 500px) {
+        gap: 28px !important;
+
+        .xans-myshop-boardlistsearch {
+
+            .form {
+                width: 100%;
+
+                #search {
+                    width: calc(100% - 98px) !important;
+                }
+            }
+        }
+    }
+}
+
+/* E :::MYPAGE - 나의 게시글 (/myshop/board_list.html) ::: E */
+
+
+/* S :::MYPAGE - 회원정보수정 (/member/modify.html) ::: S */
+.mypge-member-modify-contents {
+    padding: 0;
+
+    .memberArea {
+        max-width: 100% !important;
+        margin: 0 !important;
+
+        .modify-table {
+            padding-top: 32px;
+
+            tbody {
+                display: flex !important;
+                flex-direction: column;
+                gap: 32px;
+            }
+
+            tr {
+                display: flex !important;
+                flex-direction: row !important;
+                align-items: flex-start;
+                gap: 4px;
+                margin-bottom: 0 !important;
+                padding: 0 !important;
+                border: 0 !important;
+
+                &.displaynone {
+                    display: none !important;
+                }
+
+                th {
+                    min-width: 140px;
+                    font-weight: 600 !important;
+                    color: #000;
+                    line-height: 1.6;
+                    padding: 0 !important;
+
+                    span {
+                        position: relative;
+
+                        &::after {
+                            content: '';
+                            display: block;
+                            width: 4px;
+                            height: 4px;
+                            border-radius: 2px;
+                            background: #00ACED;
+                            position: absolute;
+                            top: -1px;
+                            right: -5px;
+                        }
+                    }
+                }
+
+                td {
+                    width: 100%;
+                    max-width: 750px;
+                    position: relative;
+                    text-align: left;
+                    display: flex;
+                    align-items: center;
+                    gap: 4px;
+
+                    input[type=text][readonly] {
+                        background: #f9f9f9 !important;
+                        color: #909090 !important;
+                        font-size: 14px !important;
+                    }
+
+                    select,
+                    input:not([type="radio"]) {
+                        font-size: 14px !important;
+                        height: 48px !important;
+                        margin-bottom: 0;
+
+                        &::placeholder {
+                            color: #909090 !important;
+                            font-weight: 400 !important;
+                            font-size: 14px !important;
+                        }
+                    }
+
+                    .btn-toggle-pw {
+                        cursor: pointer;
+                        background: url(https://arenakorea1.cafe24.com/web/2026-renewal/img/hide-password.png) center center;
+                        background-size: contain;
+                        width: 20px;
+                        height: 20px;
+                        position: absolute;
+                        top: 12px;
+                        right: 20px;
+
+                    }
+
+                    .btn-toggle-pw.active {
+                        background: url(https://arenakorea1.cafe24.com/web/2026-renewal/img/fill-password.png) center center;
+                        background-size: contain;
+                        width: 20px;
+                        height: 20px;
+                        position: absolute;
+                        top: 12px;
+                        right: 20px;
+
+                    }
+
+                    .ec-address-zipcode {
+                        display: flex;
+                        gap: 4px !important;
+                        margin-bottom: 8px;
+
+                        .ec-base-label {
+                            display: none;
+                        }
+
+                        #postcode1 {
+                            flex: 1;
+                        }
+
+                        #postBtn {
+                            width: 80px !important;
+                            height: 48px;
+                            background: #000;
+                            color: #fff;
+                            font-size: 14px;
+                            margin-left: 0;
+                        }
+                    }
+
+                    #fmodify_baseAddr_wrap {
+                        margin-bottom: 8px;
+                    }
+
+                    input[type="radio"] {
+                        background: url(https://arenakorea1.cafe24.com/web/2026-renewal/img/renewal-radio-off.png) no-repeat center / cover;
+
+                        &+label {
+                            margin: 0 28px 0 4px !important;
+                        }
+
+                        &:checked {
+                            background: url(https://arenakorea1.cafe24.com/web/2026-renewal/img/renewal-radio-on.png) no-repeat center / cover;
+                        }
+                    }
+                }
+
+                .phone-wrap {
+                    gap: 4px;
+
+                    >* {
+                        margin: 0 !important;
+                    }
+
+                    .auth-code-btn {
+                        padding: 0;
+                        width: 80px;
+                        height: 48px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+
+                }
+            }
+        }
+
+        .btn-wrap {
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+
+            .quit-btn {
+                font-size: 14px;
+                font-weight: 500;
+                color: #000;
+            }
+
+            .cancel-modify-wrap {
+                display: flex;
+                gap: 8px;
+
+                >a {
+                    width: 240px;
+                    height: 48px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 14px;
+                    font-weight: 700;
+                    cursor: pointer;
+
+                    &.cancel-btn {
+                        background: #f8f8f8;
+                        color: #000;
+                    }
+
+                    &.modify-btn {
+                        color: #fff;
+                        background: #000;
+                    }
+                }
+            }
+        }
+    }
+
+    @media all and (max-width: 1180px) {
+        .memberArea {
+            .modify-table {
+                tr {
+                    td {
+                        max-width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    @media all and (max-width: 768px) {
+        .memberArea {
+            margin-top: 16px !important;
+
+            .modify-table {
+                tr {
+                    flex-direction: column !important;
+
+                    td {
+                        input[type="radio"] {
+                            &+label {
+                                font-size: 14px !important;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .btn-wrap {
+                .quit-btn {
+                    margin-top: 0 !important;
+                    padding: 7px 0;
+                }
+
+                .cancel-modify-wrap {
+                    a {
+                        width: calc(50% - 4px);
+                    }
+                }
+            }
+        }
+    }
+
+    @media all and (max-width: 500px) {
+        .memberArea {
+            .btn-wrap {
+                gap: 36px;
+
+                .cancel-modify-wrap {
+                    flex-wrap: wrap;
+
+                    a {
+                        width: 100%;
+
+                        &.cancel-btn {
+                            border: 1px solid #E9E9E9;
+                            background: #fff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* E :::MYPAGE - 회원정보수정 (/member/modify.html) ::: E */

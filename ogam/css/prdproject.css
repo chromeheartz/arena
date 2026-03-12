@@ -1,0 +1,165 @@
+
+[data-page="prdProject"],
+[data-page="prdProject"] *{
+   box-sizing: border-box;
+}
+[data-page="prdProject"] .og_project_imgs ul{position: relative;}
+[data-page="prdProject"] .og_project_imgs ul li > div { font-size: 0; }
+[data-page="prdProject"] .og_iframe_banner{ position: relative; }
+[data-page="prdProject"] .og_iframe_banner > *{display: block; width: 100%; height: auto; padding-top: calc((100%*9/16));}
+[data-page="prdProject"] .og_iframe_banner iframe{width: 100%; height: 100%; position: absolute; top: 0; left: 0;}
+[data-page="prdProject"] .og_project_imgs img {max-width: inherit; width: 100%;}
+
+
+@media screen and (min-width: 1367px) {
+
+    
+    
+    [data-page="prdProject"] .og_project_section .og_project_section_title,
+    [data-page="prdProject"] .og_project_section .og_base_product{
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+        max-width: 1521px;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+
+
+}
+@media only screen and (max-width: 1367px) {
+    [data-page="prdProject"] .forMob .og_iframe_banner { position: relative; z-index: 1 !important; width: 100% !important; }
+}
+
+
+
+
+
+[data-page="prdProject"] .og_base_tab{
+    margin: 140px 0;
+    position: relative;
+    z-index: 100;
+}
+[data-page="prdProject"] .og_base_tab .tabMenu{
+    width: 100%;
+    background: var(--color-black-base);
+    position: static;
+}
+
+
+
+[data-page="prdProject"] .og_base_tab ul{
+    display: flex;
+    width: 100%;
+}
+
+[data-page="prdProject"] .og_base_tab li{
+    flex: 1 1 0;
+
+}
+
+[data-page="prdProject"] .og_base_tab li a{
+    display: flex !important;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--fs-base);
+    line-height: var(--lh-base);
+    padding: 28px 20px;
+    position: relative;
+    color: var(--color-white-base);
+    min-width: fit-content;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+[data-page="prdProject"] .og_base_tab li:not(:last-child) a::after{
+    display: block;
+    width: 1px;
+    height: 24px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    content: "";
+    background: var(--color-white-base);
+}
+
+.og_project_container{
+    display: flex;
+    row-gap: 143px;
+    flex-direction: column;
+}
+[data-page="prdProject"] .og_project_section{
+
+}
+
+[data-page="prdProject"] .og_project_section .og_project_section_title{
+    font-size: 24px;
+    line-height: var(--lh-min);
+    padding-bottom: 24px;
+    position: relative;
+    margin-bottom: 24px;
+    margin-top: 0;
+}
+[data-page="prdProject"] .og_project_section .og_project_section_title::after{
+    display: block;
+    width: calc(100% - 40px);
+    height: 1px;
+    content: "";
+    background: var(--color-black-base);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+[data-page="prdProject"] .og_project_category.sticky .tabMenu{position: fixed; z-index: 10;}
+
+@media screen and (max-width: 1366px) {
+
+    [data-page="prdProject"] .og_base_tab{
+        margin: 50px 0;
+    }
+
+
+    [data-page="prdProject"] .og_base_tab li a{
+        font-size: var(--fs-small);
+        padding: 16px 20px;
+    }
+
+    .og_project_container{
+        row-gap: 80px;
+    }
+    [data-page="prdProject"] .og_project_section .og_project_section_title{
+        padding-left: 20px;
+        padding-right: 20px;
+        font-size: var(--fs-base);
+        padding-bottom: 16px;
+        margin-bottom: 16px;
+    }
+
+
+}
+
+
+.og_base_product .prdList [id^="anchorBoxId_"] .price_wrap.exclusive_wrap {
+    flex-wrap:wrap;
+    }
+
+.og_base_product .prdList [id^="anchorBoxId_"] .description .price_wrap.exclusive_wrap .discount{
+    display:block !important;
+    order:1;
+    text-decoration:line-through;
+	margin-left:0 !important;
+    }
+
+.og_base_product .prdList [id^="anchorBoxId_"] .price_wrap.exclusive_wrap .og_prc_item.w_full {
+    width:100%;
+    order:3;
+    }
+
+.og_base_product .prdList [id^="anchorBoxId_"] .description .price_wrap.exclusive_wrap .discount_ratio {
+    display:block !important;
+    order:2;
+    margin-left:12px;
+    }

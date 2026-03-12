@@ -1,0 +1,1597 @@
+/* S ::: 주문서  (/order/orderform.html)  ::: S */
+.order-form-contents-wrapper {
+    padding: 60px 0 0;
+
+    .order-form-inner {
+        max-width: 1220px;
+        margin: 0 auto;
+        width: 100%;
+
+        .order-form-wrap {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+
+            #userStyle #mCafe24Order .btnSubmit {
+                height: 48px !important;
+                line-height: 48px;
+                background: #000 !important;
+                color: #fff;
+                font-size: 14px !important;
+                font-weight: 700 !important;
+
+            }
+
+            #mCafe24Order {
+
+                #ec-jigsaw-area-paymethod input[type="radio"][value="naverpay"]+label::after,
+                #ec-jigsaw-area-paymethod input[type="radio"][value="kakaopay"]+label::after,
+                #ec-jigsaw-area-paymethod input[type="radio"][value="payco"]+label::after {
+                    display: none;
+                }
+
+                input[type="checkbox"] {
+                    width: 24px;
+                    height: 24px;
+                    background: url(https://arenakorea1.cafe24.com/web/2026-renewal/img/renewal-check-off.png) no-repeat center / cover !important;
+                    border: 0;
+                    top: 0;
+
+                    &:checked {
+                        background: url(https://arenakorea1.cafe24.com/web/2026-renewal/img/renewal-check-on.png) no-repeat center / cover !important;
+                    }
+
+                    &+label {
+                        line-height: 24px;
+                        margin: 0 0 0 4px;
+                    }
+                }
+
+                p.ec-base-help,
+                ul.ec-base-help li,
+                ol.ec-base-help li {
+                    font-size: 13px;
+                    font-weight: 500;
+                    line-height: 1.5;
+                    color: #909090;
+                    padding-left: 10px;
+                    position: relative;
+
+                    &::after {
+                        content: '';
+                        display: block;
+                        width: 3px;
+                        height: 3px;
+                        border-radius: 3px;
+                        position: absolute;
+                        top: 7px;
+                        left: 0;
+                        background: #909090;
+                    }
+                }
+
+                .segment.unique {
+                    display: flex;
+                    gap: 4px;
+                    margin-top: 16px;
+                    flex-wrap: wrap;
+
+                    select {
+                        width: calc(100% - 124px) !important;
+                    }
+
+                    .ec-shippingInfo-omessageInput {
+                        width: calc(100% - 124px);
+                        margin-left: 124px;
+                        margin-top: 4px;
+                    }
+                }
+
+                .segment.unique div:first-of-type {
+                    width: 120px;
+                    font-size: 14px;
+                    font-weight: 600;
+                    color: #000;
+                    line-height: 1.4;
+                }
+
+                select {
+                    &:disabled {
+                        background: #F7F7F7;
+                        color: #909090;
+                    }
+                }
+
+                .delvstore_disabled * {
+                    color: #D4D4D4 !important
+                }
+
+                input[type="radio"] {
+
+                    background: url(https://arenakorea1.cafe24.com/web/2026-renewal/img/renewal-radio-off.png) no-repeat center / cover !important;
+                    background-size: 20px 20px !important;
+
+
+                    &:checked {
+                        background-image: url(https://arenakorea1.cafe24.com/web/2026-renewal/img/renewal-radio-on.png) !important;
+
+                        &+label {
+                            font-size: 14px;
+                            font-weight: 600;
+                            color: #000;
+                        }
+                    }
+
+                }
+
+                .ec-base-fold {
+                    &:not(:first-of-type) {
+                        margin-top: 60px !important;
+                        border-top: 1px solid #D4D4D4;
+                    }
+
+                    &#ec-jigsaw-area-paymethod {
+                        border-top: 0;
+
+                        .payMethod>li.selected>.inner {
+                            flex-direction: row;
+                            gap: 4px;
+                            flex-wrap: wrap;
+                            margin-top: 0;
+
+                            .ec-base-label {
+                                width: calc(33.333% - (8px / 3));
+
+                                &:not(:first-of-type)>label {
+                                    margin-top: 0 !important;
+                                }
+
+                                label {
+
+                                    min-height: 36px;
+                                    font-weight: 500;
+                                    box-sizing: border-box;
+                                    padding: 0;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    gap: 4px;
+                                    width: 100%;
+                                    padding-bottom: 0 !important;
+
+                                }
+                            }
+                        }
+                    }
+
+                    .pannelArea {
+                        margin-top: 60px !important;
+                        border-top: 1px solid #D4D4D4;
+                    }
+                }
+
+                .txtRed {
+                    color: #3f3f3f;
+                }
+
+                .title {
+                    h2 {
+                        font-size: 16px;
+                        line-height: 1.2;
+                        font-weight: 700;
+                        color: #000;
+                    }
+                }
+
+                input[type="button"],
+                input[type="text"],
+                input[type="password"],
+                input[type="tel"],
+                input[type="image"],
+                textarea,
+                select {
+                    height: 48px;
+                    padding: 14px 16px;
+                    font-size: 14px;
+                    color: #000;
+                    line-height: 1.4;
+                    border: 1px solid #E1E1E1;
+                }
+
+                .ec-base-table.typeWrite {
+                    tbody {
+                        tr {
+                            flex-direction: row;
+                            gap: 4px;
+
+                            &:not(:first-of-type) {
+                                margin-top: 16px;
+                            }
+
+                            th {
+                                width: 120px;
+                                font-size: 14px;
+                                font-weight: 600;
+                                color: #000;
+                                line-height: 1.4;
+                            }
+
+                            td {
+                                margin-top: 0;
+                                flex: 1;
+                                max-width: 100%;
+                            }
+                        }
+                    }
+                }
+
+                .ec-base-table .ec-address {
+                    margin-top: -8px;
+
+                    >li {
+                        margin-top: 8px;
+                    }
+
+                    .ec-address-zipcode .btnBasic {
+                        height: 48px;
+                        width: 80px;
+                        padding: 0;
+                        line-height: 48px;
+                        margin-left: 4px;
+                    }
+                }
+
+                .ec-area-shipping-companies {
+                    .ec-base-help {
+                        margin-bottom: 20px;
+
+                    }
+                }
+
+                #og_delivcompany_area_custom {
+                    .wrap1 {
+                        width: 100%;
+                    }
+
+                    .wrap2 {
+                        margin-left: unset;
+                        width: calc(100% - 124px);
+
+                        >.ec-base-label {
+                            width: 100%;
+
+                            select {
+                                width: 100%;
+                            }
+                        }
+                    }
+
+                    >.ec-base-label {
+                        margin-right: 4px;
+                        width: 120px;
+                    }
+
+                    .list {
+                        .desc {
+                            font-size: 14px;
+                            color: #000;
+                            line-height: 1.4;
+                        }
+                    }
+
+                    .og_delv_desc {
+                        .title {
+                            width: 120px;
+                            font-size: 14px;
+                            font-weight: 600;
+                            color: #000;
+                            line-height: 1.4;
+                            padding-top: 0;
+                        }
+                    }
+                }
+
+                .orderArea .xans-order .ec-base-prdInfo {
+                    padding: 0;
+                    border-bottom: 0;
+
+                    .prdBox {
+                        padding: 20px 0 60px;
+
+                        .thumbnail {
+                            width: 120px;
+                            height: 120px;
+                            margin-right: 16px;
+
+                        }
+                    }
+
+                    .description {
+                        .prdName {
+                            margin: 0;
+                            font-size: 14px;
+                            line-height: 1.4;
+                            font-weight: 700;
+                            color: #000;
+                        }
+
+                        .info {
+                            margin-bottom: 8px;
+
+                            li {
+                                font-size: 13px;
+                                line-height: 1.5;
+                                font-weight: 400;
+                                color: #909090;
+                                margin: 0;
+
+                                * {
+
+                                    line-height: 1.5;
+
+                                }
+                            }
+                        }
+
+                        .proPrice {
+                            font-size: 14px;
+                            line-height: 1.4;
+                            font-weight: 700;
+                            color: #000;
+                        }
+
+                    }
+                }
+
+                /* 결제 help wrap */
+                .ec-paymethod-input-detail.onlyType .helpArea {
+                    background: #fff;
+                    padding: 0;
+                    margin-top: 8px;
+
+                }
+
+                .helpArea {
+                    ul {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 4px;
+
+                        li {
+                            word-break: keep-all;
+
+                            &::before {
+                                display: none !important;
+                            }
+                        }
+                    }
+                }
+
+                .ec-paymethod-input-detail {
+
+                    #payment_input_cash.ec-base-table.typeWrite,
+                    #payment_input_tcash.ec-base-table.typeWrite,
+                    #payment_input_icash.ec-base-table.typeWrite {
+                        margin-bottom: 16px;
+                    }
+                }
+
+                .receiptWrap {
+                    #cashreceipt_display_area {
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: 4px;
+
+                        .title {
+                            padding-top: 0;
+
+                            h3 {
+                                width: 120px;
+                                font-size: 14px;
+                                font-weight: 600;
+                                color: #000;
+                                line-height: 1.4;
+                            }
+                        }
+
+                        .ec-cashreceipt-textAndForm {
+                            padding-bottom: 0;
+                            width: calc(100% - 124px);
+                            margin-left: 124px;
+
+                            .ec-cashreceipt-formArea {
+                                width: 100%;
+
+                                #cashreceipt_form_area {
+                                    margin-top: 0;
+                                }
+
+                            }
+                        }
+
+                        label {
+                            display: inline-block;
+                        }
+                    }
+                }
+
+                #ec-jigsaw-area-agreement {
+                    margin: 60px 0;
+
+                    &+.helpArea {
+                        padding: 16px 20px;
+                    }
+                }
+
+                .agreeArea .agreement>ul {
+                    margin: 0;
+                }
+
+                /* 수령지 정보 */
+                #ec-jigsaw-area-shippingInfo {
+                    #ec-jigsaw-tab-shippingInfo {
+                        margin: 0;
+
+                        ul {
+                            margin-bottom: 24px;
+                            margin-top: 20px;
+
+                            li {
+                                width: 160px;
+                                height: 48px;
+                                flex: unset;
+                                border: 0;
+
+                                &.selected {
+                                    border: 1px solid #E9E9E9;
+                                    border-bottom: 0;
+
+                                    a {
+                                        background: #fff;
+                                        color: #000;
+                                    }
+                                }
+
+                                a {
+                                    background: #F8F8F8;
+                                    color: #909090;
+                                    font-weight: 600;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                label {
+                    font-weight: 600;
+                }
+
+                /* 새 배송지 */
+                #ec-shippingInfo-newAddress {
+                    table {
+                        margin-top: 24px;
+                    }
+                }
+
+                .ec-base-fold.selected>.title#ec-jigsaw-title-shippingInfo {
+                    width: fit-content;
+                }
+
+                .segment.ec-shippingInfo-newAddress-setMain {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    padding-top: 20px;
+
+                }
+
+                .discountDetail {
+                    &.mCouponModify .couponWrap .ec-order-expandwrap {
+                        border: 1px solid #E9E9E9;
+                        padding: 12px 12px 12px 20px;
+
+                        .btnRemove {
+
+                            &::before,
+                            &::after {
+                                display: none;
+                            }
+
+                            background:url(https://arenakorea1.cafe24.com/web/2026-renewal/img/renewal-x.png) no-repeat center / cover;
+                        }
+
+                        .ec-coupon-expand {
+                            padding: 6px 0;
+
+                            .txt_info {
+                                font-size: 14px;
+                                font-weight: 500;
+                                color: #000;
+
+                                &::after {
+                                    right: -22px;
+                                    top: 3px;
+                                }
+                            }
+                        }
+
+                        .couponList {
+                            &::after {
+                                display: none;
+                            }
+
+                            padding-left: 0;
+                        }
+
+                        &.selected {
+                            .txt_info {
+                                &::after {
+                                    top: 9px;
+                                }
+                            }
+
+                            .coupon-help-info {
+                                border-top: 0;
+                                border-bottom: 0;
+                                background: #fff;
+                                padding: 0;
+                                margin-top: 12px;
+
+                                span {
+                                    font-size: 12px;
+                                    font-weight: 500;
+                                    color: #909090;
+                                }
+                            }
+                        }
+                    }
+
+                    .displayblock,
+                    .displayFlex {
+                        display: flex;
+                        flex-direction: row;
+                        gap: 4px;
+                    }
+
+                    .heading {
+                        width: 120px;
+                        font-size: 14px;
+                        line-height: 1.4;
+                        font-weight: 600;
+                        color: #000;
+                        margin-right: 0;
+                    }
+
+                    .control {
+                        margin-top: 0;
+                        flex: 1;
+                        column-gap: 4px;
+
+                        .btnNormal {
+                            width: 80px;
+                            height: 48px !important;
+                            padding: 0;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            font-size: 14px;
+                            font-weight: 700;
+                            color: #fff;
+                            background: #000;
+                        }
+
+                        .discountPrice {
+                            height: 48px;
+                            padding: 14px 16px;
+                            box-sizing: border-box;
+                        }
+                    }
+
+                    .summary {
+                        margin-left: 124px;
+                        margin-top: 4px;
+                        padding-left: 0;
+                        font-size: 12px;
+                        color: #000;
+
+                        .txtEm {
+                            font-size: 12px !important;
+                        }
+                    }
+                }
+
+                .payMethod {
+                    label {
+                        display: none;
+                    }
+                }
+
+            }
+
+            #mCafe24Order.typeHeader {
+                max-width: 100%;
+                overflow: visible !important;
+
+                .form-order-wrap {
+                    display: flex;
+                    gap: 44px;
+
+                    .title {
+                        &::after {
+                            display: none;
+                        }
+
+                        font-size:18px;
+                        font-weight: 700;
+                        color: #000;
+                        line-height: 1.2;
+                        padding: 0;
+                        padding-top:20px;
+                        border-bottom: 0;
+                    }
+
+                    .left-order-wrap {
+                        flex: 1;
+                        max-width: 750px;
+
+                        .logoffBox {
+                            padding: 0;
+
+                            .membership-btn {
+                                padding: 20px 12px 20px 20px;
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-between;
+                                background: #00ACED;
+
+                                p {
+                                    font-size: 16px;
+                                    line-height: 1.5;
+                                    color: #fff;
+
+                                    span {
+                                        font-weight: 700;
+                                    }
+                                }
+
+                                i {
+                                    display: block;
+                                    width: 24px;
+                                    height: 24px;
+
+                                    img {
+                                        display: block;
+                                        width: 100%;
+                                    }
+                                }
+                            }
+
+                            .xans-member-login {
+                                margin-top: 60px;
+                                border-top: 1px solid #D4D4D4;
+                                /* border-bottom: 1px solid #d4d4d4; */
+                                padding-top: 20px;
+                                padding-bottom: 60px;
+                                display: flex;
+                                flex-direction: column;
+                                gap: 20px;
+
+                                >h6 {
+                                    font-size: 16px;
+                                    line-height: 1.2;
+                                    color: #000;
+                                    font-weight: 700;
+                                    text-align: left;
+                                }
+
+                                .login__sns {
+                                    margin-top: 0;
+                                    margin: 0;
+                                    max-width: 100%;
+
+                                    .wrap_sns_log {
+                                        width: 100%;
+                                        gap: 8px;
+                                        justify-content: flex-start;
+
+                                        >a {
+                                            width: 104px;
+                                            height: 48px;
+                                            margin: 0;
+                                            justify-content: flex-start;
+                                            padding: 0;
+                                            font-size: 14px;
+                                            font-weight: 700;
+                                            border-radius: 0;
+                                            line-height: 48px;
+
+                                            &::before {
+                                                width: 48px;
+                                                height: 48px;
+                                                margin-right: 0;
+                                            }
+
+                                            &.btnNaver {
+                                                &::before {
+                                                    background: url(https://arenakorea1.cafe24.com/web/2026-renewal/img/renewal-naver.png) no-repeat center / cover;
+                                                }
+                                            }
+
+                                            &.btnKakao {
+                                                &::before {
+                                                    background: url(https://arenakorea1.cafe24.com/web/2026-renewal/img/renewal-kakao.png) no-repeat center / cover;
+                                                }
+                                            }
+
+                                            &.btnApple {
+                                                &::before {
+                                                    background: url(https://arenakorea1.cafe24.com/web/2026-renewal/img/renewal-apple.png) no-repeat center / cover;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+
+                        .billingNshipping #ec-jigsaw-area-billingInfo {
+                            border-top: 1px solid #D4D4D4;
+
+                            .contents {
+                                display: block;
+                                height: auto;
+                                opacity: 1;
+                            }
+                        }
+                    }
+
+                    .right-order-wrap {
+                        width: 420px;
+
+                        .sticky-wrap {
+                            &.is-fixed {
+                                position: fixed;
+                                top: 120px;
+                                width: 420px;
+                            }
+
+                        }
+
+                        #ec-jigsaw-area-payment {
+                            margin-bottom: 36px;
+
+                            .title {
+                                border-top: 1px solid #D4D4D4;
+
+                                h2 {
+                                    font-size: 18px;
+                                }
+                            }
+
+                            .contents {
+                                .segment {
+                                    tbody {
+
+                                        th,
+                                        td {
+                                            padding-bottom: 12px !important;
+                                        }
+
+                                        th {
+                                            color: #3f3f3f;
+                                            font-size: 14px;
+                                            font-weight: 500;
+                                            line-height: 1.4;
+                                        }
+
+                                        td {
+                                            >span {
+                                                font-size: 14px;
+                                                line-height: 1.4;
+                                                font-weight: 600;
+                                                color: #3f3f3f !important;
+                                            }
+
+                                            font-size:14px;
+                                            line-height:1.4;
+                                            font-weight:600;
+                                            color:#3f3f3f;
+                                        }
+                                    }
+                                }
+
+                                .totalPay {
+                                    margin-top: 8px;
+
+                                    .heading {
+                                        font-size: 16px;
+                                        font-weight: 700;
+                                        color: #000;
+                                        line-height: 1.4;
+                                    }
+
+                                    .txtStrong {
+                                        font-size: 18px;
+                                        font-weight: 700;
+                                        color: #000;
+                                        line-height: 1.4;
+                                    }
+                                }
+                            }
+                        }
+
+                        #ec-jigsaw-area-benefit {
+                            margin-top: 0 !important;
+                            margin-bottom: 20px;
+
+                            .title {
+                                font-size: 16px;
+
+                                #ec-jigsaw-heading-benefit {
+                                    display: none !important;
+                                }
+                            }
+
+                            .contents {
+                                display: block;
+                                height: unset;
+                                opacity: 1;
+
+                                .segment {
+                                    table {
+                                        tbody {
+
+                                            td {
+                                                font-weight: 600;
+                                            }
+
+                                            th,
+                                            td {
+                                                padding: 0 0 12px !important;
+                                                color: #3F3F3F;
+                                                line-height: 1.4;
+                                                letter-spacing: -0.02em;
+                                            }
+                                        }
+                                    }
+                                }
+
+                                .totalPay {
+
+                                    .heading {
+                                        color: #3F3F3F;
+                                        line-height: 1.4;
+                                        letter-spacing: -0.02em;
+                                    }
+
+                                    .txtEm {
+                                        span {
+                                            color: #3F3F3F;
+                                            line-height: 1.4;
+                                            letter-spacing: -0.02em;
+                                            font-weight: 600;
+                                        }
+                                    }
+                                }
+
+                            }
+                        }
+
+
+                        /* r-order-wrap */
+                    }
+
+                    /* l,r order-wrap */
+                }
+
+            }
+        }
+    }
+
+    @media all and (max-width: 1220px) {
+        .order-form-inner {
+            padding: 0 16px;
+            box-sizing: border-box;
+        }
+    }
+
+    @media all and (max-width: 1024px) {
+        .ec-base-label {
+            margin: 0;
+        }
+
+        .order-form-inner {
+            .order-form-wrap {
+                #mCafe24Order.typeHeader {
+                    margin-top: 16px;
+
+                    .form-order-wrap {
+                        flex-direction: column;
+
+                        .left-order-wrap {
+                            max-width: unset;
+
+                            .logoffBox {
+                                .xans-member-login {
+                                    .login__sns {
+                                        .wrap_sns_log {
+                                            flex-direction: row;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .right-order-wrap {
+                            width: 100%;
+
+                            .sticky-wrap {
+                                width: 100%;
+                            }
+
+                            .sticky-wrap.is-fixed {
+                                position: static;
+                                width: 100%;
+                            }
+                        }
+                    }
+
+                    .ec-base-fold {
+                        &:not(:first-of-type) {
+                            margin-top: 32px !important;
+                        }
+                        &#ec-jigsaw-area-paymethod {
+                            border-top: 1px solid #D4D4D4;
+                        }
+
+                        .pannelArea {
+                            margin-top: 32px !important;
+                        }
+                    }
+
+                    .orderArea .xans-order .ec-base-prdInfo {
+                        .prdBox {
+                            padding: 20px 0 32px;
+                        }
+                    }
+
+                    #ec-jigsaw-area-agreement {
+                        border-top: 1px solid #D4D4D4;
+                    }
+                }
+            }
+        }
+    }
+
+    @media all and (max-width: 768px) {
+        padding-top: 20px;
+
+        .order-form-inner {
+
+            .order-form-wrap {
+
+                #userStyle #mCafe24Order .btnSubmit {}
+
+                #mCafe24Order {
+                    padding: 0 !important;
+
+                    input[type="checkbox"] {
+
+                        &:checked {}
+
+                        &+label {}
+                    }
+
+                    p.ec-base-help,
+                    ul.ec-base-help li,
+                    ol.ec-base-help li {
+
+                        &::after {}
+                    }
+
+                    .segment.unique {
+                        /* flex-direction: column; */
+
+                        select {
+                            width: 100% !important;
+                        }
+
+                        .ec-shippingInfo-omessageInput {}
+                    }
+
+                    .segment.unique div:first-of-type {}
+
+                    select {
+                        &:disabled {}
+                    }
+
+                    .delvstore_disabled * {}
+
+                    input[type="radio"] {
+
+
+                        &:checked {
+
+                            &+label {}
+                        }
+
+                    }
+
+                    .ec-base-fold {
+                        &:not(:first-of-type) {
+                            margin-top: 32px !important;
+                        }
+
+                        &#ec-jigsaw-area-paymethod {
+
+
+                            .payMethod>li.selected>.inner {
+
+                                .ec-base-label {
+                                    width: calc(50% - 2px);
+
+                                    &:not(:first-of-type)>label {}
+
+                                    label {}
+                                }
+                            }
+                        }
+
+                        .pannelArea {}
+                    }
+
+                    .txtRed {}
+
+                    .title {
+                        h2 {}
+                    }
+
+                    input[type="button"],
+                    input[type="text"],
+                    input[type="password"],
+                    input[type="tel"],
+                    input[type="image"],
+                    textarea,
+                    select {}
+
+                    .ec-base-table.typeWrite {
+                        tbody {
+                            tr {
+                                flex-direction: column;
+
+                                &:not(:first-of-type) {
+                                    margin-top: 28px;
+                                }
+
+                                th {}
+
+                                td {}
+                            }
+                        }
+                    }
+
+                    .ec-base-table .ec-address {
+
+                        >li {}
+
+                        .ec-address-zipcode .btnBasic {}
+                    }
+
+                    .ec-area-shipping-companies {
+                        .ec-base-help {}
+                    }
+
+                    #og_delivcompany_area_custom {
+                        .wrap1 {
+                            width: 100%;
+                        }
+
+                        .wrap2 {
+                            width: calc(100% - 124px);
+
+
+                            >.ec-base-label {
+
+                                select {}
+                            }
+                        }
+
+                        >.ec-base-label {}
+
+                        .list {
+                            .desc {}
+                        }
+
+                        .og_delv_desc {
+                            .title {}
+                        }
+                    }
+
+                    .orderArea .xans-order .ec-base-prdInfo {
+
+                        .prdBox {
+
+                            .thumbnail {}
+                        }
+
+                        .description {
+                            .prdName {}
+
+                            .info {
+
+                                li {
+
+                                    * {}
+                                }
+                            }
+
+                            .proPrice {}
+
+                        }
+                    }
+
+                    /* 결제 help wrap */
+                    .ec-paymethod-input-detail.onlyType .helpArea {}
+
+                    .helpArea {
+                        ul {
+
+                            li {}
+                        }
+                    }
+
+                    .ec-paymethod-input-detail {}
+
+                    .receiptWrap {
+                        #cashreceipt_display_area {
+
+                            .title {
+
+                                h3 {}
+                            }
+
+                            .ec-cashreceipt-textAndForm {
+
+                                .ec-cashreceipt-formArea {
+
+                                    #cashreceipt_form_area {}
+
+                                }
+                            }
+
+                            label {}
+                        }
+                    }
+
+                    #ec-jigsaw-area-agreement {
+                        margin: 20px 0 36px;
+
+                        &+.helpArea {}
+                    }
+
+                    .agreeArea .agreement>ul {}
+
+                    /* 수령지 정보 */
+                    #ec-jigsaw-area-shippingInfo {
+                        margin-bottom: 0;
+
+                        #ec-jigsaw-tab-shippingInfo {
+
+                            ul {
+
+                                li {
+
+                                    &.selected {
+
+                                        a {}
+                                    }
+
+                                    a {}
+                                }
+                            }
+                        }
+                    }
+
+                    label {}
+
+                    #ec-shippingInfo-newAddress {
+                        table {}
+                    }
+
+                    .ec-base-fold.selected>.title#ec-jigsaw-title-shippingInfo {}
+
+                    .segment.ec-shippingInfo-newAddress-setMain {}
+
+                    .discountDetail {
+                        &.mCouponModify .couponWrap .ec-order-expandwrap {
+
+                            .btnRemove {}
+
+                            .ec-coupon-expand {
+                                padding: 6px 0;
+
+                                .txt_info {
+
+                                    &::after {}
+                                }
+                            }
+
+                            .couponList {
+                                &::after {}
+
+                            }
+
+                            &.selected {
+                                .txt_info {
+                                    &::after {}
+                                }
+
+                                .coupon-help-info {
+
+                                    span {}
+                                }
+                            }
+                        }
+
+                        .displayblock,
+                        .displayFlex {
+                            flex-direction: column;
+                        }
+
+                        .heading {}
+
+                        .control {
+
+                            .btnNormal {}
+
+                            .discountPrice {}
+                        }
+
+                        .summary {
+                            margin-left: 0;
+
+                            .txtEm {}
+                        }
+                    }
+
+
+                }
+
+                #mCafe24Order.typeHeader {
+
+
+                    .form-order-wrap {
+                        gap: 24px;
+
+                        .title {
+                            font-size: 16px;
+
+                        }
+
+                        .left-order-wrap {
+
+                            .logoffBox {
+
+                                .membership-btn {
+                                    padding: 16px 12px 16px 16px;
+
+                                    p {
+                                        font-size: 14px;
+
+                                    }
+
+                                }
+
+                                .xans-member-login {
+                                    margin-top: 32px;
+                                    padding-bottom: 32px;
+
+                                    >h6 {}
+
+                                    .login__sns {
+
+                                        .wrap_sns_log {
+                                            gap: 8px;
+
+                                            >a {
+                                                width: calc(33.333% - (16px / 3));
+
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+
+                            .billingNshipping #ec-jigsaw-area-billingInfo {
+                                .contents {}
+                            }
+                        }
+
+                        .right-order-wrap {
+
+                            .sticky-wrap {
+                                &.is-fixed {}
+
+                            }
+
+                            #ec-jigsaw-area-payment {
+
+                                .title {}
+
+                                .contents {
+                                    .segment {
+                                        tbody {
+
+                                            th,
+                                            td {}
+
+                                            th {}
+
+                                            td {
+                                                >span {}
+
+                                            }
+                                        }
+                                    }
+
+                                    .totalPay {
+
+                                        .heading {}
+
+                                        .txtStrong {}
+                                    }
+                                }
+                            }
+
+
+                            /* r-order-wrap */
+                        }
+
+                        /* l,r order-wrap */
+                    }
+
+                }
+            }
+        }
+
+    }
+
+    @media all and (max-width: 380px) {
+        & .order-form-inner {
+            & .order-form-wrap {
+                & #mCafe24Order {
+                    & #og_delivcompany_area_custom {
+                        .wrap2 {
+                            width: fit-content;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* E ::: 주문서  (/order/orderform.html)  ::: E */
+
+
+/* S ::: 쿠폰 팝업  (/coupon/coupon_select.html)  ::: S */
+
+#mCafe24Order.coupon-wrapper {
+    .pannelArea {
+        margin: 0;
+    }
+
+    .ec-base-layer.typeWide {
+
+        .btnClose {
+            background-image: url(https://arenakorea1.cafe24.com/web/2026-renewal/img/renewal-x.png);
+            background-size: 24px 24px;
+        }
+
+        h1 {
+            border: 0 none;
+            height: 60px;
+            padding: 0 24px;
+            font-size: 18px;
+            color: #000;
+            font-weight: 700;
+            background: #fff;
+            text-align: left;
+        }
+
+        .wrap {
+            background: #fff;
+
+            .contents .segment {
+                padding: 0 24px 20px;
+            }
+
+            .title {
+                padding: 0 24px 4px 24px;
+
+                h2 {
+                    font-size: 14px;
+                    line-height: 1.4;
+                    font-weight: 600;
+                    color: #000;
+                }
+            }
+        }
+    }
+
+    .xans-coupon-selectnew .prdName {
+        color: #000;
+        line-height: 1.5;
+        font-weight: 600;
+    }
+
+    .segment .ec-base-table tbody th {
+        font-size: 14px;
+        line-height: 1.5;
+        font-weight: 500;
+        color: #3f3f3f;
+    }
+
+    .segment .ec-base-table tbody td {
+        font-size: 14px;
+        line-height: 1.5;
+        font-weight: 600;
+        color: #3f3f3f;
+    }
+
+    .totalPay {
+        padding: 0 !important;
+        border-bottom: 1px solid #D4D4D4;
+        padding-bottom: 20px !important;
+        background: #fff !important;
+
+        .heading {
+            font-size: 16px;
+            font-weight: 700;
+            color: #000;
+        }
+
+        .txtStrong {
+            font-size: 18px;
+            font-weight: 700;
+            color: #000;
+        }
+    }
+
+    .ec-base-fold {
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px solid #D4D4D4;
+
+        .title {
+            padding: 0 24px;
+            margin-bottom: 20px;
+
+            .gRight {}
+        }
+
+        h2 {
+            font-size: 16px !important;
+            line-height: 1.2;
+
+            &::after {
+                display: none;
+            }
+        }
+
+        .contents {
+            overflow: unset;
+            opacity: 1;
+            height: auto;
+        }
+
+        .ec-base-table.gCellNarrow tbody {
+            tr {
+                &:not(:last-child) {
+
+                    th,
+                    td {
+                        padding-bottom: 12px;
+                    }
+                }
+            }
+        }
+
+        .ec-base-table.gCellNarrow tbody th {
+            padding: 0;
+            padding-left: 24px
+        }
+
+        .ec-base-table.gCellNarrow tbody td {
+            padding: 0;
+            padding-right: 24px;
+        }
+
+        .total-price-wrap {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 24px;
+            align-items: center;
+            margin-top: 16px;
+
+            p {
+                font-size: 16px;
+                line-height: 1.5;
+                font-weight: 700;
+                color: #000;
+            }
+
+            span {
+                font-size: 18px;
+                line-height: 1.5;
+                font-weight: 700;
+                color: #000;
+            }
+        }
+
+        .ec-base-help {
+            padding: 16px 20px;
+            background: #F8F8F8;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            border-radius: 4px;
+
+
+            li {
+                font-size: 12px;
+                line-height: 1.5;
+                color: #3f3f3f;
+                padding-left: 16px;
+                position: relative;
+                padding-top: 0;
+
+                &::after {
+                    content: '';
+                    display: block;
+                    width: 2px;
+                    height: 2px;
+                    border-radius: 2px;
+                    background: #3f3f3f;
+                    position: absolute;
+                    top: 8px;
+                    left: 5px;
+                }
+
+            }
+        }
+    }
+
+    .renewal-btn-wrap {
+        display: flex;
+        justify-content: center;
+        padding: 12px 24px 24px;
+        gap: 4px;
+
+        button {
+            border: 0 none;
+            width: calc(50% - 2px);
+            height: 48px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 14px;
+            font-weight: 700;
+
+            &.grey-btn {
+                background: #F8F8F8;
+                color: #000;
+            }
+
+            &.black-btn {
+                background: #000;
+                color: #fff;
+            }
+        }
+    }
+}
+
+/* E ::: 쿠폰 팝업  (/coupon/coupon_select.html)  ::: E */

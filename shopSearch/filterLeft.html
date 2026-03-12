@@ -1,0 +1,776 @@
+<style>
+.dalue_left_filter {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	min-height: 100vh;
+	height: 100vh;
+	width: 327px;
+	overflow-x: hidden;
+	overflow-y: hidden;
+}
+
+.dalue_left_filter_container::-webkit-scrollbar{
+    width: 6px;
+}
+
+.dalue_left_filter_container::-webkit-scrollbar-thumb{
+	height: 20px;
+    /* background: linear-gradient(#1a314c, #275f94); */
+    background: linear-gradient(#AFAFAF, #FFFFFF);
+    border-radius: 25px;
+}
+
+.dalue_left_filter_container::-webkit-scrollbar-track{
+    background-color: #FFFFFF;
+}
+
+.dalue_left_filter_container {
+    /* position: absolute; */
+	height: 100%;
+	width: 260px;
+	overflow-x: hidden;
+	overflow-y: auto;
+	border-right: 1px solid #c6cbd6;
+	background-color: #FFFFFF;
+	padding: 20px 15px;
+}
+
+.dalue_left_filter_button {
+	position: absolute;
+    /* top: 195px; */
+    top: 350px;
+    right: 9px;
+    padding: 0 7px 0 5px;
+    width: 27px;
+    outline: 0;
+    /* color: #e5e5e5; */
+    color: #ffffff;
+    font-size: 12px;
+    /* background: linear-gradient(90deg,#1a314c 0,#275f94 100%); */
+    /* background: linear-gradient(90deg,#f67280 0,#f88195 100%); */
+    background: linear-gradient(90deg,#19304C 0,#326098 100%);
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    line-height: 1.4;
+    height: 140px;
+    z-index: -1;
+}
+
+.dalue_left_filter_button :before {
+    position: absolute;
+    top: -10px;
+    left: 0;
+    display: block;
+    content: "";
+    width: 27px;
+    height: 10px;
+    background: url(1669687064) no-repeat 0 0;
+}
+
+.dalue_left_filter_button :after {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: block;
+    content: "";
+    width: 27px;
+    height: 10px;
+    background: url(1669687064) no-repeat 0 0;
+}
+
+
+.dalue_left_filter_row {
+	border-bottom: 1px solid #f0f0f0;
+}
+
+.dalue_left_filter_content {
+	display: block;
+	margin: 0 0 13px;
+	padding: 0;
+}
+
+.dalue_left_filter_content > ul {
+	margin: -6px 0 0 -5px;
+    font-size: 0;
+    line-height: 0;
+    padding: 0;
+}
+
+.dalue_left_filter_content > ul > li {
+	display: inline-block;
+    padding: 6px 0 0 5px;
+    min-width: 30%;
+    max-width: 100%;
+    vertical-align: top;
+    -webkit-box-sizing: border-box;
+    list-style: none;
+}
+
+.dalue_left_filter_content > ul > li > button {
+	display: inline-block;
+    width: 100%;
+    border-radius: 15px;
+    border: 1px solid #ccc;
+    padding: 6px;
+    outline: 0;
+    font-size: 12px;
+    line-height: 18px;
+    color: #000;
+    word-break: break-all;
+    word-wrap: break-word;
+    background: #fff;
+}
+
+.dalue_left_filter_content > ul > li > button.disabled {
+	border-color: #d7d7d8;
+    color: #d7d7d8;
+    cursor: default;
+}
+
+.dalue_left_filter_content > ul > li > button.active {
+	border: 2px solid #508bed;
+    padding: 5px;
+    color: #508bed;
+}
+
+.dalue_left_filter_title {
+	position: relative;
+    padding: 10px 19px 10px 5px;
+    text-transform: uppercase;
+    font-size: 12px;
+    cursor: pointer;
+    margin: 0;
+}
+
+.dalue_left_filter_title_header {
+	position: relative;
+    padding: 10px 10px 10px 3px;
+    text-transform: uppercase;
+    font-size: 14px;
+    margin: 0;
+}
+    
+.dalue_left_filter_title:after {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 6px;
+    width: 7px;
+    height: 5px;
+    margin: -3px 0 0;
+    background: url(https://img.echosting.cafe24.com/skin/base/product/bg_search_toggle_title.gif) no-repeat 0 0;
+}
+.dalue_left_filter_sticky_bottom {
+    position: -webkit-sticky;
+    position: sticky;
+    bottom: 20px;
+}
+    
+.dalue_left_filter_btn_container > button {
+  margin-left: 2px;
+  margin-right: 2px;
+  padding: 0.5rem 1rem;
+
+  font-size: 1rem;
+  font-weight: 400;
+  text-align: center;
+  text-decoration: none;
+
+  display: inline-block;
+  min-width: 120px;
+  width: auto;
+
+  border: none;
+  border-radius: 5px;
+}
+    
+</style>
+
+<script>
+// tag
+var dalue_filter_selected = {};
+
+function dalue_filter_show() {
+	var left = $('.dalue_left_filter').css('left').replace('px', '');
+	if(left == 0) {
+        $('.dalue_left_filter').css('z-index', 99);
+		$('.dalue_left_filter').animate({
+            left:'-291px',
+        }, 'fast');
+	} else {
+        $('.dalue_left_filter').css('z-index', 999);
+		$('.dalue_left_filter').animate({
+            left:'0px',
+        }, 'fast');
+	}
+}
+
+function dalue_filter_title_show(elm) {
+	console.log($(elm).children('.dalue_left_filter_content').length);
+
+	if($(elm).parent().children('.dalue_left_filter_content').css('display') != 'none') {
+		$(elm).parent().children('.dalue_left_filter_content').css('display', 'none');
+	} else {
+		$(elm).parent().children('.dalue_left_filter_content').css('display', '');
+	}
+}
+    
+var __sortData;
+function dalue_filter_sort_desc(a, b) {
+    return __sortData[a] > __sortData[b] ? -1 : (__sortData[a] == __sortData[b] ? 0 : 1);
+}
+
+var sortWeight1 = {};
+    sortWeight1['NEW ARRIVALS'] = 10000;
+	sortWeight1['WOMEN'] = 9000;
+    sortWeight1['MEN'] = 8000;
+    sortWeight1['GIRLS'] = 7000;
+    sortWeight1['BOYS'] = 6000;
+    sortWeight1['SALE'] = 5000;
+    sortWeight1['ETC'] = 4000;
+    
+    sortWeight1["KHAKI"] = 10000;
+sortWeight1["GREEN"] = 9000;
+sortWeight1["MINT"] = 8000;
+sortWeight1["LIME"] = 7000;
+sortWeight1["NAVY "] = 6000;
+sortWeight1["BLUE"] = 5000;
+sortWeight1["SKYBLUE"] = 4000;
+sortWeight1["JADE"] = 3000;
+sortWeight1["WINE"] = 2000;
+sortWeight1["RED "] = 1000;
+sortWeight1["PINK"] = 900;
+sortWeight1["BROWN"] = 800;
+sortWeight1["MOCHA"] = 700;
+sortWeight1["BEIGE"] = 600;
+sortWeight1["IVORY "] = 500;
+sortWeight1["WHITE"] = 400;
+sortWeight1["LIGHTGRAY"] = 300;
+sortWeight1["GRAY"] = 200;
+sortWeight1["BLACK"] = 100;
+sortWeight1["ORANGE "] = 90;
+sortWeight1["YELLOW"] = 80;
+sortWeight1["PUPPLE"] = 70;
+sortWeight1["LIGHTPUPPLE"] = 60;
+sortWeight1["RAINBOW"] = 50;
+
+sortWeight1["~10,000원"] = 10000;
+sortWeight1["10,000원~30,000원"] = 9000;
+sortWeight1["30,000원~50,000원"] = 8000;
+sortWeight1["50,000원~100,000원"] = 7000;
+sortWeight1["100,000원~500,000원"] = 6000;
+sortWeight1["500,000원~"] = 900;
+
+sortWeight1["50"] = 10000;
+sortWeight1["55"] = 9000;
+sortWeight1["60"] = 8000;
+sortWeight1["65"] = 7000;
+sortWeight1["70"] = 6000;
+sortWeight1["75"] = 5000;
+sortWeight1["80"] = 4000;
+sortWeight1["85"] = 3000;
+sortWeight1["90"] = 2000;
+sortWeight1["95"] = 1000;
+sortWeight1["100"] = 900;
+sortWeight1["105"] = 800;
+sortWeight1["110"] = 700;
+sortWeight1["115"] = 600;
+sortWeight1["120"] = 500;
+sortWeight1["125"] = 400;
+sortWeight1["130"] = 300;
+
+sortWeight1["2XS"] = 200;
+sortWeight1["XS"] = 100;
+
+sortWeight1["S"] = 90;
+sortWeight1["L"] = 80;
+sortWeight1["XL"] = 70;
+sortWeight1["2XL"] = 60;
+sortWeight1["3XL"] = 50;
+sortWeight1["4XL"] = 40;
+
+
+
+
+
+    
+var sortWeight2 = {};
+
+var sortFunctions = {};
+sortFunctions['sortWithWeight1ASC'] = sortWithWeight1ASC;
+// sortFunctions['sortWithWeight2ASC'] = sortWithWeight2ASC;
+    
+function sortWithWeight1ASC(a, b) {
+    if(sortWeight1[a] != undefined && sortWeight1[b] != undefined) {
+        return sortWeight1[b] - sortWeight1[a];
+    } else if(sortWeight1[a] != undefined) {
+        return -1;
+    } 
+    
+    return a - b;
+}
+
+function sortWithWeight2ASC(a, b) {
+    if(sortWeight1[a] != undefined && sortWeight1[b] != undefined) {
+        return sortWeight1[b] - sortWeight1[a];
+    } else if(sortWeight1[a] != undefined) {
+        return -1;
+    } 
+    
+    return a - b;
+}
+
+function info(str) {
+    $('#dalueInfo').text(str);
+}
+
+function typoCorrection(json) {
+    if(json.result.length > 0 && json.result[0].word.replace(/ /g,'').length > 0 && json.result[0].word.replace(/ /g,'') != DalueSearch.searchOptions.query.replace(/ /g,'')) {
+        var lc = json.result[0].word.charAt(json.result[0].word.length - 1).charCodeAt(0);
+        var js = parseInt(((lc - 44032) % (21 * 28)) % 28)
+        console.log(js + ' : ' + lc);
+        
+        $('.typoCorrectionTxt').html('<a href="?query=' + json.result[0].word + '" style="text-decoration: underline;">\'' + json.result[0].word + '\'' + (js != 0 ? '으' : '') + '로 검색하셨나요?</a>');
+        $('.typoCorrectionWrap').css('display', '');
+    } else {
+        $('.typoCorrectionWrap').css('display', 'none');
+    }
+}
+    
+function dalue_filter_searchOnSuccess(json) {
+    var liked = {};
+    
+    if(DalueSearch.searchOptions.query == '*') {
+        $('#dalue_search_relativeTerm_view').css('display', 'none');
+    }
+    
+    dalue_imageLoad();
+    
+    if(json.result.length == 0) {
+        $('.IF_noSearchResult').css('display', 'none');
+        if(DalueSearch.searchOptions.query.trim() != '*') {
+            DalueSearch.typoCorrection(DalueSearch.searchOptions.query, typoCorrection);
+        }
+    }
+    
+    /*
+    CAFE24.SHOP_FRONT_NEW_LIKE_COMMON_PRODUCT.setLoadData();
+    $('#displayKeyword').text(DalueSearch.searchOptions.query);
+    
+    console.log(JSON.stringify(CAFE24.SHOP_FRONT_NEW_LIKE_COMMON_PRODUCT.aMyLikePrdNo));
+    for(var i = 0; i < CAFE24.SHOP_FRONT_NEW_LIKE_COMMON_PRODUCT.aMyLikePrdNo.length; i++) {
+        liked[CAFE24.SHOP_FRONT_NEW_LIKE_COMMON_PRODUCT.aMyLikePrdNo[i].product_no] = true;
+    }
+    */
+    
+	// console.log(JSON.stringify(json));
+	// console.log(JSON.stringify(json.tagStat));
+    var rawTags;
+    var decoImages;
+    var wishList1 = undefined;
+    
+    try {
+        wishList1 = JSON.parse(sessionStorage.localWishList1);
+    } catch(e) {
+        wishList1 = undefined;
+    }
+    
+    // info(JSON.stringify(json.result));
+    if(wishList1 != undefined) {
+        for(var i = 0; i < wishList1.wishList.length; i++) {
+            // <img src="/web/upload/icon_202302171735547600.png" class="icon_img ec-product-listwishicon" alt="관심상품 등록 후" productno="253" categoryno="160" icon_status="on" login_status="T" individual-set="F">
+            // <img src="/web/upload/icon_202302171735480600.png" class="icon_img ec-product-listwishicon" alt="관심상품 등록 전" productno="1684" categoryno="24" icon_status="on" login_status="T" individual-set="F">
+            $('.wish_' + wishList1.wishList[i]).src = '/web/upload/icon_202302171735547600.png';
+            $('.wish_' + wishList1.wishList[i]).attr('icon_status', 'on');
+        }
+    }
+    
+    for(var i = 0; i < json.result.length; i++) {
+        // alert('--------------------------------> ' + json.result[i].price);
+        // soldout
+        if(json.result[i].listIcon != null && json.result[i].listIcon != '0,0,0') {
+            var icons = json.result[i].listIcon.split(',');
+            if(icons.length > 1 && icons[0] == '1') {
+                //$('.soldout_' + json.result[i].productNo).css('display', '');
+                $('.soldout_' + json.result[i].productNo).html('<img src="/web/upload/icon_202301041549395500.png" class="icon_img" alt="품절">');
+                $('.soldout_disp_' + json.result[i].productNo).css('display', 'none');
+            }
+            
+            // <img src="//img.echosting.cafe24.com/icon/product/global/icon_global_01.gif" alt="">
+            if(icons.length > 1 && icons[1] == '1') {
+                $('.newIcon_' + json.result[i].productNo).css('display', '');
+                $('.newIcon_disp_' + json.result[i].productNo).css('display', 'none');
+            }
+            
+            if(icons.length > 2 && icons[2] == '1') {
+                $('.recommend_' + json.result[i].productNo).css('display', '');
+                $('.recommend_disp_' + json.result[i].productNo).css('display', 'none');
+            }
+            
+            if(json.result[i].categories.indexOf('당일배송') > -1) {
+                $('.delivery_' + json.result[i].productNo).css('display', '');
+            }
+        }
+        
+        // simpleDescription
+        if(json.result[i].simpleDescription != '' && json.result[i].simpleDescription != 'null') {
+            $('.simpleDescription_' + json.result[i].productNo).text(json.result[i].simpleDescription);
+        }
+        
+        // options
+        /*
+        if(json.result[i].options != '' && json.result[i].options != 'null') {
+            var jopt = JSON.parse(json.result[i].options);
+            if(jopt.has_option == 'F' || jopt.options.length == 0 || jopt.option_type != 'T') {
+                $('.option_disp_no_' + json.result[i].productNo).css('display', 'none');
+            }
+        }
+        */
+        
+        //CAFE24.SHOP_FRONT_NEW_LIKE_COMMON_PRODUCT.updateLikeIconCount(json.result[i].productNo, '/web/upload/icon_201805231309027500.png', 'off', '');
+        rawTags = json.result[i].summaryDescription.split('|');
+        
+        try {
+        $('.likeImg_' + json.result[i].productNo).bind('click', function () {
+            var elm = $('#like_' + $(this).attr('product_no'));
+            var likeStatus = $('.likePrdIcon_' + json.result[i].productNo).attr('icon_status');
+            if(elm == undefined) {
+                return;
+            }
+            
+            //alert(elm.css('color'));
+            if(likeStatus == 'off') {
+                elm.css('color', 'red');
+                $('.likePrdIcon_' + json.result[i].productNo).attr('icon_status', 'on');
+            } else {
+                elm.css('color', '');
+                $('.likePrdIcon_' + json.result[i].productNo).attr('icon_status', 'off');
+            }
+        });
+        } catch(e) {
+            console.log('-----------------------------');
+            console.error(e);
+            }
+        
+        if(liked[json.result[i].productNo] == true) {
+            $('#like_' + json.result[i].productNo).css('color', 'red');
+            $('.likePrdIcon_' + json.result[i].productNo).attr('icon_status', 'on');
+        }
+        // decorationImages
+        try {
+            var enabled = false;
+        	decoImages = JSON.parse(json.result[i].decorationimages);
+            //console.log('date: ' + new Date(decoImages.show_start_date));
+            if(decoImages.use_show_date == 'F') {
+                enabled = true;
+            } else {
+                var ds = new Date(decoImages.show_start_date);
+                var de = new Date(decoImages.show_end_date);
+                var dc = new Date();
+                
+                if(dc.getTime() >= ds.getTime() && dc.getTime() <= de.getTime()) {
+                    enabled = true;
+                }
+            }
+            
+            if(enabled) {
+                var imgs = decoImages.image_list;
+                for(var j = 0; j < imgs.length; j++) {
+                    var id = (imgs[j].image_horizontal_position + imgs[j].image_vertical_position).toUpperCase(); // + '_DECO_IMAGE').toUpperCase();
+                    // id += '_' + json.result[i].productNo;
+                    
+                    // ec-product-bgLT_1234
+                    $('.ec-product-bg' + id + '_' + json.result[i].productNo).css('background-image', 'url(\'' + '//' + dalue_decorationImages[imgs[j].code] + '\')');
+                    $('.' + id + '_DECO_IMAGE_' + json.result[i].productNo).css('display', '');
+                }
+            }
+        } catch(e) {
+            console.log(e);
+        }
+        
+        if(json.result[i].icon != '') {
+			var iconList = json.result[i].icon.split(',');
+           	var iconHtml = '';
+           	for(var j = 0; j < iconList.length; j++) {
+                if(dalue_icons[iconList[j]] != undefined)
+					iconHtml += '<img src="' + dalue_icons[iconList[j]] + '" style="height: 22px; display: inline-block; margin-right: 5px; margin-bottom: 5px;">';
+			}
+        }
+        $('#promotion_' + json.result[i].productNo).html(iconHtml);
+        
+        try {
+            if(rawTags[2] == '') {
+                $('#dalue_title_ko_' + json.result[i].productNo).css('display', 'none');
+            } else {
+                $('#dalue_title_ko_' + json.result[i].productNo).text(rawTags.length > 1 ? rawTags[2] : '');
+            }
+        	
+		} catch(e) {
+			console.error(e);
+		}
+    }
+    
+	var filters = [
+		"delivery",
+        "colorName",
+        "backStyle",
+        "sizeShoe",
+        "price",
+        "sizeSuit",
+        "type", "class"
+	]; 
+ 
+    var filterSort = [
+		'sortWithWeight1ASC' 
+		, 'sortWithWeight1ASC'
+        , 'NAME'
+        , 'NAME'
+        , 'sortWithWeight1ASC'
+        , 'sortWithWeight1ASC'
+        , 'NAME'
+        , 'sortWithWeight1ASC' // class
+        , 'NAME'
+        , 'NAME'
+        , 'NAME'
+	];
+    
+    
+	var itemHtml = $("#dalue_left_filter_item").html();
+    var itemHtmlColorName = $("#dalue_left_filter_item_colorName").html();
+    var itemHtmlType = $('#dalue_left_filter_item_type').html();
+    
+	var html = '';
+	var itemOut = '';
+	for(var i = 0; i < filters.length; i++) {
+		html = '';
+		
+		// console.log(filters[i] + ', ' + JSON.stringify(json.tagStat.tag[filters[i]]));
+		
+		if(json.tagStat.tag[filters[i]] != undefined) {
+			var keys = Object.keys(json.tagStat.tag[filters[i]]);
+			__sortData = json.tagStat.tag[filters[i]];
+            
+            if(filterSort[i] == 'NAME') {
+                keys.sort();
+            } else if(filterSort[i] == 'RES_DESC') {
+                keys.sort(dalue_filter_sort_desc);
+            } else { // it's function
+                if(sortFunctions[filterSort[i]] != undefined) {
+                    keys.sort(sortFunctions[filterSort[i]]);
+                } else {
+                    // no sort
+                }
+            }
+            
+            var tagSelects = DalueSearch.searchOptions['tagValue_' + filters[i]] != undefined ? DalueSearch.searchOptions['tagValue_' + filters[i]].split(DalueSearch.options.tagSeperator) : [];
+            //console.log(JSON.stringify(tagSelects));
+            if(i == 0) {
+                // dalue_left_filter_row_model_
+                for(var j = 1; j < filters.length; j++) {
+                    //console.log('filters[' + filters[j] + ']');
+                    if(filters[j].startsWith('model_')) {
+                        $('.dalue_left_filter_row_' + filters[j]).css('display', 'none');
+                    }
+                    
+                }
+                for(var j = 0; j < tagSelects.length; j++) {
+                    $('.dalue_left_filter_row_model_' + tagSelects[j]).css('display', '');
+                   // console.log('tagSelects: ' + tagSelects[j]);
+                }
+                
+            }
+            
+            for(var j = 0; j < tagSelects.length; j++) {
+                if(tagSelects[j] == '') {
+                    continue;
+                }
+                //console.log(' - - - - - - ' + filters[i] + '^' + tagSelects[j]);
+                $('.dalue_left_filter_row_' + filters[i]).css('display', '');
+                dalue_filter_selected[filters[i] + '^' + tagSelects[j]] = 1;
+                DalueSearch.addTag(filters[i], tagSelects[j]); 
+            }
+            
+            var nsels = 0;
+			for(var j = 0; j < keys.length; j++) {
+                itemOut = itemHtml;
+                if(filters[i] == 'colorName') {
+                    itemOut = itemHtmlColorName;
+                } else if($('.dalue_filter-' + filters[i]).hasClass('button-type')) {
+                    itemOut = itemHtmlType;
+                }
+				
+				
+				itemOut = itemOut.replaceWhole('{$field}', DalueSearch.escapeHtml(filters[i]));
+				itemOut = itemOut.replaceWhole('{$tag}', DalueSearch.escapeHtml(keys[j]));
+				itemOut = itemOut.replaceWhole('{$name}', DalueSearch.escapeHtml(keys[j]));
+                itemOut = itemOut.replaceWhole('{$name-s}', DalueSearch.escapeHtml(keys[j]).toLowerCase());
+				itemOut = itemOut.replaceWhole('{$click}', 'dalue_filter_tagClick(this);');
+				if(json.tagStat.tag[filters[i]][keys[j]] == 0) {
+					itemOut = itemOut.replaceWhole('{$class}', 'disabled');
+				} else {
+                    nsels++;
+					if(dalue_filter_selected[filters[i] + '^' + keys[j]] == undefined) {
+						itemOut = itemOut.replaceWhole('{$class}', 'dalue_filter_select_button ');	
+					} else {
+						itemOut = itemOut.replaceWhole('{$class}', 'dalue_filter_select_button active');
+					}
+					
+				}
+				
+				html += itemOut;
+			}
+			
+            if(nsels == 0) {
+                $('.dalue_filter-' + filters[i]).parent().css('display', 'none');
+            }
+			$('.dalue_filter-' + filters[i]).html(html);	
+            // console.log(html);
+		}
+		
+	}
+    
+    $('#dss-empty').css('display', 'none');
+    // alert('aaa');
+    $('#dalue_search_filter').css('display', '');
+}
+
+function dalue_filter_search() {
+    DalueSearch.searchOptions.begin = 1;
+    
+    if(window.location.href.indexOf('shopSearch/search.html') > -1) {
+        // DalueSearch.searchAddOrDeleteTag(null, null);
+        dalue_filter_show();
+    } else {
+        try {
+        	var params = DalueSearch.parseParameter();
+        	DalueSearch.searchWithTag(params['query'] == undefined ? '*' : params['query']);
+        } catch(e) {
+            console.error(e);
+        }
+        
+    }
+}
+    
+function dalue_filter_reset() {
+    if(window.location.href.indexOf('shopSearch/search.html') > -1) {
+    	DalueSearch.removeTagUrl();
+    }
+    
+    for(var i = 0; i < $('.dalue_filter_select_button').length; i++) {
+        var elm = $('.dalue_filter_select_button').eq(i);
+        DalueSearch.deleteTag(elm.attr('field'), elm.attr('tag'));
+        elm.removeClass('active');
+        delete dalue_filter_selected[elm.attr('field') + '^' + elm.attr('tag')];
+        //DalueSearch.searchOptions.tagValues[elm.attr('field')] = '';
+    }
+    
+    console.log(window.location.href);
+    
+    if(window.location.href.indexOf('shopSearch/search.html') > -1) {
+        //window.location.reload();
+        // DalueSearch.searchOptions.query = '';
+        DalueSearch.removeQuery();
+        DalueSearch.options.tagStatOnly = 0;
+        DalueSearch.searchWithOptions();
+    } else {
+        DalueSearch.options.tagStatOnly = 1;
+        DalueSearch.searchWithOptions();
+    }
+}
+    
+    
+function dalue_filter_tagClick(elmIn) {
+	var elm = $(elmIn);
+
+	if(elm.hasClass('disabled')) {
+		return;
+	}
+
+    DalueSearch.searchOptions.begin = 1;
+    // DalueSearch.removeTagUrl();
+	//DalueSearch.searchAddOrDeleteTag(elm.attr('field'), elm.attr('tag'));
+    
+    
+	if(elm.hasClass('active')) {
+		elm.removeClass('active');
+		delete dalue_filter_selected[elm.attr('field') + '^' + elm.attr('tag')];
+        DalueSearch.deleteTag(elm.attr('field'), elm.attr('tag'));
+	} else {
+		elm.addClass('active');
+		dalue_filter_selected[elm.attr('field') + '^' + elm.attr('tag')] = 'Y';
+        DalueSearch.addTag(elm.attr('field'), elm.attr('tag'));
+	}
+    
+    if(window.location.href.indexOf('shopSearch/search.html') > -1) {
+        DalueSearch.options.tagStatOnly = 0;
+        DalueSearch.searchWithOptions();
+    } else {
+        DalueSearch.options.tagStatOnly = 1;
+        DalueSearch.searchWithOptions();
+        // DalueSearch.searchWithTagAddOnly(elm.attr('field'), elm.attr('tag'));
+    }
+    
+}
+    
+
+</script>
+
+<div class="dalue_left_filter" style="left: -291px; z-index: 99; display: none;">
+	<div class="dalue_left_filter_container" style="width: 261px;">
+		<button class="dalue_left_filter_button" onclick="dalue_filter_show();" style="border-color: #F67280;">
+            <svg id="Dalue_shopSearchIcon" data-name="Dalue_shopSearchIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 221.9 221.14"><defs><style>.cls-shopSearch-white{fill:#fff;}.cls-shopSearch-trans{fill:none;}</style></defs><circle class="cls-shopSearch-white" cx="68.04" cy="118.84" r="40.4"/><path class="cls-shopSearch-trans" d="M68,80.52a38.32,38.32,0,1,1-38.32,38.32A38.31,38.31,0,0,1,68,80.52m0-4.16a42.48,42.48,0,1,0,42.48,42.48A42.52,42.52,0,0,0,68,76.36Z"/><path class="cls-shopSearch-white" d="M216.25,186.4l-38.63-38.62c-.16-.16-.32-.32-.49-.47a96,96,0,1,0-28.9,29.23l.31.33,38.62,38.62a19.33,19.33,0,0,0,27.32,0l1.77-1.77A19.33,19.33,0,0,0,216.25,186.4ZM96,161.49A65.5,65.5,0,1,1,161.49,96,65.5,65.5,0,0,1,96,161.49Z"/><circle class="cls-shopSearch-trans" cx="95.99" cy="95.99" r="65.5"/><path class="cls-shopSearch-trans" d="M216.25,186.4l-38.63-38.62c-.16-.16-.32-.32-.49-.47a96,96,0,1,0-28.9,29.23l.31.33,38.62,38.62a19.33,19.33,0,0,0,27.32,0l1.77-1.77A19.33,19.33,0,0,0,216.25,186.4Z"/><circle class="cls-shopSearch-white" cx="68.04" cy="118.84" r="38.32"/></svg>
+            <div style="height: 6px;"></div>
+            상<br>세<br>검<br>색
+       </button>
+		<div class="dalue_left_filter_row">
+            <h3 class="dalue_left_filter_title_header" onclick="">
+                상세검색
+                <div style="position: absolute; right: 0px; top: 10px; cursor: pointer; color: #19304C; font-weight: 200;" onclick="dalue_filter_show();">
+                    <!-- svg style="height: 12px; width: auto;" id="Dalue_shopSearchIcon_refresh" data-name="Dalue_shopSearchIcon_refresh" xmlns="https://ecimg.cafe24img.com/pg159b53619349084/dbbooks/web/upload/category/editor/2022/12/15/8e8b8f86760d053a3c33c6016db9e62d.png" viewBox="0 0 238.56 232.06"><defs><style>.cls-shopSearch-595857{fill:none;stroke:#595857;stroke-linecap:round;stroke-miterlimit:10;stroke-width:10px;}.cls-2{fill:#595857;}</style></defs><path class="cls-shopSearch-595857" d="M218.74,158.26a111,111,0,1,1,4.33-71.82"/><polygon class="cls-2" points="201.97 75.53 221.48 80.44 238.56 69.8 227.06 116.03 201.97 75.53"/></svg -->
+                    <img src="https://ecimg.cafe24img.com/pg159b53619349084/dbbooks/web/upload/category/editor/2022/12/15/8e8b8f86760d053a3c33c6016db9e62d.png" style="width: 16px; height: auto;"></a>
+                </div>
+            </h3>
+        </div>
+		
+        
+        <div class="dalue_left_filter_sticky_bottom" style="text-align: center; border-bottom: 0px solid #FFFFFF; margin-top: 12px;background: #fff; padding: 5px 0px 10px 0;">
+            <div class="dalue_left_filter_btn_container" style="display: inline-block;">
+            	<button onclick="dalue_filter_reset();"><svg style="height: 12px; width: auto;" id="Dalue_shopSearchIcon_refresh" data-name="Dalue_shopSearchIcon_refresh" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 238.56 232.06"><defs><style>.cls-shopSearch-595857{fill:none;stroke:#595857;stroke-linecap:round;stroke-miterlimit:10;stroke-width:10px;}.cls-2{fill:#595857;}</style></defs><path class="cls-shopSearch-595857" d="M218.74,158.26a111,111,0,1,1,4.33-71.82"/><polygon class="cls-2" points="201.97 75.53 221.48 80.44 238.56 69.8 227.06 116.03 201.97 75.53"/></svg> 초기화</button>
+                <button onclick="dalue_filter_search();" style="background-color: #1d304c; color: #FFFFFF"><svg style="height: 12px; width: auto;" id="Dalue_shopSearchIcon" data-name="Dalue_shopSearchIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 221.9 221.14"><defs><style>.cls-shopSearch-white{fill:#fff;}.cls-shopSearch-trans{fill:none;}</style></defs><circle class="cls-shopSearch-white" cx="68.04" cy="118.84" r="40.4"/><path class="cls-shopSearch-trans" d="M68,80.52a38.32,38.32,0,1,1-38.32,38.32A38.31,38.31,0,0,1,68,80.52m0-4.16a42.48,42.48,0,1,0,42.48,42.48A42.52,42.52,0,0,0,68,76.36Z"/><path class="cls-shopSearch-white" d="M216.25,186.4l-38.63-38.62c-.16-.16-.32-.32-.49-.47a96,96,0,1,0-28.9,29.23l.31.33,38.62,38.62a19.33,19.33,0,0,0,27.32,0l1.77-1.77A19.33,19.33,0,0,0,216.25,186.4ZM96,161.49A65.5,65.5,0,1,1,161.49,96,65.5,65.5,0,0,1,96,161.49Z"/><circle class="cls-shopSearch-trans" cx="95.99" cy="95.99" r="65.5"/><path class="cls-shopSearch-trans" d="M216.25,186.4l-38.63-38.62c-.16-.16-.32-.32-.49-.47a96,96,0,1,0-28.9,29.23l.31.33,38.62,38.62a19.33,19.33,0,0,0,27.32,0l1.77-1.77A19.33,19.33,0,0,0,216.25,186.4Z"/><circle class="cls-shopSearch-white" cx="68.04" cy="118.84" r="38.32"/></svg> 검색</button>
+            </div>
+        </div>
+		<!-- for scrollbar -->
+		<div style="height: 32px;"></div>
+        <div style="position: absolute; right: 50px;"><span style="font-size: 10px; color: #AFAFAF;"><i>powered by 샵서치</i></span></div>
+	</div>
+
+
+</div>
+
+<div id="dalue_left_filter_item" style="display: none;">
+	<li class="  xans-record-" style="margin-right: 20px;" >
+        <div class="dalue-navigation-tab-item {$class}" status="{$status}" field="{$field}" tag="{$tag}" onclick="{$click}">
+            <span class="dalue-navigation-tab__txt">{$name}</span>
+        </div>
+    </li>
+</div>
+
+<div id="dalue_left_filter_item_colorName" style="display: none;">
+	<li class=" xans-record-" data-curation-colorchip="{$name}" style="background: var(--colorchip-{$name-s}); display: flex;
+    align-items: center;
+    width: 28px !important;
+    height: 28px !important; border: #AFAFAF solid 1px;" ><button name="" class="dalue-navigation-tab-item {$class}" svalue="custom_3={$name}" type="button" status="{$status}" field="{$field}" tag="{$tag}" onclick="{$click}">{$name}</button></li>
+</div>
+
+<div id="dalue_left_filter_item_type" style="display: none;">
+	<li class=" xans-record-" style="width: auto !important;"><button name="" class="ec-product-searchdata-form dalue-navigation-tab-item {$class}" type="button" status="{$status}" field="{$field}" tag="{$tag}" onclick="{$click}" style="padding: 9px 9px;
+                                            border-radius: 20px;
+                                            font-size: 14px;
+                                            font-weight: 500;
+                                            color: #5d5d5d;
+                                            background: #f8f8f8;
+                                            line-height: 1;
+                                            border: none; text-align: center;">{$name}</button></li>
+</div>

@@ -1,0 +1,35 @@
+<div class="{$refund_info_display|display} refund_wrap">
+  <div class="titleArea titleArea--middle">
+    <h3>환불 정보</h3>
+  </div>
+  <div class="ec-base-table typeWrite">
+    <table border="1" >
+      <caption>환불 계좌 정보</caption>
+      <colgroup>
+        <col style="width:200px;" />
+        <col style="width:auto;" />
+      </colgroup>
+      <tbody class="{$refund_notice_display|display}">
+      <tr>
+        <th scope="row">환불예정금액</th>
+        <td>환불예정금액은 판매자가 접수처리 완료 후 '주문상세조회'에서 확인할 수 있습니다.</td>
+      </tr>
+      <tr>
+        <th scope="row">배송비 안내</th>
+        <td>{$cs_info_desc}</td>
+      </tr>
+      </tbody>
+      <tbody class="{$refund_account_display|display}">
+      <tr>
+        <th scope="row">환불계좌</th>
+        <td>
+          <span id="{$id_acc_full_str}" class="{$acc_full_str_display|display} gSpace10">{$acc_full_str}</span>
+          <span id="{$id_acc_reg_disp}" class="{$acc_reg_display|display}"><a href="#none" class="btnStroke" onclick="OrderApply.popupAccount('./account.html');">환불계좌등록</a></span>
+          <span id="{$id_acc_mod_disp}" class="{$acc_mod_display|display}"><a href="#none" class="btnStroke" onclick="OrderApply.popupAccount('./account.html');">환불계좌변경</a></span>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="{$refund_account_display|display}"><span class="txtWarn">현금환불 발생시 등록된 환불계좌로 환불 처리 됩니다.</span></p>
+</div>

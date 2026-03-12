@@ -1,0 +1,771 @@
+<style>
+.dalue_bold {
+    font-weight: bold;
+}
+
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<!--@import(/shopSearch/dalue-ecms_240725_01.js)-->
+<!--@css(/shopSearch/simple-medium.css)-->
+<script>
+var __hash = window.location.hash; // url 생성 시 onclick="setHash({$productNo})"
+var __query = '';
+var __mallId = 'arenakorea1';
+var __shopNo = '1';
+var __shopType = 'cafe24';
+var __dssUrl = 'https://api.dalue.io:10174';
+var __dssDxUrl = 'https://api.dalue.io';
+var __dssKey = 'A6H3QSY5p0KPqVAJ';
+var __dssPrice = 'pcDiscountPrice';
+    
+function searchOnFail() {
+	var p = window.location.search.substring(1);
+	params = parse_query_string(p);
+	window.location.href = '/product/search.html?keyword=' +  (params['query'] == undefined ? '' : params['query']);
+}
+
+function setHash(h) {
+    var baseUrl = window.location.href.split('#')[0];
+	window.location.replace( baseUrl + '#' + h);
+}
+
+DalueSearch.options.functionSearchOnFail = searchOnFail;
+
+function parse_query_string(query) {
+  var vars = query.split("&");
+  var query_string = {};
+  for (var i = 0; i < vars.length; i++) {
+    var pair = vars[i].split("=");
+    var key = decodeURIComponent(pair[0]);
+    var value = decodeURIComponent(pair[1]);
+    if (typeof query_string[key] === "undefined") {
+        try {
+            query_string[key] = decodeURIComponent(value);
+        } catch(e) {
+            query_string[key] = (value);
+        }
+      // If second entry with this name
+    } else if (typeof query_string[key] === "string") {
+        try {
+            var arr = [query_string[key], decodeURIComponent(value)];
+            query_string[key] = arr;
+        } catch(e) {
+            var arr = [query_string[key], (value)];
+            query_string[key] = arr;
+        }
+      // If third or later entry with this name
+    } else {
+      query_string[key].push(decodeURIComponent(value));
+    }
+  }
+
+  return query_string;
+}
+
+
+function dalue_ha_check() {
+    var active = true;
+    // DalueSearch check
+    
+    try {
+        if(typeof DalueSearch == 'undefined') {
+        	active = false;
+    	}
+    } catch(e) {
+        active = false;
+    }
+    
+    try {
+    	if(typeof __dalue_maintenance == 'undefined' || __dalue_maintenance.maintenance == 'Y') {
+        	active = false;
+		}
+    } catch(e) {
+        active = false;
+    }
+    
+    if(active == false) {
+        if(window.location.href.indexOf('/shopSearch/search.html') > -1) {
+            var p = window.location.search.substring(1);
+    		params = parse_query_string(p);
+            window.location.href = '/product/search.html?keyword=' +  (params['query'] == undefined ? '' : params['query']);
+        }
+    }
+    
+    console.log('dalue_ha_check[' + active + ']');
+}
+    
+function dalue_locate_old_search() {
+    if(windows.location.href.indexOf('/shopSearch/search.html') > -1) {
+        var p = window.location.search.substring(1);
+    	params = parse_query_string(p);
+        window.location.href = '/product/search.html?keyword=' +  params['query'];
+    }
+}
+function dalue_imageLoad() {
+    var imgs = $('.dalue_css_search_thumbnail_img');
+	for(var i = 0; i < imgs.length; i++) {
+		if(imgs.eq(i).attr('src') != '{$image}') {
+            //console.log(i);
+            // console.log(imgs.eq(i).attr('orig'));
+            if(imgs.eq(i).attr('orig') != undefined && imgs.eq(i).attr('orig') != '{$image}' && imgs.eq(i).attr('orig') != '{$tinyImage}' && imgs.eq(i).attr('orig') != '{$detailImage}' && imgs.eq(i).attr('orig') != '{$smallImage}') {
+                imgs.eq(i).attr('src', imgs.eq(i).attr('orig'));
+            } else {
+                // imgs.eq(i).attr('src', imgs.eq(i).attr('src') + '?r=1');
+            }
+			
+			imgs.eq(i).bind('error', function() {
+				this.src = 'https://api.dalue.io/dalue-ecms/contrib/imgs/no_image.jpg';
+			});
+		}
+		
+	}
+}
+    
+setTimeout(function() { dalue_ha_check(); }, 2000);
+
+var __dss_scripts = [
+	'https://api.dalue.io/dalue-ecms/js?act=ping&mallId=' + __mallId + '&shopNo=' + __shopNo + '&mallType=' + __shopType
+	, 'https://api.dalue.io/dalue-ecms/js?act=keywordPromotionList&mallId=' + __mallId + '&shopNo=' + __shopNo + '&mallType=' + __shopType
+	, 'https://api.dalue.io/dalue-ecms/js?act=cafe24props&mallId=' + __mallId + '&shopNo=' + __shopNo + '&mallType=' + __shopType
+];
+
+// prepare
+var dalue_md = [];
+var __dss_scripts_loaded = 0;
+var __dss_scripts_loadedAll = false;
+
+function dssLoadScript() {
+	for(var i = 0; i < __dss_scripts.length; i++) {
+		var script = document.createElement('script');
+		script.type = "text/javascript";
+		script.addEventListener("load", function(event) {
+			console.log('script [' + __dss_scripts[i] + '] loaded');
+			__dss_scripts_loaded++;
+			if(__dss_scripts_loaded == __dss_scripts.length) {
+				__dss_scripts_loadedAll = true;
+				console.log('All Loaded');
+			}
+		});
+		script.src = __dss_scripts[i];
+		document.getElementsByTagName('head')[0].appendChild(script);
+	}
+}
+
+dssLoadScript();
+</script>
+
+<script>
+$.fn.bindFirst = function(name, fn) {
+  var elem, handlers, i, _len;
+  this.bind(name, fn);
+  for (i = 0, _len = this.length; i < _len; i++) {
+    elem = this[i];
+    handlers = jQuery._data(elem).events[name.split('.')[0]];
+    handlers.unshift(handlers.pop());
+  }
+};
+
+    /*
+function dalue_filter_searchOnSuccess(json) {
+    var result;
+    
+    $('#displayKeyword').text(DalueSearch.searchOptions.query);
+    for(var i = 0; i < json.result.length; i++) {
+        result = json.result[i];
+        
+        //console.log('result[DalueSearch.options.priceField]: [' + result.price + '][' + result.price.length + ']');
+        
+        // acl
+        if(result.price.length == 0) {
+            console.log('result[DalueSearch.options.priceField]: ' + result.price);
+            $('#price_' + result.productNo).html(DalueSearch.options.aclMessage);
+            $('#discountRate_' + result.productNo).css('display', 'none');
+            $('.spec_' + result.productNo).css('display', 'none');
+        } else {
+            $('#discountRate_' + result.productNo).css('display', '');
+            // $('.spec_' + result.productNo).css('display', '');
+        }
+        
+        var k = '';
+        try {
+        	k = '' + result.productNo + '|' + JSON.parse(sessionStorage.member_1).data.group_no;
+        } catch(e) {
+            continue;
+        }
+        var m = dalue_md[k];
+        
+        if(m != undefined) {
+            var membershipPrice = m.u == 'P' ? parseInt(result.price) - parseInt(parseInt(Math.round(result.price * (m.v / 100) / 10) ) * 10) : parseInt(parseInt(result.price) - m.v); // P or W // ceil
+            var discountRatio = parseInt(Math.round( ( parseInt(result[DalueSearch.options.priceField]) - membershipPrice) / parseInt(result[DalueSearch.options.priceField]) * 100)).toLocaleString();
+            // var discountRatio = result.retailPrice != 0 ? parseInt(Math.round((1 - membershipPrice / parseInt(result[DalueSearch.options.priceField]) * 100))).toLocaleString() : 0;
+            
+            //console.log('discountRatio: ' +result.productNo + ','  + discountRatio);
+            
+            // DalueSearch.userGroupName
+            $('#membership_' + result.productNo).css('display', '');
+            
+            $('#membershipPrice_' + result.productNo).text(membershipPrice.toLocaleString() + '원');
+            if(discountRatio > 0) {
+                $('#discount_' + result.productNo).text(discountRatio);
+                $('#discountUnit_' + result.productNo).text('%');
+                $('#discountPrice_' + result.productNo).css('display', '');
+            }
+            
+        } else {
+            $('#membership_' + result.productNo).css('display', 'none');
+        }
+        
+        //console.log('result[DalueSearch.options.priceField]: ' + result.price);
+        
+    }
+    
+    DalueSearch.gotoCursor();
+}
+*/
+    
+function dalue_hotKeyword_onSuccess(json) {
+    var k = '';
+
+    //console.error(JSON.stringify(json));
+
+    for(var i = 0; i < 10; i++) {
+        $('#hotkeyword_' + (i+1)).css('display', 'none');
+    }
+
+    var nk = 0;
+    var html1 = '';
+    var html2 = '';
+    for(var i = 0; i < json.result.length; i++) {
+        if(json.result[i] == '*') {
+            continue;
+        }
+        k = json.result[i].indexOf('(') > -1 ? json.result[i].substring(json.result[i].indexOf('(') + 1, json.result[i].indexOf(')')) : json.result[i];
+        k = DalueSearch.escapeHtml(k);
+        // console.log(k);
+        $('#hotkeyword_' + (nk+1)).text(k);
+        $('#hotkeyword_' + (nk+1)).css('display', '');
+        $('#hotkeyword_' + (nk+1)).css('cursor', 'pointer');
+        $('#hotkeyword_' + (nk+1)).attr('query', k);
+        $('#hotkeyword_' + (nk+1)).bind('click', function() {
+            window.location.href = '/shopSearch/search.html?query=' + $(this).attr('query');
+        });
+
+        if(nk < 10) {
+            html1 += '<li id="dalue_li_hk_' + (nk+1) + '" class="" style="height: 26px;"><a id="dalue_ac_keyword_' + (nk+1) +'" href="/shopSearch/search.html?query=' + k + '">' + (nk+1) + '. ' + k + '</a></li>';
+        } else if(nk < 20) {
+            html2 += '<li id="dalue_li_hk_' + (nk+1) + '" class="" style="height: 26px;"><a id="dalue_ac_keyword_' + (nk+1) +'" href="/shopSearch/search.html?query=' + k + '">' + (nk+1) + '. ' + k + '</a></li>';
+        }
+
+        nk++;
+    }
+
+    $('#dalue_hk_1').html(html1);
+    $('#dalue_hk_2').html(html2);
+
+}
+    
+function recentKeyword(fullLoad) {
+    if(true) {
+        return;
+    }
+    
+    var hist = DalueSearch.getJsonCookie(DalueSearch.Consts.COOKIE_QUERY_HISTORY);
+    var html = '';
+    
+    if(fullLoad == true) {
+        if(DalueSearch.parseParameter()['query'] != undefined && DalueSearch.parseParameter()['query'] != '' && DalueSearch.parseParameter()['query'] != '*') {
+            var cq = decodeURIComponent(DalueSearch.parseParameter()['query']).replace(/\+/g, ' ');
+            if(hist == undefined || hist.queries == undefined) {
+                hist = { queries: [] };
+            }
+
+            var fltArr = hist.queries.filter(function(e) { return e.query !== cq });
+            hist.queries = fltArr;
+            hist.queries.unshift( { query: cq } );
+        }
+    }
+    
+    
+    if(hist == undefined || hist.queries == undefined) { // no recentKeyword
+        html = '<center>최근 검색어가 없습니다.</center>';
+    } else {    
+        for(var i = 0; i < hist.queries.length; i++) {
+            html += '<li><span><a href="/shopSearch/search.html?query=' + encodeURI(hist.queries[i].query) + '" class="">' + DalueSearch.escapeHtml(hist.queries[i].query) + '</a></span>';
+            html += '<span><a href="javascript:;" onclick="DalueSearch.removeJsonCookie(\'' + hist.queries[i].query + '\'); recentKeyword();" class="w-keyword-del-btn"></a></span></li>';
+        }
+    }
+    
+    $('#recentKeyword1').html(html);
+	$('#recentKeyword2').html(html);
+}
+
+window.addEventListener('load', function(){
+    //DalueSearch.init();
+	//DalueSearch.keywordPromotion();
+    /*
+	$('input[name="keyword"]').bind('keypress', function (e)  { console.log(JSON.stringify(e)); });
+    for(var i = 0; i < $('input[name="keyword"]').length; i++) {
+    	$('input[name="keyword"]').eq(i).bind('keypress', function (e)  { alert(JSON.stringify(e)); });
+	}
+    */
+	var imgs = $('.dalue_css_search_thumbnail_img');
+	for(var i = 0; i < imgs.length; i++) {
+		if(imgs.eq(i).attr('src') != '{$image}' && imgs.eq(i).attr('src') != imgs.eq(i).attr('orig') && imgs.eq(i).attr('orig') != '{$image}' && imgs.eq(i).attr('orig') != '{$tinyImage}' && imgs.eq(i).attr('orig') != '{$detailImage}' && imgs.eq(i).attr('orig') != '{$smallImage}') {
+			imgs.eq(i).attr('src', imgs.eq(i).attr('orig') + '?r=1');
+			imgs.eq(i).bind('error', function() {
+				this.src = 'https://api.dalue.io/dalue-ecms/contrib/imgs/no_image.jpg';
+			});
+		}
+		
+	}
+
+	// recentKeyword(true);
+});
+
+$(window).bindFirst('DOMContentLoaded', function() {
+	__hash = document.location.hash;
+
+	try {
+        if(window.location.href.indexOf('shopSearch/search.html') > -1) {
+            var p = window.location.search.substring(1);
+            params = parse_query_string(p);
+            if(params['query'] == undefined && params['keyword'] != undefined) {
+                history.replaceState(null, '', window.location.href + '&query=' + params['keyword']);
+            }
+        }
+    } catch(e) {
+    }
+
+    if(typeof DalueSearch == 'undefined') { // JS를 가져올 수 없는 경우 
+    	var q = $('input[name="query"]');
+        q.bind('keyup keypress', function() {
+            var kws = ['#keyword', '#keyword1', '#keyword2' ];
+            for(var i = 0; i < kws.length; i++) {
+                if($(kws[i]).length != 0 && $(kws[i]).attr('type') == 'hidden') {
+                    $(kws[i]).val(this.value);
+                }
+            }
+        });
+        return;
+    }
+    
+    var dalueGinfo = getJsonCookie('DalueGInfo');
+    if(dalueGinfo == undefined) {
+        if(window.location.href.indexOf('shopSearch/search.html') < 0) { //
+            dalueSearchExec(dalueGinfo);
+			
+        } else {
+            // wait for scripttags
+            setTimeout(function() { dalueSearchExec(dalueGinfo); }, 1000);
+        }
+        
+    } else {
+        dalueSearchExec(dalueGinfo);
+    }
+});
+
+var isDalueSearchExec = false;
+var __noOfDss = 0;
+//var __dalue_autoCompleteHide = false;
+var lastDalueInfo = undefined;
+var __ginfo = undefined;
+
+function dalueSearchExec(dalueGinfo) {
+
+	if(dalueGinfo != undefined && __ginfo != undefined) {
+        if(__ginfo.dalueGno != dalueGinfo.dalueGno && window.location.href.indexOf('shopSearch/search.html') > -1) {
+            window.location.reload();
+            return;
+        }
+    }
+
+    if(isDalueSearchExec) {
+        try {
+            if(dalueGinfo != undefined && lastDalueInfo != undefined && dalueGinfo.dalueGno == lastDalueInfo.dalueGno) {
+                return;
+            }
+        } catch(e) {
+            // console.log(e);
+        }
+    }
+
+	__ginfo = dalueGinfo;
+    lastDalueInfo = dalueGinfo;
+
+	if(__dss_scripts_loadedAll == false) {
+		++__noOfDss;
+		if(__noOfDss <= 20) {
+			setTimeout(function () { dalueSearchExec(dalueGinfo); }, 100);
+			return;
+		}
+		
+		if(window.location.href.indexOf('shopSearch/search.html') > -1) {
+			window.location.href = '/product/search.html?keyword=' + encodeURI(DalueSearch.parseParameter()['query'] == undefined ? '' : DalueSearch.parseParameter()['query']);
+			return;
+		}
+		
+		return;
+	}
+
+    isDalueSearchExec = true;
+    
+    var customAuthId = 'USER';
+
+    if(dalueGinfo != undefined) {
+        switch(dalueGinfo.dalueGno)  {
+        case 7: // STAFF
+        	customAuthId = 'STAFF';
+            break;
+        case 6: // ATHLETE
+            customAuthId = 'ATHLETE';
+            break;
+        }
+    }
+
+    DalueSearch.vFields += ',summaryDescription,icon,decorationimages,icon,listIcon,decorationimages,options,pcDiscountPrice,categories,tinyImage';
+    
+    DalueSearch.url = __dssUrl;
+	DalueSearch.dxUrl = __dssDxUrl;
+    DalueSearch.apiKey = __dssKey;
+	DalueSearch.mallId = __mallId;
+	DalueSearch.shopNo = __shopNo;
+	DalueSearch.mallType = __shopType;
+    DalueSearch.options.size = 40;
+    DalueSearch.options.page = 5;
+	DalueSearch.options.recentQueryHide = false;
+	DalueSearch.options.priceField = __dssPrice;
+    DalueSearch.options.bindOrOn = 'bind';
+    DalueSearch.options.searchFormAction = '/shopSearch/search.html';
+    DalueSearch.options.viewLayer = true;
+    DalueSearch.options.iconMap = dalue_icons;
+    DalueSearch.options.filterDisplayName = true; // 분류, 브랜드 등 출력
+    DalueSearch.options.toScrollNamePos = -256;
+    // DalueSearch.options.defaultSort = 'CREATED_DESC';
+    
+    DalueSearch.options.defaultEqualFields = 'display';
+    DalueSearch.options.defaultEqualFieldValues = '1';
+    
+    DalueSearch.options.freqUpdateFieldInclude = 1;
+    DalueSearch.options.hotKeywordType = 0;
+    if(window.location.href.indexOf('/index.html') > -1) {
+    	//DalueSearch.options.layerTop = -40;
+	}
+    
+    // points
+    DalueSearch.options.pointsAmount['card'] = { point: 1, unit: 'P' };
+    DalueSearch.options.pointsAmount['cash'] = { point: 3, unit: 'P' };
+    
+    // tag
+    DalueSearch.options.searchQueryType = 0;
+	DalueSearch.options.functionSearchOnSuccess = dalue_filter_searchOnSuccess;
+    DalueSearch.options.functionHotKeywordOnSuccess = dalue_hotKeyword_onSuccess;
+	DalueSearch.options.tagStat = 0;
+    DalueSearch.options.tagFields = '';
+	// DalueSearch.options.tagOperators['category'] = 'AND';
+    
+	DalueSearch.productUrl = '/product/detail.html?product_no={$productNo}&cate_no={$categoryRoot1No}&display_group=1';
+	DalueSearch.searchUrl = '/shopSearch/search.html';
+	// categoryRoot1No,categoryRoot2No&categoryNameFields=categoryRoot1,categoryRoot2
+	DalueSearch.categoryIdFields='categoryRoot1No,categoryRoot2No';
+	DalueSearch.categoryNameFields='categoryRoot1,categoryRoot2';
+	// DalueSearch.categoryAuthFieldName='categoryRoot1No';
+	DalueSearch.categoryAuthDevice = DalueSearch.categoryAuth.device_mobile;
+	DalueSearch.memberBenefit = dalue_md;
+    
+    // acl
+    // acl
+    DalueSearch.aclShow = 0;
+    DalueSearch.options.aclMessage = '<span style="font-size: 12px; color: #f89718;">최우수 이상만 구매 가능합니다</span>';
+    DalueSearch.options.customAuthId = customAuthId;
+    
+    console.log('dalueGinfo[' + (dalueGinfo != undefined) + ']');
+    if(dalueGinfo != undefined) {
+        // console.log('member logged id[' + JSON.parse(sessionStorage.member_1).data.member_id + '], gname[' + JSON.parse(sessionStorage.member_1).data.group_name + '], gno[' + JSON.parse(sessionStorage.member_1).data.group_no + ']');
+        console.log('dalueGinfo[' + dalueGinfo.dalueGno + '][' + dalueGinfo.dalueGname +']');
+        DalueSearch.categoryAuthMemberType = DalueSearch.categoryAuth.member_logged;
+        DalueSearch.userGroupNo = dalueGinfo.dalueGno == '' ? 0 : dalueGinfo.dalueGno;
+		DalueSearch.userGroupName = dalueGinfo.dalueGname;
+        DalueSearch.aclFieldValue = DalueSearch.userGroupNo;
+    } else {
+        DalueSearch.categoryAuthMemberType = DalueSearch.categoryAuth.member_all;
+        DalueSearch.userGroupNo = 0;
+		DalueSearch.userGroupName = '';
+    }
+
+
+	{
+		var searchForm = [];
+		var searchInput = [];
+		var searchButton = [];
+		var searchButtonErase = [];
+		var autoCompleteLayer = [];
+		var autoCompleteList = [];
+		var autoCompleteItem = [];
+		var recentQueryLayer = [];
+		var recentQueryList = [];
+		var recentQueryItem = [];
+		var hotKeywordList = [];
+		var hotKeywordItem = [];
+        
+        var hotKeywordView = []
+        var hotKeywordViewList = [];
+		var hotKeywordViewItem = [];
+		var recentQueryView = [];
+		var recentQueryViewList = [];
+		var recentQueryViewItem = [];
+        // console.log('input length: ' + $('input[name="query"]').length);
+        
+        // searchField
+        searchForm.push($('#searchBarForm'));
+        searchForm.push($('.searchField'));
+        
+        searchButton.push($('.btnSearch'));
+		searchButton.push($('.btnSearch'));
+        
+        //searchButton.push($('.btnSearch'));
+		// searchButton.push($('.btnSearch2'));
+        // searchButton.push($('.btnSearchDelete'));
+        
+		var n = 0;
+		for(var i = 0; i < $('input[name="query"]').length; i++) {
+            // console.log('searchInput(' + $('input[name="query"]') + ')');
+			// searchForm.push($('form[name=searchBarForm]').eq(i));
+			
+			searchInput.push($('input[name="query"]').eq(i));
+            searchButton.push($('#' + $('input[name="query"]').eq(i).attr('btn')));
+            
+			// searchButton.push($('input[name="searchButton"]').eq(i));
+			//searchButton.push($('.searchButton').eq(i));
+            
+			searchButtonErase.push(undefined);
+			
+			autoCompleteLayer.push($('#dalue_search_autocomplete_layer_' + n));
+			autoCompleteList.push($('#dalue_search_autocomplete_list_' + n));
+			autoCompleteItem.push($('#dalue_search_autocomplete_item_' + n));
+			recentQueryLayer.push($('#dalue_search_recentQuery_layer_' + n));
+			recentQueryList.push($('#dalue_search_recentQuery_list_' + n));
+			recentQueryItem.push($('#dalue_search_recentQuery_item_' + n));
+			hotKeywordList.push($('#dalue_search_hotKeyword_list_' + n));
+			hotKeywordItem.push($('#dalue_search_hotKeyword_item_' + n));
+			
+			recentQueryView.push($('#dalue_search_recentQueryView_' + n));
+			recentQueryViewList.push($('#dalue_search_recentQueryView_list_' + n));
+			recentQueryViewItem.push($('#dalue_search_recentQueryView_item_' + n));
+            
+            hotKeywordView.push($('#dalue_search_hotKeywordView_' + n));
+		}
+		
+		DalueSearch.elements.searchForm = searchForm;
+		
+		DalueSearch.elements.searchInput = searchInput;
+		DalueSearch.elements.searchButton = searchButton;
+		DalueSearch.elements.searchButtonErase = searchButtonErase;
+		
+		DalueSearch.elements.autoCompleteLayer = autoCompleteLayer;
+		DalueSearch.elements.autoCompleteList = autoCompleteList;
+		DalueSearch.elements.autoCompleteItem = autoCompleteItem;
+		DalueSearch.elements.recentQueryLayer = recentQueryLayer;
+		DalueSearch.elements.recentQueryList = recentQueryList;
+		DalueSearch.elements.recentQueryItem = recentQueryItem;
+
+		DalueSearch.elements.hotKeywordList = hotKeywordList;
+		DalueSearch.elements.hotKeywordItem = hotKeywordItem;
+            
+		DalueSearch.elements.recentQueryView = recentQueryView;
+		DalueSearch.elements.recentQueryViewList = recentQueryViewList;
+		DalueSearch.elements.recentQueryViewItem = recentQueryViewItem;
+        
+	}
+    
+	DalueSearch.options.keywordPromotionLeft = [10, 10, 10, 10];
+
+	DalueSearch.elements.searchItem = [ $('#dalue_search_item'), $('#dalue_search_item') ];
+	DalueSearch.elements.searchList = $('#dalue_search_list');
+
+
+	/*
+    var nform = 0;
+   // DalueSearch.elements.searchForm = [];
+    $('form').each(function(idx, item) {
+        if($(item).attr('id') == 'searchBarForm') {
+            DalueSearch.elements.searchForm.push($(item));
+            nform++;
+        }
+        
+        console.log(nform + ', ' + idx + ':' + $(item).attr('id'));
+    });
+	*/
+
+	DalueSearch.elements.searchQuery = [ ];
+	// dalue_search_query_qouted
+	DalueSearch.elements.searchQueryQouted = [ $('.dalue_search_query_qouted') ];
+	DalueSearch.elements.searchCount = [ $('.dalue_css_search_count') ]; 
+	DalueSearch.elements.searchNoResult = $('#dalue_search_noResult');
+
+    DalueSearch.elements.hotKeywordView = [ $('#dalue_search_hotKeyword_view') ];
+    DalueSearch.elements.hotKeywordViewList = [ $('#dalue_search_hotKeyword_list') ];
+    DalueSearch.elements.hotKeywordViewItem = [ $('#dalue_search_hotKeyword_item') ];
+    
+	DalueSearch.options.relativeTermDisplay = DalueSearch.relativeTermDisplay.isExist;
+	DalueSearch.elements.relativeTermView = [ $('#dalue_search_relativeTerm_view') ];
+	DalueSearch.elements.relativeTermViewList = [ $('#dalue_search_relativeTerm_list') ];
+	DalueSearch.elements.relativeTermViewItem = [ $('#dalue_search_relativeTerm_item') ];
+
+	DalueSearch.elements.filterView = $('#dalue_search_filter');
+	DalueSearch.elements.filterCategoryView = $('.dalue_css_column_content_category');
+	DalueSearch.elements.filterCategoryItem = $('#dalue_search_filter_item_category');
+	DalueSearch.elements.filterBrandView = $('.dalue_css_column_content_brand');
+	DalueSearch.elements.filterBrandItem = $('#dalue_search_filter_item_brand');
+	DalueSearch.elements.filterPriceView = $('.dalue_css_column_content_price');
+	DalueSearch.elements.filterPriceItem = $('#dalue_search_filter_item_price');
+    
+	DalueSearch.elements.paginationView = $('#dalue_search_pagination');
+	DalueSearch.elements.paginationFirst = $('#dalue_search_pagination_first');
+	DalueSearch.elements.paginationPrev = $('#dalue_search_pagination_prev');
+	DalueSearch.elements.paginationNext = $('#dalue_search_pagination_next');
+	DalueSearch.elements.paginationLast = $('#dalue_search_pagination_last');
+	DalueSearch.elements.paginationItem = $('#dalue_search_pagination_item');
+
+    $($('#dalue_autocomplete_template_0').html()).insertAfter(DalueSearch.elements.searchButton[0]);
+    $($('#dalue_autocomplete_template_1').html()).insertAfter(DalueSearch.elements.searchButton[1]);
+
+
+	DalueSearch.init();
+	DalueSearch.hotKeywordView();
+	DalueSearch.recentQueryView();
+	DalueSearch.hotKeyword();	
+
+	if(window.location.href.indexOf('shopSearch/search.html') > -1) {
+        DalueSearch.relativeTermView(DalueSearch.parseParameter().query, 1);
+        
+        var param = parse_query_string(window.location.search.substring(1));
+        var v;
+        if(param.tag_field != undefined && (v = param['tagValue_' + param.tag_field]) != undefined) {
+        	dalue_filter_selected[param.tag_field + '^' + param['tagValue_' + param.tag_field]] = '1';
+            DalueSearch.searchOptions.tagValues[param.tag_field] = v;
+        } 
+        
+        if(param.queryField != undefined && param.queryField != '') {
+            DalueSearch.searchOptions.queryField = param.queryField;
+        }
+        
+        if(DalueSearch.options.tagFields != undefined) {
+            var tagFields = DalueSearch.options.tagFields.split(DalueSearch.options.tagSeperator);
+            var tagValue = param['tagValue_' + tagFields[i]];
+            DalueSearch.searchOptions.tagValues[tagFields[i]] = tagValue == undefined ? '' :tagValue;
+            // console.log('-------------------- ' + tagValue);
+        }
+        
+        DalueSearch.options.freqUpdateFieldSort = DalueSearch.getUriParam()['freqUpdateFieldSort'] == '' || DalueSearch.getUriParam()['freqUpdateFieldSort'] == null ? '' :  DalueSearch.getUriParam()['freqUpdateFieldSort'];
+        
+        DalueSearch.options.tagStatOnly = 0;
+        DalueSearch.searchOnLoad(true);
+        
+		setDalueSearchSortInit();
+        
+        // dalue_filter_show();
+	} else {
+        DalueSearch.options.tagStatOnly = 1;
+        //DalueSearch.searchOnLoad(false); // replaceHistory
+    }
+    
+	DalueSearch.keywordPromotion();
+
+    
+    params = DalueSearch.parseParameter();
+	__query = params['query'];
+    
+    $('.dalue_query').text(decodeURIComponent(__query).replace(/\+/g, ' '));
+    $('.query2').val(decodeURIComponent(__query).replace(/\+/g, ' '));
+    
+    
+}
+
+function containsEncodedComponents(x) {
+  // ie ?,=,&,/ etc
+  return (decodeURI(x) !== decodeURIComponent(x));
+}
+
+function dalueSearchSort(elmId, type) {
+	var sortButtons = [ $('#sortLabel1'), $('#sortLabel2'), $('#sortLabel3'), $('#sortLabel4'), $('#sortLabel5') ];
+	for(var i = 0; i < sortButtons.length; i++) {
+		sortButtons[i].removeClass('dalue_bold');
+	}
+    
+	$('#' + elmId).addClass('dalue_bold');
+    
+    $('#' + elmId).addClass('dalue_bold');
+    if(elmId == 'sortLabel4') {
+        DalueSearch.options.freqUpdateFieldSort = 'reviews';
+    } else {
+        DalueSearch.options.freqUpdateFieldSort = '';
+    }
+    
+    DalueSearch.searchOptions.replaceHistory = false;
+	DalueSearch.searchParameterSort(type);
+    
+    
+}
+
+function setDalueSearchSortInit() {
+    var sortButtons = [ $('#sortLabel1'), $('#sortLabel2'), $('#sortLabel3'), $('#sortLabel4'), $('#sortLabel5') ];
+    
+    for(var i = 0; i < sortButtons.length; i++) {
+		sortButtons[i].removeClass('dalue_bold');
+	}
+    
+    if(DalueSearch.options.freqUpdateFieldSort != null && DalueSearch.options.freqUpdateFieldSort == 'reviews') {
+        $('#sortLabel4').addClass('dalue_bold');
+    } else {
+        for(var i = 0; i < sortButtons.length; i++) {
+            if(sortButtons[i].attr('val') == DalueSearch.searchOptions.sortType) {
+                sortButtons[i].addClass('dalue_bold');
+            }
+        }
+    }
+}
+    
+function containsEncodedComponents(x) {
+  // ie ?,=,&,/ etc
+  return (decodeURI(x) !== decodeURIComponent(x));
+}
+    
+function searchButtonClick(elm) {
+    if($('#dalue_search_keywordPromotion_0').css('display') == 'none') { DalueSearch.goSearch(); } else { if(DalueSearch.keywordPromotionList[DalueSearch.keywordPromotionElementNo] != undefined) { event.preventDefault(); window.location.href = DalueSearch.keywordPromotionList[DalueSearch.keywordPromotionElementNo].url; } else { DalueSearch.goSearch(); } }
+}
+    
+function getJsonCookie(name) {
+    var x, y;
+    var val = document.cookie.split(';');
+    var parsed;
+
+    for (var i = 0; i < val.length; i++) {
+        x = val[i].substr(0, val[i].indexOf('='));
+        y = val[i].substr(val[i].indexOf('=') + 1);
+        x = x.replace(/^\s+|\s+$/g, '');
+
+        if (x == name) {
+            try {
+                if(y != undefined) {
+                    //console.error(y);
+                    parsed = JSON.parse(decodeURI(y));
+                    return parsed
+                }
+
+            } catch(e) {
+                
+            }
+        }
+    }
+
+    return null;
+}
+    
+</script>
+
+<style>
+.dalue_css_column_title { 
+ background-color: #FFFFFF;
+
+}
+</style>

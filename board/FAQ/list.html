@@ -1,0 +1,262 @@
+<!--@layout(/layout/basic/layout.html)-->
+<!--@js(/ogam/js/board.js)-->
+<!--@css(/ogam/css/board.css)-->
+
+<div class="renewal-list-wrapper">
+    <div class="renewal-inner">
+        <div class="renewal-container">
+
+            <!-- 사이드 메뉴 -->
+            <div class="sub-side-menu">
+                <div class="menu-wrapper">
+                    <div class="menu-wrap">
+                        <div class="subTitle">
+                            <h3>고객센터</h3>
+                        </div>
+                        <ul class="menu">
+                            <li><a href="/board/notice/list.html">공지사항</a></li>
+                            <li class="on"><a href="/board/FAQ/list.html">자주 묻는 질문</a></li>
+                            <li><a href="/board/consult/list.html">1:1 문의</a></li>
+                            <li><a href="/shopinfo/intro_membership.html">멤버십</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="renewal-contents-wrapper faq-contents-wrapper">
+                <div class="page-top-nav-wrap">
+                    <dl>
+                        <dt>홈<span>/</span>고객센터<span>/</span></dt>
+                        <dd>
+                            자주 묻는 질문
+                            <i class="mo-arrow"><img src="https://arenakorea1.cafe24.com/web/2026-renewal/img/grey-down-arrow.png" alt="grey down arrow" /></i>
+                        </dd>
+                    </dl>
+                    <h6>자주 묻는 질문</h6>
+                    <ul class="mo-dropdown-list">
+                        <li><a href="/board/notice/list.html">공지사항</a></li>
+                        <li class="on"><a href="/board/FAQ/list.html">자주 묻는 질문</a></li>
+                        <li><a href="/board/consult/list.html">1:1 문의</a></li>
+                        <li><a href="/shopinfo/intro_membership.html">멤버십</a></li>
+                    </ul>
+
+                </div>
+
+
+                <div class="section board-section list_board_type1" module="Board_ListPackage_3">
+                    <!--css(/css/module/board/listPackage.css)-->
+                    <!--css(/css/module/board/boardPackage.css)-->
+
+
+                    <div module="Layout_BoardInfo" class="ec-base-tab typeMenu gScroll">
+                        <ul class="menu">
+                            <li><a href="{$board_list_url}" class="button">{$board_name}</a></li>
+                            <li><a href="{$board_list_url}" class="button">{$board_name}</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="boardSort displaynone">
+                        <span module="board_category_3">{$form.board_category}</span>
+                        <span module="board_ReplySort_3">{$reply_sort}</span>
+                    </div>
+
+
+                    <div class="option_wrap option_wrap2">
+                        <ul></ul>
+                    </div>
+
+                       <div class="mo-component mo-search" module="board_search_3">
+                        <!--@css(/css/module/board/search.css)-->
+                        <fieldset class="boardSearch">
+                            <legend>게시물 검색</legend>
+                            <div class="form">{$form.search_key} {$form.search} <a href="#none" class="btnNormal" onclick="{$action_search}">검색</a></div>
+                        </fieldset>
+                    </div>
+                    
+
+                    <div class="ec-base-table typeList faq-list-table">
+                        <table border="1" >
+                            <caption>게시판 목록</caption>
+
+                            <tbody module="board_notice_3" class="center">
+                                <!--
+$count = 10
+$login_page_url = /member/login.html
+$deny_access_url = /index.html
+-->
+                                <tr style="{$list_bg_color} {$list_char_color}">
+                                    <td class="subject left txtBreak">
+                                        <a href="{$link_board_detail}" style="{$link_color}">
+                                            <div class="text-wrap">
+                                                <span>{$category_name}</span>
+                                                <p>
+
+                                                    {$subject}
+                                                </p>
+                                            </div>
+                                            <i></i>
+                                        </a>
+                                        <div class="ac_panel">{$content}</div>
+                                    </td>
+
+                                </tr>
+                                <tr style="{$list_bg_color} {$list_char_color}">
+
+                                    <td class="subject left txtBreak">
+                                        <a href="{$link_board_detail}" style="{$link_color}">
+                                            <div class="text-wrap">
+                                                <span>{$category_name}</span>
+                                                <p>
+
+                                                    {$subject}
+                                                </p>
+                                            </div>
+                                            <i></i>
+                                        </a>
+                                        <div class="ac_panel">{$content}</div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody module="board_fixed_3" class="center">
+                                <!--
+$count = 10
+$login_page_url = /member/login.html
+$deny_access_url = /index.html
+-->
+                                <tr style="{$list_bg_color} {$list_char_color}">
+                                    <td class="subject left txtBreak">
+                                        <a href="{$link_board_detail}" style="{$link_color}">
+                                            <div class="text-wrap">
+                                                <span>{$category_name}</span>
+                                                <p>
+
+                                                    {$subject}
+                                                </p>
+                                            </div>
+                                            <i></i>
+                                        </a>
+                                        <div class="ac_panel">{$content}</div>
+                                    </td>
+
+                                </tr>
+                                <tr style="{$list_bg_color} {$list_char_color}">
+                                    <td class="subject left txtBreak">
+                                        <a href="{$link_board_detail}" style="{$link_color}">
+                                            <div class="text-wrap">
+                                                <span>{$category_name}</span>
+                                                <p>
+
+                                                    {$subject}
+                                                </p>
+                                            </div>
+                                            <i></i>
+                                        </a>
+                                        <div class="ac_panel">{$content}</div>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                            <tbody module="board_list_3" class="center">
+                                <!--
+$login_page_url = /member/login.html
+$deny_access_url = /index.html
+-->
+                                <tr style="{$list_bg_color} {$list_char_color}">
+                                    <td class="subject left txtBreak">
+                                        <a href="#none" style="{$link_color}">
+                                            <div class="text-wrap">
+                                                <span>{$category_name}</span>
+                                                <p>
+
+                                                    {$subject}
+                                                </p>
+                                            </div>
+                                            <i></i>
+                                        </a>
+                                        <div class="ac_panel">{$content}</div>
+                                    </td>
+
+                                </tr>
+                                <tr style="{$list_bg_color} {$list_char_color}">
+                                    <td class="subject left txtBreak">
+                                        <a href="#none" style="{$link_color}">
+                                            <div class="text-wrap">
+                                                <span>{$category_name}</span>
+                                                <p>
+
+                                                    {$subject}
+                                                </p>
+                                            </div>
+                                            <i></i>
+                                        </a>
+                                        <div class="ac_panel">{$content}</div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p class="empty-text {$empty_display|display}" module="board_empty_3">{$empty_message}</p>
+                    </div>
+
+
+
+
+
+
+
+                    <div class="board-element-wrap">
+                        <div module="board_search_3">
+                            <!--@css(/css/module/board/search.css)-->
+                            <fieldset class="boardSearch">
+                                <legend>게시물 검색</legend>
+                                <div class="form">{$form.search_key} {$form.search} <a href="#none" class="btnNormal" onclick="{$action_search}">검색</a></div>
+                            </fieldset>
+                        </div>
+
+                        <div module="board_paging_3" class="section ec-base-paginate typeList custom-pagination-wrap">
+                            <a href="{$param_prev}">이전 페이지</a>
+                            <ol>
+                                <li><a href="{$param_num}" class="{$param_class}">{$page_num}</a></li>
+                                <li><a href="{$param_num}" class="{$param_class}">{$page_num}</a></li>
+                            </ol>
+                            <a href="{$param_next}">다음 페이지</a>
+                        </div>
+
+
+                        <div module="board_ButtonList_3" class="{$write_display|display} gBottom ec-base-button write-btn">
+                            <span class="gRight">
+                                <a href="/board/free/write.html{$param_write}&listpage=/board/FAQ/list.html" class="btn119 {$write_display|display}">글쓰기</a>
+                            </span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+    // 1. 함수로 분리하여 여러 상황에서 호출할 수 있게 합니다.
+    const applySearchPlaceholder = () => {
+        // ID뿐만 아니라 게시판 검색 폼 내부의 모든 text input을 대상으로 합니다.
+        const searchInputs = document.querySelectorAll('.boardSearch input[type="text"], #search');
+        
+        searchInputs.forEach(input => {
+            input.setAttribute('placeholder', '검색');
+        });
+    };
+
+    // 2. DOMContentLoaded에서 먼저 실행
+    window.addEventListener('DOMContentLoaded', applySearchPlaceholder);
+
+    // 3. 만약 카페24 기본 JS가 뒤늦게 DOM을 건드릴 경우를 대비해 window.onload도 활용합니다.
+    window.addEventListener('load', applySearchPlaceholder);
+</script>

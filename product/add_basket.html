@@ -1,0 +1,47 @@
+<div module="Product_BasketAdd" class="ec-base-layer-area">
+    <style>
+        .ec-base-layer.gAlert { background: rgba(0,0,0,0.6); border-radius: 200px; width: fit-content; top:70px; border:0;  }
+       .typeModal .content { display: flex; gap: 24px; justify-content: space-between; padding: 16px 21px !important; background-color: #666666; min-height: unset; border-radius: 200px;}
+       .typeModal .content p { color: #fff !important; font-weight: 500; font-size: 14px; line-height:24px; }
+       .typeModal .content a { background: unset;  color: #fff; padding: unset; height: unset; line-height: unset; font-weight: 500;  font-size: 14px; display: flex; align-items: center;}
+       .typeModal .content a::after { content: ''; display: inline-block;  width: 24px;  height: 24px; background: url(https://arenakorea1.cafe24.com/web/2026-renewal/img/white-right-arrow.png) no-repeat center / cover;}
+       @media (max-width: 1024px) {
+        .ec-base-layer.gAlert { background: #000; border-radius: 15px; width: 95%; top: unset; bottom: 70px; }
+        .typeModal .content { padding: 15px !important; }
+        .typeModal .content p , .typeModal .content a { font-size: 11px; }
+        .typeModal .content a::after { width: 10px; height: 10px; background-size: 10px; }
+       }
+    </style>
+    <!--@css(/layout/basic/css/ec-base-layer.css)-->
+    <!--@css(/css/module/product/basketAdd.css)-->
+    <div class="ec-base-layer typeModal gAlert">
+        <div class="content">
+            <p>장바구니에 상품이 담겼습니다.</p> <a href="/order/basket.html?delvtype={$delvtype}" class="btnSubmit sizeM">바로가기 </a>
+        </div>
+        <div class="ec-base-button displaynone">
+            <!-- <a href="#none" class="btnNormal sizeM displaynone" onclick="$('#confirmLayer').remove();" complete="complete">계속 쇼핑하기</a> -->
+            <a class="btnClose displaynone" onclick="$('#confirmLayer').remove();">닫기</a>
+        </div>
+    </div>    
+</div>
+
+<script>
+
+const observer = new MutationObserver(() =>
+{
+    const modal = document.querySelector('.ec-base-layer.typeModal.gAlert');
+    if (modal && modal.style.display !== 'none' && !modal.classList.contains('handled')) {
+        console.log('팝업열림');
+
+        setTimeout(() =>
+        {
+            $('#confirmLayer').remove();
+        }, 4000);
+
+        modal.classList.add('handled');
+    }
+});
+
+observer.observe(document.body, { childList: true, subtree: true });
+
+</script>

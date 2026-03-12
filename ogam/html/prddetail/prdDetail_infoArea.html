@@ -1,0 +1,43 @@
+<!--@js(/js/module/product/product_image.js)-->
+<div class="RW">
+    <div class="prdImg">
+        <div class="thumbnail">
+            <a href="/product/image_zoom2.html{$zoom_param}" alt="{$product_code}" onclick="window.open(this.href, 'image_zoom2', 'toolbar=no,scrollbars=auto,resizable=yes,width=450,height=693,left=0,top=0', this);return false;">
+                <img src="{$big_img}" alt="{$seo_alt_tag}" class="{$big_img_class} {$img_display|display}"><span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span>
+            </a>
+            <div id="zoom_wrap"></div>
+        </div>
+    </div>
+    <div class="listImg" module="product_addimage">
+        <div class="inner">
+            <ul class="list">
+                <li>{$add_img}</li>
+                <li>{$add_img}</li>
+            </ul>
+        </div>
+        <button type="button" class="prev"><i aria-hidden="true" class="icon icoArrowLeft"></i>이전</button>
+        <button type="button" class="next"><i aria-hidden="true" class="icon icoArrowRight"></i>다음</button>
+    </div>
+</div>
+
+<div class="RTMB">
+    <p class="prdImg">
+        <a href="#none" id="prdDetailImg" data-param="{$zoom_param}" class="thumbnail">
+            <img src="{$big_img}" class="bigImage" alt="{$seo_alt_tag}"><span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span>
+        </a>
+    </p>
+    <div module="Product_mobileImage" class="prdImg">
+        <!--@css(/css/module/product/mobileImage.css)-->
+        <!--
+            $swipe = yes
+        -->
+        <ul>
+            <li data-param="{$zoom_param}">
+                <p class="thumbnail">
+                    <img src="{$big_img}" class="{$thumb_img_class}" alt="{$seo_alt_tag}"><span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span>
+                </p>
+            </li>
+            {$aAddImage}
+        </ul>
+    </div>
+</div>

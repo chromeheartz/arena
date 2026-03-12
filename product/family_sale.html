@@ -1,0 +1,169 @@
+<style>
+	#targetDiv { position: fixed; top: 0; left: 0; width: 100dvw; height: 100dvh; z-index: 999999; background: rgba(0, 0, 0, 0.6); display: grid; place-items: center; }
+    #targetDiv * { box-sizing: border-box; }
+    #targetDiv .familySalePopup { background: #fff; overflow-y: auto; height: 100%;  -ms-overflow-style: none; max-width: 1920px; }
+	#targetDiv .familySalePopup::-webkit-scrollbar { display: none; }
+    #targetDiv .topImgBox { font-size: 0; }
+    #targetDiv .topImgBox img { width: 100%; }
+    #targetDiv .middleInputBox { padding: 100px 20px 130px; background-image: url('/web/upload/arena_fsbg_pc.png'); background-size: contain; background-repeat: no-repeat; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 0; aspect-ratio: 1920 / 529; background-color: #2a2c2a; }
+    #targetDiv .middleInputBox .titleTxt { margin-bottom: 50px; color: #fff;  
+        font-family: SUIT;
+      font-size: 40px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1;
+      letter-spacing: normal; }
+    #targetDiv .middleInputBox .inputBox { width:100%; max-width: 600px;  font-family: SUIT!important;
+      font-size: 25px;
+      font-weight: 600;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1;
+      letter-spacing: normal;
+      text-align: center;
+        padding: 22px 20px;
+        height: auto;
+        max-height: 67px;
+        margin-bottom: 10px;
+        border: none; outline: none;
+      }
+    #targetDiv .middleInputBox .inputBox::placeholder { color: #b2b2b2; }
+    #targetDiv .middleInputBox .inputBtn { width: 100%; max-width: 600px; 
+  font-family: SUIT!important;
+  font-size: 25px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: normal;
+         text-align: center;
+        padding: 0px 20px;
+        height: 67px;
+        display: grid;
+        place-items: center;
+    color: #fff; 
+    background: #2c9eff; margin-bottom: 40px; }
+    #targetDiv .middleInputBox .descTxt { 
+     font-family: SUIT;
+  font-size: 22px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: normal;
+        line-height: 1;
+  text-align: center;
+        color: #fff;
+    }
+    #targetDiv .bottomTxtBox { display: flex; flex-direction: column; align-items: center; background: #d1d1d1; padding: 84px 20px 68px; }
+    #targetDiv .bottomTxtBox .descTit {
+    font-family: SUIT;
+  font-size: 24px;
+  font-weight: 800;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.72px;
+  color: #000;
+        margin-bottom: 24px;
+    }
+    #targetDiv .bottomTxtBox .decsList li {
+        font-family: SUIT;
+      font-size: 22px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: 0.33px;
+      text-align: left;
+      color: #000;
+        }
+    #targetDiv .bottomTxtBox .decsList li::before {
+    content: '-'; margin-right: 4px; display: inline-block; font-weight: normal; color: #000; }
+     #targetDiv .bottomTxtBox .decsList li.pointTxt {
+         font-weight: bold;
+  color: #00a7dd;
+    }
+    .forMob { display: none; }
+    @media screen and (max-width: 967px) {
+        .forPC { display: none; }
+    .forMob { display: block; }
+        #targetDiv .middleInputBox { padding: 0 7.8vw; background-image: url('/web/upload/arena_fsbg_mob.png'); background-size: contain; background-repeat: no-repeat; aspect-ratio: 640 / 528; }
+    	#targetDiv .middleInputBox .titleTxt { font-size: 6.25vw;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: 1.5px; text-align: center; margin-bottom: 7.8vw; }
+        #targetDiv .middleInputBox .inputBox { font-size: 4.3vw; height: 11vw; padding: unset; max-height: unset; }
+        #targetDiv .middleInputBox .inputBtn { font-size: 4.3vw; height: 11vw; margin-bottom: 6.4vw; }
+        #targetDiv .middleInputBox .descTxt { font-size: 3.5vw; line-height: normal; }
+        #targetDiv .bottomTxtBox .descTit { font-size: 3.5vw; margin-bottom: 3.8vw; }
+        #targetDiv .bottomTxtBox .decsList li { font-size: 3.5vw; text-indent: 0; }
+        #targetDiv .bottomTxtBox { padding: 13.5vw 7.9vw 12.5vw; }
+    }
+</style>
+
+<div id="targetDiv" class="displaynone">
+    <div class="familySalePopup">
+            <div class="topImgBox">
+                <img src="/web/upload/250912_arena_fs_pc.png" alt="패밀리 세일" class="forPC"><img src="/web/upload/250912_arena_fs_mob.png" alt="패밀리 세일" class="forMob">
+        	</div>
+            <div class="middleInputBox">
+                    <p class="titleTxt">회원 전용 입장코드</p>
+                <input class="inputBox" type="text" placeholder="인증 코드 입력">
+                <button class="inputBtn">접속하기</button>
+                <p class="descTxt">인증번호 입력 후 접속하기 버튼 클릭시,<br class="forMob"> <b>아레나 패밀리 혜택</b>을 확인하실 수 있습니다.</p>
+                </div>
+            <div class="bottomTxtBox">
+                <div class="txtArea">
+                	<p class="descTit">NOTICE</p>
+                    <ul class="decsList">
+                        <li>본 이벤트는 아레나코리아 회원 전용 행사로 인증코드 확인 시에만 입장이 가능합니다.</li>
+                        <li>ID가 없으신 경우, 신규 가입 후 이용해주시기 바랍니다.</li>
+                        <!--<li class="pointTxt">패밀리 세일 상품 특성상 모든 교환,반품,환불 모두 불가하오니 구매시 유의 부탁드립니다.</li>-->
+                        <li>일부 상품의 경우 조기품절 될 수 있습니다.</li>
+                        <li>행사기간 외의 주문건은 취소될 수 있습니다.</li>
+                        <li>주문량이 증가로 인한 배송지연 및 품절이 발생 될 수 있습니다.</li>
+                        <li>오프라인 매장에서 교환/환불/반품 불가합니다.</li>
+                    </ul>
+                </div>
+            </div>
+    </div>
+</div>
+
+<script>
+    
+const currentUrl = window.location.href;
+if (currentUrl.includes('?cate_no=642')) {
+    const targetDiv = document.getElementById('targetDiv');
+    const isAuthenticated = sessionStorage.getItem('isAuthenticated');
+    
+    if (targetDiv) {
+        if (isAuthenticated === 'true') {
+            targetDiv.classList.add('displaynone');
+        } else {
+            targetDiv.classList.remove('displaynone');
+        }
+    }
+}
+
+function checkAuth() {
+    const inputValue = document.querySelector('#targetDiv .inputBox').value;
+
+    if (inputValue === '2025ARENA') {
+        sessionStorage.setItem('isAuthenticated', 'true');
+        $('#targetDiv').fadeOut();
+    } else {
+        alert("인증 코드가 올바르지 않습니다.");
+    }
+}
+
+document.querySelector('#targetDiv .inputBtn').addEventListener('click', checkAuth);
+
+document.querySelector('#targetDiv .inputBox').addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+        checkAuth();
+    }
+});
+
+</script>

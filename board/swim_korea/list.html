@@ -1,0 +1,213 @@
+<!--@layout(/layout/basic/layout.html)-->
+<!--@js(/ogam/js/board.js)-->
+<!--@css(/ogam/css/board.css)-->
+<div class="supportContainer swimWrap">
+  <div class="tab_wrap" webpb-banner-code="cffv" hidden>
+    <ul class="tab">
+      <li webpb-banner class="{#text_2}"><a href="{#link}" target="{#link_target}">{#text_1}</a></li>
+    </ul>
+  </div>
+
+  <div class="tab_content">
+    <!--------------대한수영연맹----------->
+    <div class="tabpanel" id="tab1">
+      <div class="bannerBox" webpb-banner-code="a9si" hidden>
+        <div webpb-banner>
+          <a href="{#link}" target="{#link_target}">{#pc_thumb_tag}</a>
+        </div>
+        <div webpb-banner>
+          <a href="{#link}" target="{#link_target}">{#pc_thumb_tag}</a>
+        </div>
+      </div>
+
+      <!-- TAB이랑 연결되어있습니다. 변경하실경우 탭에 on class 가 안들어 갈 수 있습니다. -->
+      <div class="tabName section titleArea displaynone">
+        <span class="href">대한수영연맹</span>
+      </div>
+      <!--// TAB이랑 연결되어있습니다. -->
+
+
+      <div class="wid_content">
+        <!--@layout(/layout/basic/layout.html)-->
+        <!--@css(/ogam/css/board.css)-->
+
+        <div class=" gallery_wrap container50">
+          <div class="section board_type2" module="Board_ListPackage_21">
+            <!--@css(/css/module/board/listPackage_gallary.css)-->
+            <div>
+
+              <div class="boardSort layout_hidden">
+                <span module="board_category_21">{$form.board_category}</span>
+              </div>
+
+              <div module="board_listheader_21" class="ec-base-tab gBlank7 {$list_type_display|display}">
+                <ul>
+                  <li class="selected"><a
+                      href="/board/gallery/list.html{$param_list}"><!--@import(/svg/icon-sort-thumb.html)--> 이미지형</a>
+                  </li>
+                  <li><a href="/board/gallery/list2.html{$param_list}"><!--@import(/svg/icon-sort-list.html)--> 리스트형</a>
+                  </li>
+                </ul>
+              </div>
+
+
+              <div class="boardList">
+                <div module="board_notice_21">
+                  <!--
+                      $login_page_url = /member/login.html
+                      $deny_access_url = /index.html
+                  -->
+                  <ul>
+                    <li data-cate="{$category_name}">
+                      <a href="/board/swim_korea/read.html{$param_read}&listpage=/board/swim_korea/list.html">
+                        <span class="thumbnail"><img src="{$img_src}"
+                            onerror="this.src='//img.echosting.cafe24.com/thumb/198x198.gif'" alt="" /></span>
+                        <span class="summary">
+                          <strong class="subject">{$checkbox}{$subject}</strong>
+                          <!--<span>{$member_icon}{$writer} </span>
+                                        <span class="date {$date_display|display}">{$write_date}</span>-->
+                        </span>
+                        <span class="displaynone og_content_check">{$content|striptag}</span>
+                      </a>
+
+                    </li>
+                    <li data-cate="{$category_name}">
+                      <a href="/board/swim_korea/read.html{$param_read}&listpage=/board/swim_korea/list.html">
+                        <span class="thumbnail"><img src="{$img_src}"
+                            onerror="this.src='//img.echosting.cafe24.com/thumb/198x198.gif'" alt="" /></span>
+                        <span class="summary">
+                          <strong class="subject">{$checkbox}{$subject}</strong>
+                          <!--<span>{$member_icon}{$writer} </span>
+                                        <span class="date {$date_display|display}">{$write_date}</span>-->
+                        </span>
+                        <span class="displaynone og_content_check">{$content|striptag}</span>
+                      </a>
+
+                    </li>
+                  </ul>
+                </div>
+                <div module="board_fixed_21">
+                  <!--
+                        $login_page_url = /member/login.html
+                        $deny_access_url = /index.html
+                    -->
+                  <ul>
+                    <li data-cate="{$category_name}">
+                      <a href="/board/swim_korea/read.html{$param_read}&listpage=/board/swim_korea/list.html#tab1">
+                        <span class="thumbnail"><img src="{$img_src}"
+                            onerror="this.src='//img.echosting.cafe24.com/thumb/198x198.gif'" alt="" /></span>
+                        <span class="summary">
+                          <strong class="subject">{$checkbox}{$subject}</strong>
+                          <!--<span>{$member_icon}{$writer} </span>
+                                        <span class="date {$date_display|display}">{$write_date}</span>-->
+                        </span>
+                        <span class="displaynone og_content_check">{$content|striptag}</span>
+                      </a>
+
+                    </li>
+                    <li data-cate="{$category_name}">
+                      <a href="/board/swim_korea/read.html{$param_read}&listpage=/board/swim_korea/list.html#tab1">
+                        <span class="thumbnail"><img src="{$img_src}"
+                            onerror="this.src='//img.echosting.cafe24.com/thumb/198x198.gif'" alt="" /></span>
+                        <span class="summary">
+                          <strong class="subject">{$checkbox}{$subject}</strong>
+                          <!--<span>{$member_icon}{$writer} </span>
+                                        <span class="date {$date_display|display}">{$write_date}</span>-->
+                        </span>
+                        <span class="displaynone og_content_check">{$content|striptag}</span>
+                      </a>
+
+                    </li>
+                  </ul>
+                </div>
+                <div module="board_list_21">
+                  <!--
+                      $count = 6
+                      $login_page_url = /member/login.html
+                      $deny_access_url = /index.html
+                  -->
+                  <ul>
+                    <li data-cate="{$category_name}">
+                      <a href="/board/swim_korea/read.html{$param_read}&listpage=/board/swim_korea/list.html#tab1">
+                        <span class="thumbnail"><img src="{$img_src}"
+                            onerror="this.src='//img.echosting.cafe24.com/thumb/198x198.gif'" alt="" /></span>
+                        <span class="summary">
+                          <strong class="subject">{$checkbox}{$subject}</strong>
+                          <!--<span>{$member_icon}{$writer} </span>
+                                        <span class="date {$date_display|display}">{$write_date}</span>-->
+                        </span>
+                        <span class="displaynone og_content_check">{$content|striptag}</span>
+                      </a>
+                    </li>
+                    <li data-cate="{$category_name}">
+                      <a href="/board/swim_korea/read.html{$param_read}&listpage=/board/swim_korea/list.html#tab1">
+                        <span class="thumbnail"><img src="{$img_src}"
+                            onerror="this.src='//img.echosting.cafe24.com/thumb/198x198.gif'" alt="" /></span>
+                        <span class="summary">
+                          <strong class="subject">{$checkbox}{$subject}</strong>
+                          <!--<span>{$member_icon}{$writer} </span>
+                                        <span class="date {$date_display|display}">{$write_date}</span>-->
+                        </span>
+                        <span class="displaynone og_content_check">{$content|striptag}</span>
+                      </a>
+
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="boardListEmpty {$empty_display|display}" module="board_empty_21">
+                  <p>{$empty_message}</p>
+                </div>
+              </div>
+
+              <!--<div module="board_search_21">
+                    &lt;!&ndash;@css(/css/module/board/search.css)&ndash;&gt;
+                    <fieldset class="boardSearch">
+                        <legend>게시물 검색</legend>
+                        <div class="form">{$form.search_date} {$form.search_key} {$form.search} <a href="#none" class="btnNormal" onclick="{$action_search}">찾기</a></div>
+                    </fieldset>
+                </div>-->
+
+              <div module="board_paging_21" class="section ec-base-paginate typeList">
+                <a href="{$param_prev}">이전 페이지</a>
+                <ol>
+                  <li><a href="{$param_num}" class="{$param_class}">{$page_num}</a></li>
+                  <li><a href="{$param_num}" class="{$param_class}">{$page_num}</a></li>
+                </ol>
+                <a href="{$param_next}">다음 페이지</a>
+              </div>
+
+              <div module="board_ButtonList_21" class="btn_right {$write_display|display} gBottom">
+                <span class="gRight">
+                  <a href="/board/swim_korea/write.html{$param_write}&listpage=/board/swim_korea/list.html"
+                    class="btn119 {$write_display|display}">글쓰기</a>
+                </span>
+              </div>
+
+              <!-- Admin only -->
+              <div class="section" module="board_catemove_21">
+                <!--@css(/css/module/board/catemove.css)-->
+                <span class="gColumn">{$board_catemove_selectbox}</span>
+                <span class="gColumn"><a href="#none" class="btnNormal sizeM"
+                    onclick="{$action_category_move}">{$category_move}</a></span>
+              </div>
+
+              <!--<div class="section" module="board_function_21">
+                                &lt;!&ndash;@css(/css/module/board/function.css)&ndash;&gt;
+                                <span class="gColumn">{$board_function_selectbox}</span>
+                                <span class="gColumn">
+                                    <a href="#none" class="btnNormal sizeS" onclick="{$action_article_move}">{$article_move}</a>
+                                    <a href="#none" class="btnNormal sizeS" onclick="{$action_article_copy}">{$article_copy}</a>
+                                </span>
+                                <span class="ec-base-help">{$board_function_help|replace:*,}</span>
+                            </div>-->
+              <!-- // Admin only -->
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--------------수영대회----------->
+  </div>
+</div>

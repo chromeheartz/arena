@@ -1,0 +1,87 @@
+#container {min-height: calc(100vh - 571px);}
+
+
+#contents > .xans-board-modifypackage.xans-board.xans-board-listpackage,
+#contents > .xans-board-replypackage.xans-board.xans-board-listpackage,
+#contents > .xans-board-writepackage.xans-board.xans-board-listpackage,
+#contents > .xans-board-listpackage.xans-board,
+#contents > .xans-board-readpackage.xans-board{width: calc(92% - 220px);max-width: 1263px;padding: 0 0 0 220px;margin: 160px auto;position: relative;}
+#contents > .xans-board-modifypackage.xans-board,
+#contents > .xans-board-replypackage.xans-board,
+#contents > .xans-board-writepackage.xans-board{ padding: 0 60px}
+
+
+
+.xans-board-listpackage .ec-base-table{ border-top: 1px solid #000}
+.xans-board-listpackage .titleArea.titleArea--board {margin: 160px 0 50px 0;}
+
+
+
+/*type2 board*/
+#contents > .board_type2.xans-board{padding: 0; width: auto; max-width: initial; margin: 0}
+#contents > .board_type2.xans-board > form{max-width: 1520px; margin: 0 auto; padding: 0 60px}
+#contents > .board_type2.xans-board .detail{ background: none}
+
+.xans-board .titleArea h2 {font-size: 20px; text-align: left;}
+
+.xans-board .customer_tap {display: none;}
+.xans-board .customer_tap .titleArea {margin: 30px auto 50px;}
+.xans-board .customer_tap .titleArea h2 {font-size: 40px; line-height: 1; text-align: center;}
+.xans-board .customer_tap .tab_wrap ul {margin-bottom: 50px;}
+.xans-board .customer_tap .tab_wrap ul li {padding: 0 25px;}
+
+.board-aside {position: absolute; left: 0; top: 0; width: 200px;}
+.board-aside .h2-title {font-size: 30px; line-height: 32px; font-weight: normal;}
+.board-menu {margin-top: 30px;}
+.board-menu li {padding: 8px 0;}
+.board-menu li a {font-size: 14px; color: #606060; font-weight: normal; }
+.board-menu li a.this {color: #009FE3; font-weight: bold;}
+
+.option_wrap ul {display: flex;}
+.option_wrap ul li {color: #747474; background-color: #F9F9F9; font-size: 12px; line-height: 24px; font-weight: 600; padding: 6px 10px; cursor: pointer; margin-bottom: 50px }
+.option_wrap ul li:not(:first-child) {margin-left: 10px;}
+.option_wrap ul li.this {background-color: #EEEEEE; color: #747474;}
+
+.email-consent {font-size: 12px; display: inline-block; margin-top: 10px;}
+input#cons_re0 {margin-left: 10px;}
+.ec-base-table.typeWrite .fr-box.fr-basic {width: 100%;}
+span.red-dot {position: relative;}
+span.red-dot::after {content: ""; position: absolute; right: -5px; top: 0; width: 4px; height: 4px; border-radius: 4px; background: #009FE3; }
+
+.xans-board-buttonlist{ text-align: right}
+
+/* 자주묻는질문 */
+.xans-board-listpackage-3 .board-fna{ color: #009FE3; font-weight: 700}
+.xans-board-listpackage-3 .ec-base-table.typeList td{ padding: 0}
+.xans-board-listpackage-3 .ec-base-table.typeList td a{ display: inline-block; width: 100%; font-size: 16px;font-weight: 500;line-height: 24px; color: #000; padding: 30px 10px;}
+.xans-board-listpackage-3 .ac_panel{ background-color: #F4F4F4; font-size: 14px; line-height: 24px; font-weight: 400; height: 0; overflow: hidden;transition: height 1s}
+.xans-board-listpackage-3 .ac_panel.on{height: auto;overflow: visible; padding: 20px 30px}
+.xans-board-listpackage-3 .ac_panel { font-size: 14px; color: #000; font-family: SUIT}
+
+
+/********************* Tablet / Mobile *********************/
+@media screen and (max-width: 1336px) {
+    .xans-board-listpackage .titleArea.titleArea--board {margin: 130px 0 30px 0;}
+}
+@media all and (max-width: 1024px) {
+    /*type2 board*/
+    #contents > .board_type2.xans-board > form {padding: 0 20px;}
+}
+@media all and (max-width:768px){
+    #contents > .xans-board-listpackage.xans-board {width: 100%; padding: 0;}
+    .xans-board-listpackage .ec-base-table {margin: 0 20px;}
+    .xans-board-listpackage .titleArea.titleArea--board {display: none;}
+    /*type2 board*/
+    #contents > .board_type2.xans-board > form {padding: 0 20px;}
+    .xans-board .customer_tap {display: block;}
+    .xans-board-listpackage .ec-base-table.typeList tbody tr {display: flex; flex-direction: column; row-gap: 4px;}
+    .board-aside {display: none;}
+
+    .xans-board-readpackage-13 .ec-base-button .gRight {width: 100%;}
+    .xans-board-readpackage-13 .ec-base-button .gRight .btn_append a {width: 100%;}
+    .xans-board-readpackage-13 .ec-base-button .gRight > a {width: 50%;}
+}
+@media screen and (max-width: 600px) {
+    .xans-board-buttonlist {margin: 80px auto 0; display: flex; justify-content: center;}
+}
+

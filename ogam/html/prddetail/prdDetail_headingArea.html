@@ -1,0 +1,189 @@
+<div module="product_detail" class="prdDetail_headingArea og_inner">
+    <!-- 메뉴 출력 -->
+    <div class="menu-share-wrap">
+
+
+        <div class="prdDetail_menu_container" module="Layout_category" data-ogcate-type="currentView_list_category">
+            <!-- 자동호출메뉴 강제 가림 처리 -->
+            <ul class="menu_1ul" style="display:none">
+                <!-- 자동 호출 메뉴 -->
+                <li class="menu_1li" data-cate="{$cate_no}" data-depth="1">
+                    <a href="/{$design_page_url}{$param}">{$name}</a>
+                </li>
+                <li class="menu_1li" data-cate="{$cate_no}" data-depth="1">
+                    <a href="/{$design_page_url}{$param}">{$name}</a>
+                </li>
+                <!-- //자동 호출 메뉴 -->
+            </ul>
+        </div>
+        <div class="og_share_area" module="product_action">
+            <!-- 관심상품 등록 -->
+            <div class="og_button wishlist_action_button {$wishlist_display|display}">
+                <a href="#none" onclick="{$action_wishlist}">
+                    <!--@import(/SkinImg/svg/wish.html)-->
+                </a>
+            </div>
+            <!-- //관심상품 등록 -->
+            <div class="og_button share_button" data-border="none">
+                <a href="javascript:void(0);" onclick="">
+                    <!--@import(/SkinImg/svg/share.html)-->
+                </a>
+                <div class="share_popup">
+                    <div class="RTMB">SNS 공유</div>
+                    <div class="close_button">
+                        <!--@import(/SkinImg/svg/close.html)-->
+                    </div>
+                    <ul>
+                        <li>
+                            <a class="share" data-share="facebook">
+                                <!--@import(/SkinImg/svg/facebook.html)-->
+                            </a>
+                        </li>
+                        <li>
+                            <a class="share" data-share="kakao">
+                                <!--@import(/SkinImg/svg/kakao.html)-->
+                            </a>
+                        </li>
+                        <li>
+                            <a class="share" data-share="url">
+                                <!--@import(/SkinImg/svg/url.html)-->
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- //메뉴 출력 -->
+
+    <!-- 상단 상품 인포 박스 -->
+    <div class="prdDetail_infoBox ">
+        <ul>
+            <li class="prdDetail_info name h4 fw_bold">
+                <strong class="title"></strong>
+                <span class="desc"><span>{$name}</span></span>
+            </li>
+            <li class="prdDetail_info product_code">
+                <strong class="title"></strong>
+                <span class="desc"><span></span></span>
+            </li>
+            <li class="promotion_code">
+                <div class="icon og_promotion_icons">
+                    <a href="#none" class="{$sms_restock_display|display} displaynone" sms_restock_login_display="{$sms_restock_login_display}" name="btn_restock" id="btn_restock" onclick="{$action_sms_restock}"><img src="https://arenakorea1.cafe24.com/web/img/restock-image.png" style="height: 20px;" alt="재입고 알림 SMS" /></a>
+                    <!--{$soldout_icon}--> {$stock_icon} {$recommend_icon} {$new_icon} {$product_icons} {$today_arrival_icon} {$pickup_icon|replace:alt,alt data-pickupcheck} {$benefit_icons}</div>
+            </li>
+            <li class="og_prc_infoBox">
+                <div>
+                    <ul class="price_wrap">
+                        <li class="prdDetail_info  og_prc_item"><strong class="title "></strong><span class="desc og_prc_promo"></span></li>
+                        <li class="prdDetail_info og_prc_item "><strong class="title "></strong><span class="desc og_prc_sell"></span></li>
+                        <li class="prdDetail_info og_prc_item "><strong class="title "></strong><span class="desc og_prc_custom"></span></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+
+
+        <div class="og_review_and_share_area">
+            <div class="og_review_area">
+                <div class="og_review_item star">
+                    <span class="fixed">
+                        <!--@import(/SkinImg/svg/star.html)-->
+                    </span>
+                    <span>0.0<!-- 여기에 평점 등록 --></span>
+                </div>
+                <div class="og_review_item count">
+                    <span class="fixed">
+                        리뷰
+                    </span>
+                    <span>0<!-- 여기에 리뷰 수 등록 --></span>
+                </div>
+            </div>
+
+            <!-- 공유하기 영역 -->
+
+            <!-- //공유하기 영역 -->
+        </div>
+
+
+
+
+        <div class="topLogo {$supply_link_display|display}">
+            <span>{$supply_top_logo}</span>
+            <a href="#none" onclick="{$supply_go_action}"><img src="{$supply_go_img}" alt="공급사 바로가기" /></a>
+        </div>
+
+
+
+        <div class="benefit-wrap" id="benefit-coupon-wrap" data-title="혜택">
+            <div class="dl-wrap benefit-dl">
+                <dl class="title-dl">
+                    <dt>예상 혜택 적용가</dt>
+                    <dd class="total-benefit-price">10,000원</dd>
+                </dl>
+                <dl class="grade-dl">
+                    <dt></dd>
+                    <dd class="grade-benefit-price"></dd>
+                </dl>
+                <dl>
+                    <dt>신규 회원 1만 쿠폰</dd>
+                    <dd>-10,000원</dd>
+                </dl>
+            </div>
+            <div class="dl-wrap">
+                <dl class="title-dl">
+                    <dt>적립금</dt>
+                    <dd>3,000원</dd>
+                </dl>
+                <dl>
+                    <dt>리뷰 작성 시</dd>
+                    <dd>+최대 3,000원</dd>
+                </dl>
+            </div>
+            <div class="dl-wrap">
+                <dl class="title-dl">
+                    <dt>배송비</dt>
+                    <dd>3만원 이상 시 무료배송</dd>
+                </dl>
+            </div>
+        </div>
+
+        <ul module="product_detaildesign" class="*displaynone og_basic_prd_info">
+            <!--
+출력 갯수 지정 변수, 없으면 설정된 전체가 나옵니다.
+count = 30
+-->
+            <!--
+<li class="prdDetail_info detail_design_info" data-title="혜택">
+<span class="desc">신규 가입시, 1만원 쿠폰증정<br>리뷰 작성시, 최대 3천원 적립금 지급<br>회원 구매시, 등급별 최대 10% 즉시할인</span>
+</li>
+-->
+            <li class="npay_benefit_area displaynone">
+                <span><img src="/SkinImg/img/naverpay_logo.png"> 네이버페이 포인트 혜택</span>
+                <span>최대 3% 적립</span>
+            </li>
+            <li class="prdDetail_info detail_design_info {$item_display|display}" data-title="{$item_title|striptag}">
+                <strong class="title">{$item_title}</strong>
+                <span class="desc">{$item_content}</span>
+            </li>
+            <li class="prdDetail_info detail_design_info {$item_display|display}" data-title="{$item_title|striptag}">
+                <strong class="title">{$item_title}</strong>
+                <span class="desc">{$item_content}</span>
+            </li>
+        </ul>
+    </div>
+    <!-- //상단 상품 인포 박스 -->
+
+
+
+
+
+    <!--    {$custom_option1|cover:<div class="bigandsmall"><p><a href="/shopinfo/big_small.html">고객님의 사이즈가 없다면 지금 주문하시겠습니까?</a></p>,</div>}-->
+
+
+
+    <div class="eventArea {$common_event_b|display}">{$common_event_b}</div>
+
+
+</div>

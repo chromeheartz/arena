@@ -1,0 +1,69 @@
+
+<style>
+.verticalBannerSwiper { contain: content; position: fixed; top: 0; width:100%; height:40px; overflow:hidden; z-index: 1002; opacity: 0; transition: opacity 0.3s ease;}
+.verticalBannerSwiper.loaded { opacity: 1; }
+.verticalBannerSwiper .swiper-slide a { display:flex; align-items:center; justify-content:center; gap: 10px; width:100%; height:40px; font-size:14px; text-align:center; }
+.verticalBannerSwiper .swiper-slide a div { max-width: 40px; max-height: 40px; }
+.verticalBannerSwiper .swiper-slide a div img { width: 100%; height: 100%; object-fit: cover; }
+.verticalBannerSwiper .swiper-slide a div:not(:has(img)) { width: 0; height: 0; }
+</style>
+
+<div  webpb-banner-code="3512"  class="mainTopBanner swiper verticalBannerSwiper">
+    <div class="swiper-wrapper">
+        <div webpb-banner class="swiper-slide">
+            <a href="{#link}" target="{#link_target}" style="background:{#color1}; color:{#color2};">
+               <div class="pc">{#pc_thumb_tag}</div>
+               <span>{#html}</span>
+               <div class="mob">{#m_thumb_tag}</div>
+            </a>
+        </div>
+        <div webpb-banner class="swiper-slide">
+            <a href="{#link}" target="{#link_target}" style="background:{#color1}; color:{#color2};">
+               <div class="pc">{#pc_thumb_tag}</div>
+               <span>{#html}</span>
+               <div class="mob">{#m_thumb_tag}</div>
+            </a>
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const bannerElement = document.querySelector(".verticalBannerSwiper");
+    
+    // 웹퍼블릭배너 로드 체크 함수
+    function checkBannerLoaded() {
+        const pcThumbElements = bannerElement.querySelectorAll('[webpb-banner] .pc');
+        let allLoaded = true;
+        
+        pcThumbElements.forEach(el => {
+            if (el.innerHTML.includes('{#pc_thumb_tag}') || el.innerHTML.includes('pc_thumb_tag')) {
+                allLoaded = false;
+            }
+        });
+        
+        if (allLoaded) {
+            bannerElement.classList.add('loaded');
+            initializeSwiper();
+        } else {
+            setTimeout(checkBannerLoaded, 100);
+        }
+    }
+    
+    function initializeSwiper() {
+        new Swiper(".verticalBannerSwiper", {
+            direction: "vertical",    
+            loop: true,                
+            autoplay: {
+                delay: 2500,            
+                disableOnInteraction: false
+            },
+            speed: 800,                 
+        });
+    }
+    
+    // 초기 로드 체크 시작
+    checkBannerLoaded();
+});
+</script>
+

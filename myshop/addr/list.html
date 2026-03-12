@@ -1,0 +1,145 @@
+<!--@layout(/layout/basic/layout.html)-->
+<!--@css(/ogam/css/myshop.css)-->
+<!--@js(/ogam/js/myshop.js)-->
+
+<div module="layout_logincheck" data-ez="contents-04w3slw-1">
+    <!--
+$url = /member/login.html
+--></div>
+
+
+<div class="mypage-main-wrapper mypage-wrapper">
+    <div class="mypage-inner">
+        <div class="mypage-contents-wrapper">
+            <!--@import(/myshop/myshop_main.html)-->
+            <div
+                 class="myshopArea myshopMain flex-1 mypage-common-contents-wrapper"
+                 data-ez="contents-0z1plus-1"
+                 >
+                <div class="page-top-nav-wrap">
+                    <dl>
+                        <dt>홈<span>/</span>마이페이지<span>/</span></dt>
+                        <dd>
+                            배송 주소록 관리
+                        <i class="mo-arrow"><img src="https://arenakorea1.cafe24.com/web/2026-renewal/img/grey-down-arrow.png" alt="grey down arrow" /></i>
+                        </dd>
+                    </dl>
+                    <h6>배송 주소록 관리</h6>
+                    
+                    <ul class="mo-dropdown-list">
+                        <li>
+                            <a href="/myshop/order/list.html">주문내역조회</a>
+                        </li>
+                        <li>
+                            <a href="/myshop/mileage/historyList.html">적립금 내역</a>
+                        </li>
+                        <li class="{$coupon_display|display}">
+                            <a href="/myshop/coupon/coupon.html">쿠폰 내역</a>
+                        </li>
+                        <li class="on">
+                            <a href="/myshop/addr/list.html">배송 주소록 관리</a>
+                        </li>
+                        <li module="Myshop_InquiryDash">
+                            <a href="/board/inquiry/list.html">대량구매 문의 관리</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" onclick="manageOpen()">멤버십 관리</a>
+                        </li>
+                        <li>
+                            <a href="/product/recent_view_product.html">최근 본 상품</a>
+                        </li>
+                        <li>
+                            <a href="/myshop/wish_list.html">나의 위시리스트</a>
+                        </li>
+                        <li class="{$myLike_display|display}">
+                            <a href="{$myLike_href}">좋아요</a>
+                        </li>
+                        <li class="{$board_display|display}">
+                            <a href="/myshop/board_list.html">나의 게시글</a>
+                        </li>
+                        <li class="displaynone {$board_display|display}">
+                            <a href="/board/notice/list.html?board_no=1">고객센터</a>
+                        </li>
+                        <li>
+                            <a href="/member/modify.html">회원 정보 수정</a>
+                        </li>
+                        <li module="Layout_stateLogon">
+                            <a href="{$action_logout}">로그아웃</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div module="myshop_AddrList" class="mypage-common-contents-wrapper my-address-list-contents">
+                    <!--
+$return_url = /myshop/addr/list.html
+-->
+
+                    <ul class="my-address-list-wrap {$list_display|display}">
+                        <li>
+                            <div class="check-text-wrap">
+                                {$checkbox}
+                                <div class="text-wrap">
+                                    <div class="title-text">
+                                        <h6>{$ma_rcv_title}</h6>
+                                        <span class="{$default_img_display|display}">기본 배송지</span>
+                                    </div>
+                                    <div class="sub-text">
+                                        <span>({$ma_rcv_zipcode}){$ma_rcv_addr1} {$ma_rcv_addr2}</span>
+                                        <span>{$ma_rcv_mobile_no}</span>
+                                        <span>{$ma_rcv_name}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p><a href="modify.html?ma_idx={$ma_idx}" class="edit-btn {$notfix_display}">수정</a></p>
+                        </li>
+                        <li>
+                            <div class="check-text-wrap">
+                                {$checkbox}
+                                <div class="text-wrap">
+                                    <div class="title-text">
+                                        <h6>{$ma_rcv_title}</h6>
+                                        <span class="{$default_img_display|display}">기본 배송지</span>
+                                    </div>
+                                    <div class="sub-text">
+                                        <span>({$ma_rcv_zipcode}){$ma_rcv_addr1} {$ma_rcv_addr2}</span>
+                                        <span>{$ma_rcv_mobile_no}</span>
+                                        <span>{$ma_rcv_name}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p><a href="modify.html?ma_idx={$ma_idx}" class="edit-btn {$notfix_display}">수정</a></p>
+                        </li>
+                    </ul>
+
+                    <p class="{$nodata_display|display} empty-text pt-140">
+                        내역이 없습니다
+                    </p>
+                    <div class="help-text-wrap">
+                        <h3>배송주소록 유의사항</h3>
+
+                        <ul>
+                            <li>배송 주소록은 최대 10개까지 등록할 수 있으며, 별도로 등록하지 않을 경우 최근 배송 주소록 기준으로 자동 업데이트 됩니다.</li>
+                            <li>자동 업데이트를 원하지 않을 경우 주소록 고정 선택을 선택하시면 선택된 주소록은 업데이트 대상에서 제외됩니다.</li>
+                            <li>기본 배송지는 1개만 저장됩니다. 다른 배송지를 기본 배송지로 설정하시면 기본 배송지가 변경됩니다.</li>
+                        </ul>
+
+                    </div>
+
+                    <div class="btn-wrap">
+                        <a href="#none" class="{$delete_display|display} delete-btn" onclick="{$action_delete}; return false;">선택 배송지 삭제</a>
+                        <a href="register.html" class="save-btn">배송지 등록</a>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!--#ez="1/1"-->

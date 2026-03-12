@@ -1,0 +1,231 @@
+<!--@layout(/layout/basic/layout.html)-->
+
+<!--@css(/ogam/css/prdproject.css)-->
+<!--@js(/ogam/js/prdproject.js)-->
+
+<!-- 
+카테고리 넘버 447일 경우 pc에서 다운로드 기능 사용할 수 있도록 세팅
+-->
+
+<style>
+    @media (min-width: 1367px) {
+        .cate447 .downloadBtn {
+            z-index: 100;
+            position: absolute;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .cate447 .downloadBtn1 {
+            top: 56.28%;
+            left: 32.5%;
+            width: 19%;
+            height: 1.6%;
+        }
+
+        .cate447 .downloadBtn2 {
+            top: 56.28%;
+            right: 25.6%;
+            width: 21%;
+            height: 1.6%;
+        }
+
+        .cate447 .downloadBtn a {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+    }
+</style>
+
+
+
+<div class="project-detail-contents-wrapper">
+    <div class="project-detail-inner">
+        <div class="project-detail-container">
+
+
+        </div>
+
+        <div class="project-detail-wrap">
+            <div class="page-top-nav-wrap" module="board_title_8">
+                <dl>
+                    <dt>홈<span>/</span></dt>
+                    <dd>기획전</dd>
+                </dl>
+                <h6>기획전</h6>
+            </div>
+            
+            
+            <!--@import(/product-project.html)-->
+
+            <div class="project-detail-contents">
+                <div module="Project_Package" class="og_sub_container project-container" data-page="prdProject">
+                    <!--@css(/css/module/product/project_package.css)-->
+
+
+                    <div class="og_project_imgs" df-banner-code="event-201" hidden>
+
+                        <ul>
+                            <li df-banner-clone>
+                                <div data-href="{#href}" data-target="{#target}"><span
+                                        class="displaynone">{#title}</span>{#item}</div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="downloadBtn downloadBtn1">
+                        <a href="https://withgone.cafe24.com/web/file/성인부[다이빙] 참가신청서.zip"
+                            download="성인부[다이빙] 참가신청서.zip"></a>
+                    </div>
+                    <div class="downloadBtn downloadBtn2">
+                        <a href="https://withgone.cafe24.com/web/file/학생부[경영,다이빙] 참가신청서.zip"
+                            download="학생부[경영,다이빙] 참가신청서.zip"></a>
+                    </div>
+
+
+                    <div class="og_base_tab og_project_category">
+                        <div class="tabMenu">
+                            <div class="og_inner">
+                                <ul class=" og_swiper">
+                                    <li module="product_projectcategory" style="display:{$display};">
+                                        <a href="javascript:void(0)" data-href="#{$cate_id}"
+                                            class="button">{$category_name} <span
+                                                class="count {$product_count_display|display}">({$product_count})</span></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--div module="product_headcategory" class="product_top_image">{$top_image_tag}</div-->
+
+                    <div class="og_project_container">
+                        <div module="project_list" class="og_project_section og_project_list">
+                            <!--
+$basket_result = /product/add_basket.html
+$basket_option = /product/basket_option.html
+-->
+                            <h3 class="og_project_section_title"><span id="{$cate_id}"></span>{$category_name}</h3>
+
+                            <div module="project_productlist" class="ec-base-product og_base_product">
+                                <ul class="prdList grid4">
+                                    <li id="anchorBoxId_{$product_no}" data-prd="{$product_no}" class="each_product">
+                                        <!--@import(/ogam/html/prd/common_prd.html)-->
+                                        <!--@import(/ogam/html/prd/product_ListItem.html)-->
+                                    </li>
+                                    <li id="anchorBoxId_{$product_no}" data-prd="{$product_no}" class="each_product">
+                                        <!--@import(/ogam/html/prd/common_prd.html)-->
+                                        <!--@import(/ogam/html/prd/product_ListItem.html)-->
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <a style="    display: flex;
+    width: 112px;
+    height: 48px;
+    border: 1px solid black;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 60px;" class="to-list-button" href="/product/기획전/list.html">목록으로</a>
+        </div>
+
+    </div>
+</div>
+</div>
+
+
+
+<!-- 기획전 카테고리 넘버가 642일 경우 패밀리 세일 페이지 노출 -->
+<!--@import(/product/family_sale.html)-->
+
+<script>
+    // 기획전 카테고리 넘버가 447일 경우 클래스 추가
+    function checkDownload() {
+        const url = document.location.href;
+        const categoryNo = url.split('cate_no=')[1];
+        const top = document.querySelector('.og_sub_container');
+        const btn = document.querySelector('.downloadBtn.custom');
+        console.log("checkDownload categoryNo: ", categoryNo);
+        if (categoryNo == 447) {
+            top.classList.add('cate447');
+        }
+    }
+
+    checkDownload();
+
+    let winSize = window.innerWidth;
+    setTimeout(function () {
+        let mobVideo = document.querySelector('.og_project_imgs');
+        if (winSize < 1368) {
+            console.log(mobVideo);
+            mobVideo.classList.add('forMob');
+        }
+    }, 1000);
+
+    let memberId;
+    document.addEventListener('DOMContentLoaded', function () {
+        memberCheck();
+
+        let interval = setInterval(memberCheck, 100);
+        function memberCheck() {
+            // (1) 카페24 함수 상태값 체크
+            if (CAPP_ASYNC_METHODS.STATUS === 'complete') {
+                // (2) 로그인 여부 체크
+                if (CAPP_ASYNC_METHODS.IS_LOGIN) {
+                    // (3) ID 체크  
+                    if (CAPP_ASYNC_METHODS.member.__sMemberId) {
+                        memberId = CAPP_ASYNC_METHODS.member.__sMemberId;
+                        console.log("memberId: ", memberId);
+                        clearInterval(interval);
+                    } else {
+                        // 로그인 상태인데 id 없으면 계속 불러오기
+                    }
+                } else {
+                    // 비로그인이면 id 체크 리셋
+                    clearInterval(interval);
+                }
+            }
+        }
+
+        const targetImg1 = document.querySelector('[data-page="prdProject"] .og_project_imgs img[alt="checkLogin1"]');
+
+        if (targetImg1) {
+            targetImg1.style.cursor = "pointer"; // 사용자에게 클릭 가능하다는 힌트를 줍니다
+            targetImg1.addEventListener("click", function () {
+                checkLogin1();
+            });
+        }
+
+        const targetImg2 = document.querySelector('[data-page="prdProject"] .og_project_imgs img[alt="checkLogin2"]');
+
+        if (targetImg2) {
+            targetImg2.style.cursor = "pointer"; // 사용자에게 클릭 가능하다는 힌트를 줍니다
+            targetImg2.addEventListener("click", function () {
+                checkLogin2();
+            });
+        }
+    });
+
+    function checkLogin1() {
+        // 2025 마스터즈 대회 요강 다운로드
+        if (memberId) {
+            window.location.href = 'https://withgone.cafe24.com/web/file/성인부[다이빙] 참가신청서.zip';
+        }
+        else {
+            alert("로그인이 필요합니다.");
+        }
+    }
+
+    function checkLogin2() {
+        // 참가 신청서 다운로드
+        window.location.href = 'https://withgone.cafe24.com/web/file/성인부[다이빙] 참가신청서.zip';
+    }
+</script>

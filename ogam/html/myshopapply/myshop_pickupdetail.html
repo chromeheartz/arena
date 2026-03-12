@@ -1,0 +1,66 @@
+<div id="{$pickup_detail_id}" class="{$pickup_detail_display|display}">
+  <div class="titleArea titleArea--middle og_myshop_apply_head">
+    <h3>수거지 정보<span class="og_required">필수입력사항</span></h3>
+  </div>
+  <div class="ec-base-table typeWrite">
+    <table border="1" >
+      <caption>수거지 정보</caption>
+      <colgroup>
+        <col style="width:200px;" />
+        <col style="width:auto;" />
+      </colgroup>
+      <tbody>
+      <tr>
+        <th>{$form.sameaddr}</td>
+      </tr>
+      <tr id="{$pickup_sameaddr_id}" class="{$pickup_order_address_display|display}">
+        <th scope="row">수거지 주소 </th>
+        <td>
+          <ul>
+            <li>
+              <strong>이름</strong>
+              <span>{$r_name}</span>
+            </li>
+            <li class="">
+              <strong>주소</strong>
+              <span>({$r_zipcode}) {$r_addr1} {$r_addr2}</span>
+            </li>
+            <li class="">
+              <strong>일반전화</strong>
+              <span>{$r_phone1}</span>
+            </li>
+            <li class="">
+              <strong>휴대폰 번호</strong>
+              <span>{$r_phone2}</span>
+            </li>
+          </ul>
+        </td>
+      </tr>
+      <tr id="{$pickup_name_id}" class="{$pickup_name_display|display}">
+        <th scope="row">이름<span class="og_required"></span></th>
+        <td>{$form.pickup_name}</td>
+      </tr>
+      <tr id="{$pickup_address_id}" class="{$pickup_address_display|display}">
+        <th scope="row">수거지 주소<span class="og_required"></span></th>
+        <td>{$form.address}</td>
+      </tr>
+      <tr id="{$pickup_phone1_id}" class="{$pickup_phone1_display|display}">
+
+        <th scope="row">일반전화 <span class="og_required {$is_pickup_phone1_required_display|display}"></span></th>
+        <td class="formGroup code">{$form.pickup_phone1_}</td>
+      </tr>
+      <tr id="{$pickup_phone2_id}" class="{$pickup_phone2_display|display}">
+        <th scope="row">휴대폰 번호 <span class="og_required {$is_pickup_phone2_required_display|display}"></span></th>
+        <td class="formGroup code">{$form.pickup_phone2_}</td>
+      </tr>
+      <tr id="{$pickup_delivery_info_id}" class="{$delivery_info_offer_display|display}">
+        <th scope="row">배송정보제공방침</th>
+        <td>
+          {$form.delivery_info_offer_content}
+          <p class="grid"><span class="question">배송정보제공방침에 대하여 동의하십니까?</span>{$form.delivery_info_offer_check}</p>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

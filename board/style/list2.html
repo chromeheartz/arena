@@ -1,0 +1,255 @@
+                <!--@layout(/layout/basic/layout.html)-->
+<!--@js(/ogam/js/board.js)-->
+<!--@css(/ogam/css/board.css)-->
+
+
+
+
+
+<div class="gallery-list-contents-wrapper">
+    <div class="gallery-list-inner">
+        <div class="gallery-list-container">
+            <!-- 사이드 메뉴 -->
+            <div class="sub-side-menu">
+                <div class="menu-wrapper">
+                    <div class="menu-wrap">
+                        <div class="subTitle">
+                            <h3>커뮤니티</h3>
+                        </div>
+                        <ul class="menu">
+                            <li class=""><a href="/board/catalog/13">매거진</a></li>
+                            <li class="on"><a href="/board/style/list2.html">룩북</a></li>
+                            <li class=""><a href="/board/style/snap.html">스냅</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-list-wrap">
+                <div class="page-top-nav-wrap" module="board_title_8">
+                    <dl>
+                        <dt>홈<span>/</span>커뮤니티<span>/</span></dt>
+                        <dd >
+                            룩북
+                        <i class="mo-arrow"><img src="https://arenakorea1.cafe24.com/web/2026-renewal/img/grey-down-arrow.png" alt="grey down arrow" /></i>
+                        </dd>
+                        
+                    </dl>
+                    <h6>룩북</h6>
+                    <ul class="mo-dropdown-list">
+                        <li class=""><a href="/board/catalog/13">매거진</a></li>
+                        <li class="on"><a href="/board/style/list2.html">룩북</a></li>
+                        <li class=""><a href="/board/style/snap.html">스냅</a></li>
+                    </ul>
+                </div>
+
+                <div class="gallery-list-contents">
+                    <div class="supportContainer">
+
+                        <div module="board_title_8" class="section titleArea displaynone">
+                            <h2>{$board_title}</h2>
+                            <p class="imgArea">{$board_top_image}</p>
+                        </div>
+                        <div class="wid_content">
+                            <!--@layout(/layout/basic/layout.html)-->
+                            <!--@css(/ogam/css/board.css)-->
+
+                                          <div class=" gallery_wrap container50">
+                    <div class="boardSort"><span module="board_category_14">{$form.board_category}</span></div>
+
+                    <div class="section board_type2" module="Board_ListPackage_14">
+                        <!--@css(/css/module/board/listPackage_gallary.css)-->
+
+                        <div module="board_title_14">
+
+                            <div class="titleArea displaynone">
+                                <h2>{$board_title} {$board_adult_icon}</h2>
+                            </div>
+                            <p class="imgArea">{$board_top_image}</p>
+                        </div>
+
+                        <div class="wid_content">
+                            <div module="board_listheader_14" class="ec-base-tab gBlank7 {$list_type_display|display}">
+                                <ul>
+                                    <li class="selected"><a href="/board/gallery/list.html{$param_list}"><!--@import(/svg/icon-sort-thumb.html)--> 이미지형</a></li>
+                                    <li><a href="/board/gallery/list2.html{$param_list}"><!--@import(/svg/icon-sort-list.html)--> 리스트형</a></li>
+                                </ul>
+                            </div>
+
+
+                            <div class="boardList">
+                                <div module="board_notice_14">
+                                    <!--
+                                        $login_page_url = /member/login.html
+                                        $deny_access_url = /index.html
+                                    -->
+                                    <ul>
+                                        <li>
+                                            <a href="/board/style/read2.html{$param_read}&listpage=/board/style/list2.html">
+                                                <span class="thumbnail"><img src="{$img_src}" onerror="this.src='//img.echosting.cafe24.com/thumb/198x198.gif'" alt="" /></span>
+                                                <span class="summary">
+                                                    <strong class="subject">{$subject}</strong><span class="comment">{$comment_count}</span>
+                                                    <!--<span>{$member_icon}{$writer} </span>
+                                                    <span class="date {$date_display|display}">{$write_date}</span>-->
+                                                    <span>{$content}</span>
+                                                </span>
+                                            </a>
+
+                                        </li>
+                                        <li>
+                                            <a href="/board/style/read2.html{$param_read}&listpage=/board/style/list2.html">
+                                                <span class="thumbnail"><img src="{$img_src}" onerror="this.src='//img.echosting.cafe24.com/thumb/198x198.gif'" alt="" /></span>
+                                                <span class="summary">
+                                                    <strong class="subject">{$subject}</strong><span class="comment">{$comment_count}</span>
+                                                    <!--<span>{$member_icon}{$writer} </span>
+                                                    <span class="date {$date_display|display}">{$write_date}</span>-->
+                                                    <span>{$content}</span>
+                                                </span>
+                                            </a>
+
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div module="board_fixed_14">
+                                    <!--
+                                        $login_page_url = /member/login.html
+                                        $deny_access_url = /index.html
+                                    -->
+                                    <ul>
+                                        <li>
+                                            <a href="/board/style/read2.html{$param_read}&listpage=/board/style/list2.html">
+                                                <span class="thumbnail"><img src="{$img_src}" onerror="this.src='//img.echosting.cafe24.com/thumb/198x198.gif'" alt="" /></span>
+                                                <span class="summary">
+                                                    <!--<span>{$checkbox}</span>-->
+                                                    <strong class="subject">{$subject}</strong><span class="comment">{$comment_count}</span>
+                                                    <!--<span>{$member_icon}{$writer} </span>
+                                                    <span class="date {$date_display|display}">{$write_date}</span>-->
+                                                    <span>{$content}</span>
+                                                </span>
+                                            </a>
+
+                                        </li>
+                                        <li>
+                                            <a href="/board/style/read2.html{$param_read}&listpage=/board/style/list2.html">
+                                                <span class="thumbnail"><img src="{$img_src}" onerror="this.src='//img.echosting.cafe24.com/thumb/198x198.gif'" alt="" /></span>
+                                                <span class="summary">
+                                                    <!--<span>{$checkbox}</span>-->
+                                                    <strong class="subject">{$subject}</strong><span class="comment">{$comment_count}</span>
+                                                    <!--<span>{$member_icon}{$writer} </span>
+                                                    <span class="date {$date_display|display}">{$write_date}</span>-->
+                                                    <span>{$content}</span>
+                                                </span>
+                                            </a>
+
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div module="board_list_14">
+                                    <!--
+                                        $count = 12
+                                        $login_page_url = /member/login.html
+                                        $deny_access_url = /index.html
+                                    -->
+                                    <ul>
+                                        <li>
+                                            <a href="/board/style/read2.html{$param_read}&listpage=/board/style/list2.html">
+                                                <span class="thumbnail"><img src="{$img_src}" onerror="this.src='//img.echosting.cafe24.com/thumb/198x198.gif'" alt="" /></span>
+                                                <div class="summary">
+                                                    <strong class="subject"><!--{$checkbox}-->{$subject}</strong><span class="comment">{$comment_count}</span>
+                                                    <!--<span>{$member_icon}{$writer} </span>
+                                                    <span class="date {$date_display|display}">{$write_date}</span>-->
+                                                    <span class="content">{$content}</span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/board/style/read2.html{$param_read}&listpage=/board/style/list2.html">
+                                                <span class="thumbnail"><img src="{$img_src}" onerror="this.src='//img.echosting.cafe24.com/thumb/198x198.gif'" alt="" /></span>
+                                                <div class="summary">
+                                                    <strong class="subject"><!--{$checkbox}-->{$subject}</strong><span class="comment">{$comment_count}</span>
+                                                    <!--<span>{$member_icon}{$writer} </span>
+                                                    <span class="date {$date_display|display}">{$write_date}</span>-->
+                                                    <span class="content">{$content}</span>
+                                                </div>
+                                            </a>
+
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="boardListEmpty {$empty_display|display}" module="board_empty_14">
+                                    <p>{$empty_message}</p>
+                                </div>
+                            </div>
+
+                            <!--<div module="board_search_14">
+                                &lt;!&ndash;@css(/css/module/board/search.css)&ndash;&gt;
+                                <fieldset class="boardSearch">
+                                    <legend>게시물 검색</legend>
+                                    <div class="form">{$form.search_date} {$form.search_key} {$form.search} <a href="#none" class="btnNormal" onclick="{$action_search}">찾기</a></div>
+                                </fieldset>
+                            </div>-->
+
+                            <div module="board_paging_14" class="section ec-base-paginate typeList custom-pagination-wrap">
+                                <a href="{$param_prev}">이전 페이지</a>
+                                <ol>
+                                    <li><a href="{$param_num}" class="{$param_class}">{$page_num}</a></li>
+                                    <li><a href="{$param_num}" class="{$param_class}">{$page_num}</a></li>
+                                </ol>
+                                <a href="{$param_next}">다음 페이지</a>
+                            </div>
+
+                            <div module="board_ButtonList_14" class="btn_right {$write_display|display} gBottom">
+                                <span class="gRight">
+                                    <a href="/board/style/write2.html{$param_write}&listpage=/board/style/list2.html" class="btn119 {$write_display|display}">글쓰기</a>
+                                </span>
+                            </div>
+
+                            <!-- Admin only -->
+                            <div class="section" module="board_catemove_14">
+                                <!--@css(/css/module/board/catemove.css)-->
+                                <span class="gColumn">{$board_catemove_selectbox}</span>
+                                <span class="gColumn"><a href="#none" class="btnNormal sizeM" onclick="{$action_category_move}">{$category_move}</a></span>
+                            </div>
+
+                            <!--<div class="section" module="board_function_14">
+                                &lt;!&ndash;@css(/css/module/board/function.css)&ndash;&gt;
+                                <span class="gColumn">{$board_function_selectbox}</span>
+                                <span class="gColumn">
+                                    <a href="#none" class="btnNormal sizeS" onclick="{$action_article_move}">{$article_move}</a>
+                                    <a href="#none" class="btnNormal sizeS" onclick="{$action_article_copy}">{$article_copy}</a>
+                                </span>
+                                <span class="ec-base-help">{$board_function_help|replace:*,}</span>
+                            </div>-->
+                            <!-- // Admin only -->
+
+                        </div>
+                    </div>
+                </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+$(function () {
+    var boardTitle = $.trim($('.page-top-nav-wrap h6').text()).toLowerCase();
+
+    if (!boardTitle) return;
+
+    $('.menu li').removeClass('on');
+
+    $('.menu li a').each(function () {
+        var menuText = $.trim($(this).text()).toLowerCase();
+
+        if (menuText === boardTitle) {
+            $(this).parent('li').addClass('on');
+        }
+    });
+});
+</script>

@@ -1,0 +1,36 @@
+<!--@layout(/layout/basic/layout.html)-->
+<!--@css(/ogam/css/myshop.css)-->
+<!--@js(/ogam/js/myshop.js)-->
+<div class="myshopArea" data-type="return">
+    <div class="titleArea titleArea--myshop">
+        <h2>반품신청</h2>
+    </div>
+    <div module="Myshop_OrderHistoryApplyReturn">
+
+        <!--@css(/css/module/myshop/orderHistoryApplyReturn.css)-->
+        <!--
+            $isRuleBasedAddrForm = T
+        -->
+        <div class="order">
+            <div class="order__number">
+                <span class="date" title="주문일자">{$order_date_ymd}</span>
+                <span class="number" title="주문번호">({$order_id})</span>
+            </div>
+        	<div class="{$product_no_receiver_display|display}">
+                <!--@import(/ogam/html/myshopapply/myshop_apply_prd.html)-->
+            </div>
+        </div>
+        <!--
+        <div class="txtWarn">주문상품 전체 반품인 경우, 사은품은 자동적으로 반품 신청됩니다.</div>
+-->
+
+        <!--@import(/ogam/html/myshopapply/myshop_reason.html)-->
+        <!--@import(/ogam/html/myshopapply/myshop_add_item.html)-->
+        <!--@import(/ogam/html/myshopapply/myshop_pickuplist.html)-->
+        <!--@import(/ogam/html/myshopapply/myshop_pickupdetail.html)-->
+        <!--@import(/ogam/html/myshopapply/myshop_shipfee.html)-->
+        {$form.is_new_cs_form}
+        <!--@import(/ogam/html/myshopapply/myshop_refund.html)-->
+        <!--@import(/ogam/html/myshopapply/myshop_btn.html)-->
+    </div>
+</div>

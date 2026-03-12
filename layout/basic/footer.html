@@ -1,0 +1,209 @@
+<div class="bottom-nav" ez-module="bottom-navigation" data-ez="module-0w5oap2-1">
+    <ul class="bottom-nav__tabBar">
+        <!--li><button type="button" class="btnNav eNavFold"><i aria-hidden="true" class="icon icoNav"></i>네비게이션</button></li-->
+        <!--li><button type="button" class="btnSearch eSearch">--@import(/svg/icon-search.html)--검색</button></li-->
+        <li><a href="/"><span><!--@import(/SkinImg/svg/home.html)--></span><span>홈</span></a></li>
+        <li><a href="/myshop/wish_list.html"><span><!--@import(/SkinImg/svg/wish.html)--></span><span>찜</span></a></li>
+        <li><a href="/product/recent_view_product.html"><span><!--@import(/SkinImg/svg/recent.html)--></span><span>히스토리</span></a></li>
+        <li module="Layout_stateLogon"><a href="/order/basket.html"><span><!--@import(/svg/icon-cart.html)--></span><span class="count {$basket_count_display|display} {$basket_count_display_class}"><span class="{$basket_count_class}">{$basket_count}</span></span><span>장바구니</span></a></li>
+        <li module="Layout_stateLogoff"><a href="/order/basket.html"><span><!--@import(/svg/icon-cart.html)--></span><span class="count {$basket_count_display|display} {$basket_count_display_class}"><span class="{$basket_count_class}">{$basket_count}</span></span><span>장바구니</span></a></li>
+        <li><a href="/myshop/index.html"><span><!--@import(/SkinImg/svg/mypage.html)--></span><span>MY</span></a></li>
+    </ul>
+    <div class="bottom-nav__top displaynone">
+        <a href="#wrap" title="화면 최상단으로 이동하기"><!--@import(/svg/icon-quick-arrow.html)--></a>
+    </div>
+</div>
+<div class="footer_margin" data-ez="module-05wkwru-1" data-ez-module="user-defined/1" data-ez-name="USER DEFINED" data-ez-type="plain"></div>
+<div class="floating" data-ez="module-1ffzr61-1" data-ez-module="user-defined/1" data-ez-type="plain">
+    <ul class="floating-list">
+        <li class="displaynone"><a><img src="/layout/basic/img/btn_arena.png" loading="lazy" ez-prevent="img"></a></li>
+        <!-- <li><a href="http://pf.kakao.com/_nxdxkKd/chat" target="_blank"><img src="/layout/basic/img/btn_kakao.png" loading="lazy" ez-prevent="img"></a></li> -->
+        <li><a href="https://www.arena.co.kr/board/consult/list.html" target="_blank"><img src="https://arenakorea1.cafe24.com/web/2026-renewal/img/floating-btn-consult.png" loading="lazy" ez-prevent="img"></a></li>
+        <li><a href="/product/recent_view_product.html"><img src="https://arenakorea1.cafe24.com/web/2026-renewal/img/floating-btn-recent.png" loading="lazy" ez-prevent="img"></a></li>
+        <li class="btn_top"><a><img src="https://arenakorea1.cafe24.com/web/2026-renewal/img/floating-btn-top.png" loading="lazy" ez-prevent="img"></a></li>
+    </ul>
+</div>
+<footer id="footer" data-ez="module-1uyv60x-1" class="renewal-footer">
+
+    <!-- 공통 호출 하단 스크립트 : 모든페이지 하단 설치 -->
+    <!-- PlayD TERA Log Script v1.2 -->
+    <script>
+        var _nSA=(function(_g,_s,_p,_d,_i,_h){ 
+            if(_i.wgc!=_g){_i.wgc=_g;_i.wrd=(new Date().getTime());
+                           var _sc=_d.createElement('script');_sc.src=_p+'//sas.techhub.co.kr/'+_s+'gc='+_g+'&rd='+_i.wrd;
+                           var _sm=_d.getElementsByTagName('script')[0];_sm.parentNode.insertBefore(_sc, _sm);} return _i;
+        })('TR10284906253','sa-w.js?',location.protocol,document,window._nSA||{},location.hostname);
+    </script>
+    <!-- LogAnalytics Script Install -->
+
+    <!-- 푸터 -->
+    <div class="footer-wrapper" module="Layout_footer">
+        <div class="footer-top">
+            <div class="dl-wrap">
+                <dl>
+                    <dt>고객센터</dt>
+                    <dd>{$phone}</dd>
+                </dl>
+                <dl>
+                    <dt>상담시간</dt>
+                    <dd>{$runtime}</dd>
+                </dl>
+                <dl>
+                    <dt>이메일</dt>
+                    <dd>{$email}</dd>
+                </dl>
+            </div>
+            <div class="list-wrap">
+                <ul>
+                    <li>
+                        <a href="/board/masters/list.html#tab1">아레나 마스터즈</a>
+                    </li>
+                    <li>
+                        <a href="/board/player/list.html#tab1">스폰서쉽</a>
+                    </li>
+                    
+                </ul>
+                <ul>
+                    <li>
+                        <a href="/shopinfo/brand_story.html#tab1">브랜드 소개</a>
+                    </li>
+                    <li>
+                        <a href="/board/store/list.html">매장 안내</a>
+                    </li>
+                    <li>
+                        <a href="/shopinfo/smart_pickup.html">스마트 픽업</a>
+                    </li>
+                    <li>
+                        <a href="/product/list.html?cate_no=381">커스터마이즈</a>
+                    </li>
+                    <li class="mo-li"><a href="/member/mall_agreement.html">이용약관</a></li>
+                    <li class="mo-li"><a href="https://arenacareer.ninehire.site" target="_blank">채용정보</a></li>
+                    <li class="mo-li"><a href="/member/privacy.html">개인정보처리방침</a></li>
+                    <li class="mo-li"><a href="/board/FAQ/list.html">고객센터</a></li>
+                </ul>
+                <ul>
+                    <li>
+                        <a href="/board/notice/list.html">공지사항</a>
+                    </li>
+                    <li>
+                        <a href="/board/FAQ/list.html">자주 묻는 질문</a>
+                    </li>
+                    <li>
+                        <a href="/board/consult/list.html">1:1 문의</a>
+                    </li>
+                    <li>
+                        <a href="/shopinfo/intro_membership.html">멤버십</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="address-wrap">
+                <ul data-ez-role="list" class="policy-list">
+
+                    <li data-ez-item="agreement"><a href="/member/mall_agreement.html">이용약관</a></li>
+                    <li data-ez-item="recruit"><a href="https://arenacareer.ninehire.site" target="_blank">채용정보</a></li>
+                    <li data-ez-item="privacy"><a href="/member/privacy.html">개인정보처리방침</a></li>
+                </ul>
+                <address>
+                    <div>
+                        <p><span>{$company_name}</span></p>
+                        <p><span>대표이사 : {$president_name}</span></p>
+                        <p class="last"><span>{$mall_addr1} {$mall_addr2}</span></p>
+                    </div>
+                    <div>
+                        <p><span>사업자등록번호 {$company_regno}</span></p>
+                        <p class="last"><span>통신판매업신고: {$network_regno}</span></p>
+                    </div>
+                    <div>
+                        <p class="last"><span>Copyright © ARENA ALL RIGHTS RESERVED.</span></p>
+                    </div>
+                </address>
+            </div>
+            <div class="mo-address-acc js-acc" data-acc="arena-biz">
+                <button type="button" class="acc-btn js-acc-btn" aria-expanded="false" aria-controls="arena-biz-panel">
+                    <span class="acc-title">아레나 사업자 정보</span>
+                    <span class="acc-ico" aria-hidden="true"></span>
+                </button>
+
+                <div id="arena-biz-panel" class="acc-panel js-acc-panel" role="region" aria-hidden="true">
+                    <div class="acc-panel-inner">
+                        <address class="mo-address-wrap">
+
+                                <p><span>{$company_name}</span></p>
+                                <p><span>대표이사 : {$president_name}</span></p>
+                                <p class="last"><span>{$mall_addr1} {$mall_addr2}</span></p>
+
+                                <p><span>사업자등록번호 {$company_regno}</span></p>
+                                <p class="last"><span>통신판매업신고: {$network_regno}</span></p>
+
+                                <p class="last"><span>Copyright © ARENA ALL RIGHTS RESERVED.</span></p>
+
+                        </address>
+                    </div>
+                </div>
+            </div>
+            <div class="sns-wrap">
+
+                <a class="facebook" href="https://www.facebook.com/arena.KOR" target="_blank"><img src="https://arenakorea1.cafe24.com/web/2026-renewal/img/footer-facebook.png" alt="footer logo" loading="lazy" ez-prevent="img"></a>
+                <a class="instagram" href="https://www.instagram.com/arena_korea/" target="_blank"><img src="https://arenakorea1.cafe24.com/web/2026-renewal/img/footer-insta.png" alt="footer logo" loading="lazy" ez-prevent="img"></a>
+                <a class="twitter" href="https://www.instagram.com/arena_korea/" target="_blank"><img src="https://arenakorea1.cafe24.com/web/2026-renewal/img/footer-x.png" alt="footer logo" loading="lazy" ez-prevent="img"></a>
+                <a class="youtube" href="https://www.youtube.com/@arenaKorea" target="_blank"><img src="https://arenakorea1.cafe24.com/web/2026-renewal/img/footer-youtube.png" alt="footer logo" loading="lazy" ez-prevent="img"></a>
+
+            </div>
+        </div>
+        <div class="mo-footer-logo"><img src="https://arenakorea1.cafe24.com/web/2026-renewal/img/footer-mo-logo.png" alt="footer logo" loading="lazy" ez-prevent="img"></div>
+    </div>
+
+
+
+
+</footer>
+<div data-ez-module="user-defined/1" data-ez-name="USER DEFINED" data-ez-type="plain" data-ez="module-10ynxos-1"><script>
+    (function () {
+        function setPanel(el, open) {
+            var btn = el.querySelector('.js-acc-btn');
+            var panel = el.querySelector('.js-acc-panel');
+
+            if (!btn || !panel) return;
+
+            if (open) {
+                el.classList.add('is-open');
+                btn.setAttribute('aria-expanded', 'true');
+                panel.setAttribute('aria-hidden', 'false');
+
+                // 현재 컨텐츠 높이만큼 열기
+                panel.style.maxHeight = panel.scrollHeight + 'px';
+            } else {
+                el.classList.remove('is-open');
+                btn.setAttribute('aria-expanded', 'false');
+                panel.setAttribute('aria-hidden', 'true');
+                panel.style.maxHeight = '0px';
+            }
+        }
+
+        // 초기화: 혹시 열린 상태로 시작하고 싶으면 data-open="true" 같은 속성 추가해서 처리 가능
+        document.querySelectorAll('.js-acc').forEach(function (acc) {
+            var btn = acc.querySelector('.js-acc-btn');
+            var panel = acc.querySelector('.js-acc-panel');
+            if (!btn || !panel) return;
+
+            // 기본 닫힘
+            setPanel(acc, false);
+
+            btn.addEventListener('click', function () {
+                var isOpen = acc.classList.contains('is-open');
+                setPanel(acc, !isOpen);
+            });
+        });
+
+        // 창 크기 변경 시 열린 패널 높이 재계산 (줄바꿈 등 대응)
+        window.addEventListener('resize', function () {
+            document.querySelectorAll('.js-acc.is-open').forEach(function (acc) {
+                var panel = acc.querySelector('.js-acc-panel');
+                if (panel) panel.style.maxHeight = panel.scrollHeight + 'px';
+            });
+        });
+    })();
+</script></div>
+<!--#ez="1/2"-->

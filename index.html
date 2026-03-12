@@ -1,0 +1,621 @@
+<!--@layout(/layout/basic/layout.html)-->
+
+<!-- CSS/JS -->
+<!--@js(/ogam/js/main.js)-->
+<!--@css(/ogam/css/main.css)-->
+<!-- //CSS/JS -->
+<style>
+    /*온라인 단독 아이콘*/
+    .og_base_product .prdList.swiper-wrapper [id^="anchorBoxId_"] .og_promotion_icons.online {
+        display: flex;
+    }
+
+    .og_base_product .prdList.swiper-wrapper [id^="anchorBoxId_"] .og_promotion_icons.online::after {
+        content: '';
+        display: inline-block;
+        width: 56px;
+        ;
+        height: 20px;
+        background-image: url("https://arenakorea1.cafe24.com/web/2026-renewal/img/online-only.png");
+        background-size: contain;
+        margin-top: 5px;
+
+    }
+
+    [data-section-type="newArrivals"] .og_base_product .prdList.swiper-wrapper [id^="anchorBoxId_"] .og_promotion_icons.online {
+        justify-content: center;
+    }
+</style>
+
+
+<div class="og_sub_container" data-page="main" data-ez="contents-1dn5cil-1" id="main-container">
+
+    <!-- 메인 비주얼 PC -->
+    <div class="main-visual-wrapper">
+        <div class="og_section og_main_section main-swiper main_og_main_visual " df-banner-code="main-visual--pc" hidden
+             data-section-type="mainVisual">
+            <div class>
+                <ul class>
+                    <li data-header-change-text-trigger-color="{#title}" class df-banner-clone><a href="{#href}"
+                                                                                                  target="{#target}">{#item}{#html}</a></li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="main-visual-progress">
+            <span class="bar"></span>
+        </div>
+        <div class="main-visual-pagination">
+            <span class="current">01</span>
+            <span class="sep"> - </span>
+            <span class="total">03</span>
+        </div>
+    </div>
+    <!-- //메인 비주얼 PC -->
+
+    <!-- 메인 비주얼 MO -->
+    <div class="main-visual-mo-wrapper">
+        <div class="og_section og_main_section main-swiper main_og_main_visual " df-banner-code="main-visual--mo" hidden
+             data-section-type="mainVisual">
+            <div class>
+                <ul class>
+                    <li data-header-change-text-trigger-color="{#title}" class df-banner-clone><a href="{#href}"
+                                                                                                  target="{#target}">{#item}{#html}</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="main-visual-mo-progress">
+            <span class="bar"></span>
+        </div>
+        <div class="main-visual-mo-pagination">
+            <span class="current">01</span>
+            <span class="sep"> - </span>
+            <span class="total">03</span>
+        </div>
+    </div>
+    <!-- //메인비주얼 MO -->
+
+
+    <!-- CIRCLE CATEGORY -->
+    <div class="circle_section" data-section-type="mainCategoryCircle">
+        <div class="circle_inner">
+            <!--
+Arena opens new dimensions <br class="pc-br" />and expanding <br class="mo-br" />the
+possibilities <br class="pc-br" />
+of <br class="mo-br" />performance.
+-->
+            <p>
+                Beyond The Water <br />
+                Expanding new dimensions <br />
+                of performance with Arena. <br /></p>
+
+            <div class="swiper main-category-swiper">
+                <ul class="swiper-wrapper circle-list" df-banner-code="main-category-circle">
+                    <li class="swiper-slide" df-banner-clone onclick="window.location.href='{#href}'">
+                        <a href="{#href}" target="{#target}">
+                            <i>{#item}</i>
+                            <p>{#title}</p>
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="swiper-button-next circle-swiper-button-next"></div>
+                <div class="swiper-button-prev circle-swiper-button-prev"></div>
+            </div>
+        </div>
+    </div>
+    <!-- CIRCLE CATEGORY -->
+
+
+
+
+    <!-- STYLES PICKS -->
+    <!-- 렌더링전까지 hidden처리 -->
+    <div class="style-picks-section hidden">
+        <div class="style-picks-inner">
+            <div class="style-picks-container">
+                <div class="title-wrap">
+                    <h6>Style picks</h6>
+                </div>
+                <div module="product_listmain_41" class="og_base_product">
+
+                    <!--
+$count = 6
+-->
+                    <ul class="prdList grid4">
+                        <li id="anchorBoxId_{$product_no}" data-prd="{$product_no}" class="each_product">
+                            <!--@import(/ogam/html/prd/common_prd.html)-->
+                            <!--@import(/ogam/html/prd/product_ListItem.html)-->
+                        </li>
+                        <li id="anchorBoxId_{$product_no}" data-prd="{$product_no}" class="each_product">
+                            <!--@import(/ogam/html/prd/common_prd.html)-->
+                            <!--@import(/ogam/html/prd/product_ListItem.html)-->
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- STYLES PICKS -->
+
+
+    <!-- LOOK BOOK -->
+    <div class="lookbook-section">
+        <div class="lookbook-banner" df-banner-code="main-lookbook-pc">
+            <div df-banner-clone>
+                {#item}
+            </div>
+        </div>
+        <div class="lookbook-inner">
+            <div class="lookbook-container">
+                <div class="title-wrap">
+                    <div class="lookbook-banner-mo" df-banner-code="main-lookbook-mo">
+                        <div df-banner-clone>
+                            {#item}
+                        </div>
+                    </div>
+                    <div df-banner-code="main-lookbook-pc">
+                        <h6 df-banner-clone>
+                            {#html}
+                        </h6>
+                    </div>
+                    <a href="/board/style/list2.html">
+                        <span>더 탐색하기</span>
+                        <i></i>
+                    </a>
+                </div>
+                <div module="product_listmain_42" class="og_base_product">
+
+                    <!--
+$count = 4
+-->
+                    <ul class="prdList grid4">
+                        <li id="anchorBoxId_{$product_no}" data-prd="{$product_no}" class="each_product">
+                            <!--@import(/ogam/html/prd/common_prd.html)-->
+                            <!--@import(/ogam/html/prd/product_ListItem.html)-->
+                        </li>
+                        <li id="anchorBoxId_{$product_no}" data-prd="{$product_no}" class="each_product">
+                            <!--@import(/ogam/html/prd/common_prd.html)-->
+                            <!--@import(/ogam/html/prd/product_ListItem.html)-->
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- LOOK BOOK -->
+
+
+    <!-- TRENDING NOW -->
+    <div class="trending-section" data-section-type="mainTrendingNow">
+        <div class="trending-inner">
+            <div class="trending-container">
+
+
+                <div class="title-wrap">
+                    <h6>Trending Now</h6>
+                    <a href="/product/기획전/list.html">
+                        <span>더 탐색하기</span>
+                        <i></i>
+                    </a>
+                </div>
+                <div class="overflow-wrap">
+                    <ul class="trending-list" df-banner-code="main-trendingnow-2026--pc" hidden>
+                        <li class df-banner-clone onclick="window.location.href('{#href}')">
+                            <a href="{#href}" target="{#target}">
+                                <i>
+                                    {#item}
+                                </i>
+                                <div class="text-wrap">
+                                    {#title}
+                                    <span>더 탐색하기</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <a href="/product/기획전/list.html" class="mo-btn">
+                    <span>더 탐색하기</span>
+                    <i></i>
+                </a>
+            </div>
+
+        </div>
+    </div>
+    <!-- TRENDING NOW -->
+
+    <!-- SNAP -->
+    <div class="snap-section">
+        <div class="snap-inner">
+
+            <div class="title-wrap">
+                <h6>SNAP</h6>
+                <a href="/board/style/snap.html">
+                    <span>더 탐색하기</span>
+                    <i></i>
+                </a>
+            </div>
+
+            <div id="app-3cuniverse-snap" class="code_2602119gDE5R"></div>
+
+            <a href="/board/style/snap.html" class="mo-btn">
+                <span>더 탐색하기</span>
+                <i></i>
+            </a>
+        </div>
+    </div>
+    <!-- SNAP -->
+
+
+    <!-- MAGAZINE -->
+    <div class="magazine-section" data-section-type="mainMagazineSection">
+        <div class="magazine-inner">
+            <div class="magazine-container">
+                <div class="title-wrap">
+                    <h6>Magazine</h6>
+                    <a href="/board/catalog/13">
+                        <span>더 탐색하기</span>
+                        <i></i>
+                    </a>
+                </div>
+
+                <div class="overflow-wrap">
+                    <div module="Board_ListPackage_13">
+
+                        <div module="board_list_13">
+                            <!--
+$count = 3
+$login_page_url = /member/login.html
+$deny_access_url = /index.html
+-->
+                            <ul class="magazine-list">
+                                <li>
+                                    <a href="/board/gallery/read.html{$param_read}" class="imgLink">
+                                        <i><img src="{$img_src}"
+                                                onerror="this.src='http://img.echosting.cafe24.com/skin/base_ko_KR/board/@img_gallery.gif'"
+                                                alt="" /></i>
+                                        <div class="text-wrap">
+                                            <p class="subject">{$subject} </p>
+                                        </div>
+                                    </a>
+
+                                </li>
+                                <li>
+                                    <a href="/board/gallery/read.html{$param_read}" class="imgLink">
+                                        <i><img src="{$img_src}"
+                                                onerror="this.src='http://img.echosting.cafe24.com/skin/base_ko_KR/board/@img_gallery.gif'"
+                                                alt="" /></i>
+                                        <div class="text-wrap">
+                                            <p class="subject">{$subject} </p>
+                                        </div>
+                                    </a>
+
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+
+                <a href="/" class="mo-btn">
+                    <span>더 탐색하기</span>
+                    <i></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- MAGAZINE -->
+
+
+    <!-- VIDEO -->
+    <div class="video-section"><img src="https://arenakorea1.cafe24.com/web/2026-renewal/img/dummy-video.png" /></div>
+
+    <!-- VIDEO -->
+
+    <!-- BEYOND ARENA -->
+    <div class="beyond-section">
+        <h6>beyond the water, Arena</h6>
+        <div class="beyond-marquee">
+            <ul class="beyond-list" df-banner-code="main-beyond-2026--pc" hidden>
+                <li df-banner-clone>
+                    <i>
+                        {#item}
+                    </i>
+
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- BEYOND ARENA -->
+
+    <!-- GUIDE -->
+    <!--
+<div class="guide-section">
+<ul>
+<li>
+<a href="/">
+<div class="text-wrap">
+<h6>브랜드 소개</h6>
+<p>신소재·공학기술 연구로 개발된 혁신적인 기술력이 담긴 <br />
+지속가능한 시그니처 소재를 소개합니다.</p>
+</div>
+<i></i>
+</a>
+</li>
+<li>
+<a href="/">
+<div class="text-wrap">
+<h6>퍼포먼스 스윔 핏 가이드</h6>
+<p>
+아레나가 선보이는 대표적인 수영복 <br />
+퍼포먼스 스윔의 다양한 제품과 핏가이드를 소개합니다.
+</p>
+</div>
+<i></i>
+</a>
+</li>
+</ul>
+</div>
+-->
+    <!-- GUIDE -->
+
+
+
+
+
+
+
+    <script>
+        // 상세페이지 신규 아이콘 추가 코드
+        function addIcon() {
+            let listProduct = $(".prdList").children();
+
+            for (let i = 0; i < listProduct.length; i++) {
+                let productId = $(listProduct[i]).attr("id");
+                //요약설명에 아이콘
+                //$("#"+productId ).find(".promotion.og_promotion_icons").append($("#"+productId ).find($('[data-name="상품 요약설명"]').find('span > span')).html());
+                //$("#"+productId ).find($('[data-name="상품 요약설명"]').find('span > span')).html("");
+
+                // 각 제품의 .forAdd .forAddIcon 내의 span 요소를 가져옵니다.
+                let spans = $("#" + productId).find(".forAdd .forAddIcon > span");
+
+                // 각 span 요소를 순회하며 텍스트를 확인합니다.
+                let hasOnlineText = false;
+                spans.each(function () {
+                    let spanText = $(this).text().trim();
+                    let regex = /온라인\s*단독|온라인단독/;
+
+                    if (regex.test(spanText)) {
+                        hasOnlineText = true;
+                    }
+                });
+
+                // .promotion.og_promotion_icons 요소에 클래스를 추가합니다.
+                if (hasOnlineText) {
+                    $("#" + productId).find(".promotion.og_promotion_icons").addClass('online');
+                }
+            }
+        }
+        let intervalIcon = setInterval(addIcon, 1000);
+        setTimeout(function () {
+            clearInterval(intervalIcon)
+        }, 10000);
+
+
+        // 다른 카테고리 클릭 시 아이콘 추가시키는 함수
+        function addIcon2() {
+            setTimeout(function () {
+                let listProduct = $(".prdList").children();
+
+                for (let i = 0; i < listProduct.length; i++) {
+                    let productId = $(listProduct[i]).attr("id");
+                    //요약설명에 아이콘
+                    $("#" + productId).find(".promotion.og_promotion_icons").append($("#" + productId).find($('[data-name="상품 요약설명"]').find('span > span')).html());
+                    $("#" + productId).find($('[data-name="상품 요약설명"]').find('span > span')).html("");
+                }
+            }, 300);
+        }
+    </script>
+</div>
+<!-- //WEEKLY BEST -->
+
+
+
+
+
+
+
+
+<!--@define(cmc_log)-->
+
+<!-- 하단 삭제 금지, 삭제 시 상품 영역 정상동작 하지 않습니다. -->
+<div module="product_listnormal" class="ec-base-product og_base_product displaynone">
+    <!--
+$count = 1
+$cate_no=24
+$moreview = yes
+$basket_result = /product/add_basket.html
+$basket_option = /product/basket_option.html
+-->
+    <ul class="prdList grid4">
+        <li id="anchorBoxId_{$product_no}" data-prd="{$product_no}" class="each_product">
+            <!--@import(/ogam/html/prd/common_prd.html)-->
+            <!--@import(/ogam/html/prd/product_ListItem.html)-->
+        </li>
+        <li id="anchorBoxId_{$product_no}" data-prd="{$product_no}" class="each_product">
+            <!--@import(/ogam/html/prd/common_prd.html)-->
+            <!--@import(/ogam/html/prd/product_ListItem.html)-->
+        </li>
+    </ul>
+</div>
+<!-- //하단 삭제 금지, 삭제 시 상품 영역 정상동작 하지 않습니다. -->
+</div>
+<!--#ez="1/1"-->
+
+
+<script>
+    // 메인 배너 - 유튜브 관련 코드
+    function iframePosition() {
+        // name에 배너이름 입력, link에 연결하고자 하는 링크 입력
+        const links = [
+            {
+                name: 'youtube',
+                link: 'javascript:void(0)',
+            },
+            {
+                name: 'youtube2',
+                link: 'javascript:void(0)',
+            },
+        ]
+
+
+        // 배너 링크 연결하는 코드
+        const banners = document.querySelectorAll('.og_swiper > li');
+
+        banners.forEach(function (banner) {
+            const bannerName = banner.getAttribute('data-header-change-text-trigger-color');
+
+            links.forEach(function (element) {
+                if (element.name == bannerName) {
+                    const link = element.link;
+                    const a = banner.querySelector('a');
+                    a.href = `${link}`;
+                }
+            })
+        })
+
+
+        // 유튜브 영상 꽉 차게
+        const iframes = document.querySelectorAll('.og_swiper_container .swiper-slide a iframe');
+
+        iframes.forEach(function (iframe, index) {
+            iframe.style.position = `absolute`;
+            iframe.style.top = `0`;
+            iframe.style.pointerEvents = `none`;
+        })
+    }
+
+    iframePosition();
+    window.addEventListener('DOMContentLoaded', iframePosition);
+    window.addEventListener('readystatechange', iframePosition);
+    window.addEventListener('load', iframePosition);
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta data-filepathid="2226" id="recommend-redirect-to-app-stats">
+<script src="https://plusapp-manager.cafe24.com/js/front/recommend-redirect-to-app.js" defer></script>
+<!--@import(/apps/cafe24plusapp/marketing/recommend_install.html)-->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const marquee = document.querySelector('.beyond-section ul');
+        const items = marquee.children;
+
+
+        marquee.innerHTML += marquee.innerHTML;
+
+        let x = 0;
+        let speed = 1;
+
+        function animate() {
+            x -= speed;
+
+            const totalWidth = marquee.scrollWidth / 2;
+
+            if (Math.abs(x) >= totalWidth) {
+                x = 0;
+            }
+
+            marquee.style.transform = `translateX(${x}px)`;
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+    });
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const snapContainer = document.querySelector('#app-3cuniverse-snap');
+
+        if (snapContainer) {
+            const fixSnapLayout = () => {
+                const feeds = snapContainer.querySelectorAll('.snap_main_feed');
+                const slideTrack = snapContainer.querySelector('.snap_main_slide');
+
+                // 1. 슬라이더 트랙의 레이아웃이 깨지지 않게 방어
+                if (slideTrack) {
+                    slideTrack.style.display = 'flex';
+                    slideTrack.style.flexWrap = 'nowrap';
+                    slideTrack.style.overflow = 'hidden'; // 한꺼번에 출력되는 현상 방지
+                }
+
+                feeds.forEach(feed => {
+                    // 2. 높이를 auto로 밀어버리는 대신, aspect-ratio만 중요하게 다룸
+                    // 슬라이더가 부여한 width 값을 기준으로 3:4 높이가 자동 형성됩니다.
+                    if (feed.style.aspectRatio !== '3 / 4') {
+                        feed.style.setProperty('height', 'auto', 'important');
+
+                        // 슬라이더 내에서 아이템이 찌그러지거나 겹치지 않게 방어
+                        feed.style.setProperty('flex-shrink', '0', 'important');
+                        feed.style.setProperty('min-width', '0', 'important');
+                    }
+                });
+
+                // 3. 브라우저에 리사이즈 이벤트를 줘서 슬라이더가 위치를 재계산하게 함
+                window.dispatchEvent(new Event('resize'));
+            };
+
+            // 감시 로직 (라이브러리의 스타일 주입 방어)
+            const observer = new MutationObserver(() => {
+                fixSnapLayout();
+            });
+
+            observer.observe(snapContainer, {
+                childList: true,
+                subtree: true,
+                attributes: true,
+                attributeFilter: ['style']
+            });
+
+            // 초기 로드 대응을 위해 0.5초 뒤에 한 번 더 실행 (위젯 렌더링 시간 고려)
+            setTimeout(fixSnapLayout, 500);
+        }
+    });
+</script>
+
+<script>
+    $(document).ready(function () {
+
+        // 온라인 단독 아이콘
+        addOnlineIcon();
+        // 상세페이지 신규 아이콘 추가 코드
+
+        function addOnlineIcon() {
+            var promotionIconsContent = $(".prdDetail_infoBox .og_promotion_icons").html().trim();
+            var regex = /온라인\s*단독|온라인단독/;
+            if (regex.test(promotionIconsContent)) {
+                $(".prdDetail_infoBox .og_promotion_icons").addClass('online');
+            }
+        }
+
+    })
+</script>

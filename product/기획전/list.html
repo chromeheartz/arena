@@ -1,0 +1,155 @@
+<!--@layout(/layout/basic/layout.html)-->
+
+<!--@css(/ogam/css/prdproject.css)-->
+<!--@js(/ogam/js/prdproject.js)-->
+
+<!-- 
+카테고리 넘버 447일 경우 pc에서 다운로드 기능 사용할 수 있도록 세팅
+-->
+
+<style>
+    @media (min-width: 1367px) {
+        .cate447 .downloadBtn { z-index: 100; position: absolute; border-radius: 20px; cursor: pointer;}
+        .cate447 .downloadBtn1 {top: 56.28%; left: 32.5%; width: 19%; height: 1.6%;}
+        .cate447 .downloadBtn2 {top: 56.28%; right: 25.6%; width: 21%; height: 1.6%;}
+        .cate447 .downloadBtn a {width: 100%; height: 100%; display: block;}
+    }
+</style>
+
+
+
+<div class="project-detail-contents-wrapper">
+    <div class="project-detail-inner">
+        <div class="project-detail-container">
+
+            <div class="project-detail-wrap">
+                <div class="page-top-nav-wrap" module="board_title_8">
+                    <dl>
+                        <dt>홈<span>/</span></dt>
+                        <dd >기획전</dd>
+                    </dl>
+                    <h6>기획전</h6>
+                </div>
+
+                <div class="project-detail-contents">
+                    <!--
+                    main-trendingnow-2026--pc
+-->
+                    <div class="og_section og_main_section main_og_main_visual " df-banner-code="product-project--2026" hidden data-section-type="mainVisual">
+                        <div class>
+                            <ul class>
+                                <li data-header-change-text-trigger-color="{#title}" class df-banner-clone><a href="{#href}" target="{#target}">{#item}{#html}</a></li>
+                                
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            
+            
+
+        </div>
+    </div>
+</div>
+
+
+
+<!-- 기획전 카테고리 넘버가 642일 경우 패밀리 세일 페이지 노출 -->
+<!--@import(/product/family_sale.html)-->
+
+<script>
+    // 기획전 카테고리 넘버가 447일 경우 클래스 추가
+    function checkDownload()
+    {
+        const url = document.location.href;
+        const categoryNo = url.split('cate_no=')[1];
+        const top = document.querySelector('.og_sub_container');
+        const btn = document.querySelector('.downloadBtn.custom');
+        console.log("checkDownload categoryNo: ", categoryNo);
+        if(categoryNo == 447)
+        {
+            top.classList.add('cate447');
+        }
+    }
+
+    checkDownload();
+
+    let winSize = window.innerWidth;
+    setTimeout(function(){
+        let mobVideo = document.querySelector('.og_project_imgs');	
+        if(winSize < 1368) {
+            console.log(mobVideo);
+            mobVideo.classList.add('forMob');
+        }
+    },1000);
+
+    let memberId;
+    document.addEventListener('DOMContentLoaded', function() {
+        memberCheck();
+
+        let interval = setInterval(memberCheck, 100);
+        function memberCheck(){
+            // (1) 카페24 함수 상태값 체크
+            if(CAPP_ASYNC_METHODS.STATUS === 'complete') {
+                // (2) 로그인 여부 체크
+                if( CAPP_ASYNC_METHODS.IS_LOGIN ){
+                    // (3) ID 체크  
+                    if ( CAPP_ASYNC_METHODS.member.__sMemberId ) {
+                        memberId = CAPP_ASYNC_METHODS.member.__sMemberId;
+                        console.log("memberId: ", memberId);
+                        clearInterval(interval);     
+                    } else {
+                        // 로그인 상태인데 id 없으면 계속 불러오기
+                    }
+                } else {
+                    // 비로그인이면 id 체크 리셋
+                    clearInterval(interval);            
+                }
+            }
+        }
+
+        const targetImg1 = document.querySelector('[data-page="prdProject"] .og_project_imgs img[alt="checkLogin1"]');
+
+        if (targetImg1) {
+            targetImg1.style.cursor = "pointer"; // 사용자에게 클릭 가능하다는 힌트를 줍니다
+            targetImg1.addEventListener("click", function () {
+                checkLogin1();
+            });
+        }
+
+        const targetImg2 = document.querySelector('[data-page="prdProject"] .og_project_imgs img[alt="checkLogin2"]');
+
+        if (targetImg2) {
+            targetImg2.style.cursor = "pointer"; // 사용자에게 클릭 가능하다는 힌트를 줍니다
+            targetImg2.addEventListener("click", function () {
+                checkLogin2();
+            });
+        }
+    });
+
+    function checkLogin1() {
+        // 2025 마스터즈 대회 요강 다운로드
+        if(memberId) {
+            window.location.href = 'https://withgone.cafe24.com/web/file/성인부[다이빙] 참가신청서.zip';
+        }
+        else {
+            alert("로그인이 필요합니다.");
+        }
+    }
+
+    function checkLogin2() {
+        // 참가 신청서 다운로드
+        window.location.href = 'https://withgone.cafe24.com/web/file/성인부[다이빙] 참가신청서.zip';
+    }
+</script>
+
+
+<!-- 배너매니저 스크립트 코드 -->
+<style>[df-banner-code][hidden] { display:none !important }</style>
+<script>
+if (!document.getElementById('dfbm-script-30333')){
+  var dfbm_src = '/web/upload/appfiles/ZaReJam3QiELznoZeGGkMG/d835870fa77f5f3cbbc26a0e1eee35d3.js';
+  document.write('<script id="dfbm-script-30333" src="' + dfbm_src + '?v=' + Date.now() + '"><\/script>');
+}
+</script>

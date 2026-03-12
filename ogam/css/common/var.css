@@ -1,0 +1,106 @@
+:root{
+    --fs-xxsmall: 11px;
+    --fs-xsmall: 12px;
+    --fs-xsmall-sub: 13px;
+    --fs-small: 14px;
+    --fs-small-sub: 15px;
+    --fs-base: 16px;
+    --fs-medium: 18px;
+    --fs-large: 20px;
+    --fs-xlarge: 24px;
+    --fs-xxlarge: 28px;
+
+    --fw-light : 300;
+    --fw-base: 400;
+    --fw-medium: 500;
+    --fw-bold: 700;
+
+
+    --ff-eng : 'SUIT';
+    --ff-kor : 'SUIT';
+    --ff-point: 'Montserrat';
+
+    --ff-type1: 'SUIT','Montserrat', Arial,"Apple SD Gothic Neo","맑은 고딕","malgun gothic","돋움","dotum",sans-serif;
+    --ff-type2: "Montserrat","SUIT",Arial,"Apple SD Gothic Neo","맑은 고딕","malgun gothic","돋움","dotum",sans-serif;
+
+
+
+    --lh-min: 1;
+    --lh-narrow: 1.2;
+    --lh-base : 1.5;
+    --lh-wide : 2;
+
+    --color-black-base : #000;
+    --color-black-base-fixed: #000;
+
+    --color-black2-base: #424242;
+    --color-black2-base-fixed: #424242;
+
+    --color-white-base: #fff;
+    --color-white-base-fixed: #fff;
+
+    --color-blue-base: #009fe3;
+    --color-blue-base-fixed: #009fe3;
+
+    --color-gray1-base: #888;
+    --color-gray1-base-fixed: #888;
+
+    --color-gray3-base: #d9d9d9;
+    --color-gray3-base-fixed: #d9d9d9;
+
+    --color-gray4-base: #aeaeae;
+    --color-gray4-base-fixed: #aeaeae;
+
+    --color-gray5-base: #eaeaea;
+    --color-gray5-base-fixed: #eaeaea;
+
+    --color-red-base: #F53535;
+    --color-red-base-fixed: #F53535;
+
+
+--color-bg1-base : #F6F6F6;
+    --color-bg1-base-fixed: #f4f4f4;
+
+    --z-index-important: 9999;
+    --z-index-highest: 1001;
+    --z-index-higher : 100;
+    --z-index-high : 10;
+    --z-index-base: 1;
+    --z-index-low: -1;
+    --z-index-lower: -10;
+    --z-index-lowest: -100;
+    --z-index-hidden: -9999;
+
+
+
+    --colorchip-khaki: #5D7242;
+    --colorchip-green: #00A337;
+    --colorchip-mint: #96E4BD;
+    --colorchip-lime: #DEEC4A;
+    --colorchip-navy: #001350;
+    --colorchip-blue: #173BD1;
+    --colorchip-skyblue: #51B1FF;
+    --colorchip-jade: #006089;
+
+    --colorchip-wine: #7E0000;
+    --colorchip-red: #F51515;
+    --colorchip-pink: #FF528C;
+    --colorchip-lightpink: #FFADC1;
+    --colorchip-brown: #5F372B;
+    --colorchip-mocha: #C4ACA4;
+    --colorchip-beige: #EEE0CB;
+
+    --colorchip-ivory: #FAFAEB;
+    --colorchip-white: #FFFFFF;
+    --colorchip-lightgray: #5D7242;
+    --colorchip-gray: #DADADA;
+    --colorchip-black: #000000;
+
+    --colorchip-orange: #F46E00;
+    --colorchip-yellow: #FFD912;
+    --colorchip-pupple: #4A148C;
+    --colorchip-lightpupple: #C2ADFC;
+    --colorchip-pinkyellow: linear-gradient(180deg, #FFFB5B -12.5%, #F06292 100%);
+    --colorchip-rainbow: linear-gradient(180deg, #FDB9E5 0%, #1D53D1 100%);
+
+}

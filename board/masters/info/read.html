@@ -1,0 +1,140 @@
+<!--@layout(/layout/basic/layout.html)-->
+<!--@js(/ogam/js/board.js)-->
+<!--@css(/ogam/css/board.css)-->
+
+<div class="renewal-list-wrapper">
+    <div class="renewal-inner">
+        <div class="renewal-container">
+            <div class="sub-side-menu">
+                <div class="menu-wrapper">
+                    <div class="menu-wrap">
+                        <div class="subTitle">
+                            <h3>아레나 마스터즈</h3>
+                        </div>
+                        <ul class="menu">
+                            <li><a href="/board/masters/list.html">대회 소개</a></li>
+                            <li class="on"><a href="/board/masters/infoList.html">대회 안내사항</a></li>
+                            <li><a href="/board/masters/qnaList.html">대회 Q&A</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="renewal-contents-wrapper renewal-board-detail-contents-wrapper">
+
+
+
+                <div class="page-top-nav-wrap">
+                    <dl>
+                        <dt>홈<span>/</span>아레나 마스터즈<span>/</span></dt>
+                        <dd>
+                            대회 안내사항
+                            <i class="mo-arrow"><img src="https://arenakorea1.cafe24.com/web/2026-renewal/img/grey-down-arrow.png" alt="grey down arrow" /></i>
+                        </dd>
+                    </dl>
+                    <h6>대회 안내사항</h6>
+
+                    <ul class="mo-dropdown-list">
+                        <li><a href="/board/masters/list.html">대회 소개</a></li>
+                        <li class="on"><a href="/board/masters/infoList.html">대회 안내사항</a></li>
+                        <li><a href="/board/masters/qnaList.html">대회 Q&A</a></li>
+                    </ul>
+
+                </div>
+
+
+
+                <div class="section board-section read_board_type1" module="board_ReadPackage_1">
+                    <!--css(/css/module/board/readPackage_1.css)-->
+                    <!--css(/css/module/board/boardPackage.css)-->
+                    <div module="board_title_1" class="displaynone">
+                        <!--        <div class="path">-->
+                        <!--            <span>현재 위치</span>-->
+                        <!--            <ol>-->
+                        <!--                <li><a href="/">홈</a></li>-->
+                        <!--                <li><a href="/myshop/index.html">마이쇼핑</a></li>-->
+                        <!--                <li title="현재 위치"><strong>{$board_name}</strong></li>-->
+                        <!--            </ol>-->
+                        <!--        </div>-->
+
+                        <div class="titleArea">
+                            <h2>{$board_title}</h2>
+                        </div>
+                    </div>
+
+                    <div module="Board_Read_1">
+                        <!--
+$login_page_url = /member/login.html
+$deny_access_url = /board/notice/list.html
+-->
+                        <div class="ec-base-table typeWrite renewal-board-detail-user-table">
+                            <table border="1">
+                                <colgroup module="board_listheader_1">
+                                    <col style="width:90px;"/>
+                                    <col style="width:auto;" class="{$config.use_date|display}"/>
+                                </colgroup>
+                                <tbody>
+
+                                    <tr class="category">
+                                        <td>[{$category_name}]</td>
+                                    </tr>
+                                    <tr class="title">
+                                        <td colspan="3">{$subject}</td>
+                                    </tr>
+                                    <tr class="{$config.use_date|display} date">
+                                        <td colspan="3">
+                                            <div class="date-user-wrap">
+                                                <div class="user-wrap">
+
+                                                    {$write_date}
+
+                                                </div>
+
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="view">
+                                        <td colspan="4">
+                                            <div class="detail">{$content}{$content_image}</div>
+                                        </td>
+                                    </tr>
+                                    <tr class="attach {$config.use_attach|display} displaynone" >
+                                        <th scope="row">첨부파일</th>
+                                        <td colspan="3">{$attach_file}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- <div class="ec-base-button gBottom">
+<span class="gLeft">
+<span class="{$config.is_admin|display}">
+<a href="#none" onclick="{$action_post}" class="btnNormalFix sizeM admin {$config.is_post|display}">{$admin_publish_message}</a>
+<a href="#none" onclick="{$action_post}"
+class="btnNormalFix sizeM admin {$config.not_post|display}">{$not_publish_message}</a>
+<a href="#none" onclick="{$action_spam}" class="btnNormalFix sizeM {$is_global_display|display}">스팸신고</a>
+<a href="#none" onclick="{$action_spam_cancle}"
+class="btnNormalFix sizeM {$is_global_display|display}">스팸해제</a>
+<a href="#none" onclick="{$action_delete}" class="btnNormalFix sizeM {$delete_button_auth|display}">삭제</a>
+<a href="/board/notice/modify.html{$param_modify}"
+class="btnNormalFix sizeM {$modify_button_auth|display}">수정</a>
+</span>
+</span>
+</div> -->
+                        <div class="renewal-btn-wrap">
+                            <a href="/board/masters/infoList.html" class="grey-btn">목록</a>
+                            <a href="/board/notice/reply.html{$param_reply}" class="black-btn {$reply_button_auth|display}">답변쓰기</a>
+                        </div>
+
+                      
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+</div>
+

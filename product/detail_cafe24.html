@@ -1,0 +1,135 @@
+<!--@layout(/layout/basic/layout_cafe24.html)-->
+
+<!--@css(/css/module/product/detail.css)-->
+<!--@js(/js/module/product/detail.js)-->
+<!--@css(/ogam/css/prddetail.css)-->
+<!--@js(/ogam/js/prddetail.js)-->
+
+<!-- RecoPick 메타 태그 20230629 -->
+<div style="display:none" module="product_detail">
+<meta property="recopick:title" content="{$name}">
+<meta property="recopick:image" content="https:{$medium_img}">
+<meta property="recopick:price" content="{$product_price}" />
+<meta property="recopick:price:currency" content="KRW" />
+<meta property="recopick:sale_price" content="{$product_sale_price}">
+<meta property="recopick:sale_price:currency" content="KRW">
+</div>
+<!-- RecoPick 메타 태그 -->
+
+<div class="og_sub_container" data-page="prdDetail">
+    <!--div class="section path" module="product_headcategory" data-ez-module="product-head-breadcrumb/1">
+        <span>현재 위치</span>
+        <ol>
+            <li><a href="/">홈</a></li>
+            <li class="{$disp_cate_1|display}"><a href="{$link_product_list_1}">{$name_1}</a></li>
+            <li class="{$disp_cate_2|display}"><a href="{$link_product_list_2}">{$name_2}</a></li>
+            <li class="{$disp_cate_3|display}"><a href="{$link_product_list_3}">{$name_3}</a></li>
+            <li class="{$disp_cate_4|display}"><strong><a href="{$link_product_list_4}">{$name_4}</a></strong></li>
+        </ol>
+    </div>
+    <div class="titleArea display_tablet_only" data-ez-module="product-detail-head-title-mobile/1">
+        <h2>상품상세 정보</h2>
+    </div-->
+    <div class="section" module="product_detail">
+        <!--
+            $coupon_download_page = /coupon/coupon_productdetail.html
+        -->
+        <div class="detailArea">
+            <div class="imgArea" module="product_image">
+                <!--@import(/ogam/html/prddetail/prdDetail_imageArea.html)-->
+                <!--@import(/coupon/coupon_productdetail.html)-->
+                <!--@import(/ogam/html/prddetail/prdDetail_additional_info.html)-->
+            </div>
+            <div class="infoArea og_sticky">
+                <div class="infoArea_inner">
+                    <!--@import(/ogam/html/prddetail/prdDetail_headingArea.html)-->
+                    <!--@import(/ogam/html/prddetail/prdDetail_optionArea.html)-->
+                </div>
+            </div>
+        </div>
+
+
+
+<!--        <div module="">-->
+<!--            <div class="relation og_inner">-->
+<!--                <div class="relation_title">추천 스타일</div>-->
+<!--                <div module="product_listmain_16" class="ec-base-product og_base_product">-->
+<!--                    &lt;!&ndash;-->
+<!--                    $count = 4-->
+<!--                    $moreview = yes-->
+<!--                    $basket_result = /product/add_basket.html-->
+<!--                    $basket_option = /product/basket_option.html-->
+<!--                    &ndash;&gt;-->
+<!--                    <ul class="prdList grid4" data-ogswipe-name="relation_prd">-->
+<!--                        <li id="anchorBoxId_{$product_no}" data-prd="{$product_no}" class="each_product">-->
+<!--                            &lt;!&ndash;@import(/ogam/html/prd/common_prd.html)&ndash;&gt;-->
+<!--                            &lt;!&ndash;@import(/ogam/html/prd/product_ListItem.html)&ndash;&gt;-->
+<!--                        </li>-->
+<!--                        <li id="anchorBoxId_{$product_no}" data-prd="{$product_no}" class="each_product">-->
+<!--                            &lt;!&ndash;@import(/ogam/html/prd/common_prd.html)&ndash;&gt;-->
+<!--                            &lt;!&ndash;@import(/ogam/html/prd/product_ListItem.html)&ndash;&gt;-->
+<!--                        </li>-->
+<!--                    </ul>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>&lt;!&ndash; //product_relation &ndash;&gt;-->
+
+
+        <div module="product_relation">
+            <div class="relation og_inner">
+                <div class="relation_title">관련 스타일</div>
+                <div module="product_relationlist" class="ec-base-product og_base_product">
+                    <ul class="prdList grid4" data-ogswipe-name="relation_prd2">
+                        <li id="anchorBoxId_{$product_no}" data-prd="{$product_no}" class="each_product">
+                            <!--@import(/ogam/html/prd/relation_prd.html)-->
+                        </li>
+                        <li id="anchorBoxId_{$product_no}" data-prd="{$product_no}" class="each_product">
+                            <!--@import(/ogam/html/prd/relation_prd.html)-->
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div><!-- //product_relation -->
+
+        <div module="product_action" class="ec-base-button gFixed" id="orderFixArea">
+            <button type="button" class="{$wishlist_display|display}" onclick="{$action_wishlist}" id="actionWish">
+                <!--@import(/SkinImg/svg/wish.html)-->
+            </button>
+            <div class="ec-base-button gColumn {$action_display|display}">
+                <button type="button" class="btnNormal sizeM actionCart {$basket_display|display}" id="actionCart_check">장바구니</button>
+                <a href="#none" class="btnSubmit sizeM {$buy_display|display}" id="actionBuy_check">
+                    <span id="{$btn_buy_mobile_id}">바로구매</span>
+                    <span class="{$btn_reserve_class|display}" id="{$btn_reserve_mobile_id}">예약주문</span>
+                    <span id="{$btn_regular_delivery_id}" class="{$btn_regular_delivery|display}">정기배송</span>
+                </a>
+            </div>
+            <div class="ec-base-button gColumn {$action_soldout_display|display}">
+                <button type="button" class="btnSubmit sizeM {$soldout_display|display}">SOLD OUT</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--@import(/ogam/html/common/stock_layer.html)-->
+
+<!--@define(cmc_log)-->
+
+
+<!-- Recopick 상세하단PC 스크립트 -->
+<div id="recopick_widget_yT9boyir" data-widget_id="yT9boyir" class="og_pc_view" style="margin-top: 100px">
+    <script>
+        (function(w,n){w[n]=w[n]||function(){(w[n].q=w[n].q||[]).push(arguments)};}(window, 'recoPick'));
+        recoPick('widget', 'recopick_widget_yT9boyir');
+    </script>
+</div>
+<!-- Recopick 상세하단PC 스크립트 -->
+<!-- Recopick 상세하단M 스크립트 -->
+<div id="recopick_widget_zT8ja9ia" data-widget_id="zT8ja9ia" class="og_tm_view" style="margin-top: 50px;">
+    <script>
+        (function(w,n){w[n]=w[n]||function(){(w[n].q=w[n].q||[]).push(arguments)};}(window, 'recoPick'));
+        recoPick('widget', 'recopick_widget_zT8ja9ia');
+    </script>
+</div>
+<!-- Recopick 상세하단M 스크립트 -->
+

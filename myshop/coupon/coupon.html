@@ -1,0 +1,279 @@
+<!--@layout(/layout/basic/layout.html)-->
+<!--@css(/ogam/css/myshop.css)-->
+
+
+<div module="layout_logincheck" data-ez="contents-04w3slw-1">
+    <!--
+$url = /member/login.html
+--></div>
+
+
+<div class="mypage-main-wrapper mypage-wrapper">
+    <div class="mypage-inner">
+        <div class="mypage-contents-wrapper">
+            <!--@import(/myshop/myshop_main.html)-->
+            <div
+                 class="myshopArea myshopMain flex-1 mypage-common-contents-wrapper"
+                 data-ez="contents-0z1plus-1"
+                 >
+                <div class="page-top-nav-wrap">
+                    <dl>
+                        <dt>홈<span>/</span>마이페이지<span>/</span></dt>
+                        <dd>
+                            쿠폰 내역
+                            <i class="mo-arrow"><img src="https://arenakorea1.cafe24.com/web/2026-renewal/img/grey-down-arrow.png" alt="grey down arrow" /></i>
+                        </dd>
+                    </dl>
+                    <h6>쿠폰 내역</h6>
+                    <ul class="mo-dropdown-list">
+                        <li>
+                            <a href="/myshop/order/list.html">주문내역조회</a>
+                        </li>
+                        <li>
+                            <a href="/myshop/mileage/historyList.html">적립금 내역</a>
+                        </li>
+                        <li class="on {$coupon_display|display}">
+                            <a href="/myshop/coupon/coupon.html">쿠폰 내역</a>
+                        </li>
+                        <li>
+                            <a href="/myshop/addr/list.html">배송 주소록 관리</a>
+                        </li>
+                        <li module="Myshop_InquiryDash">
+                            <a href="/board/inquiry/list.html">대량구매 문의 관리</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" onclick="manageOpen()">멤버십 관리</a>
+                        </li>
+                        <li>
+                            <a href="/product/recent_view_product.html">최근 본 상품</a>
+                        </li>
+                        <li>
+                            <a href="/myshop/wish_list.html">나의 위시리스트</a>
+                        </li>
+                        <li class="{$myLike_display|display}">
+                            <a href="{$myLike_href}">좋아요</a>
+                        </li>
+                        <li class="{$board_display|display}">
+                            <a href="/myshop/board_list.html">나의 게시글</a>
+                        </li>
+                        <li class="displaynone {$board_display|display}">
+                            <a href="/board/notice/list.html?board_no=1">고객센터</a>
+                        </li>
+                        <li>
+                            <a href="/member/modify.html">회원 정보 수정</a>
+                        </li>
+                        <li module="Layout_stateLogon">
+                            <a href="{$action_logout}">로그아웃</a>
+                        </li>
+                    </ul>
+                </div>
+
+
+
+                <div class="myshopArea mypage-coupon-contents mypage-common-contents-wrapper">
+
+                    <div class="{$serial_coupon_input_display|display}" module="myshop_CouponSerial">
+                        <!--@css(/css/module/myshop/couponSerial.css)-->
+                        <div class="coupon_serial">
+                            <!--
+$login_page_url = /member/login.html
+-->
+                            <fieldset><legend>쿠폰번호 등록</legend>
+                                <div class="coupon-wrapper">
+                                    <div class="coupon_wrap">
+                                        {$form.coupon_code|replace:placeholder, placeholder="쿠폰번호를 입력해주세요"}
+                                        <a href="#none" class="btn_black" onclick="{$action_coupon_submit}">등록</a>
+                                    </div>
+                                    <p class="txtInfo">쇼핑몰에서 발행한 쿠폰번호만 입력해주세요. (‘-’ 제외 10~35자)</p>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
+
+
+
+                    <div module="myshop_CouponList" class="coupon-list">
+                        <!--@js(/js/module/myshop/couponList.js)-->
+                        <!--
+$product_list_url = coupon_product_list.html
+-->
+                        <div class="coupon-list-wrap">
+                            <div class="{$display_coupon_list|display}">
+
+                                <dl class="coupon-accordion js-accordion">
+                                    <!-- 요약 영역 -->
+                                    <dt class="accordion-trigger">
+                                        <div class="coupon-title-wrap">
+                                            <span class="coupon-name">{$coupon_name}</span>
+                                            <div class="sub-text-wrap">
+                                                <span>{$coupon_use_date}</span>
+                                                <span>적립 {$coupon_mileage}</span>
+                                            </div>
+                                        </div>
+                                        <div class="arrow-wrap">
+                                            <span class="coupon-discount">
+                                                {$coupon_discount}
+                                                {$coupon_discount_max_benefit_price}
+                                            </span>
+                                            <i><img src="https://arenakorea1.cafe24.com/web/2026-renewal/img/renewal-down-arrow.png" alt="arrow" /></i>
+                                        </div>
+                                    </dt>
+
+                                    <!-- 상세 영역 -->
+                                    <dd class="accordion-panel">
+                                        <ul>
+
+                                            <li><strong>쿠폰번호</strong><span class="content">{$coupon_no}</span></li>
+                                            <li><strong>구매금액</strong><span class="content price-localestring">{$coupon_use_price}</span></li>
+                                            <li class="{$display_paymethod|display}"><strong>결제수단</strong><span class="content">{$coupon_paymethod}</span></li>
+                                            <li><strong>쿠폰혜택</strong><span class="content">{$coupon_benefit_result}</span></li>
+                                            <li><strong>할인액(률)</strong><span class="content">{$coupon_discount}</span></li>
+                                            <li><strong>적립액(률)</strong><span class="content">{$coupon_mileage}</span></li>
+                                            <li><strong>예치금</strong><span class="content">{$coupon_deposit}</span></li>
+                                            <li><strong>사용가능 기간</strong><span class="content">{$coupon_use_date}</span></li>
+                                            <li class="gButton"><strong>쿠폰적용상품</strong><span class="content">{$coupon_use_product_icon}</span></li>
+                                        </ul>
+                                    </dd>
+                                </dl>
+
+                                <dl class="coupon-accordion js-accordion">
+                                    <!-- 요약 영역 -->
+                                    <dt class="accordion-trigger">
+                                        <div class="coupon-title-wrap">
+                                            <span class="coupon-name">{$coupon_name}</span>
+                                            <div class="sub-text-wrap">
+                                                <span>{$coupon_use_date}</span>
+                                                <span>적립 {$coupon_mileage}</span>
+                                            </div>
+                                        </div>
+                                        <div class="arrow-wrap">
+                                            <span class="coupon-discount">
+                                                {$coupon_discount}
+                                                {$coupon_discount_max_benefit_price}
+                                            </span>
+                                            <i><img src="https://arenakorea1.cafe24.com/web/2026-renewal/img/renewal-down-arrow.png" alt="arrow" /></i>
+                                        </div>
+                                    </dt>
+
+                                    <!-- 상세 영역 -->
+                                    <dd class="accordion-panel">
+                                        <ul>
+                                            <li><strong>쿠폰 번호</strong><span class="content">{$coupon_no}</span></li>
+                                            <li><strong>구매 금액</strong><span class="content">{$coupon_use_price}</span></li>
+                                            <li class="{$display_paymethod|display}"><strong>결제 수단</strong><span class="content">{$coupon_paymethod}</span></li>
+                                            <li><strong>쿠폰 혜택</strong><span class="content">{$coupon_benefit_result}</span></li>
+                                            <li><strong>할인액(률)</strong><span class="content">{$coupon_discount}</span></li>
+                                            <li><strong>적립액(률)</strong><span class="content">{$coupon_mileage}</span></li>
+                                            <li><strong>예치금</strong><span class="content">{$coupon_deposit}</span></li>
+                                            <li><strong>사용가능 기간</strong><span class="content">{$coupon_use_date}</span></li>
+                                            <li class="gButton"><strong>쿠폰적용 상품</strong><span class="content">{$coupon_use_product_icon}</span></li>
+                                        </ul>
+                                    </dd>
+                                </dl>
+
+                            </div>
+
+                            <p class="empty-text {$display_no_coupon_list|display}">
+
+내역이 없습니다.
+                            </p>
+
+                            <!-- <div class="ec-base-button gCenter {$coupon_mileage_display|display}">
+<button type="button" class="btnStrong" onclick="COUPON.useCoupon()">사용하기</button>
+</div> -->
+                        </div>
+                    </div>
+
+                    <div module="myshop_CouponListPaging" class="ec-base-paginate typeList custom-pagination-wrap">
+                        <!--
+<a href="{$first_url}" class="first">첫 페이지</a>
+-->
+                        <a href="{$prev_url}">이전 페이지</a>
+                        <ol>
+                            <li><a href="{$url_query}" class="{$param_class}">{$n}</a></li>
+                            <li><a href="{$url_query}" class="{$param_class}">{$n}</a></li>
+                            <li><a href="{$url_query}" class="{$param_class}">{$n}</a></li>
+                        </ol>
+                        <a href="{$next_url}">다음 페이지</a>
+                        <!--
+<a href="{$last_url}" class="last">마지막 페이지</a>
+-->
+                    </div>
+
+                    <div class="help-text-wrap">
+                        <h3>쿠폰 이용 안내</h3>
+
+                        <ul>
+                            <li>쿠폰인증번호 등록하기에서 쇼핑몰에서 발행한 종이쿠폰/시리얼쿠폰/모바일쿠폰 등의 인증번호를 등록하시면 온라인쿠폰으로 발급되어 사용이 가능합니다.</li>
+                            <li>쿠폰은 주문 시 1회에 한해 적용되며, 1회 사용 시 재 사용이 불가능합니다.</li>
+                            <li>쿠폰은 적용 가능한 상품이 따로 적용되어 있는 경우 해당 상품 구매 시에만 사용이 가능합니다.</li>
+                            <li>특정한 종이쿠폰/시리얼쿠폰/모바일쿠폰의 경우 단 1회만 사용이 가능할 수 있습니다.</li>
+                            <li>기본 배송비 할인쿠폰은 배송구분이 '기본배송'인 상품에 부과된 배송비만 할인이 적용됩니다.</li>
+                            <li>전체 배송비 할인쿠폰은 배송구분이 '기본배송', '개별배송', '공급사배송'인 상품에 부과된 배송비 할인이 적용됩니다.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+    // accordion
+    document.querySelectorAll('.js-accordion').forEach(function (accordion) {
+        const trigger = accordion.querySelector('.accordion-trigger');
+        const panel = accordion.querySelector('.accordion-panel');
+
+        trigger.addEventListener('click', function () {
+            const isOpen = panel.classList.contains('is-open');
+
+            if (isOpen) {
+                panel.style.maxHeight = '0';
+                panel.classList.remove('is-open');
+                trigger.classList.remove('is-open'); // ⭐ 추가
+            } else {
+                panel.classList.add('is-open');
+                
+                panel.style.maxHeight = panel.scrollHeight + 'px';
+                trigger.classList.add('is-open'); // ⭐ 추가
+            }
+        });
+    });
+
+    // 문자열 추출
+    document.querySelectorAll('.js-coupon-date').forEach(function (el) {
+        const text = el.textContent;
+
+        if (text.includes('~')) {
+            const afterDate = text.split('~')[1].trim();
+            el.textContent = afterDate;
+        }
+    });
+        
+        
+         // 💰 금액 localeString 처리
+    document.querySelectorAll('.price-localestring').forEach(function (el) {
+        const text = el.textContent.trim();
+
+        // 숫자만 추출
+        const number = text.replace(/[^\d]/g, '');
+
+        if (number) {
+            el.textContent = Number(number).toLocaleString('ko-KR') + '원';
+        }
+    });
+
+
+});
+
+
+</script>
+
+

@@ -1,0 +1,389 @@
+<!--@layout(/layout/basic/layout.html)-->
+
+<!--@css(/ogam/css/prdlist.css)-->
+<!--@js(/ogam/js/prdlist.js)-->
+
+<!--@css(/ogam/css/search.css)-->
+<!--@js(/ogam/js/prdsearch.js)-->
+
+<style>
+    
+.dalue-navigation-tab-item.disabled {
+    pointer-events: none !important;
+    display: none  !important;
+}
+li:has(> .dalue-navigation-tab-item.disabled) {
+    display: none  !important;
+}
+    
+.dalue_filter-colorName > li > button.active {
+    background: url(https://arenakorea1.cafe24.com/web/2026-renewal/img/filter-color-check.png) no-repeat center 7px / contain;
+    background-size: 16px 12px;
+}
+.button-type {
+    display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+    flex-direction: row !important;
+}
+.button-type > li > button.active {
+    background: #00ACED !important;
+	color: #fff !important;
+	border-color: #00ACED !important;
+}
+    .og_base_product .prdList [id^="anchorBoxId_"] .thumb_img_box {
+    	padding-top:115%;
+    }
+</style>
+
+
+<div class="search-contents-wrapper">
+    <div class="search-top-wrap">
+        <div class="page-top-nav-wrap">
+            <dl>
+                <dt>홈<span>/</span></dt>
+                <dd>검색</dd>
+            </dl>
+            <h6>‘<span id="displayKeyword" class="empha dalue_query" style="font-weight: bold;"></span>' 검색 결과</h6>
+        </div>
+
+        <div class="section xans-product-searchdata">
+            <!--@css(/css/module/product/searchdata.css)-->
+            <form class="searchField" id="" action="/product/search.html" method="get">
+                <fieldset>
+                    <legend>상품검색</legend>
+                    <div class="searchInput"><input class="keyword" name="query" btn="dssInBtn"
+                                                    id="ec-product-searchdata-keyword" autocomplete="off" value="" type="text">
+                        <button id="dssInBtn">
+                            <!--import(/SkinImg/svg/search.html)-->
+                        </button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+
+    </div>
+    <div class="search-contents">
+
+        <div class="renewal-inner">
+
+        </div>
+
+        <div class="og_sub_container" data-page="prdSearch">
+            <div class="section path">
+                <span>현재 위치</span>
+                <ol>
+                    <li><a href="/">홈</a></li>
+                    <li title="현재 위치"><strong>상품검색</strong></li>
+
+                </ol>
+            </div>
+
+            <div id="dalueInfo"></div>
+            <div class="section titleArea displaynone">
+                <h2>상품 검색</h2>
+                <div class="displaynone">'<span id="displayKeyword" class="empha dalue_query"
+                                                style="font-weight: bold;"></span>'에 대한 <strong class="dalue_css_search_count">-</strong>개의 상품이 검색되었습니다.
+                </div>
+            </div>
+            <div class="normalpackage_box">
+                <div id="og_search_data_view" class="xans-element- xans-product xans-product-searchdata xans-record-"
+                     style="padding-top: 0px;">
+                    <div class="">
+
+
+                        <div class="og_inner filter-wrapper">
+                            <!--
+$compare_page = /product/compare.html
+-->
+                            <div class="og_function_area IF_noSearchResult" style="">
+                                <div class="og_function_box">
+                                    <div class="function" id="Product_ListMenu">
+                                        <p class="prdCount">검색결과 <strong class="txtEm dalue_css_search_count">-</strong>건</p>
+                                    </div>
+                                    <div class="sort">
+                                        <select id="" name="selArray" class="xans-element- xans-product xans-product-orderby"
+                                                onchange="dalueSearchSort('sortLabel1', this.value);">
+                                            <option value="" class="xans-record-" selected>관련도 순</option>
+                                            <option value="CREATED_DESC" class="xans-record-">신상품 순</option>
+                                            <option value="PRICE_ASC" class="xans-record-">낮은가격 순</option>
+                                            <option value="PRICE_DESC" class="xans-record-">높은가격 순</option>
+                                            <option value="PRODUCT_NAME_ASC" class="xans-record-">상품명 순</option>
+                                        </select>
+                                    </div>
+                                    <div class="og_curation_button">
+                                        <span>필터</span>
+                                        <!--@import(/SkinImg/svg/filter.html)-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div id="dalue_search_relativeTerm_view"
+                             class="xans-element- xans-product xans-product-hotkeyword keywordArea"
+                             style="overflow: hidden; overflow-x: auto; padding: 11px 14px; font-size: 12px; white-space: nowrap;  background: #fff; ">
+                            <strong class="heading"
+                                    style="border: 1px solid #cbcbcb; border-radius: 7px; padding-left: 8px; padding-right: 8px; font-size: var(--fs-small); font-weight: var(--fw-medium); line-height: var(--lh-base); color: var(--color-gray1-base);">연관검색어</strong>
+                            <ul class="list" id="dalue_search_relativeTerm_list"
+                                style="display: inline-block; vertical-align: top; margin: 0px 0px 0px 16px;">
+                            </ul>
+                        </div>
+
+                        <div class="renewal-search-wrap">
+
+                            <div class="xans-product-searchdata typePopup" id="ec-product-searchdata-form">
+                                <div id="dalue_search_filter" class="dalue_css_filter_wrap"
+                                     style="font-size: 12px !important; line-height: 1.5 !important; margin-right: 12px; position: unset; display: none;">
+                                    <div class="header">
+                                        <h2 class="title">필터</h2><button type="button"
+                                                                         class="btnClose2"><!--@import(/SkinImg/svg/close.html)--></button>
+                                    </div>
+                                    <div class="filter-list-wrapper">
+                                        <div class="filter-list">
+                                            <div class="dalue_css_filter_row"
+                                                 style="position: unset; padding-left: 5px; padding-right: 5px;">
+                                                <div class="dalue_css_column_content dalue_filter-class noscroll2"
+                                                     style="width: 100%; overflow-x: auto;">
+                                                </div>
+                                            </div>
+                                            <div class="dalue_css_filter_row"
+                                                 style="position: unset; padding-left: 5px; padding-right: 5px;">
+                                                <div class="dalue_css_column_content dalue_filter-sizeSuit  noscroll2 button-type"
+                                                     style="width: 100%; overflow-x: auto;">
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="dalue_css_filter_row"
+                                                 style="position: unset; padding-left: 5px; padding-right: 5px;">
+                                                <div class="dalue_css_column_content dalue_filter-sizeShoe noscroll2 button-type"
+                                                     style="width: 100%; overflow-x: auto;">
+                                                </div>
+                                            </div>
+                                            <div class="dalue_css_filter_row"
+                                                 style="position: unset; padding-left: 5px; padding-right: 5px;">
+                                                <div class="dalue_css_column_content dalue_filter-colorName noscroll2"
+                                                     style="width: 100%; overflow-x: auto; display: grid;
+                                        grid-template-columns: repeat(5, 24px);
+                                        grid-template-rows: repeat(auto-fill, 24px);
+                                        column-gap: 12px;
+                                        row-gap: 12px;">
+                                                </div>
+                                            </div>
+                                            <div class="dalue_css_filter_row"
+                                                 style="position: unset; padding-left: 5px; padding-right: 5px;">
+                                                <div class="dalue_css_column_content dalue_filter-type noscroll2"
+                                                     style="width: 100%; overflow-x: auto;">
+                                                </div>
+                                            </div>
+                                            <div class="dalue_css_filter_row"
+                                                 style="position: unset; padding-left: 5px; padding-right: 5px;">
+                                                <div class="dalue_css_column_content dalue_filter-delivery noscroll2"
+                                                     style="width: 100%; overflow-x: auto;">
+                                                </div>
+                                            </div>
+                                            <div class="dalue_css_filter_row"
+                                                 style="position: unset; padding-left: 5px; padding-right: 5px;">
+                                                <div class="dalue_css_column_content dalue_filter-price noscroll2"
+                                                     style="width: 100%; overflow-x: auto;">
+                                                </div>
+                                            </div>
+                                            <div class="dalue_css_filter_row"
+                                                 style="position: unset; padding-left: 5px; padding-right: 5px;">
+                                                <div class="dalue_css_column_content dalue_filter-backStyle noscroll2"
+                                                     style="width: 100%; overflow-x: auto;">
+                                                </div>
+                                            </div>
+                                            
+                                            <!--
+<div class="dalue_css_filter_row">
+<div class="dalue_css_column_content dalue_css_column_content_brand noscroll2"  style="width: 100%; overflow-x: auto;">
+</div>
+</div>
+-->
+                                            <!-- div class="dalue_css_filter_row" style="padding-left: 5px;">
+                                                <div class="dalue_css_column_content dalue_css_column_content_price noscroll2"
+                                                     style="width: 100%; overflow-x: auto;">
+
+                                                </div>
+                                            </div -->
+                                        </div>
+                                 
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="og_inner">
+
+
+                                <div class="xans-element- xans-search xans-search-result section ec-base-product og_base_product ">
+                                    <ul class="prdList grid3" id="dalue_search_list">
+                                    </ul>
+                                </div>
+
+                                <div style="width: 100%; text-align: center;">
+                                    <div class="pagination" style="display: inline-block;">
+                                        <div class="dalue_css_pagination" id="dalue_search_pagination">
+                                        </div>
+                                    </div>
+                                </div>
+
+								<div id="dss-empty" style="height: 1024px"></div>
+                                
+                            </div>
+                        </div>
+
+                        <div id="dalue_search_noResult" class="empty">
+                            <div class="empty-search-wrap">
+                                <h6>검색결과 <span>0</span>건</h6>
+
+                            </div>
+                            <div class="keyword-wrap">
+
+                            </div>
+<div class="crema-target-product-recommendation-cart-page" data-campaign-id=34><img src="https://target.cre.ma/arena.co.kr/target/loader_image?campaign_id=34" class="crema-target-loader-image" width=300 height=112 style="padding: 140px 0; margin: auto; display: block; box-sizing: content-box;" onerror="this.style.display = 'none';" /></div>
+                            
+                        </div>
+
+                    </div>
+                    
+                    
+                </div>
+
+                
+                <!-- 크리마 장바구니와 같은 상품 영역 추가 필요 -->
+
+                <!-- 하단 삭제 금지, 삭제 시 상품 영역 정상동작 하지 않습니다. -->
+                <div class="og_inner">
+                    <div module="product_listnormal" class="ec-base-product og_base_product displaynone">
+                        <!--
+$count = 1
+$cate_no = 46
+$moreview = yes
+$basket_result = /product/add_basket.html
+$basket_option = /product/basket_option.html
+-->
+                        <ul class="prdList grid4">
+                            <li id="anchorBoxId_{$product_no}" data-prd="{$product_no}" class="each_product">
+                                <!--@import(/ogam/html/prd/common_prd.html)-->
+                                <!--@import(/ogam/html/prd/product_ListItem.html)-->
+                            </li>
+                            <li id="anchorBoxId_{$product_no}" data-prd="{$product_no}" class="each_product">
+                                <!--@import(/ogam/html/prd/common_prd.html)-->
+                                <!--@import(/ogam/html/prd/product_ListItem.html)-->
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!------기존 더보기 버튼 코드--------------------------------------------------------------------------->
+
+                    <!-- <div module="product_listmore" class="more layout_hidden"> -->
+                    <!--@css(/css/module/product/productMore.css)-->
+                    <!-- <a href="#none" onclick="{$more_action}" class="btnMore">
+상품 더보기<div>(<span id="more_current_page">{$current_page}</span>/<span
+id="more_total_page">{$total_page}</span>)</div>
+</a>
+</div> -->
+
+                    <!------기존 더보기 버튼 코드--------------------------------------------------------------------------->
+                </div>
+            </div>
+        </div>
+<script>(function(i,s,o,g,r,a,m){if(s.getElementById(g)){return};a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.id=g;a.async=1;a.src=r;m.parentNode.insertBefore(a,m)})(window,document,"script","crema-jssdk","//widgets.cre.ma/arena.co.kr/init.js");</script>
+
+
+        <script>
+            $(()=>
+              {
+                // console.log('load',dalueSearchSort);
+                // dalueSearchSort('sortLabel1', 'CREATED_DESC');
+                // document.querySelector('[name=selArray]').value = 'CREATED_DESC';
+            })
+        </script>
+        <!-- //하단 삭제 금지, 삭제 시 상품 영역 정상동작 하지 않습니다. -->
+
+        <script>
+
+            $('.dalue_css_filter_row').each(function () {
+                const $row = $(this);
+                const $content = $row.find('.dalue_css_column_content');
+
+                // 타이틀 텍스트 결정
+                let title = '필터';
+                
+                // let filters = DalueSearch.options.tagFields.split('|');
+                var titles = {};
+                titles['delivery'] = '배송';
+                titles['colorName'] = '컬러';
+                titles['backStyle'] = '백스타일';
+                titles['sizeShoe'] = '신발 사이즈';
+                titles['sizeSuit'] = '사이즈';
+                titles['price'] = '가격';
+                titles['type'] = '종류';
+                titles['class'] = '카테고리'; 
+                
+                let keys = Object.keys(titles);
+                for(let nf = 0; nf < keys.length; nf++) {
+                    if($content.hasClass('dalue_filter-' + keys[nf])) {
+                       title = titles[keys[nf]];
+                       break;
+                    }
+                }
+                
+                if ($content.hasClass('dalue_css_column_content_category')) {
+                    title = '카테고리';
+                } else if ($content.hasClass('dalue_css_column_content_price')) {
+                    title = '가격';
+                }
+
+                // 이미 h6 있으면 중복 생성 방지
+                if ($row.find('.dalue_filter_title').length === 0) {
+                    const $title = $('<h6 class="dalue_filter_title"></h6>').text(title);
+                    $row.prepend($title);
+                }
+
+                const $title = $row.find('.dalue_filter_title');
+
+                // 초기 닫힘
+                $content.hide();
+                $row.removeClass('on');
+                $title.removeClass('on');
+
+                // 클릭 이벤트
+                $title.off('click.dalueAccordion').on('click.dalueAccordion', function () {
+                    const isOpen = $row.hasClass('on');
+
+                    // 다른 아코디언 닫기 (원하면 제거)
+                    $('.dalue_css_filter_row').removeClass('on');
+                    $('.dalue_filter_title').removeClass('on');
+                    $('.dalue_css_column_content').slideUp(200);
+
+                    if (!isOpen) {
+                        $row.addClass('on');
+                        $title.addClass('on');
+                        $content.slideDown(200);
+                    }
+                });
+            });
+
+
+            $(document).ready(function () {
+                var $recommendLinks = $('.xans-search-hotkeyword a');
+
+                var $keywordWrap = $('#dalue_search_noResult .keyword-wrap');
+
+                // 기존 내용 비우기
+                $keywordWrap.empty();
+
+                // 추천 검색어 a 태그 하나씩 복사해서 추가
+                $recommendLinks.each(function () {
+                    var $clone = $(this).clone();
+                    $keywordWrap.append($clone);
+                });
+            });
+
+        </script>
+
+
+    </div>
+</div>

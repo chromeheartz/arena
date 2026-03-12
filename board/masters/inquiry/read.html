@@ -1,0 +1,92 @@
+<!--@layout(/layout/basic/layout.html)-->
+<!--@js(/ogam/js/board.js)-->
+<!--@css(/ogam/css/board.css)-->
+<div class="section board-section read_board_type1" module="board_ReadPackage_1">
+    <!--css(/css/module/board/readPackage_1.css)-->
+    <!--css(/css/module/board/boardPackage.css)-->
+    <div module="board_title_1">
+        <!--        <div class="path">-->
+        <!--            <span>현재 위치</span>-->
+        <!--            <ol>-->
+        <!--                <li><a href="/">홈</a></li>-->
+        <!--                <li><a href="/myshop/index.html">마이쇼핑</a></li>-->
+        <!--                <li title="현재 위치"><strong>{$board_name}</strong></li>-->
+        <!--            </ol>-->
+        <!--        </div>-->
+
+        <div class="titleArea">
+            <h2>{$board_title}</h2>
+        </div>
+    </div>
+
+    <div module="Board_Read_1">
+        <!--
+            $login_page_url = /member/login.html
+            $deny_access_url = /board/notice/list.html
+        -->
+        <div class="ec-base-table typeWrite">
+            <table border="1">
+                <colgroup module="board_listheader_1">
+                    <col style="width:90px;"/>
+                    <col style="width:auto;" class="{$config.use_date|display}"/>
+                </colgroup>
+                <tbody>
+                <tr class="title">
+                    <th scope="row">제목</th>
+                    <td colspan="3">{$subject}</td>
+                </tr>
+                <tr class="writer">
+                    <th scope="row">작성자</th>
+                    <td colspan="3">{$writer}</td>
+                </tr>
+                <tr class="{$config.use_date|display} date">
+                    <th scope="row">작성일</th>
+                    <td colspan="3">{$write_date}</td>
+                </tr>
+                <tr class="view">
+                    <td colspan="4">
+                        <div class="detail">{$content}{$content_image}</div>
+                    </td>
+                </tr>
+                <tr class="attach {$config.use_attach|display}">
+                    <th scope="row">첨부파일</th>
+                    <td colspan="3">{$attach_file}</td>
+                </tr>
+                <tr class="{$delete_button_auth|display} {$config.use_password|display}">
+                    <th scope="row">비밀번호</th>
+                    <td colspan="3">{$form.password}<span class="ec-base-help txtInfo">삭제하려면 비밀번호를 입력하세요.</span></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="ec-base-button gBottom">
+            <span class="gLeft">
+                <span class="{$config.is_admin|display}">
+                    <a href="#none" onclick="{$action_post}" class="btnNormalFix sizeM admin {$config.is_post|display}">{$admin_publish_message}</a>
+                    <a href="#none" onclick="{$action_post}"
+                       class="btnNormalFix sizeM admin {$config.not_post|display}">{$not_publish_message}</a>
+                    <a href="#none" onclick="{$action_spam}" class="btnNormalFix sizeM {$is_global_display|display}">스팸신고</a>
+                    <a href="#none" onclick="{$action_spam_cancle}"
+                       class="btnNormalFix sizeM {$is_global_display|display}">스팸해제</a>
+                    <a href="#none" onclick="{$action_delete}" class="btnNormalFix sizeM {$delete_button_auth|display}">삭제</a>
+                    <a href="/board/notice/modify.html{$param_modify}"
+                       class="btnNormalFix sizeM {$modify_button_auth|display}">수정</a>
+                </span>
+            </span>
+            <span class="gRight gBreak">
+                <a href="{$link_board_list}" class="btn119">목록</a>
+                <a href="/board/notice/reply.html{$param_reply}" class="btn119 {$reply_button_auth|display}">답변쓰기</a>
+            </span>
+        </div>
+
+        <div class="board-aside">
+            <h2 class="h2-title">고객센터</h2>
+            <ul class="board-menu">
+                <li><a href="/board/notice/list.html?board_no=1" class="this">공지사항</a></li>
+                <li><a class="board-fna" href="/board/FAQ/list.html">자주 묻는 질문</a></li>
+                <li><a href="/board/consult/list.html" class="">1:1 문의</a></li>
+            </ul>
+        </div>
+    </div>
+</div>

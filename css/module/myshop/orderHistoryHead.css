@@ -1,0 +1,47 @@
+.xans-myshop-orderhistoryhead .stateSelect{margin-top: 20px}
+.xans-myshop-orderhistoryhead select { width:100%; }
+.xans-myshop-orderhistoryhead .period { display:flex; margin: 20px 0; }
+.xans-myshop-orderhistoryhead .period a{ border: 1px solid #E8E8E8; width: 63px; height: 34px;line-height: 34px; display: inline-block; box-sizing: border-box; text-align: center; color: #787878; margin-right: 8px; font-size: 14px}
+.xans-myshop-orderhistoryhead .period a.selected { color: #fff; background: #000; border-color: #000}
+
+.xans-myshop-orderhistoryhead .date .datepicker .start,
+.xans-myshop-orderhistoryhead .date .datepicker .end{ position: relative; border: 1px solid #E0E0E0; display: inline-block; width: 178px}
+.xans-myshop-orderhistoryhead .datepicker input{ border: none;}
+.xans-myshop-orderhistoryhead .datepicker input{ height: 42px; line-height: 40px; padding: 0 0 0 15px;}
+
+.xans-myshop-orderhistoryhead .datepicker .ui-datepicker-trigger {position: absolute; right: 15px; top: 50%; transform: translateY(-50%); width:20px; height:20px; vertical-align:middle; background:url("/SkinImg/img/icon_calender.svg") no-repeat; }
+.xans-myshop-orderhistoryhead .datepicker .ui-datepicker-trigger img { opacity:0.0001; }
+.xans-myshop-orderhistoryhead .date .btnSubmit { position:relative; width: calc(100% - 393px); margin-left: 10px; font-size: 14px; height: 44px; line-height: 20px}
+.xans-myshop-orderhistoryhead #order_search_btn { position:absolute; top:-1px; left:-1px; right:-1px; width:100%; height:100%; display:block; opacity:0.0001; }
+.txtList li{ position: relative; padding-left: 12px}
+.txtList li::before{position: absolute; display: block; content:""; width: 3px; height: 3px; border-radius: 50%; background-color: #949494; top: 9px; left: 0}
+.txtList li:not(:last-of-type){ margin-bottom: 8px}
+.txtList li a{ color: #000; text-decoration: underline}
+
+.past_cnt .xans-myshop-orderhistoryhead .form{ display: flex; align-items: center; width: 100%; margin-bottom: 20px}
+.past_cnt .xans-myshop-orderhistoryhead .form .stateSelect{ width: 80%;}
+.past_cnt .xans-myshop-orderhistoryhead .form .date{ width: 20%;}
+.past_cnt .xans-myshop-orderhistoryhead .form .date .btnSubmit{  margin-top: 20px; padding: 0; line-height: 44px; width: calc(100% - 10px)}
+
+/********************* Mobile / Tablet *********************/
+@media all and (max-width:1024px) {
+	.xans-myshop-orderhistoryhead { padding:0 16px; }
+}
+@media all and (max-width:768px) {
+	.xans-myshop-orderhistoryhead .date{ display: flex; flex-direction: column}
+	.xans-myshop-orderhistoryhead .date .datepicker .start, .xans-myshop-orderhistoryhead .date .datepicker .end{
+		width: calc(50% - 12px);
+	}
+	.xans-myshop-orderhistoryhead .date .btnSubmit{
+		width: 100%;
+		margin: 10px 0 0 0;
+	}
+	.past_cnt .xans-myshop-orderhistoryhead .form .stateSelect + .date .btnSubmit{
+		margin: 20px 0 0 10px
+	}
+	.xans-myshop-orderhistorylistpast{
+		margin-top: 50px;
+	}
+
+}
+

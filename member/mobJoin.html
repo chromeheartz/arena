@@ -1,0 +1,65 @@
+<!--@layout(/layout/basic/layout.html)-->
+
+<!--@css(/ogam/css/member.css)-->
+<!--@js(/ogam/js/member.js)-->
+<div class="og_member_inner" id="og_member_login">
+	<div class="section titleArea og_member_title">
+		<h2>회원가입</h2>
+        <p>아이디와 비밀번호 매번 입력하기 귀찮으시죠?<br>카카오/네이버로 간편하게 회원가입 하세요.</p>        
+	</div>
+	<div module="member_login" id="{$member_login_module_id}" class="">
+		<!--@css(/css/module/member/login.css)-->
+		<!--@js(/js/module/member/login.js)-->
+		<!--
+			$defaultReturnUrl = /index.html
+			$forbidIpUrl = member/adminFail.html
+		-->
+		<fieldset class="form">
+			<legend>회원로그인</legend>
+            <div class="login__sns">
+                <div class="wrap_sns_log">
+                    <a href="#none" class="btnKakao {$display_kakao|display}" onclick="{$kakao_func_login}">카카오 간편 회원가입</a>
+                    <a href="#none" class="btnNaver {$display_naver|display}" onclick="{$naver_func_login}">네이버 간편 회원가입</a>
+                    <a href="#none" class="btnApple {$display_apple|display}" onclick="{$apple_func_login}">Apple로 로그인</a>
+                    <!--					<a href="#none" class="btnFacebook {$display_facebook|display}" onclick="{$facebook_func_login}">페이스북 로그인</a>
+                    <a href="#none" class="btnLine {$display_line|display}" onclick="{$line_func_login}">라인 로그인</a>
+                    <a href="#none" class="btnGoogle {$display_google|display}" onclick="{$google_func_login}">구글 로그인</a>
+                    <a href="#none" class="btnApple {$display_apple|display}" onclick="{$apple_func_login}">Apple로 로그인</a>
+                    <a href="#none" class="yahoojp {$display_yahoojp|display}" onclick="{$yahoojp_func_login}">Yahoo! JAPAN<br>ID로 로그인</a>-->
+                </div>
+                <!--div class="sns_h">SNS 계정으로 로그인</div-->
+        	</div>
+            <div class="login_or">
+                <span></span>
+                <p>또는</p>
+            </div>
+            <a class="agreementBtn" href="/member/agreement.html">ID/PW 입력이 필요한 회원가입</a>
+            <div class="new_benefit_wrap">
+                <p class="title">회원 가입 시 혜택</p>
+                <ul>
+                	<li>
+                    	<img src="https://arenakorea1.cafe24.com/web/upload/benefit/01.png"><p>1만원 쿠폰 증정 <span>(5만원 이상 사용)</span></p>
+                    </li>
+                    
+                    <li>
+                    	<img src="https://arenakorea1.cafe24.com/web/upload/benefit/02.png"><p>매월 5% 쿠폰 증정</p>
+                    </li>
+                    
+                    <li>
+                    	<img src="https://arenakorea1.cafe24.com/web/upload/benefit/03.png"><p>SALE 상품 구매 가능</p>
+                    </li>
+                    
+                    <li>
+                    	<img src="https://arenakorea1.cafe24.com/web/upload/benefit/04.png"><p>등급별 즉시할인, 구매포인트 적립,<br>생일 쿠폰 혜택 증정</p>
+                    </li>
+                    
+                    <li>
+                    	<img src="https://arenakorea1.cafe24.com/web/upload/benefit/05.png"><p>리뷰 적립금 혜택 증정</p>
+                    </li>
+                </ul>
+            </div>
+            
+		</fieldset>
+	</div>
+
+</div>

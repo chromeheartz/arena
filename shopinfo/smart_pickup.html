@@ -1,0 +1,86 @@
+<!--@layout(/layout/basic/layout.html)-->
+<!--@js(/ogam/js/shopinfo.js)-->
+<!--@css(/ogam/css/shopinfo.css)-->
+<div class="intro_area smart_pickup">
+    <div class="top_area">
+        <div class="section titleArea">
+            <h2>스마트픽업</h2>
+            <p>오프라인 매장 픽업 서비스</p>
+        </div>
+        <div class="message_wrap">
+            <h2>아레나 공식 홈페이지 내에서 상품의 재고현황과 매장정보를 확인하세요!</h2>
+            <p>스마트 픽업 주문 후 오프라인 매장에 방문하여 주시기 바랍니다.</p>
+        </div>
+    </div>
+
+    <div class="middle_area">
+        <div class="pc_pickup">
+            <h2>PC 에서</h2>
+            <div class="cnt_wrap">
+                <div class="cnt_box">
+<!--                    <div class="left">-->
+<!--                        <em>1.</em>-->
+<!--                        <p>상품 라벨에서 스마트픽업 상품인지 확인</p>-->
+<!--                    </div>-->
+<!--                    <div class="right"><img src="/SkinImg/banner/pickup_step1.png" alt=""></div>-->
+                    <div class="step_img"><img src="/web/upload/pickup_PC.png" alt=""></div>
+                </div>
+                <div class="cnt_box">
+<!--                    <div class="left">-->
+<!--                        <em>2.</em>-->
+<!--                        <p>주문서에서 스마트 픽업 선택!<br> 원하시는 오프라인 매장을 선택해주세요~</p>-->
+<!--                    </div>-->
+<!--                    <div class="right"><img src="/SkinImg/banner/pickup_step22.png" alt=""></div>-->
+                    <div class="step_img"><img src="/SkinImg/banner/pickup_step222.png" alt=""></div>
+                </div>
+            </div>
+        </div>
+        <div class="mo_pickup">
+            <h2>모바일 앱에서</h2>
+            <div class="cnt_wrap">
+                <div class="controller"><span><i>1</i></span><span><i>2</i></span></div>
+                <div class="controller_wrap">
+                    <div class="controller_box">
+                        <h3>라벨 확인하기!</h3>
+                        <p>상품 라벨에서 스마트픽업 상품인지 확인</p>
+                    </div>
+                    <div class="controller_box">
+                        <h3>스토어픽업 선택!</h3>
+                        <p>원하시는 오프라인 매장을 선택해주세요!</p>
+                    </div>
+                </div>
+                <div class="img_box"><img src="/web/upload/pickup_mo1.png" /><img src="/SkinImg/banner/pickup_mo2.png" /></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="middle_box_plus">
+        <img src="../SkinImg/img/pc_pickup240403.jpg" alt="스마트 픽업 안내">
+    </div>
+
+    <div class="bottom_area">
+        <h2>아레나 스마트픽업 상품</h2>
+        <div class="cate_num">
+            <div module="product_listmain_13" class="ec-base-product og_base_product">
+                <!--
+                $count = 200
+                $moreview = yes
+                $basket_result = /product/add_basket.html
+                $basket_option = /product/basket_option.html
+                -->
+                <ul class="prdList grid4">
+                    <li id="anchorBoxId_{$product_no}" data-prd="{$product_no}" class="each_product">
+                        <!--@import(/ogam/html/prd/common_prd.html)-->
+                        <!--@import(/ogam/html/prd/product_ListItem.html)-->
+                    </li>
+                    <li id="anchorBoxId_{$product_no}" data-prd="{$product_no}" class="each_product">
+                        <!--@import(/ogam/html/prd/common_prd.html)-->
+                        <!--@import(/ogam/html/prd/product_ListItem.html)-->
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+

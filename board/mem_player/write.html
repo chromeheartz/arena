@@ -1,0 +1,128 @@
+
+<!--@layout(/layout/basic/layout.html)-->
+<!--@js(/ogam/js/board.js)-->
+<!--@css(/ogam/css/shopinfo.css)-->
+
+<div class="renewal-list-wrapper">
+    <div class="renewal-inner">
+        <div class="renewal-container">
+
+
+            <!-- 콘텐츠 -->
+            <div class="renewal-contents-wrapper board-contents-wrapper">
+                <div class="page-top-nav-wrap">
+                    <dl>
+                        <dt>홈<span>/</span></dt>
+                        <dd>스폰서쉽</dd>
+                    </dl>
+                    <h6>스폰서쉽</h6>
+                </div>
+
+                <div>
+                    <div class="supportContainer teamArenaWrap sponser-contents-wrapper">
+                        <div class="tab_wrap" webpb-banner-code="cffv" hidden>
+                            <ul class="tab">
+                                <li webpb-banner class="{#text_2}"><a href="{#link}" target="{#link_target}">{#text_1}</a></li>
+                            </ul>
+                        </div>
+                    </div
+
+
+                        <div class="memRegi mem_write player-write-contents">
+
+                        <div class="benefit-wrap">
+                            <div class="title-wrap">
+                                <h6>아레나 등록선수 혜택</h6>
+                                <p>아레나에 등록선수 인증을 하시면 수영선수만의 특별한 혜택을 누리실 수 있습니다.</p>
+                            </div>
+                            <ul>
+                                <li>
+                                    <span>01</span>
+                                    <p>당해 등록선수만 할인 혜택 제공</p>
+                                </li>
+                                <li>
+                                    <span>02</span>
+                                    <p>선수 혜택은 등록일로부터 12월 31일까지 유효 (이후 소멸)</p>
+                                </li>
+                                <li>
+                                    <span>03</span>
+                                    <p>신청 완료 시 등록선수 확인중 검토 후 인증 승인</p>
+                                </li>
+                                <li>
+                                    <span>04</span>
+                                    <p>혜택에 대한 자세한 내용은 승인 완료 후 마이페이지에서 확인 가능</p>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="form-wrap">
+
+                            <div class="title-wrap">
+                                <h6>정보입력 · 신청하기</h6>
+                            </div>
+                            <div class="Requirements">
+                                <div class="section board-section" module="board_writePackage_2">
+                                    <!--@css(/css/module/board/writePackage_9.css)-->
+                                    <!--@css(/css/module/board/boardPackage.css)-->
+
+                                    <div module="board_write_2">
+                                        <!--
+$login_page_url = /member/login.html
+$deny_access_url = /index.html
+-->
+
+                                        <div class="layout_hidden">{$form.subject}{$form.writer}</div>
+
+                                        <div class="member_name member-info">
+                                            <span>이름</span>
+                                        </div>
+
+                                        <div class="member_id member-info">
+                                            <span>아이디</span>
+                                        </div>
+
+                                        <div class="member_phone member-info">
+                                            <span>휴대폰</span>
+                                        </div>
+
+
+                                        <div class="regi_list1">
+                                            <span>등록선수 확인증 </span>
+                                            <span>{$form.attach_file}</span>
+                                        </div>
+                                        <div class="regi_list2">
+                                            <span>가족관계증명서</span>
+                                            <span class="text-file">
+                                                {$form.attach_file}
+                                                <p>등록선수 확인증/가족관계증명서를 첨부해 주세요.</p>
+                                            </span>
+                                        </div>
+
+                                        <div class="renewal-btn-wrap">
+                                            <!--<span class="{$config.is_admin|display}"><a href="#none" class="btnNormalFix sizeM" onclick="{$action_comment_admin}">관리자 답변보기</a></span>-->
+                                            <a href="/board/mem_player/register.html" class="grey-btn">취소</a>
+                                            <a href="#none" onclick="{$action_write}" class="black-btn">신청하기</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const tabItems = document.querySelectorAll('.tab li');
+        if (tabItems.length >= 2) {
+            tabItems[1].classList.add('on');
+        }
+    });
+</script>

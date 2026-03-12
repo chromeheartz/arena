@@ -1,0 +1,189 @@
+<!--@layout(/layout/basic/popup.html)-->
+<!--@css(/css/module/product/detail.css)-->
+<!--@css(/ogam/css/prddetail.css)-->
+<!--@js(/js/module/product/detail.js)-->
+<!--@js(/ogam/js/prddetail.js)-->
+
+<div class="basket-option-conents-wrapper">
+    <div module="Product_OptionSelectLayer" class="ec-base-layer typeSide og_sub_container">
+        <div class="header">
+            <h2>옵션 선택</h2>
+        </div>
+        <div class="content">
+            <div class="inner" module="product_detail">
+                <div class="information productNormal {$normal_product_display|display}">
+                    <div class="thumbnail">
+                        <img src="{$medium_img}" alt="{$seo_alt_tag}" onerror="this.src='//img.echosting.cafe24.com/thumb/img_product_small.gif';" id="{$image_id}" class="{$display_single_product|display}" />
+                    </div>
+                    <div class="description">
+                        <a href="{$link_product_detail}"><span class="icon"> {$soldout_icon} {$stock_icon} {$recommend_icon} {$new_icon} <!--{$product_icons}--> {$pickup_icon}</span></a>
+                        <div class="name-code-wrap">
+                            <p>{$ma_product_code}</p>
+                            <div class="name">{$name}</div>
+                        </div>
+                        <ul>
+                            <li class="{$strike_custom_price} {$custom_price_display|display}"><strong>{$product_custom}</strong></li>
+                            <li class="{$discount}"><strong class="txtEm">{$price}</strong>{$product_tax_type_text}</li>
+                            <li class="{$product_sale_price_display|display} txtEm"><strong>{$product_sale_price}</strong></li>
+                        </ul>
+                        <ul class="info">
+                            <li class="mileage">{$mileage_list}</li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="infoArea">
+                    <div class="infoArea_inner">
+                        <!--@import(/ogam/html/prddetail/prdDetail_optionArea.html)-->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="ec-base-button gColumn" module="product_action">
+            <a href="#none" class="btnNormal sizeM {$basket_display|display}" onclick="{$action_basket}">장바구니</a>
+            <!--
+            <a href="#none" class="btnSubmit sizeM {$buy_display|display}" onclick="{$action_buy}">
+                <span id="{$btn_buy_id}">바로구매</span>
+                <span id="{$btn_reserve_id}" class="{$btn_reserve_class|display}">예약주문하기</span>
+                <span id="{$btn_regular_delivery_id}" class="{$btn_regular_delivery|display}">정기배송 신청하기</span>
+            </a>
+-->
+            <!-- 네이버 체크아웃 구매 버튼 -->
+            <div id="NaverChk_Button"></div>
+            <div id="{$app_payment_button_box_id}"></div>
+        </div>
+        <a class="btnClose close" onclick='#'><img src="/SkinImg/img/icon_x.svg"></a>
+    </div>
+</div>
+
+
+<script>
+    (function () {
+
+        /* ==============================
+     $ 헬퍼 (OG$, EC$, jQuery 자동)
+  ============================== */
+        function get$() {
+            return window.OG$ || window.EC$ || window.jQuery;
+        }
+
+        /* ==============================
+     가격 파싱 (핵심 수정)
+     - 139000.00 → 139000
+     - 139,000 → 139000
+  ============================== */
+        function parsePrice(text) {
+            if (!text) return 0;
+            text = String(text).replace(/,/g, '').trim();
+
+            // 소수점 있으면 버림
+            if (text.indexOf('.') > -1) {
+                return Math.floor(Number(text));
+            }
+            return parseInt(text.replace(/[^0-9]/g, ''), 10);
+        }
+
+        function comma(n) {
+            return Number(n || 0).toLocaleString();
+        }
+
+        /* ==============================
+     가격 UL 변환
+  ============================== */
+        function buildOnce($, root) {
+            var $root = root ? $(root) : $(document);
+
+            $root.find('.information .description').each(function () {
+                var $desc = $(this);
+
+                // 이미 변환된 경우 스킵
+                if ($desc.find('ul.price_wrap').length) return;
+
+                // 가격 UL만 선택 (info UL 제외)
+                var $ul = $desc.children('ul').not('.info').first();
+                if (!$ul.length) return;
+
+                var $li = $ul.find('li');
+                if ($li.length < 3) return;
+
+                var originPrice = parsePrice($li.eq(0).find('strong').text());
+                var salePrice   = parsePrice($li.eq(2).find('strong').text());
+
+                if (!originPrice || !salePrice) return;
+
+                var html = '<ul class="price_wrap">';
+
+                // 할인 상태
+                if (salePrice < originPrice) {
+                    var ratio = Math.round((1 - (salePrice / originPrice)) * 100);
+
+                    html += ''
+                        + '<li class="discount_ratio og_prc_item">'
+                        +   '<span class="desc">' + ratio + '%</span>'
+                        + '</li>'
+                        + '<li class="og_prc_item">'
+                        +   '<span class="og_prc_promo desc">' + comma(salePrice) + '</span>'
+                        + '</li>'
+                        + '<li class="og_prc_item w_full discount">'
+                        +   '<span class="og_prc_sell desc">' + comma(originPrice) + '</span>'
+                        + '</li>';
+                } 
+                // 할인 아님
+                else {
+                    html += ''
+                        + '<li class="og_prc_item">'
+                        +   '<span class="og_prc_sell desc">' + comma(originPrice) + '</span>'
+                        + '</li>';
+                }
+
+                html += '</ul>';
+
+                // 기존 가격 UL 교체
+                $ul.replaceWith(html);
+            });
+        }
+
+        /* ==============================
+     부트스트랩
+  ============================== */
+        function boot() {
+            var $ = get$();
+            if (!$) {
+                setTimeout(boot, 100);
+                return;
+            }
+
+            // 최초 1회
+            buildOnce($);
+
+            // 옵션 레이어 DOM 변경 감시
+            var target =
+                document.querySelector('.basket-option-conents-wrapper') ||
+                document.body;
+
+            if (window.MutationObserver && target) {
+                var observer = new MutationObserver(function () {
+                    buildOnce($, target);
+                });
+                observer.observe(target, { childList: true, subtree: true });
+
+                // 초기 렌더 보정
+                setTimeout(function () { buildOnce($, target); }, 300);
+                setTimeout(function () { buildOnce($, target); }, 800);
+            } else {
+                // 구형 fallback
+                var t = setInterval(function () {
+                    buildOnce($);
+                }, 200);
+                setTimeout(function () {
+                    clearInterval(t);
+                }, 5000);
+            }
+        }
+
+        boot();
+
+    })();
+</script>

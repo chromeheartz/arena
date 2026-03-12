@@ -1,0 +1,747 @@
+#og_delivcompany_area_ori.hidden{ display: none}
+#container #contents > .section{ max-width: 960px; width: auto; padding: 0 60px;}
+
+.titleArea{ text-align: center; padding: 100px 0 50px; margin: 0 !important;}
+.titleArea h2 { font-size: 32px; color: #000000; line-height: 40px; }
+
+#mCafe24Order .txtRed{ color: #009FE3}
+
+/* radio */
+#mCafe24Order input[type="radio"] { position:relative; opacity:1; width:20px; height:20px; cursor:pointer; appearance:none; -webkit-appearance:none; -moz-appearance:none; border:0; background:url("/SkinImg/img/radio_off.svg") no-repeat 0 0; background-size:18px 18px; outline:0; }
+#mCafe24Order input:not(:disabled):checked[type="radio"] { background-image:url("/SkinImg/img/radio_on.svg"); -webkit-transition:.2s ease-out; transition:.2s ease-out; }
+#mCafe24Order input[type="radio"]::-ms-check { border:1px solid #000; background-color:#fff; }
+/* checkbox */
+#mCafe24Order input[type="checkbox"] {width:17px; height:17px; background:url('/SkinImg/img/checkbox_off.svg') no-repeat center !important;transition:none; background-size: 17px !important;}
+#mCafe24Order input:not(:disabled):checked[type="checkbox"] {background:url('/SkinImg/img/checkbox_on.svg') no-repeat center !important;transition:none;border: 1px solid #000;}
+
+/* 장바구니 */
+.bsk_wrap > .title{ padding-bottom: 12px; border-bottom: 1px solid #000000; }
+.bsk_wrap > .title h3{ font-size: 16px; font-weight: 700; line-height: 24px}
+.btnText { float: right; padding-bottom: 2px; text-underline-position: under;font-weight: 500}
+.bsk_wrap .ec-base-prdInfo .btnDelete{ top: 24px; right: 1px;}
+.bsk_wrap .ec-base-prdInfo .btnDelete:before,
+.bsk_wrap .ec-base-prdInfo .btnDelete:after{ background-color: #000000;}
+.bsk_wrap .ec-base-prdInfo .btnDelete:before{ height: 11px}
+.bsk_wrap .ec-base-prdInfo .btnDelete:after{ width: 11px; top: 9px; right: 9px}
+.xans-order-basketpackage .ec-base-prdInfo.gCheck .quantity .ec-base-qty a{ width: 36px; height: 36px}
+.xans-order-basketpackage .ec-base-prdInfo.gCheck .quantity .ec-base-qty{ width: auto !important;}
+.xans-order-basketpackage .ec-base-prdInfo.gCheck .quantity .ec-base-qty .up{ background: url('/SkinImg/img/icon_up.svg') no-repeat top 50% left 50%; }
+.xans-order-basketpackage .ec-base-prdInfo.gCheck .quantity .ec-base-qty .down{ background: url('/SkinImg/img/icon_down.svg') no-repeat top 50% left 50%;}
+
+
+/* 원터치주문서 커스텀 */
+#mCafe24Order{ margin: 0 auto;}
+#mCafe24Order .billingNshipping{ margin-top: 0}
+#mCafe24Order .ec-base-fold:not(:first-of-type){ margin-top: 80px !important}
+#mCafe24Order .ec-base-fold .contents{ padding-top: 20px;}
+#mCafe24Order .ec-base-table:last-child{ padding-bottom: 0}
+
+#ec-jigsaw-heading-benefit{ line-height: 24px}
+
+#mCafe24Order{ background: #ffffff;max-width: 560px; width: auto; border: none;}
+#mCafe24Order.typeHeader{ padding-top: 0}
+#mCafe24Order #ec-jigsaw-area-productdetail{ margin-top: 0}
+#mCafe24Order .ec-base-fold{ border-bottom: 0;}
+#mCafe24Order .ec-base-fold > .title{ padding: 0 32px 13px 0; border-bottom: 1px solid #000000;}
+#mCafe24Order .ec-base-fold > .title:after{ width: 6px;height: 6px;border: 1px solid #000000; right: 9px; border-right: 0; border-bottom: 0; top: 6px !important;}
+#mCafe24Order .title h2{ font-size: 16px; line-height: 24px; font-weight: 700}
+#mCafe24Order .title h3{ font-size: 14px;}
+#mCafe24Order .ec-base-table{ border-top: none; color: #000000; }
+#mCafe24Order .ec-base-table.typeWrite table,
+#mCafe24Order .ec-base-table.typeWrite tbody{display: block}
+#mCafe24Order .ec-base-table.typeWrite tbody colgroup{ display: none}
+#mCafe24Order .ec-base-table.typeWrite tbody tr{ display: flex; flex-direction: column; width: 100%;}
+#mCafe24Order .ec-base-table.typeWrite tbody tr:not(:first-of-type){ margin-top: 20px;}
+#mCafe24Order .ec-base-table.typeWrite tbody th,
+#mCafe24Order .ec-base-table.typeWrite tbody td{ background: none; border-bottom: none; display: block; font-size: 14px;font-weight: 500;width: 100%; max-width: 560px; padding: 0;}
+#mCafe24Order .ec-base-table.typeWrite tbody td{ margin-top: 8px;}
+#mCafe24Order input{ color: #000000; font-size: 14px; font-weight: 500; line-height: 20px;}
+#mCafe24Order input[type=text][readonly]{ background: none;}
+#mCafe24Order .ec-base-mail .mailAddress .directInput input{ padding: 16px 9px}
+#mCafe24Order input::placeholder{ color: #949494; font-size: 14px; line-height: 20px; font-weight: 500;}
+#mCafe24Order input[type="button"],
+#mCafe24Order input[type="text"],
+#mCafe24Order input[type="password"],
+#mCafe24Order input[type="tel"],
+#mCafe24Order input[type="image"],
+#mCafe24Order textarea,
+#mCafe24Order select { padding: 12px 25px 12px 12px; border-color: #E0E0E0; height: auto; line-height: initial}
+#mCafe24Order .ec-base-help{ font-size: 14px; line-height: 20px;color: #949494; font-weight: 500;}
+#mCafe24Order  span.ec-base-help,#mCafe24Order p.ec-base-help,#mCafe24Order ul.ec-base-help li{ background-image: none; margin: 0; color: #949494;}
+#mCafe24Order .ec-shop-ordererForm p.ec-base-help, #mCafe24O#mCafe24Order .ec-base-table .ec-address .ec-address-zipcoderder ul.ec-base-help li, #mCafe24Order ol.ec-base-help li{ padding: 10px 0}
+#mCafe24Order .icoRequired{ background-image: none; width: 4px; height: 4px; background-color: #009FE3; margin: -14px 0 0; border-radius: 50%}
+
+#mCafe24Order .ec-base-table .ec-address{ margin: 0}
+#mCafe24Order .ec-base-table .ec-address > li{ position: relative;padding: 0; line-height: 20px; margin-top: 8px}
+#mCafe24Order #ozipcode1, #mCafe24Order #rzipcode1, #mCafe24Order #fzipcode, #mCafe24Order #tax_request_zipcode{ width: 100%;}
+#mCafe24Order #ozipcode1{ width: 60%}
+#mCafe24Order .btnBasic{ width: 40%; margin-left: 8px; border: none; background-color: #000; color: #fff; height: 100%; line-height: 44px;}
+#mCafe24Order .ec-base-table .ec-address .ec-address-zipcode{ display: flex; align-items: center; justify-content: space-between;flex-wrap: wrap; margin-top: 8px;}
+#mCafe24Order .ec-base-table .ec-address .ec-address-zipcode .ec-base-label{ margin: 0}
+#mCafe24Order .ec-base-table .ec-address .ec-address-zipcode .btnBasic{ margin: 0 0 0 10px;}
+
+#ec-jigsaw-area-hopeShippingDate .segment, #ec-jigsaw-area-hopeShippingTime .segment, #mCafe24Order .ec-area-shipping-companies .segment{ padding: 0}
+
+#mCafe24Order .segment.ec-shippingInfo-sameaddr{ padding: 0; margin-top: 20px}
+#mCafe24Order input[type="radio"] + label{ font-size: 14px; margin: 0 24px 0 8px; color: #949494; font-weight: 500;}
+
+#mCafe24Order .segment.unique{ border-top: none; margin-top: 32px; padding: 0}
+#mCafe24Order .segment.unique div:first-of-type{ font-size: 14px; margin-bottom: 8px}
+#mCafe24Order #omessage_select, #mCafe24Order #fmessage_select, #mCafe24Order #ship_hope_time, #mCafe24Order #fship_hope_time, #mCafe24Order .xans-order-ordadd select, #mCafe24Order #bankaccount, #mCafe24Order #receiver_id_card_type{
+    padding: 12px 25px 12px 12px;
+}
+
+#mCafe24Order .pannelArea{ background: none;}
+#mCafe24Order .ec-orderform-NoMemberPasswdRow{ margin-top: 72px;}
+#mCafe24Order .ec-orderform-NoMemberPasswdRow .contents{ margin-top: 20px}
+
+#mCafe24Order .title{ padding: 0 0 12px 0; border-bottom: 1px solid #000000}
+#order_password,
+#order_password_confirm{margin-bottom: 10px}
+#mCafe24Order span.ec-base-help, #mCafe24Order p.ec-base-help, #mCafe24Order ul.ec-base-help li{padding: 0}
+
+#ec-jigsaw-area-additionalInput, #mCafe24Order .orderArea .totalPrice{ display: none;}
+
+#mCafe24Order #ec-jigsaw-area-orderProduct .contents{ padding-top: 0}
+#mCafe24Order .ec-base-prdInfo .thumbnail{ width: 110px; height: 147px; background: #F4F4F4; border: none;}
+#mCafe24Order .ec-base-prdInfo .thumbnail img{width: 100%;vertical-align: middle;height: 100%;object-fit: contain;}
+#mCafe24Order .orderArea .ec-base-prdInfo{ margin: 0; border: none;}
+#mCafe24Order .ec-base-prdInfo .description{ margin: 0; padding: 0}
+#mCafe24Order .ec-base-prdInfo .description .prdName{ font-weight: 500; margin: 5px 0 10px 0; pointer-events: none;}
+#mCafe24Order .ec-base-prdInfo .description .info{ margin: 0}
+#mCafe24Order .ec-base-prdInfo .description .info li{ color: #747474; font-weight: 500; margin-bottom: 10px;}
+#mCafe24Order .ec-base-prdInfo .description .info li *{line-height: 1;}
+#mCafe24Order .ec-base-prdInfo .description .proPrice{ font-size: 14px;}
+#mCafe24Order .ec-base-prdInfo .description .proPrice span{ font-weight: 500}
+#mCafe24Order .orderArea .totalPrice .title{ background: none;}
+#mCafe24Order #ec-jigsaw-area-payment .segment{ padding: 0;}
+#mCafe24Order .ec-base-table th,
+#mCafe24Order .ec-base-table td,
+#mCafe24Order .totalPay.paymentPrice{ background: none; border-bottom: none;}
+#mCafe24Order .totalPay{ padding: 0; font-size: 14px; font-weight: 500; background: none}
+#mCafe24Order #ec-jigsaw-area-payment .totalPay.paymentPrice .txtStrong{ font-size: 16px; font-weight: 700}
+#mCafe24Order .totalPay .heading{ font-size: 14px; color: #949494}
+#userStyle #mCafe24Order .txtEm, #userStyle #mCafe24Order .txtStrong{ color: #000; font-size: 14px; font-weight: 700}
+#mCafe24Order .segment .ec-base-table tbody th, #mCafe24Order .segment .ec-base-table tbody td{ font-size: 14px; font-weight: 500; padding: 0 0 16px 0 !important; height: auto}
+.ec-base-table.typeWrite .ec-address .ec-address-zipcode input[type="text"]{ flex: 1}
+
+/* 상품수령 */
+#mCafe24Order .ec-area-shipping-companies .segment .ec-base-label input[type="radio"]{ margin-right: 8px}
+#mCafe24Order .ec-area-shipping-companies .segment > span:not(#delivery_app_list){ margin-right: 24px;}
+#mCafe24Order .ec-area-shipping-companies .segment #delivery_app_list{ margin-right: 0}
+#mCafe24Order .ec-area-shipping-companies .segment > span label{ color: #000; font-size: 14px}
+#mCafe24Order .ec-area-shipping-companies .segment ul.ec-base-help{ padding-top: 16px; margin-bottom: 0}
+#mCafe24Order .ec-area-shipping-companies .segment ul.ec-base-help li,
+#userStyle #mCafe24Order .ec-area-shipping-companies .segment ul.ec-base-help li.txtEm{ color: #747474; font-weight: 400;}
+#mCafe24Order .ec-area-shipping-companies .segment ul.ec-base-help li:not(:first-of-type){ margin-top: 10px}
+#mCafe24Order .ec-area-shipping-companies .segment ul.ec-base-help li #deliv_company_price_custom_type{ margin-left: 103px}
+#mCafe24Order .ec-area-shipping-companies .segment ul.ec-base-help li #deliv_company_period_custom_type{ margin-left: 68px}
+
+
+
+/* 결제수단 */
+#mCafe24Order .payMethod{ margin-top: 0}
+#ec-jigsaw-area-paymethod .segment{ padding: 0 0 32px 0}
+#mCafe24Order .payMethod input[type="radio"] + label{ margin: 0; color: #000000; padding-bottom: 16px;}
+#mCafe24Order .payMethod > li.selected > .inner{ color: #000000; font-weight: 500; font-size: 14px;}
+#mCafe24Order .payMethod > li .inner > .ec-base-label{ text-align: center; }
+#mCafe24Order .payMethod > li .inner > .ec-base-label > label{ border: 1px solid #E0E0E0; font-size: 14px; font-weight: 400}
+#mCafe24Order .payMethod > li .inner > .ec-base-label:not(:first-of-type) > label{margin-top: 8px}
+#mCafe24Order .payMethod > li .inner > .ec-base-label > input:checked ~ label{ border: 1px solid #000; color: #000; font-weight: 500}
+#mCafe24Order .payMethod > li .inner > .ec-base-label:last-child{ border-bottom: none;}
+
+
+#mCafe24Order .ec-paymethod-input-detail{ padding: 0}
+#mCafe24Order .ec-paymethod-input-detail #payment_input_cash, #mCafe24Order .ec-paymethod-input-detail #payment_input_tcash, #mCafe24Order .ec-paymethod-input-detail #payment_input_icash{
+    background: none; border: none;
+}
+
+#mCafe24Order .ec-paymethod-input-detail .helpArea{ border: none; background: none;}
+#mCafe24Order .helpArea{ padding: 0}
+#mCafe24Order .helpArea .ec-base-help{ padding-bottom: 0}
+#mCafe24Order .ec-base-help{ font-weight: 400; font-size: 12px; line-height: 18px; color: #949494}
+#mCafe24Order .ec-paymethod-input-detail.onlyType .helpArea{ border-top: none; padding: 0}
+#mCafe24Order p.ec-base-help, #mCafe24Order ul.ec-base-help li, #mCafe24Order ol.ec-base-help li{ padding: 0}
+#mCafe24Order .ec-paymethod-input-detail .helpArea .ec-base-help.typeDash li:before{ top: 8px;}
+#mCafe24Order p.ec-base-help.typeDash:before, #mCafe24Order ul.ec-base-help.typeDash li:before, #mCafe24Order #mileage_use_area ul.ec-base-help li:before{ width: 3px; height: 3px; background-color: #949494; border-radius: 50%; display: inline-block;content: "";position: absolute;}
+#mCafe24Order .ec-paymethod-input-detail #payment_input_cash.ec-base-table.typeWrite th, #mCafe24Order .ec-paymethod-input-detail #payment_input_tcash.ec-base-table.typeWrite th, #mCafe24Order .ec-paymethod-input-detail #payment_input_icash.ec-base-table.typeWrite th,
+#mCafe24Order .ec-paymethod-input-detail #payment_input_cash.ec-base-table.typeWrite td, #mCafe24Order .ec-paymethod-input-detail #payment_input_tcash.ec-base-table.typeWrite td, #mCafe24Order .ec-paymethod-input-detail #payment_input_icash.ec-base-table.typeWrite td{ padding: 0 !important;}
+#mCafe24Order .ec-paymethod-input-detail #payment_input_tcash.ec-base-table.typeWrite th{ padding: 0; color: #000000}
+#mCafe24Order .ec-base-table.typeWrite#payment_input_tcash tbody tr:not(:first-of-type){ margin: 0}
+#mCafe24Order #payment_input_icash + .ec-base-table{padding-top: 0;}
+#mCafe24Order #flagEscrowIcashUse0 + label, #mCafe24Order #flagEscrowUse0 + label{ font-size: 14px; color: #949494; font-weight: 500;}
+
+#mCafe24Order .receiptWrap{ border-bottom: none; margin: 24px 0 0 0}
+#mCafe24Order .receiptWrap .receiptArea{ border: none; background: none; padding: 0}
+
+#mCafe24Order .receiptArea .title{ color: #000; padding: 0; border-bottom: none; font-size: 14px; margin-bottom: 16px}
+#mCafe24Order .ec-paymethod-input-detail #payment_input_icash.ec-base-table.typeWrite{ padding: 0}
+#mCafe24Order .ec-paymethod-input-detail #payment_input_icash.ec-base-table.typeWrite th{ color: #000000;}
+#mCafe24Order .ec-paymethod-input-detail #payment_input_tcash.ec-base-table.typeWrite td,
+#mCafe24Order .ec-paymethod-input-detail #payment_input_icash.ec-base-table.typeWrite td { padding: 0}
+
+#userStyle #mCafe24Order .txtEm, #userStyle #mCafe24Order .txtStrong{ font-weight: 500}
+#mCafe24Order .agreeArea .allAgree{display: flex; align-items: center; margin: 0; padding: 20px 0; border-bottom: 1px solid #E0E0E0; font-size: 14px; color: #000000; font-weight: 500}
+#mCafe24Order label{ min-height: auto; line-height: 20px; color: #000}
+#mCafe24Order .agreeArea .agreement .agree{ align-items: center; justify-content: flex-start;}
+#mCafe24Order .agreeArea .agreement .agree .check{flex: inherit;}
+#mCafe24Order .agreeArea .allAgree > label{ line-height: 20px; font-size: 14px;}
+#mCafe24Order .agreeArea .allAgree > label > strong,
+#mCafe24Order .agreeArea .agreement .agree .check > label{ font-size: 14px;}
+#mCafe24Order .agreeArea .agreement{ margin: 0; padding: 0}
+#mCafe24Order .agreeArea .agreement li{ padding: 15px 0 0 0; border-top: none;}
+#mCafe24Order .agreeArea .agreement .agree .check > input{ top: 5px;}
+#mCafe24Order .agreeArea .agreement .btnAgree{ margin: 0; background-size: 5px 8px; width: 20px; height: 20px; filter: brightness(0);margin-top:2px;}
+
+#ec-jigsaw-area-agreement{ margin: 80px 0 50px 0; border-top: 1px solid #000}
+
+#orderFixItem.ec-base-button.gFull{ text-align: center; *max-width: 244px; margin: 0 auto; max-width: 100%;}
+#ec-jigsaw-area-agreement.layout_hidden + #orderFixItem.ec-base-button.gFull{margin-top: 70px;}
+#userStyle #mCafe24Order .btnSubmit{ background-color: #009FE3 !important;border: none !important;font-size: 15px;font-weight: 500; /*width: 250px;*/ height: 51px; }
+#mCafe24Order .ec-base-button + .helpArea{display:none; background: none; padding: 16px 0}
+#mCafe24Order .ec-base-button + .helpArea li{ padding: 0 0 0 9px;}
+
+
+#mCafe24Order .ec-base-fold#ec-jigsaw-area-shippingInfo .contents{ padding-top: 0}
+#mCafe24Order .ec-base-fold.selected > .title#ec-jigsaw-title-shippingInfo{ border-bottom-color: #E0E0E0}
+#mCafe24Order .ec-base-fold.selected > .title#ec-jigsaw-title-shippingInfo.border_black{border-bottom-color: #000;}
+#mCafe24Order .ec-base-fold > .title#ec-jigsaw-title-shippingInfo{ border-bottom-color: #000}
+#mCafe24Order .ec-base-tab ul{ border-top: none;}
+#mCafe24Order .ec-base-tab a{ color: #747474; padding: 20px 0; font-size: 14px;}
+#mCafe24Order .ec-base-tab li{ background: #fff; border: 1px solid #E0E0E0}
+#mCafe24Order .ec-base-tab li:first-child{ border-left: 1px solid #E0E0E0}
+#mCafe24Order .ec-base-tab li.selected{ border-color: #000; color: #ffffff;}
+#mCafe24Order .ec-base-tab li.selected a{ background: #000; color: #ffffff}
+.tabCont table{ margin-top: 20px}
+
+#mCafe24Order .recentShipArea .recent{padding: 0; margin-top: 20px}
+#mCafe24Order .recentShipArea .segment{ padding: 0;}
+#mCafe24Order .recentShipArea .name{ font-size: 14px; color: #000000;}
+#ec-shop-deliveryInfoName{margin-left: 3px;}
+#ec-shop-deliveryInfoMainLabel,#ec-shop-deliveryInfoName{ font-weight: 700;}
+#ec-shippingInfo-recentAddress button#ec-shippingInfo-showRecentAddressList{ border-color: #000000; font-size: 13px; width: 105px; height: 44px;line-height: 42px}
+#mCafe24Order .recentShipArea .recent .address{ font-size: 14px; color: #949494}
+#mCafe24Order .recentShipArea .contact dd{ font-size: 14px; color: #949494}
+#mCafe24Order .shippingList .choice{margin-top: -35px;}
+#mCafe24Order .fRadio[type="radio"]{
+    position: relative;
+    opacity: 1;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: 0;
+    background-image: url(/SkinImg/img/radio_off.svg);
+    background-size: 100% auto;
+}
+#mCafe24Order .shippingList .choice .fRadio[type="radio"]:checked + input,
+#mCafe24Order .fRadio:not(:disabled):checked[type="radio"],
+#mCafe24Order .selected > .fRadio{ *background-image: none; background-image: url(/SkinImg/img/radio_on.svg);}
+#mCafe24Order .shippingList .description .address{line-height: var(--lh-base); color: #747474; font-size: var(--fs-small); margin-top: 6px !important;}
+#mCafe24Order .recentShipArea .recent + .sideRight,
+#mCafe24Order .shippingList + .sideRight{ right: 0;}
+#mCafe24Order .recentShipArea .recent + .sideRight{ top: -8px}
+#ec-shippingInfo-closeRecentAddressList:after, #ec-shippingInfo-closeRecentAddressList:before{ background-color: #000; width: 1px;}
+#ec-shippingInfo-closeRecentAddressList{ border: none !important;}
+#mCafe24Order .shippingList .button .btnText{ color: #000; font-size: var(--fs-small); line-height: var(--lh-base);}
+#mCafe24Order .segment.ec-shippingInfo-newAddress-setMain{ padding: 16px 0 0 0; display: flex; align-items: center}
+#mCafe24Order .shippingList li{ border-top: 1px solid #E8E8E8; border-botton: 1px solid #E8E8E8; }
+#mCafe24Order input[type="checkbox"] + label{ font-size: 14px; line-height: 20px}
+.ec-base-help br{ display: none}
+#mCafe24Order .discountDetail{ padding: 24px 0 0 0; text-align: left; border-bottom: none;}
+#mCafe24Order .discountDetail .heading{ font-size: 14px; font-weight: 500; color: #000000; line-height: 20px}
+#mCafe24Order .discountDetail .control{ position: relative; display: block;}
+#mCafe24Order .discountDetail .control .btnNormal{ position: absolute; bottom: 10px; right: 0; border-radius: 16px; border: none; background: #000; color: #fff; width: 93px; height: 32px; line-height: 32px; font-size: 12px;}
+#mCafe24Order .discountDetail .summary{ display: block; padding-left: 10px; font-size: 14px; color: #949494; font-weight: 500}
+#mCafe24Order .discountDetail .summary .txtEm{ color: #949494 !important;}
+#mCafe24Order .discountDetail .ec-base-help{ margin-top: 16px}
+#mCafe24Order .discountDetail .ec-base-help li{ position: relative;padding: 0 0 0 9px !important; font-size: 12px !important; color: #949494 !important; }
+#mCafe24Order .discountDetail .ec-base-help li:not(.ec-order-expand){ opacity: 1; height: auto}
+#mCafe24Order .discountDetail .ec-base-help{ background: none; padding: 0 !important;}
+#mCafe24Order #mileage_use_area ul.ec-base-help li:before{ top: 8px; left: 0}
+#mCafe24Order .discountDetail + .totalPay{ display: none}
+#mCafe24Order .segment .ec-base-table .price{ font-weight: 500}
+
+#mCafe24Order .discountDetail .control .inputTypeText{ color: #000000; text-align: left}
+#mCafe24Order .discountDetail:first-child{ padding: 0}
+#mCafe24Order .discountDetail .discountList .title{ display: flex; border-bottom: none}
+#mCafe24Order .discountDetail .discountList .contents{ display: block}
+#mCafe24Order .discountDetail .discountList .title .heading:after{ display: none;}
+#mCafe24Order .discountDetail .discountList .control{ border-bottom: none }
+#mCafe24Order .discountDetail .discountList .contents{ border-top: none}
+#mCafe24Order .discountDetail .discountList .contents ul li{ padding: 0 0 0 5px}
+#mCafe24Order #mileage_use_area .control .btnNormal{ bottom: 0; border-radius: 0; height: 44px}
+
+#mCafe24Order #ec-jigsaw-area-paymethod .payMethod .inner{ text-align: center}
+#mCafe24Order #ec-jigsaw-area-paymethod .payMethod > li.selected > .inner{margin-top: 20px; font-weight: var(--fw-bold);}
+#mCafe24Order #ec-jigsaw-area-paymethod .payMethod > li{ border-bottom: none; margin-bottom: 0; padding-bottom: 24px}
+#mCafe24Order #ec-jigsaw-area-paymethod .segment{ padding-bottom: 0}
+#mCafe24Order .payMethod > li.selected > .inner{ border-color: #000}
+#mCafe24Order #ec-jigsaw-area-paymethod li input{ margin-bottom: 0}
+#mCafe24Order #ec-jigsaw-area-paymethod input[type="radio"] + label{ padding-bottom: 0}
+#ec-jigsaw-area-paymethod .ec-paymethod-newArea{ padding-bottom: 12px !important;}
+#mCafe24Order #ec-jigsaw-area-paymethod .segment.saveArea{ border-top:  1px solid #DDDDDD;margin-top: 14px; padding: 24px 0 0 0}
+#ec-jigsaw-area-benefit .segment{ padding: 0}
+#ec-jigsaw-heading-benefit{ display: none;}
+
+input[name="addr_paymethod"] + label{ padding-bottom: 14px !important; }
+#mCafe24Order .segment .paymentList ul{ padding: 12px 0; margin-top: 0}
+
+
+
+/* 주문완료 */
+#userStyle.order_result .titleArea{
+    padding: 80px 0 50px !important;
+}
+#mCafe24Order .resultArea{ padding: 0; margin: 0}
+#mCafe24Order .resultArea .titleArea{ padding: 0}
+#mCafe24Order .resultArea .message{ background-image: none; font-size: 14px;text-align: center; color: #787878; padding: 8px 0 48px}
+
+#mCafe24Order .resultInfo{ border-top: none; margin: 0}
+
+#mCafe24Order.xans-order-result .ec-base-table.gCellNarrow tbody th,
+#mCafe24Order.xans-order-result .ec-base-table.gCellNarrow tbody td{ font-size: 14px; font-weight: 500}
+#mCafe24Order.xans-order-result .ec-base-table.gCellNarrow tbody th{ color: #949494}
+#mCafe24Order.xans-order-result .ec-base-table.gCellNarrow tbody td{ color: #000000;}
+
+#mCafe24Order.xans-order-result .pannelArea{ border: none; margin-top: 48px;}
+#mCafe24Order.xans-order-result .title{padding: 0;}
+#mCafe24Order.xans-order-result .title{ font-size: 16px; font-weight: 700; padding-bottom: 12px;}
+#mCafe24Order.xans-order-result .segment{ padding: 24px 0 0 0}
+#mCafe24Order.xans-order-result .segment > .ec-base-table.typeView{ margin: 0}
+#mCafe24Order.xans-order-result .xans-order-deliverylist .segment .ec-base-table tbody td, #mCafe24Order.xans-order-result .segment .ec-base-table .address_form td{ text-align: right}
+#mCafe24Order.xans-order-result .ec-base-table.typeView > table > tbody > tr:first-child > td,
+#mCafe24Order.xans-order-result .segment .ec-base-table tbody td div,
+#mCafe24Order.xans-order-result .segment .ec-base-table tbody td span{ text-align: right;}
+#mCafe24Order.xans-order-result .segment .ec-base-table tbody td span{ display: block}
+#mCafe24Order.xans-order-result .methodButton [class*="btn"].mini{ height: 32px; line-height: 30px; border-color: #E8E8E8; border-radius: 16px; font-size: 12px;margin-top: 12px;}
+#mCafe24Order.xans-order-result .segment .ec-base-table tbody th, #mCafe24Order.xans-order-result .segment .ec-base-table tbody td{ font-size: 14px;}
+#mCafe24Order.xans-order-result .ec-base-table.typeView > table > tbody > tr > th{ border-top: none;}
+#mCafe24Order .ec-base-table.typeView > table > tbody > tr > td{ border-top: none; color: #000}
+
+#mCafe24Order.xans-order-result .ec-base-prdInfo{ border-top: none}
+#mCafe24Order.xans-order-result .contents > .orderArea > .xans-order:first-child > .ec-base-prdInfo:first-child, #mCafe24Order.xans-order-result .ec-base-prdInfo{ padding: 24px 0 0 0}
+#mCafe24Order.xans-order-result .ec-base-prdInfo .prdBox{ padding: 0;}
+#mCafe24Order.xans-order-result .ec-base-prdInfo .description .prdName{ font-size: 14px; color: #000; font-weight: 500; margin: 0; max-height: 40px; height: 40px; margin-bottom: 4px;}
+#mCafe24Order.xans-order-result .contents .ec-base-table{ padding-top: 0}
+
+
+#mCafe24Order.xans-order-result .totalPay{ padding: 0; border-top: none; color: #000; font-size: 14px; background: none; margin-top: 0;}
+#mCafe24Order.xans-order-result .totalPay .heading{ font-weight: 500;}
+#mCafe24Order.xans-order-result .txtStrong{ color: #000000; font-size: 14px; font-weight: 500;}
+
+#mCafe24Order.xans-order-result .btn_wrap{ margin-top: 56px;}
+#mCafe24Order.xans-order-result .btn_wrap a{ width: 100%; border-radius: 32px; margin: 0 0 8px 0 !important; font-size: 14px; font-weight: 500; height: 48px; line-height: 48px;}
+#mCafe24Order.xans-order-result .btn_wrap .btnSubmit{ background-color: #000}
+#mCafe24Order.xans-order-result .btn_wrap a:last-of-type{ margin-bottom: 0}
+
+/* 주문상품 */
+#mCafe24Order .orderArea .xans-order-normallist, #mCafe24Order .orderArea .xans-order-individuallist, #mCafe24Order .orderArea .xans-order-supplierlist, #mCafe24Order .orderArea .xans-order-oversealist{ margin-bottom: 0 !important;}
+#mCafe24Order .orderArea .xans-order .ec-base-prdInfo{ border-bottom: 1px solid #E0E0E0}
+#mCafe24Order .orderArea .xans-order .ec-base-prdInfo .prdBox{ padding: 20px 0;}
+
+
+
+/* 배송목록파업 */
+#zipcodeLayer .mCafe24Post.gPc h1{ display: none; }
+#mCafe24Order .shippingList .button .btnText:before{ display: none}
+
+/* 할인/부가결제 */
+#ec-jigsaw-area-discount .contents{
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+#ec-jigsaw-area-discount .discountDetail .displayFlex{ flex-direction: column;}
+/*
+#mCafe24Order .discountDetail .control{ border-bottom: 1px solid #D1D1D1; color: #D1D1D1; padding: 16px 12px; margin-top: 8px;}
+#mCafe24Order .discountDetail .displayFlex .control .discountPrice{ color: #D1D1D1; line-height: 20px}*/
+#mCafe24Order .discountDetail .heading{ float: none;}
+
+#mCafe24Order .discountDetail{padding: 0;}
+#mCafe24Order .discountDetail .heading{
+    font-size: var(--fs-small);
+    line-height: var(--lh-base);
+    font-weight: var(--fw-base);
+}
+#mCafe24Order .discountDetail .control{
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    background-color: #ffffff; padding: 0; border-bottom: none; margin-top: 15px;
+}
+#mCafe24Order .discountDetail .control .inputTypeText{}
+#mCafe24Order .discountDetail .control .btnNormal{
+    position: relative; top: inherit; left: inherit; right: inherit; bottom: inherit; flex-shrink: 0; width: 97px; background: var(--color-white-base);
+    color: var(--color-black-base); border: 1px solid var(--color-black-base);
+    font-size: 13px; line-height: var(--lh-base);
+    border-radius: 0;
+    height: 44px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#mCafe24Order .discountDetail .summary{
+    margin-top: 10px;
+    font-weight: var(--fw-base);
+    font-size: var(--fs-small);
+    line-height: var(--lh-base);
+}
+#mCafe24Order .discountDetail .summary .txtEm{
+    color: var(--color-blue-base) !important;
+    font-weight: var(--fw-base);
+    font-size: var(--fs-small);
+    line-height: var(--lh-base);
+}
+#mCafe24Order .discountDetail .ec-base-help{
+
+}
+#mCafe24Order .discountDetail .displayFlex .control .discountPrice{
+    margin: 0;
+    flex: 1;
+    padding: 12px 25px 12px 12px;
+    border: 1px solid #E0E0E0;
+    height: auto;
+    line-height: initial;
+    font-size: var(--fs-small);
+    line-height: var(--lh-base);
+    color: var(--color-black-base);
+    font-weight: var(--fw-base);
+}
+#mCafe24Order .discountDetail .displayFlex .control .discountStrong{
+    font-weight: var(--fw-base);
+}
+#mCafe24Order .discountDetail.mCouponModify .couponWrap .ec-order-expandwrap{ font-size: 14px; color: #949494; font-weight: 400}
+#mCafe24Order .discountDetail.mCouponModify .ec-order-expandwrap .btnRemove{ border: none;}
+#mCafe24Order .discountDetail.mCouponModify .ec-order-expandwrap .btnRemove:after,
+#mCafe24Order .discountDetail.mCouponModify .ec-order-expandwrap .btnRemove:before{ background-color: #000000}
+#mCafe24Order .discountDetail.mCouponModify .ec-order-expandwrap .couponList span[id^=txt_cpn_price]{ display: none;}
+#mCafe24Order .discountDetail.mCouponModify .ec-order-expandwrap .ec-order-expand .txt_info:after, #mCafe24Order .discountDetail.mCouponModify .ec-order-expandwrap .ec-coupon-expand .txt_info:after{ border-color: #000000}
+#mCafe24Order .discountDetail.mCouponModify .ec-order-expandwrap.selected .coupon-help-info{ border-top: 1px solid #E8E8E8; border-bottom: 1px solid #E8E8E8}
+#mCafe24Order .discountDetail.mCouponModify .ec-order-expandwrap .coupon-help-info{ padding: 16px 8px; margin: 18px 0 0 0; color: #949494;}
+#mCafe24Order .discountDetail.mCouponModify .ec-order-expandwrap .coupon-help-info span[id^=txt_cpn_period] span{ color: #949494;}
+#mCafe24Order .discountDetail.mCouponModify .couponWrap{ border-top: none; margin-top: 12px; padding: 0}
+#mCafe24Order .discountDetail .summary{ margin-top: 10px;}
+#mCafe24Order #ec-shop-orderfom-total-benefit-view-id{display: none !important;}
+/* 쿠폰팝업 */
+#popup{ font-family: 'Pretendard', sans-serif}
+#mCafe24Order .coupon_wrap.ec-base-layer strong{ border-bottom: 1px solid #000; color: #000; font-size: 16px; padding-bottom: 12px; }
+#mCafe24Order .coupon_wrap.ec-base-layer .title{ border-bottom: 0}
+#mCafe24Order .coupon_wrap.ec-base-layer .btnClose{ background-image: url('/SkinImg/img/btn_close.svg');width: 24px; height: 24px; top: 20px }
+#mCafe24Order .coupon_wrap{ padding: 64px 0 0; margin: 0 20px; }
+#mCafe24Order .coupon_wrap.ec-base-layer{ width: calc(100% - 40px)}
+#mCafe24Order .ec-base-layer.typeWide .wrap{ background: #fff; padding-top: 17px; }
+#mCafe24Order .coupon_wrap.ec-base-layer .wrap .title h2{ font-size: 14px; font-weight: 500; color: #000000;}
+#mCafe24Order .coupon_wrap.ec-base-layer .wrap .contents .segment{ padding: 0;}
+#mCafe24Order .ec-base-layer .pannelArea .ordCouponList li{ margin: 0}
+#mCafe24Order .ec-base-layer select{ border: 1px solid #DDDDDD}
+#mCafe24Order .ec-base-fold .ec-base-table.gCellNarrow tbody th,
+#mCafe24Order .ec-base-fold .ec-base-table.gCellNarrow tbody td{ font-size: 14px; color: #747474; font-weight: 500; padding: 0 0 16px 0;}
+#mCafe24Order .ec-base-fold .ec-base-table.gCellNarrow tbody td{ color: #000}
+#mCafe24Order ul.ec-base-help li{ position: relative}
+#mCafe24Order ul.ec-base-help li::before{ content:""; position: absolute; top: 5px; left: -10px; background-color: #949494; border-radius: 50%;width: 3px; height: 3px}
+#mCafe24Order .coupon_wrap.ec-base-layer .pannelArea + .ec-base-fold .title{ border-bottom: 1px solid #000; padding-bottom: 12px}
+#mCafe24Order .coupon_wrap.ec-base-layer .pannelArea + .ec-base-fold .title h2{ font-size: 16px; font-weight: 700}
+#mCafe24Order .coupon_wrap.ec-base-layer .ec-base-fold > .title:after{ top: 6px !important;}
+#mCafe24Order .coupon_wrap.ec-base-layer .txtStrong{ color: #949494 !important;}
+#mCafe24Order .coupon_wrap.ec-base-layer .btn_wrap{ margin-top: 48px;}
+#mCafe24Order .coupon_wrap.ec-base-layer .btn_wrap button{ width: 100%; border: 1px solid #000; border-radius: 32px; padding: 14px 24px; margin-bottom: 8px}
+#mCafe24Order .coupon_wrap.ec-base-layer .btn_wrap button:first-of-type{ background-color: #000; color: #fff}
+
+
+/* 장바구니 */
+
+
+
+/* 당일배송 스타일 임시 */
+#og_delivcompany_area_custom{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+#og_delivcompany_area_custom .ec-base-help{
+    width: 100%;
+}
+
+#og_delivcompany_area_custom .ec-base-label{
+    display: block;
+    margin-right: 25px;
+}
+#mCafe24Order .ec-area-shipping-companies .segment .ec-base-label input[type="radio"] + label{
+    font-size: var(--fs-small);
+}
+
+.wrap1, .wrap2{ display: flex; align-items: center;}
+.wrap1{ margin-right: 25px;}
+.wrap2{margin-left: auto;}
+#og_delivstore{width: 180px;}
+
+#og_delivcompany_area_custom #delivery_app_list + span + span{
+    margin-left: auto;
+    margin-right: 0;
+}
+
+html #mCafe24Order #og_delivcompany_area_custom .ec-base-label label{
+    color: var(--color-black-base);
+}
+
+#og_delivcompany_area_custom .list{
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+#og_delivcompany_area_custom .list:last-child{
+    margin-bottom: 0;
+}
+#og_delivcompany_area_custom .list .title{
+    padding: 0;
+    border: none;
+    margin-right: 10px;
+    min-width: 105px;
+    font-size: var(--fs-small);
+    color: var(--color-gray1-base);
+    line-height: var(--lh-narrow);
+}
+#og_delivcompany_area_custom .list .desc{
+    font-size: var(--fs-small);
+    color: var(--color-gray1-base);
+    line-height: var(--lh-narrow);
+}
+
+#og_delivcompany_area_custom #delivstore{
+    width: 165px;
+}
+
+#og_delivcompany_area_custom .og_delv_desc{
+    width: 100%;
+    margin-top: 16px;
+}
+.og_delv_desc .fixed_txt:not(.selected){
+    display: none;
+}
+
+.og_store_pickup_desc{
+    width: 100%;
+    margin-top: 16px;
+}
+
+.og_store_pickup_desc dl:not(.selected){
+    display: none;
+}
+
+.og_store_pickup_desc dt{
+    color: var(--color-gray1-base);
+    font-size: var(--fs-small);
+    line-height: var(--lh-narrow);
+    font-weight: var(--fw-base);
+    margin: 0 0 12px;
+}
+
+.og_store_pickup_desc dt strong{
+    font-size: var(--fs-small);
+    font-weight: var(--fw-medium);
+    line-height: var(--lh-narrow);
+    color: var(--color-black-base);
+}
+
+.og_store_pickup_desc dd{
+
+}
+.og_store_pickup_desc .info_txt{
+    /*background: #eee;*/
+    margin: 5px 0 0;
+}
+.og_store_pickup_desc .info_txt strong{
+    display: block;
+    margin: 0 0 10px;
+    font-size: var(--fs-small);
+    color: var(--color-black-base);
+    line-height: var(--lh-base);
+    font-weight: var(--fw-bold);
+}
+.og_store_pickup_desc .info_txt ul{
+    display: flex;
+    flex-direction: column;
+    row-gap: 3px;
+}
+.og_store_pickup_desc .info_txt li{
+    font-size: var(--fs-small);
+    color: var(--color-black-base);
+    line-height: var(--lh-base);
+    font-weight: var(--fw-base);
+}
+
+.delvstore_disabled,
+.delvstore_disabled *{
+    color: #ccc !important;
+    pointer-events: none;
+}
+#og_delivcompany_area_custom .ec-base-help br{
+    display: block;
+}
+
+
+
+#mCafe24Order .segment #og_delivcompany_area_custom .ec-base-table tbody tr:not(:nth-child(-n+2)){
+    display: none;
+}
+
+
+#mCafe24Order .segment #og_delivcompany_area_custom .ec-base-table tbody th,
+#mCafe24Order .segment #og_delivcompany_area_custom .ec-base-table tbody td{
+    padding: 0 0 10px 0 !important;
+    color: var(--color-gray1-base);
+    font-size: var(--fs-small);
+    line-height: var(--lh-narrow);
+    font-weight: var(--fw-base);
+}
+
+#mCafe24Order .segment #og_delivcompany_area_custom .ec-base-table tbody td strong{
+    display: block;
+    margin-top: 16px;
+    color: var(--color-black-base);
+    font-weight: var(--fw-medium);
+}
+
+#mCafe24Order .segment.ec-shippingInfo-sameaddr .ec-base-label + label{
+    margin: 0 24px 0 8px;
+    font-size: var(--fs-small);
+}
+
+/* 주문완료 스타일 임시 */
+#userStyle.order_result #mCafe24Order .ec-base-button[class*="gColumn"]{
+    margin: 0;
+    display: grid;
+    grid-auto-flow: column;
+    width: 100%;
+    grid-template-columns: repeat(2,calc(50% - 5px));
+    column-gap: 10px;
+}
+
+#userStyle.order_result #mCafe24Order .ec-base-button[class*="gColumn"] a{
+    margin: 0;
+    padding: 0;
+    height: 51px;
+    font-size: 15px;
+    font-weight: 500;
+}
+#userStyle.order_result #mCafe24Order .ec-base-button[class*="gColumn"] .btnEm{
+    color: var(--color-blue-base);
+}
+
+
+#mCafe24Order #ec-jigsaw-area-paymethod input[type="radio"][value] + label{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: var(--fw-bold);
+}
+#mCafe24Order #ec-jigsaw-area-paymethod input[type="radio"][value="naverpay"] + label::after{
+    display: block;
+    content: '';
+    width: 44px;
+    height: 26px;
+    background-image: url('/SkinImg/img/icon_pay_method_naverpay.png');
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-left: 3px;
+}
+
+
+#mCafe24Order #ec-jigsaw-area-paymethod input[type="radio"][value="kakaopay"] + label::after{
+    display: block;
+    content: '';
+    width: 50px;
+    height: 20px;
+    background-image: url('/SkinImg/img/icon_pay_method_kakaopay.png');
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-left: 3px;
+}
+#mCafe24Order #ec-jigsaw-area-paymethod input[type="radio"][value="payco"] +label a{display: none;}
+#mCafe24Order #ec-jigsaw-area-paymethod input[type="radio"][value="payco"] + label::after{
+    display: block;
+    content: '';
+    width: 50px;
+    height: 20px;
+    background-image: url('/SkinImg/img/icon_pay_method_payco.png');
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-left: 3px;
+}
+
+/* 네이버페이 */
+#mCafe24Order #ec-jigsaw-area-paymethod input[type="radio"][value="naverpay"] +label a {display: none;}
+
+@media screen and (max-width: 1366px){
+    #og_delivcompany_area_custom .ec-base-label{margin-top: 0; margin-bottom: 0;}
+    .titleArea{ padding: 30px 0 50px;}
+    #userStyle.order_result .titleArea{
+        padding: 30px 0 50px !important;
+    }
+
+
+
+    #mCafe24Order #ec-jigsaw-area-paymethod input[type="radio"][value="naverpay"] + label::after{
+        background-image: url('/SkinImg/img/icon_pay_method_naverpay.svg');
+    }
+    #mCafe24Order #ec-jigsaw-area-paymethod input[type="radio"][value="kakaopay"] + label::after{
+        background-image: url('/SkinImg/img/icon_pay_method_kakaopay.svg');
+    }
+    #mCafe24Order #ec-jigsaw-area-paymethod input[type="radio"][value="payco"] + label::after{
+        background-image: url('/SkinImg/img/icon_pay_method_payco.svg');
+    }
+
+    #mCafe24Order .payMethod > li .inner > .ec-base-label{
+        margin: 0;
+    }
+
+
+}
+
+@media screen and (max-width: 1024px){
+    /*#og_delivcompany_area_custom{ align-items: flex-start; flex-direction: column}*/
+    #og_delivcompany_area_custom > .ec-base-label{margin-top: 0px;}
+    .wrap1{width: 100%;}
+    .wrap2{margin-left: 0; margin-top: 10px;}
+    .wrap2 .ec-base-label{margin: 0;}
+    #orderFixItem.ec-base-button.gFull{max-width: 100%;}
+}
+
+@media screen and (max-width:768px){
+    #mCafe24Order{ padding: 0 20px}
+    #container #contents > .section{ padding:0 20px; }
+    #mCafe24Order .ec-base-table.typeWrite tbody th, #mCafe24Order .ec-base-table.typeWrite tbody td{ width: calc(100% )}
+    /*#userStyle .titleArea{ margin: 112px 0 48px;}*/
+    #mCafe24Order .billingNshipping{ margin-top: 0}
+    #mCafe24Order .ec-base-fold:first-of-type{ margin-top: 0 !important;}
+    #mCafe24Order .ec-base-table .ec-address .ec-address-zipcode{flex-wrap: wrap }
+    #mCafe24Order .ec-base-table .ec-address .ec-address-zipcode .btnBasic{ position:  initial}
+    #mCafe24Order .ec-base-fold:not(:first-of-type){ margin-top: 50px !important;}
+    #ec-jigsaw-area-agreement{ margin-top: 50px}
+
+    #mCafe24Order .ec-base-tab a{ padding: 13px 0;}
+
+
+
+}
+
+
+#lShippingCompanyLists{
+    opacity: 0;
+}
+#lShippingCompanyLists.done{
+    opacity: 1;
+}
+#lShippingCompanyLists .contents{
+    max-height: 168px;
+}
+#lShippingCompanyLists.done .contents{
+    max-height: inherit;
+}

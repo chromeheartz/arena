@@ -1,0 +1,117 @@
+<!--@layout(/layout/basic/layout.html)-->
+<!--@js(/js/common.js)-->
+<!--@js(/member/js/member.js)-->
+
+<div class="member_wrap">
+    <div class="member_title titleArea">
+        <h2>아이디 / 비밀번호찾기</h2>
+    </div>
+
+    <div class="login_wrap">
+
+        <ul class="tab">
+            <li data-tab="tab1">아이디찾기</li>
+            <li data-tab="tab2">비밀번호 찾기</li>
+        </ul>
+
+        <div class="tabpanel_wrap">
+            <div class="tabpanel" id="tab1">
+                <div module="member_findid" class="memberArea">
+                    <!--@css(/css/module/member/find_id.css)-->
+                    <!--
+                        $returnURL = /member/id/find_id_result.html
+                     -->
+                    <div class="member_ckbox"><span class="check">{$form.check_method}</span></div>
+                    <div class="input_flex">
+                        <div class="ec-base-box typeMember">
+                            <fieldset class="content">
+                                <legend>아이디 찾기</legend>
+                                <ul class="ec-base-desc gVer">
+                                    <!--<li><strong class="term">회원유형</strong><div class="desc">{$form.searchType}<div class="check gBlank10">{$form.check_method}</div></div></li>-->
+                                    <li id="name_view" class="name"><div class="">{$form.name}</div></li>
+                                    <li id="ssn_view" class="ssn_no" ><strong class="term" id="ssn_name">법인번호로 찾기</strong><div class=""><span class="ec-base-field code">{$form.ssn1} - {$form.ssn2}</span></div></li>
+                                    <li id="email_view" class="email" style="display:none;"><div class="">{$form.email}</div></li>
+                                    <li id="mobile_view" class="mobile" style="display:none;"><div class=""><span class="ec-base-field code">{$form.mobile1} - {$form.mobile2} - {$form.mobile3}</span></div></li>
+                                    <li id="ipin_view" class="ipin" style="display:none;">
+                                        <strong class="term">아이핀인증으로 찾기</strong>
+                                        <div class="">
+                                            <p class="info">회원가입을 아이핀으로 가입하신 회원님께서는 아이핀으로 인증하세요.</p>
+                                            <a href="#none" class="btnNormal sizeS gBlank10" onclick="{$action_func_find_id}">아이핀인증</a>
+                                        </div>
+                                    </li>
+                                    <li id="mobile_auth_view" class="mobileauth" style="display:none;"><strong class="term">휴대폰인증으로 찾기</strong>
+                                        <div class="">
+                                            <p class="info">본인 명의의 휴대폰으로 아이디 찾기를 진행할 수 있습니다. <br />휴대폰 명의자의 정보로 가입한 아이디 찾기가 가능합니다.</p>
+                                            <a href="#none" class="btnNormal sizeS gBlank10" onclick="{$action_func_find_id}">휴대폰 인증</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </fieldset>
+                        </div>
+                        <div class=" ">
+                            <a href="#none" class="btnSubmitFix  gFull" onclick="{$action_func_find_id}">확인</a>
+                        </div>
+                    </div>
+
+                    <div class="ec-base-help">
+                        <span>SNS 로그인을 연동하시면 아이디, 비밀번호를 찾을 필요없이<br> 더욱편하게 이용하실 수 있습니다</span>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="tabpanel" id="tab2">
+                <div module="member_findpasswd" class="memberArea">
+                    <!--@css(/css/module/member/find_passwd.css)-->
+                    <!--
+                        $nextURL = /member/passwd/find_passwd_question.html
+                     -->
+                    <div class="member_ckbox"><span class="check">{$form.check_method}</span></div>
+                    <div class="input_flex">
+                        <div class="ec-base-box typeMember">
+                            <fieldset class="content">
+                                <legend>비밀번호 찾기 1단계 정보 입력</legend>
+                                <ul class="ec-base-desc gVer">
+                                    <!--<li><strong class="term">회원유형</strong><div class="desc">{$form.searchType}<span class="check gBlank10">{$form.check_method}</span></div></li>-->
+                                    <li class="{$display_id|display}"><div class="">{$form.member_id}</div></li>
+                                    <li id="name_view" class="name"><div class="">{$form.name}</div></li>
+                                    <!--<li id="ssn_view" class="ssn_no" style="display:none;">
+                                        <strong class="term" id="ssn_name">법인번호로 찾기</strong>
+                                        <div class=""> {$form.ssn} <p class="gBlank5 txtInfo">(-) 없이 숫자만 입력하세요.</p></div>
+                                    </li>-->
+                                    <li id="email_view" class="email" style="display:none;"><div class="">{$form.email}</div></li>
+                                    <li id="mobile_view" class="mobile" style="display:none;">
+                                        <div class=""><span class="ec-base-field code">{$form.mobile1} - {$form.mobile2} - {$form.mobile3}</span></div>
+                                    </li>
+                                    <li id="ipin_view" class="ipin" style="display:none;">
+                                        <strong class="term">아이핀인증으로 찾기</strong>
+                                        <div class="">
+                                            <p class="info">회원가입을 아이핀으로 가입하신 회원님께서는 아이핀으로 인증하세요.</p>
+                                            <a href="#none" class="btnNormal sizeS gBlank10" onclick="{$action_func_find_passwd_question}">아이핀인증</a>
+                                        </div>
+                                    </li>
+                                    <li id="mobile_auth_view" class="mobileauth" style="display:none;">
+                                        <strong class="term">휴대폰인증으로 찾기</strong>
+                                        <div class="">
+                                            <p class="info">본인 명의의 휴대폰으로 아이디 찾기를 진행할 수 있습니다. <br />휴대폰 명의자의 정보로 가입한 아이디 찾기가 가능합니다.</p>
+                                            <a href="#none" class="btnNormal sizeS gBlank10" onclick="{$action_func_find_passwd_question}">휴대폰 인증</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </fieldset>
+                        </div>
+                        <div class="">
+                            <a href="#none" class="btnSubmitFix gFull" onclick="{$action_func_find_passwd_question}">확인</a>
+                        </div>
+                    </div>
+                    <div class="ec-base-help">
+                        <span>SNS 로그인을 연동하시면 아이디, 비밀번호를 찾을 필요없이<br> 더욱편하게 이용하실 수 있습니다</span>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+

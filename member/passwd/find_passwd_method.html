@@ -1,0 +1,43 @@
+<!--@layout(/layout/basic/layout.html)-->
+
+<!--@css(/ogam/css/member.css)-->
+<!--@js(/ogam/js/member.js)-->
+<div class="find-contents-wrapper">
+    <div class="page-top-nav-wrap">
+        <dl>
+            <dt>홈<span>/</span>로그인<span>/</span></dt>
+            <dd>비밀번호 찾기</dd>
+        </dl>
+        <h6>비밀번호 찾기</h6>
+    </div>
+
+
+
+    <div class="og_member_inner find-member-wrap" id="og_member_find_pw_method">
+
+    <div class="section titleArea og_member_title mgB48 displaynone">
+        <h2>임시 비밀번호 전송</h2>
+    </div>
+    <div module="member_findpasswdmethod" class="memberArea">
+        <!--@css(/css/module/member/find_passwd_method.css)-->
+        <!--
+            $nextURL = /member/passwd/find_passwd_result.html
+         -->
+        <div class="ec-base-box typeMember">
+            <fieldset class="content">
+                <legend>임시 비밀번호 전송</legend>
+                <ul class="ec-base-desc gVer">
+                    <li><strong class="term">임시 비밀번호</strong><span class="desc">{$form.passwd_method_type}</span></li>
+                    <li id="{$passwd_method_email_info}"><strong class="term">이메일</strong><span class="desc"><strong class="txtEm">{$passwd_method_email}</strong></span></li>
+                    <li id="{$passwd_method_mobile_info}"><strong class="term">휴대폰 번호</strong><span class="desc"><strong class="txtEm number">{$passwd_method_mobile}</strong></span></li>
+                </ul>
+            </fieldset>
+        </div>
+        <div class="find-btn-wrap">
+            <a href="#none" class="grey-btn" onclick="{$action_func_find_passwd_send}">임시 비밀번호 전송</a>
+            <a href="#none" class="black-btn" onclick="{$action_func_find_passwd_cancel}">취소</a>
+        </div>
+    </div>
+</div>
+    </div>
+</div>

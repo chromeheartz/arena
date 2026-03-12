@@ -1,0 +1,142 @@
+<!--@layout(/layout/basic/layout.html)-->
+<!--@css(/ogam/css/myshop.css)-->
+
+
+<div module="layout_logincheck" data-ez="contents-04w3slw-1">
+    <!--
+$url = /member/login.html
+--></div>
+
+
+<div class="mypage-main-wrapper mypage-wrapper">
+    <div class="mypage-inner">
+        <div class="mypage-contents-wrapper">
+            <!--@import(/myshop/myshop_main.html)-->
+            <div
+                 class="myshopArea myshopMain flex-1 mypage-common-contents-wrapper"
+                 data-ez="contents-0z1plus-1"
+                 >
+                <div class="page-top-nav-wrap">
+                    <dl>
+                        <dt>홈<span>/</span>마이페이지<span>/</span></dt>
+                        <dd>적립금 내역</dd>
+                    </dl>
+                    <h6>적립금 내역</h6>
+                </div>
+
+                <div class="myshopArea mileage_wrap mypage-mileage-contents mypage-common-contents-wrapper">
+                    <div module="Myshop_mileageUnavailPackage" class="mypage-mileage-wrap">
+                        <!--@css(/css/module/myshop/mileageUnavailPackage.css)-->
+
+
+                        <div module="myshop_summary" class="myshop_summary summary-wrap">
+                            <ul>
+                                <li><strong class="title">총 {$mileage_name}</strong><span>{$total_mileage}</span></li>
+                                <span class="bar" />
+                                <li><strong class="title">사용가능 {$mileage_name}</strong><span>{$avail_mileage}</span></li>
+                                <span class="bar" />
+                                <li><strong class="title">사용된 {$mileage_name}</strong><span>{$used_mileage}</span></li>
+                                <span class="bar" />
+                                <li><strong class="title">미가용 {$mileage_name}</strong><span>{$unavail_mileage}</span></li>
+                                <span class="bar" />
+                                <li><strong class="title">환불예정 {$mileage_name}</strong><span>{$refunded_mileage}</span></li>
+                            </ul>
+                        </div>
+
+                        <div class="ec-base-tab typeNav">
+                            <ul class="menu">
+                                <li><a href="/myshop/mileage/historyList.html">적립 내역</a></li>
+                                <li class="selected"><a href="/myshop/mileage/unavailList.html">미가용 적립 내역</a></li>
+                                <li><a href="/myshop/mileage/couponList.html">미가용 쿠폰/회원등급 적립</a></li>
+                            </ul>
+                        </div>
+                        <div module="myshop_unavailList">
+                            <!--
+$only_html = no
+$count = 10
+$login_page = /member/login.html
+-->
+                            <div class="{$display_unavail|display} mileage_cnt">
+                                <div class="item">
+                                    <div>
+                                        <span class="date" title="주문날짜">{$order_date}</span>
+                                        <span class="number" title="관련주문번호"><a href="/myshop/order/detail.html?order_id={$order_id}">({$order_id})</a></span>
+                                    </div>
+                                    <div class="ec-base-table gClearBorderTop">
+                                        <table border="1">
+                                            <caption>적립금</caption>
+                                            <colgroup>
+                                                <col style="width:120px;">
+                                                <col style="width:auto;">
+                                            </colgroup>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">{$mileage_name} : {$mileage_type}<div class="use_date">{$can_use_date}</div></th>
+                                                    <td>{$product_mileage}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div>
+                                        <span class="date" title="주문날짜">{$order_date}</span>
+                                        <span class="number" title="관련주문번호"><a href="/myshop/order/detail.html?order_id={$order_id}">({$order_id})</a></span>
+                                    </div>
+                                    <div class="ec-base-table gClearBorderTop">
+                                        <table border="1">
+                                            <caption>적립금</caption>
+                                            <colgroup>
+                                                <col style="width:120px;">
+                                                <col style="width:auto;">
+                                            </colgroup>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">{$mileage_name} : {$mileage_type}<div class="use_date">{$can_use_date}</div></th>
+                                                    <td>{$product_mileage}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="empty-text pt-100 {$display_unavail_none|display}">{$mileage_name} 내역이 없습니다.</p>
+                        </div>
+                    </div>
+
+                    <div module="myshop_unavailPaging" class="ec-base-paginate typeList custom-pagination-wrap">
+                        <!-- <a href="{$first_url}" class="first">첫 페이지</a> -->
+                        <a href="{$prev_url}">이전 페이지</a>
+                        <ol>
+                            <li><a href="{$url_query}" class="{$param_class}">{$n}</a></li>
+                            <li><a href="{$url_query}" class="{$param_class}">{$n}</a></li>
+                            <li><a href="{$url_query}" class="{$param_class}">{$n}</a></li>
+                            <li><a href="{$url_query}" class="{$param_class}">{$n}</a></li>
+                            <li><a href="{$url_query}" class="{$param_class}">{$n}</a></li>
+                            <li><a href="{$url_query}" class="{$param_class}">{$n}</a></li>
+                            <li><a href="{$url_query}" class="{$param_class}">{$n}</a></li>
+                            <li><a href="{$url_query}" class="{$param_class}">{$n}</a></li>
+                            <li><a href="{$url_query}" class="{$param_class}">{$n}</a></li>
+                            <li><a href="{$url_query}" class="{$param_class}">{$n}</a></li>
+                        </ol>
+                        <a href="{$next_url}">다음 페이지</a>
+                        <!-- <a href="{$last_url}" class="last">마지막 페이지</a> -->
+                    </div>
+
+                    <div class="help-text-wrap" module="myshop_head">
+                        <h3>{$mileage_name} 안내</h3>
+
+                        <ul module="myshop_historyInfo">
+                            <li>주문으로 발생한 {$mileage_name}은 배송완료 후 {$mileage_period} 부터 실제 사용 가능한 {$mileage_name}으로 전환됩니다. 배송완료 시점으로부터 {$mileage_period} 동안은 미가용 {$mileage_name}으로 분류됩니다. </li>
+                            <li>미가용 {$mileage_name}은 반품, 구매취소 등을 대비한 임시 {$mileage_name}으로 사용가능 {$mileage_name}으로 전환되기까지 상품구매에 사용하실 수 없습니다.</li>
+                            <li>사용가능 {$mileage_name}(총{$mileage_name} - 사용된{$mileage_name} - 미가용{$mileage_name})은 상품구매 시 바로 사용가능합니다.</li>
+                        </ul>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+

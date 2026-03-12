@@ -1,0 +1,71 @@
+<aside id="" module="layout_slidePackage" >
+	<div class="aside_mypage">
+		<ul>
+			<li>
+				<a module="Layout_statelogoff" href="/member/login.html">로그인</a>
+				<a module="Layout_stateLogon" href="{$action_logout}">로그아웃</a>
+			</li>
+			<li module="Layout_statelogoff">
+				<a href="/member/mobJoin.html">회원가입</a>
+			</li>
+			<li module="Layout_stateLogon"class="displaynone">
+				<a href="/member/modify.html">내정보수정</a>
+			</li>
+			<li module="Layout_stateLogon" >
+				<a href="/myshop/index.html">마이페이지</a>
+			</li>
+			<li class="displaynone">
+				<a href="/product/recent_view_product.html">최근본상품</a>
+			</li>
+		</ul>
+		<button type="button" class="btnClose layout_hidden">
+			<!--@import(/SkinImg/svg/close.html)-->
+		</button>
+	</div>
+	<div class="aside_navi" module="Layout_category" data-ogcate-type="allView_slide" data-ogcate-event="false">
+		<ul class="menu_1ul">
+			<!-- 자동 호출 메뉴 : 이 부분은 수정하시면 안됩니다. -->
+			<li class="menu_1li" data-cate="{$cate_no}" data-depth="1" data-over-img="{$img_over}" data-img="{$img}">
+				<a href="/{$design_page_url|replace:list2.html,list.html}{$param}">{$name}</a>
+			</li>
+			<li class="menu_1li" data-cate="{$cate_no}" data-depth="1" data-over-img="{$img_over}" data-img="{$img}">
+				<a href="/{$design_page_url|replace:list2.html,list.html}{$param}">{$name}</a>
+			</li>
+			<!-- //자동 호출 메뉴 : 이 부분은 수정하시면 안됩니다. -->
+		</ul>
+		<ul class="menu_1ul">
+			<!--@import(/ogam/html/common/menu1.html)-->
+		</ul>
+	</div>
+<!--	<div class="aside_banner" df-banner-code="mo-sidebar-banner" hidden>-->
+<!--		<div class="" >-->
+<!--			<ul class="og_swiper" data-ogswipe-custom="false" data-ogswipe-slidesPerview="2" data-ogswipe-spaceBetween="10">-->
+<!--				<li class="" df-banner-clone><a href="{#href}" target="{#target}">{#item}</a></li>-->
+<!--			</ul>-->
+<!--		</div>-->
+<!--	</div>-->
+	<div class="aside_util">
+		<ul>
+			<li>
+				<a href="/order/basket.html">
+					<!--@import(/SkinImg/svg/cart.html)-->
+					장바구니
+				</a>
+			</li>
+			<li>
+				<a href="/myshop/order/list.html">
+					<!--@import(/SkinImg/svg/truck.html)-->
+					주문조회
+				</a>
+			</li>
+			<li>
+				<a href="/board/consult/list.html">
+					<!--@import(/SkinImg/svg/headphone.html)-->
+					고객센터
+				</a>
+			</li>
+		</ul>
+	</div>
+
+</aside>
+<!--#ez="1/4"-->

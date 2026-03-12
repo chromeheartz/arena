@@ -1,0 +1,43 @@
+.xans-board-title p.imgArea { margin:0 0 20px; }
+
+.xans-board-write-9 .file td { color:#7d7d7d; }
+.xans-board-write-9 .file label { color:#000; }
+.xans-board-write-9 .file [id^="delfile"] { margin-left:20px; }
+
+.ec-base-table.typeWrite th {font-size: 12px; font-weight: 600; }
+.ec-base-table.typeWrite th[scope*="row"] {width:130px; padding: 20px 0 ; padding-right: 30px !important; line-height: 40px;}
+.ec-base-table.typeWrite td {color: #424242; padding: 20px 0; font-size: 12px;}
+.ec-base-table.typeWrite td select{width: 150px !important; margin-right: 10px; font-size: 12px;  color: #424242;}
+.ec-base-button.gBottom {margin: 60px auto !important;}
+.ec-base-table.typeWrite td #subject {width: calc(100% - 400px); height:44px; margin-right: 30px;}
+
+/********************* Mobile / Tablet *********************/
+@media all and (max-width:1024px) {
+	.xans-board-write-9 .ec-base-table input[type="text"],
+    .xans-board-write-9 .ec-base-table input[type="password"],
+    .xans-board-write-9 .ec-base-table select { width:100%; }
+    .xans-board-write-9 #email1 { width:47%; *margin:0 6px 0 0; }
+    .xans-board-write-9 #email2 { width:47%; flex:1; *margin:0 0 0 6px; }
+    .xans-board-write-9 #email3 { margin:10px 0 0; }
+    .xans-board-write-9 #captcha { flex:1; margin-left:10px; }
+    .xans-board-write-9 .file input[type="file"] { display:block; }
+     /****채용공고_글쓰기****/
+    .ec-base-table.typeWrite td #subject {width: calc(100% - 160px); margin-right: 0;}
+}
+
+/********************* PC *********************/
+@media all and (min-width:1025px) {
+    .xans-board-write-9 #subject { width: calc(100% - 160px); height: 44px; }
+    .xans-board-write-9 #email1 { width:150px; height: 44px;  }
+    .xans-board-write-9 #email2 { width:150px; height: 44px;  *margin-right: 10px;}
+    .xans-board-write-9 #email3 { width:150px; height: 44px;  *margin-right: 30px;}
+    .xans-board-write-9 #captcha { width:200px; margin:0 20px 0 10px; }
+}
+@media screen and (max-width: 768px) {
+    /****채용공고_글쓰기****/
+    .ec-base-table.typeWrite th[scope*="row"] {width:100%; padding: 20px 0 15px ;}
+    .ec-base-table.typeWrite th {font-size: 14px; font-weight: 400; }
+    .ec-base-table.typeWrite td {padding: 0 0 20px; font-size: 12px; width: 100%;}
+    .ec-base-table.typeWrite td select{width: 100% !important; margin-right: 0; margin-bottom: 5px;}
+    .ec-base-table.typeWrite td #subject {width: 100%; margin-right: 0; margin-bottom: 10px;}
+}

@@ -1,0 +1,94 @@
+
+<!--
+1. 일단 project-image-wrapper 를 전체 복사 붙여넣기 해주세요
+2. project-image-wrapper 옆에 해당 기획전 number를 넣어주시면 됩니다.
+3. img들을 파일업로더에 product-project 폴더에 올려놓으시고 해당 주소들을 img src에 넣어주시면 됩니다.
+4. ul이 pc, mo 2가지가 있는데 pc에 들어갈 이미지들은 pc의 li안에 넣어주시고, mo도 마찬가지로 맞춰서 넣어주시면 됩니다
+5. ###### 여기서 중요한것은 usemap이라는 속성이 map찍혀있는 name, id에 맞게 같이 들어가야 합니다.
+-->
+
+<!-- START ::::기획전 969 ::: START -->
+<!-- 복사붙여넣기할곳 시작 -->
+<div class="project-image-wrapper 969">
+    <div class="product-project-wrap">
+        <ul class="pc">
+            <li>
+                <img src="https://arenakorea1.cafe24.com/product-project/969/pc-969-01.jpg" />
+            </li>
+            <li>
+                <img src="https://arenakorea1.cafe24.com/product-project/969/pc-969-02.jpg" />
+            </li>
+        </ul>
+        <ul class="mo">
+            <li>
+                <!-- usemap이 map과 name,id가 같아야 동작합니다 -->
+                <img src="https://arenakorea1.cafe24.com/product-project/969/mo-969-02.jpg" usemap="#promotion_mo_01_02Map" />
+            </li>
+            <li>
+                <img src="https://arenakorea1.cafe24.com/product-project/969/mo-969-03.jpg" usemap="#promotion_mo_01_03Map" />
+            </li>
+        </ul>
+    </div>
+
+    <!-- START :::::이미지 매핑하는 코드 여기 안에 넣어주세요 :::: START -->
+    <map name="promotion_mo_01_02Map" id="promotion_mo_01_02Map">
+        <area shape="rect" coords="84,60,670,756" href="https://www.arena.co.kr/product/detail.html?product_no=8393&amp;cate_no=24&amp;display_group=1" target="_blank" />
+        <area shape="rect" coords="88,1532,666,2284" href="https://www.arena.co.kr/product/detail.html?product_no=8383&amp;cate_no=32&amp;display_group=1" target="_blank" />
+        <area shape="rect" coords="16,2305,578,3012" href="https://www.arena.co.kr/product/detail.html?product_no=8387&amp;cate_no=24&amp;display_group=1" target="_blank" />
+    </map>
+
+    <map name="promotion_mo_01_03Map" id="promotion_mo_01_03Map">
+        <area shape="poly" coords="337,402,5,403,8,1144,359,1139,458,566,338,564" href="https://www.arena.co.kr/product/detail.html?product_no=8385&amp;cate_no=24&amp;display_group=1" target="_blank" />
+        <area shape="poly" coords="496,966,542,990,589,986,700,1049,687,1110,580,1133,675,1245,725,1363,723,1557,723,1766,688,1820,603,1807,632,1556,605,1415,483,1515,473,1690,542,1804,527,1841,339,1856,292,1755,353,1716,392,1662,383,1470,426,1401,359,1166,395,1003,423,968" href="https://www.arena.co.kr/product/detail.html?product_no=8387&amp;cate_no=24" target="_blank" />
+    </map>
+    <!-- END :::::이미지 매핑하는 코드 여기 안에 넣어주세요 :::: END -->
+</div>
+<!-- 복사붙여넣기할곳 시작 -->
+<!-- END ::::기획전 969 ::: END -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 여기는 안건드리셔도 됩니다 -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+        const params = new URLSearchParams(window.location.search);
+        const cateNo = params.get("cate_no");
+
+        const projectWrappers = document.querySelectorAll(".project-image-wrapper");
+        const bannerManagers = document.querySelectorAll(".og_project_imgs.df-bannermanager");
+
+        projectWrappers.forEach(el => el.style.display = "none");
+
+        if (!cateNo) {
+            bannerManagers.forEach(el => el.style.display = "none");
+            return;
+        }
+
+        let matched = false;
+
+        projectWrappers.forEach(wrapper => {
+            if (wrapper.classList.contains(cateNo)) {
+                wrapper.style.display = "block";
+                matched = true;
+            }
+        });
+
+        if (matched) {
+            bannerManagers.forEach(el => el.style.display = "none");
+        }
+    });
+</script>

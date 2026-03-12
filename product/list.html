@@ -1,0 +1,473 @@
+<!--@layout(/layout/basic/layout.html)-->
+<!--@js(/js/module/product/menucategory.js)-->
+<!--@css(/css/module/product/menupackage.css)-->
+<!--@css(/css/module/product/normalpaging.css)-->
+<!--@css(/ogam/css/prdlist.css)-->
+<!--@js(/ogam/js/prdlist.js)-->
+
+<style>
+    /*전체용 애니메이션 감추고 리스트용 애니메이션 노출*/
+    .loadingBox {
+        display: none;
+    }
+
+    .loadingBox2 {
+        display: block;
+    }
+
+    li.menu_2li[data-cate="824"] {
+        display: none !important;
+    }
+
+    /*온라인단독 아이콘*/
+    .og_base_product .prdList [id^="anchorBoxId_"] .og_promotion_icons.online {
+        display: flex;
+    }
+
+    .og_base_product .prdList [id^="anchorBoxId_"] .og_promotion_icons.online::after {
+        content: '';
+        display: inline-block;
+        width: auto;
+        height: 24px;
+        background-image: url(https://arenakorea1.cafe24.com/web/2026-renewal/img/online-only.png);
+        background-size: cover;
+        aspect-ratio: 14 / 4.8 !important;
+        order: 1;
+        margin-right:4px !important;
+    }
+
+    /* 자사몰단독 아이콘 */
+    .og_base_product .prdList [id^="anchorBoxId_"] .og_promotion_icons.only {
+        display: flex;
+    }
+
+    .og_base_product .prdList [id^="anchorBoxId_"] .og_promotion_icons.only::before {
+        content: '';
+        display: inline-block;
+        width: 56px;
+        ;
+        height: 20px;
+        background-image: url("https://arenakorea1.cafe24.com/web/2026-renewal/img/mall-only.png");
+        background-size: contain;
+        margin-top: 5px;
+        aspect-ratio: 14 / 4.8 !important;
+        order:2;
+        margin:0;
+        width: 70px;
+        height: 24px;
+        @media all and (max-width:768px) {
+            width: auto !important;
+            height:15px !important;
+        }
+    }
+</style>
+
+<!-- <div module="product_headcategory"  class="top-img-box">
+<div class="top-img-box"><img src="{$top_image}"></div>
+{$top_image1_tag}
+{$top_image2_tag}
+{$top_image3_tag}
+</div> -->
+<!--
+<div class="top-img-box" data-ez-module="product-list-categoryimage/1" module="product_headcategory">{$top_image1_tag}</div>
+-->
+<div class="product-list-contents-wrapper">
+
+
+    <div class="page-top-nav-wrap" module="product_headcategory">
+        <dl>
+            <dt>홈<span>/</span></dt>
+            <dd>{$name_1}</dd>
+        </dl>
+        <!--
+<h6>{$title_text}</h6>
+-->
+        <h6 class="og_parent_cate_name"><a></a></h6>
+    </div>
+
+
+    <div class="og_sub_container product-list-contents" data-page="prdList">
+
+
+
+
+        <div class="og_bg_img_wrap">
+
+            <div class="og_prdlist_category">
+
+                <div module="Layout_category" data-ogcate-type="currentView_list_under" data-ogcate-event="true">
+                    <!-- 카테고리 깨지는 UI display:none으로 강제 가림 처리 -->
+                    <ul class="menu_1ul" style="display:none;">
+                        <!-- 자동 호출 메뉴 : 이 부분은 수정하시면 안됩니다. -->
+                        <li class="menu_1li" data-cate="{$cate_no}" data-depth="1" data-over-img="{$img_over}"
+                            data-img="{$img}">
+                            <a href="/{$design_page_url|replace:list2.html,list.html}{$param}">{$name}</a>
+                        </li>
+                        <li class="menu_1li" data-cate="{$cate_no}" data-depth="1" data-over-img="{$img_over}"
+                            data-img="{$img}">
+                            <a href="/{$design_page_url|replace:list2.html,list.html}{$param}">{$name}</a>
+                        </li>
+                        <!-- //자동 호출 메뉴 : 이 부분은 수정하시면 안됩니다. -->
+                    </ul>
+                </div>
+                <div module="product_normalmenu" class="">
+                    <!--
+$compare_page = /product/compare.html
+-->
+                    <div class="og_function_area">
+                        <div class="og_function_box">
+                            <div class="function" id="{$listmenu_position}">
+                                <p class="prdCount">총<strong class="txtEm">{$total_count}</strong>개의 상품이 있습니다.</p>
+                                <div class="sort">
+                                    <select id="selArray" name="selArray" module="product_Orderby">
+                                        <option value="{$param}">{$sort_name}</option>
+                                        <option value="{$param}">{$sort_name}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="og_curation_button">
+                                <span>필터</span>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <div class="normalpackage_box">
+            <!-- import(/product/shoppQ/searchContent.html)-->
+
+
+            <div module="product_normalpackage" class="">
+                <!--@css(/css/module/product/listnormal.css)-->
+                <!--@js(/js/module/product/normalmenu.js)-->
+
+
+                <div class="product-list-container">
+
+                    <div class="filter-wrap">
+
+                        <div module="product_searchdata" class="{$filter_class}">
+                            <!-- css(/css/module/product/searchdata.css)-->
+                            <form class="searchCondition " id="{$searchdata_form}" name="" method="get">
+                                <input type="hidden" name="keyword" id="{$searchdata_keyword_hidden}" /><input
+                                                                                                               type="hidden" name="rel_keyword" id="{$searchdata_rel_keyword}"
+                                                                                                               value="{$searchdata_rel_keyword_param}" />
+                                <div class="header">
+                                    <h2 class="title">필터</h2><button type="button"
+                                                                     class="btnClose2"><!--@import(/SkinImg/svg/close.html)--></button>
+                                </div>
+                                <div class="wrap">
+                                    <div class="toggleArea eToggle selected accordion"
+                                         module="product_SearchFilterList">
+                                        <div class="title {$filter_key}">
+                                            <h3>{$filter_name}</h3>
+                                        </div>
+                                        <div class="contents {$filter_type}">
+                                            <ul module="product_filterform">
+                                                <li class="{$filter_class}">{$filter_value}</li>
+                                                <li class="{$filter_class}">{$filter_value}</li>
+                                            </ul>
+                                            <div class="withinInput {$within_input_display|display}">
+                                                <div class="search">{$within_input}<button type="button"
+                                                                                           class="btnDelete">삭제</button></div>
+                                                {$within_suggest}
+                                            </div>
+                                            <div class="priceInput {$price_input_display|display}">{$price_input}</div>
+                                            <div class="slider {$price_slider_display|display}">{$price_slider}</div>
+                                            <p class="value {$price_slider_display|display}">{$price_txt}</p>
+                                        </div>
+                                        <button type="button" class="btnClear ec-product-searchdata-form-clear"
+                                                {$filter_key_value}>선택해제</button>
+                                    </div>
+                                </div>
+                                <div class=" og_base_button">
+                                    <div class="og_inner">
+                                        <div class="ec-base-button gColumn">
+                                            <button type="button" class="btnEm ec-product-searchdata-reset">필터 초기화</button>
+                                            <button type="button" class="btnSubmit"
+                                                    id="{$searchdata_submit}">적용하기</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+
+                    </div>
+                    <div class="og_inner">
+                        <div class="data-wrap">
+
+
+                            <div class="data-view-wrap">
+                                <!--@import(/product/shoppQ/searchConditionData.html)-->
+                            </div>
+
+                            <div module="product_listnormal" class="ec-base-product og_base_product">
+
+                                <!--
+$count = 60
+※ 상품진열갯수를 설정하는 변수입니다. 설정하지 않을 경우, 최대 200개의 상품이 진열 됩니다.
+※ 진열된 상품이 많으면, 쇼핑몰에 부하가 발생할 수 있습니다.
+$moreview = no
+$cache = no
+$basket_result = /product/add_basket.html
+$basket_option = /product/basket_option.html
+-->
+
+                                <ul class="prdList grid4">
+                                    <li id="anchorBoxId_{$product_no}" data-prd="{$product_no}" class="each_product">
+                                        <!--@import(/ogam/html/prd/common_prd.html)-->
+                                        <!--@import(/ogam/html/prd/product_ListItem.html)-->
+                                    </li>
+                                    <li id="anchorBoxId_{$product_no}" data-prd="{$product_no}" class="each_product">
+                                        <!--@import(/ogam/html/prd/common_prd.html)-->
+                                        <!--@import(/ogam/html/prd/product_ListItem.html)-->
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <script>
+                            function addIcon() {
+                                let listProduct = $(".prdList").children();
+
+                                for (let i = 0; i < listProduct.length; i++) {
+                                    let $product = $(listProduct[i]);
+                                    let productId = $product.attr("id");
+
+                                    let $iconBox = $("#" + productId).find(".promotion.og_promotion_icons");
+                                    let spanContent = $("#" + productId).find(".forAdd .forAddIcon > span").html().trim();
+
+                                    $iconBox.append(spanContent);
+
+                                    // 온라인단독
+                                    if (/온라인단독/.test(spanContent)) {
+                                        $iconBox.addClass('online');
+                                    }
+
+                                    // 자사몰단독
+                                    if (/자사몰단독/.test(spanContent)) {
+                                        $iconBox.addClass('only');
+                                    }
+                                }
+                            }
+
+                            addIcon();
+
+                            $(window).on('scroll', function () {
+                                // addIcon();
+                            });
+                        </script>
+
+                        <!------기존 더보기 버튼 코드--------------------------------------------------------------------------->
+
+                        <div module="product_listmore" class="more layout_hidden">
+                            <!--@css(/css/module/product/productMore.css)-->
+                            <a href="#none" onclick="{$more_action}" class="btnMore">
+                                상품 더보기<div>(<span id="more_current_page">{$current_page}</span>/<span
+                                                                                                      id="more_total_page">{$total_page}</span>)</div>
+                            </a>
+                        </div>
+
+                        <!------기존 더보기 버튼 코드--------------------------------------------------------------------------->
+
+
+                        <!------ 화면 하단의 페이지네이션 코드-------------------------------------------------------------------->
+                        <div module="product_normalpaging" class="ec-base-paginate typeList custom-pagination-wrap">
+
+                            <a href="{$param_before}">이전 페이지</a>
+                            <ol>
+                                <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
+                                <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
+                                <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
+                                <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
+                                <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
+                            </ol>
+                            <a href="{$param_next}">다음 페이지</a>
+
+                        </div>
+                        <!------ 화면 하단의 페이지네이션 코드-------------------------------------------------------------------->
+
+
+                    </div><!-- //product_list -->
+                </div>
+            </div><!-- //product_normalpackage -->
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- 배너매니저 스크립트 코드 -->
+<style>
+    [df-banner-code][hidden] {
+        display: none !important
+    }
+</style>
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script>
+    var ord = Math.random();
+    document.write('<script async src="/web/upload/appfiles/ZaReJam3QiELznoZeGGkMG/1d9774ca0a3f99832c863c90349d45bb.js?v=' + ord + '"><\/script>');
+    $('.prdImg').on('mouseover', function () {
+        $(this).find('.hover_img').css('opacity', '1');
+    });
+    $('.prdImg').on('mouseleave', function () {
+        $(this).find('.hover_img').css('opacity', '0');
+    });
+
+
+    // 658 카테고리 상품 리스트 탑 배너 생성
+    document.addEventListener("DOMContentLoaded", function () {
+        if (window.location.href.includes("/product/list.html?cate_no=658")) {
+            const banner = document.querySelector(".listTopBanner.cate658");
+            if (banner) {
+                banner.classList.remove("displaynone");
+            }
+        }
+    });
+</script>
+
+<!--@import(/apps/cafe24plusapp/marketing/recommend_install.html)-->
+<!--import(/product/filter_img.html)-->
+
+
+
+<meta data-filepathid="2227" id="recommend-redirect-to-app-stats">
+<script src="https://plusapp-manager.cafe24.com/js/front/recommend-redirect-to-app.js" defer></script>
+
+
+
+
+<script>
+    // 카페24 가격 자체 refresh되게 하는것 막기
+    document.addEventListener(
+        'click',
+        function (e) {
+            const title = e.target.closest('.toggleArea.eToggle.accordion > .title');
+            if (!title) return;
+
+            if (title.textContent.trim() !== '가격') return;
+
+            // Cafe24 이벤트 완전 차단
+            e.preventDefault();
+            e.stopPropagation();
+            e.stopImmediatePropagation();
+
+            const accordion = title.closest('.accordion');
+            const contents = accordion.querySelector('.contents');
+            if (!accordion || !contents) return;
+
+            // 우리가 직접 열고 닫기
+            $(contents).stop(true, true).slideToggle(200);
+            accordion.classList.toggle('active');
+        },
+        true
+    );
+
+
+    $(document).on('click', '.accordion > .title', function (e) {
+        // 가격은 위에서 처리했으므로 제외
+        console.log('11111');
+        if ($(this).text().trim() === '가격') return;
+
+        e.preventDefault();
+
+        const $accordion = $(this).closest('.accordion');
+        const $contents = $accordion.children('.contents');
+
+        $contents.stop(true, true).slideToggle(200);
+        $accordion.toggleClass('active');
+    });
+
+    document.addEventListener(
+        'change',
+        function (e) {
+            if (
+                e.target.id === 'ec-product-searchdata-minval' ||
+                e.target.id === 'ec-product-searchdata-maxval'
+            ) {
+                e.stopImmediatePropagation();
+            }
+        },
+        true
+    );
+</script>
+
+<script>
+    $(function () {
+        var $dataViewWrap = $('.data-view-wrap');
+        var $list = $dataViewWrap.find('.list');
+
+        if ($list.find('li').length === 0) {
+            $dataViewWrap.addClass('hidden');
+        } else {
+            $dataViewWrap.removeClass('hidden');
+        }
+
+
+
+    });
+
+
+</script>
+
+
+
+<script>
+    (function () {
+        function isMobileSheet() {
+            return window.innerWidth < 1366;
+        }
+
+        // 열기 버튼: UI 상태만 ON
+        $(document).on('click', '.og_curation_button', function () {
+            if (!isMobileSheet()) return;
+
+            $('.filter-wrap').addClass('is-open');
+            $('body').addClass('filter-open');
+        });
+
+        // 닫기 버튼: UI 상태만 OFF
+        $(document).on('click', '.filter-wrap .btnClose2', function () {
+            $('.filter-wrap').removeClass('is-open');
+            $('body').removeClass('filter-open');
+        });
+
+        // 딤 클릭으로 닫기(선택)
+        $(document).on('click', function (e) {
+            if (!isMobileSheet()) return;
+            if (!$('body').hasClass('filter-open')) return;
+
+            // filter-wrap 바깥 클릭이면 닫기
+            if ($(e.target).closest('.filter-wrap, .og_curation_button').length === 0) {
+                $('.filter-wrap').removeClass('is-open');
+                $('body').removeClass('filter-open');
+            }
+        });
+
+        // 1366 이상으로 돌아가면 흔적 제거
+        $(window).on('resize', function () {
+            if (!isMobileSheet()) {
+                $('.filter-wrap').removeClass('is-open');
+                $('body').removeClass('filter-open');
+            }
+        });
+    })();
+</script>

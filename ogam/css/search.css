@@ -1,0 +1,251 @@
+
+
+#dalue_search_relativeTerm_view{
+    display: none;
+}
+
+#dalue_search_filter{
+    display: none;
+}
+
+
+html .dalue_css_pagination a{
+    margin: 0;
+    padding: 0;
+}
+
+html .dalue_css_pagination a.active{
+    color: #000 !important;
+    border: none;
+    border-radius: 0;
+}
+
+
+html #ec-product-searchdata-form{
+    position: relative;
+    background: transparent;
+}
+
+
+html .dalue_css_pagination{
+    margin: 50px 0 0 0;
+    text-align: center;
+    font-size: 0;
+    line-height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+html .dalue_css_pagination > a {
+    display: inline-block;
+    width: 40px;
+    line-height: 40px;
+    text-align: center;
+    background: #fff;
+    box-sizing: border-box;
+    background: url(/SkinImg/img/btn_page_next.png) no-repeat center center;
+    background-size: 40px;
+    height: 40px;
+    vertical-align: top;
+}
+
+html .dalue_css_pagination > a:first-child,
+html .dalue_css_pagination > a:nth-child(2){
+    background: url(/SkinImg/img/btn_page_prev.png) no-repeat center center;
+    background-size: 40px;
+}
+
+html .dalue_css_pagination > a:not(:first-child):not(:nth-child(2)):not(:last-child):not(:nth-last-child(2)){
+    display: block;
+    width: 27px;
+    height: 30px;
+    font-size: 14px;
+    color: #000000;
+    line-height: 30px;
+    background: #fff;
+    margin: 0 10px 0 -1px;
+    vertical-align: top;
+}
+
+html .dalue_css_pagination > a:first-child,
+html .dalue_css_pagination > a:last-child{
+    display: none;
+}
+
+html .dalue_css_pagination a.active{
+    position: relative;
+    z-index: 1;
+    color: #000;
+    border: 1px solid #000;
+    font-weight: bold;
+    box-sizing: border-box;
+    line-height: 28px;
+}
+
+html .dalue_css_pagination > a:nth-last-child(3){
+    margin-right: 0 !important;
+}
+
+
+
+#dalue_search_filter{
+    display: flex;
+    margin: 0 !important;
+    padding: 20px 0 30px;
+    border: none;
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+}
+#dalue_search_filter .og_inner{
+    display: flex;
+}
+
+
+#dalue_search_filter::after{
+    display: block;
+    width: 100vw;
+    height: 1px;
+    background: #eaeaea;
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+html .dalue_css_filter_row{
+    display: block;
+    border: none;
+    padding: 0 !important;
+    margin-right: 153px;
+}
+html .dalue_css_column_content{
+    padding: 0;
+    height: auto;
+    white-space: inherit;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 0;
+}
+html .dalue_css_column_content > li{
+    margin: 0 !important;
+}
+html .dalue_css_column_content input,
+html .dalue_css_column_content > a{
+    display: none !important;
+}
+
+html .dalue-navigation-tab-item{
+    text-align: left;
+}
+html .dalue-navigation-tab-item .dalue-navigation-tab__txt{
+    font-size: var(--fs-small);
+    line-height: var(--lh-narrow);
+    color: var(--color-black2-base);
+    margin-top: 10px;
+    opacity: 1;
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+
+}
+html .dalue_css_column_content > li:first-child .dalue-navigation-tab__txt{
+    margin-top: 0;
+}
+
+html .dalue-navigation-tab-item.active .dalue-navigation-tab__txt{
+    border-radius: 0;
+    background: transparent;
+    color: #000;
+    padding: 0;
+    font-size: var(--fs-small);
+    line-height: var(--lh-narrow);
+    color: var(--color-black2-base);
+}
+
+html .dalue-navigation-tab-item .dalue-navigation-tab__txt::before{
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: url(/SkinImg/img/checkbox_off.svg) no-repeat center !important;
+    content : "";
+}
+
+html .dalue-navigation-tab-item.active .dalue-navigation-tab__txt::before{
+    background: url(/SkinImg/img/checkbox_on.svg) no-repeat center !important;
+}
+
+html .dalue_css_filter_row::before{
+    margin-bottom: 26px;
+    font-size: var(--fs-base);
+    font-weight: var(--fw-medium);
+    line-height: var(--lh-narrow);
+    color: var(--color-black2-base);
+}
+
+/*
+html .dalue_css_filter_row:first-child::before{
+    display: block;
+    content: "카테고리";
+}
+html .dalue_css_filter_row:nth-child(2)::before{
+    display: block;
+    content: "가격";
+}
+*/
+
+@media screen and (max-width: 1366px){
+
+    html #ec-product-searchdata-form{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: var(--z-index-highest);
+        background: rgba(0,0,0,0.5);
+    }
+
+    #dalue_search_filter{
+        top: auto;
+        bottom: 0;
+        left: 0;
+        border-radius: 20px 20px 0 0;
+        padding: 20px;
+        display: block;
+    }
+
+    #dalue_search_filter::after{
+        display: none;
+    }
+
+
+    #dalue_search_filter .og_inner{
+        flex-direction: column;
+        padding: 0 !important;
+        row-gap: 32px;
+    }
+
+    html .dalue_css_filter_row{
+        margin-right: 0;
+    }
+
+    #og_search_data_view .og_inner{
+        padding: 0 !important;
+    }
+
+    .og_sub_container .xans-product-searchdata + div .og_function_area{
+        margin-top: 6px;
+    }
+    .og_function_box .function .prdCount{
+        font-size: var(--fs-small);
+    }
+
+    .og_sub_container .titleArea h2{
+        font-size: 30px;
+    }
+}

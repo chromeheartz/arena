@@ -1,0 +1,28 @@
+
+.layout_hidden {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+    min-width: initial !important;
+    min-height: initial !important;
+    overflow: hidden !important;
+    opacity: 0 !important;
+    font-size: 0 !important;
+    line-height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+}
+
+.noEvent {
+    position: relative;
+    pointer-events: none;
+}
+
+.noscroll {
+    /*position: fixed;
+    overflow-y: scroll;*/
+    /* 스크롤 커스텀으로인해 동작 불가하여 주석처리 */
+}

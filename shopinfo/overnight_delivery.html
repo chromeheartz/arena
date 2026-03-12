@@ -1,0 +1,107 @@
+<!--@layout(/layout/basic/layout.html)-->
+<!--@js(/ogam/js/shopinfo.js)-->
+<!--@css(/ogam/css/shopinfo.css)-->
+
+<div class="intro_area">
+    <div class="top_area">
+        <div class="section titleArea">
+            <h2>아레나 당일배송</h2>
+            <p>회원 전용 서울 지역 당일배송 서비스</p>
+        </div>
+        <div class="step_wrap">
+            <div class="step step1">
+                <div class="step_icon"></div>
+                <strong>step 01</strong>
+                <p>당일배송 상품주문</p>
+            </div>
+            <div class="step step2">
+                <div class="step_icon"></div>
+                <strong>step 02</strong>
+                <p>평일 오후 12시 이전 주문 확인</p>
+            </div>
+            <div class="step step3">
+                <div class="step_icon"></div>
+                <strong>step 03</strong>
+                <p>당일배송 상품출발</p>
+            </div>
+            <div class="step step4">
+                <div class="step_icon"></div>
+                <strong>step 04</strong>
+                <p>당일 배송완료</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="middle_area">
+        <div class="middle_box">
+            <div class="benefit benefit1">
+                <div class="title_area">
+                    <strong>당일도착</strong>
+                </div>
+                <div class="txt_wrap">
+                    <p>평일 12시 이전 결제시 당일도착<br>평일 12시 이후 결제시 익일 출발</p>
+                    <span>*서울, 수도권 지역 배송건에 해당</span>
+                </div>
+            </div>
+            <div class="benefit benefit2">
+                <div class="title_area">
+                    <strong>배송비</strong>
+                </div>
+                <div class="txt_wrap">
+                    <p>당일 도착하는데 배송비가 3,000원!<br>급할때는 당일배송으로!</p>
+                </div>
+            </div>
+            <div class="benefit benefit3">
+                <div class="title_area">
+                    <strong>만족도 상승!</strong>
+                </div>
+                <div class="txt_wrap">
+                    <p>쉽고 편한 당일 배송 서비스<br>당일배송으로 고객 만족도 상승</p>
+                </div>
+            </div>
+        </div>
+        <div class="middle_box_plus">
+            <!--<img src="../SkinImg/img/over_service.jpg" alt="당일배송 서비스 지역 안내">-->
+            <img src="https://arenakorea1.cafe24.com/web/upload/over_service_modi.jpg" alt="당일배송 서비스 지역 안내">
+        </div>
+        <div class="noti_wrap">
+            <div class="noti">
+                <h3>당일배송 안내</h3>
+                <p>당일배송은 평일 오후 12시 이전 결제 기준으로 당일배송 되며, 결제 기준 시간 이후의 결제건은 익일 발송됩니다.</p>
+                <p>아레나 당일배송 서비스는 당일 도착 보장 서비스이며 날씨, 천재지변에 따라 시간이 변경될 수 있습니다.</p>
+                <p>당일배송은 주문 후 변경이 불가하므로 교환 및 반품은 고객센터를 통해서 접수해주시기 바랍니다.</p>
+                <p>주말/공휴일 전일의 주문건은 도착 예정 날짜가 변경될 수 있습니다.</p>
+                <p>당일배송은 서울 지역에 한함, 추후 배송 가능 지역은 확대 예정입니다.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="bottom_area">
+        <h2>아레나 당일배송 상품</h2>
+        <div class="cate_num" data-cate="206"></div>
+    </div>
+</div>
+
+<!-- 하단 삭제 금지, 삭제 시 상품 영역 정상동작 하지 않습니다. -->
+<div module="product_listnormal" class="ec-base-product og_base_product displaynone">
+    <!--
+    $count = 8
+    $cate_no= 206
+    $moreview = yes
+    $basket_result = /product/add_basket.html
+    $basket_option = /product/basket_option.html
+    -->
+    <ul class="prdList grid4">
+        <li id="anchorBoxId_{$product_no}" data-prd="{$product_no}" class="each_product">
+            <!--@import(/ogam/html/prd/common_prd.html)-->
+            <!--@import(/ogam/html/prd/product_ListItem.html)-->
+        </li>
+        <li id="anchorBoxId_{$product_no}" data-prd="{$product_no}" class="each_product">
+            <!--@import(/ogam/html/prd/common_prd.html)-->
+            <!--@import(/ogam/html/prd/product_ListItem.html)-->
+        </li>
+    </ul>
+</div>
+
+<!-- //하단 삭제 금지, 삭제 시 상품 영역 정상동작 하지 않습니다. -->

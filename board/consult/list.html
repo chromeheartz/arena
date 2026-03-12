@@ -1,0 +1,213 @@
+<!--@layout(/layout/basic/layout.html)-->
+<!--@js(/ogam/js/board.js)-->
+<!--@css(/ogam/css/board.css)-->
+
+
+<div class="renewal-list-wrapper">
+    <div class="renewal-inner">
+        <div class="renewal-container">
+            <div class="sub-side-menu">
+
+                <div class="menu-wrapper">
+                    <div class="menu-wrap">
+                        <div class="subTitle">
+                            <h3>고객센터</h3>
+                        </div>
+                        <ul class="menu">
+                            <li><a href="/board/notice/list.html">공지사항</a></li>
+                            <li><a href="/board/FAQ/list.html">자주 묻는 질문</a></li>
+                            <li class="on"><a href="/board/consult/list.html">1:1 문의</a></li>
+                            <li><a href="/shopinfo/intro_membership.html">멤버십</a></li>
+
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="renewal-contents-wrapper board-contents-wrapper renewal-board-contents-wrapper">
+
+                <div class="nav-flex-wrap">
+
+                    <div class="page-top-nav-wrap">
+                        <dl>
+                            <dt>홈<span>/</span>고객센터<span>/</span></dt>
+                            <dd>
+                                1:1 문의
+                                <i class="mo-arrow"><img src="https://arenakorea1.cafe24.com/web/2026-renewal/img/grey-down-arrow.png" alt="grey down arrow" /></i>
+                            </dd>
+                        </dl>
+                        <h6>1:1 문의</h6>
+                        <ul class="mo-dropdown-list">
+                            <li><a href="/board/notice/list.html">공지사항</a></li>
+                            <li><a href="/board/FAQ/list.html">자주 묻는 질문</a></li>
+                            <li class="on"><a href="/board/consult/list.html">1:1 문의</a></li>
+                            <li><a href="/shopinfo/intro_membership.html">멤버십</a></li>
+                        </ul>
+                    </div>
+                    <div module="board_ButtonList_9" class="ec-base-button">
+
+                        <a href="/board/consult/write.html{$param_write}&listpage=/board/consult/list.html" class="{$write_display|display}">1:1 문의하기</a>
+
+                    </div>
+                </div>
+
+
+
+                <div>
+                    <div class="mo-component" module="board_search_9">
+                        <!--@css(/css/module/board/search.css)-->
+                        <fieldset class="boardSearch">
+                            <legend>게시물 검색</legend>
+                            <div class="form">{$form.search_key} {$form.search} <a href="#none" class="btnNormal" onclick="{$action_search}">검색</a></div>
+                        </fieldset>
+                    </div>
+                    <div class="section board-section list_board_type1" module="Board_ListPackage_9">
+                        <!-- css(/css/module/board/listPackage.css)-->
+                        <!-- css(/css/module/board/boardPackage.css)-->
+
+
+
+                        <div class="boardSort layout_hidden">
+                            <span module="board_category_9">{$form.board_category}</span>
+                            <span module="board_ReplySort_9">{$reply_sort}</span>
+                        </div>
+
+                        <div class="ec-base-table typeList">
+                            <table border="1" >
+                                <caption>1:1 맞춤상담 목록</caption>
+                                <colgroup module="board_listheader_9">
+                                    <col style="width:150px;" class="{$config.is_category|display}" />
+                                    <col style="width:auto;" />
+                                    <col style="width:140px;" />
+                                    <col style="width:140px;" class="{$config.use_date|display}" />
+                                </colgroup>
+                                <thead module="board_listheader_9">
+                                    <tr>
+                                        <th scope="col" class="{$config.is_category|display}">카테고리</th>
+                                        <th scope="col" class="left">제목</th>
+                                        <th scope="col">처리상태</th>
+                                        <th scope="col" class="{$config.use_date|display}">작성일</th>
+                                    </tr>
+                                </thead>
+                                <tbody module="board_list_9" class="center">
+                                    <!--
+$login_page_url = /member/login.html
+-->
+                                    <tr style="{$list_bg_color} {$list_char_color}">
+                                        <td class="displaynone">{$no}</td>
+                                        <td class="category"><span>{$category_name}</span></td>
+                                        <td class="subject left txtBreak"><a href="/board/consult/read.html{$param_read}&cate_name={$category_name}&listpage=/board/consult/list.html" style="{$link_color}">{$subject}</a>{$icon_file}</td>
+                                        <td class="displaynone">{$member_icon}{$writer}</td>
+                                        <td class="consult"><span class="state">{$consult}</span></td>
+                                        <td class="date {$date_display|display}"><span class="txtNum">{$write_date}</span></td>
+                                    </tr>
+                                    <tr style="{$list_bg_color} {$list_char_color}">
+                                        <td class="displaynone">{$no}</td>
+                                        <td class="category"><span>{$category_name}</span></td>
+                                        <td class="subject left txtBreak"><a href="/board/consult/read.html{$param_read}&cate_name={$category_name}&listpage=/board/consult/list.html" style="{$link_color}">{$subject}</a>{$icon_file}</td>
+                                        <td class="displaynone">{$member_icon}{$writer}</td>
+                                        <td class="consult"><span class="state">{$consult}</span></td>
+                                        <td class="date {$date_display|display}"><span class="txtNum">{$write_date}</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p class="empty-text {$empty_display|display}" module="board_empty_9">문의 내역이 없습니다</p>
+                        </div>
+
+
+                        <div class="board-element-wrap">
+
+                            <div class="section pc-component" module="board_search_9">
+                                <!--@css(/css/module/board/search.css)-->
+                                <fieldset class="boardSearch">
+                                    <legend>게시물 검색</legend>
+                                    <div class="form">{$form.search_key} {$form.search} <a href="#none" class="btnNormal" onclick="{$action_search}">검색</a></div>
+                                </fieldset>
+                            </div>
+                            <div module="board_ButtonList_9" class="ec-base-button">
+                                <a href="/board/consult/write.html{$param_write}&listpage=/board/consult/list.html" class="mo-component {$write_display|display}">1:1 문의하기</a>
+                            </div
+
+                                <div module="board_paging_9" class="section ec-base-paginate typeList custom-pagination-wrap">
+                                <a href="{$param_prev}">이전 페이지</a>
+                                <ol>
+                                    <li><a href="{$param_num}" class="{$param_class}">{$page_num}</a></li>
+                                    <li><a href="{$param_num}" class="{$param_class}">{$page_num}</a></li>
+                                </ol>
+                                <a href="{$param_next}">다음 페이지</a>
+                            </div>
+
+
+                        </div>
+
+
+
+
+
+
+
+
+
+
+                    </div>
+                </div>    
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<script>
+    const urlParams = new URL(location.href).searchParams;
+
+    const cateNo = urlParams.get('category_no');
+    if(cateNo=='8'){
+        $('.oriThis').removeClass('this');
+        $('.oriOn').removeClass('on');
+
+        $('.newThis').addClass('this');
+        $('.newOn').addClass('on');
+    }
+
+</script>
+
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const states = document.querySelectorAll(".state");
+
+        states.forEach(state => {
+            const value = state.textContent.trim();
+
+            if (value === "O") {
+                state.textContent = "답변완료";
+                state.classList.add("is-complete");
+            }
+            else if (value === "X") {
+                state.textContent = "답변대기";
+                state.classList.add("is-waiting");
+            }
+        });
+    });
+</script>
+
+<script>
+    // 1. 함수로 분리하여 여러 상황에서 호출할 수 있게 합니다.
+    const applySearchPlaceholder = () => {
+        // ID뿐만 아니라 게시판 검색 폼 내부의 모든 text input을 대상으로 합니다.
+        const searchInputs = document.querySelectorAll('.boardSearch input[type="text"], #search');
+        
+        searchInputs.forEach(input => {
+            input.setAttribute('placeholder', '검색');
+        });
+    };
+
+    // 2. DOMContentLoaded에서 먼저 실행
+    window.addEventListener('DOMContentLoaded', applySearchPlaceholder);
+
+    // 3. 만약 카페24 기본 JS가 뒤늦게 DOM을 건드릴 경우를 대비해 window.onload도 활용합니다.
+    window.addEventListener('load', applySearchPlaceholder);
+</script>

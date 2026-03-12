@@ -1,0 +1,135 @@
+/* ogswiper css */
+
+.og_swiper_container{
+    position: relative;
+}
+
+.og_swiper_container .no-swiping{
+    transform: none !important;
+}
+
+.og_swiper_container .swiper-container{
+    height: 100%;
+    overflow: hidden;
+}
+
+.og_swiper_container .swiper-wrapper{
+
+}
+
+.og_swiper_container .swiper-slide{
+
+}
+
+.og_swiper_container .swiper-slide > a:only-child{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.og_swiper_container .swiper-slide > a:only-child > img:only-child{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.og_module_container{
+    width: 100%;
+    text-align: center;
+}
+
+.og_module_container .swiper-pagination{
+    position: static;
+}
+
+
+
+
+/* swiper 공통 스타일 */
+
+.og_module_container{
+    z-index: var(--z-index-high);
+}
+.og_module_container .swiper-pagination-fraction{
+    display: inline-flex;
+    width: auto;
+    margin: 0 auto;
+    padding: 7px 20px;
+    background: rgba(0,0,0,0.5);
+    border-radius: 2em;
+    color: var(--color-white-base);
+    font-size: 13px;
+}
+
+.og_module_container .swiper-pagination-fraction span{
+    color: var(--color-white-base);
+    font-size: 13px;
+    line-height: var(--lh-narrow);
+}
+
+.og_module_container .swiper-pagination-fraction span:first-child{margin-right: 2px;}
+.og_module_container .swiper-pagination-fraction span:last-child{margin-left: 2px;}
+
+.og_module_container .swiper-button-next,
+.og_module_container .swiper-button-prev{
+    width: 45px;
+    height: 45px;
+    background-size: auto 23px;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-top: -22.5px;
+}
+
+.og_module_container .swiper-button-next::after,
+.og_module_container .swiper-button-prev::after{
+    display: none;
+}
+
+.og_module_container .swiper-button-prev,
+.og_module_container .swiper-container-rtl .swiper-button-next {
+    left: 0;
+    right: auto;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='26' viewBox='0 0 14 26' fill='none'%3E%3Cpath d='M12.75 24.5L1.25 13L12.75 1.5' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+.og_module_container .swiper-button-next,
+.og_module_container .swiper-container-rtl .swiper-button-prev{
+    left: auto;
+    right: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='26' viewBox='0 0 14 26' fill='none'%3E%3Cpath d='M1.25 24.5L12.75 13L1.25 1.5' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+.og_module_container.og_swiper_scrollbar{
+
+}
+
+.og_module_container.og_swiper_scrollbar .swiper-scrollbar{
+    background: var(--color-gray3-base);
+}
+
+.og_module_container.og_swiper_scrollbar .swiper-scrollbar-drag{
+    height: 4px;
+    background: var(--color-black-base);
+}
+
+
+
+/* 모듈 화이트 */
+[data-ogswipe-module-theme="white"] .og_module_container.og_swiper_scrollbar .swiper-scrollbar{
+    background: rgba(255,255,255,0.2);
+}
+
+[data-ogswipe-module-theme="white"] .og_module_container.og_swiper_scrollbar .swiper-scrollbar-drag{
+    background: var(--color-white-base);
+    height: 2px;
+}
+
+[data-ogswipe-module-theme="white"] .og_module_container .swiper-button-prev,
+[data-ogswipe-module-theme="white"] .og_module_container .swiper-container-rtl .swiper-button-next {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='26' viewBox='0 0 14 26' fill='none'%3E%3Cpath d='M12.75 24.5L1.25 13L12.75 1.5' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+[data-ogswipe-module-theme="white"] .og_module_container .swiper-button-next,
+[data-ogswipe-module-theme="white"] .og_module_container .swiper-container-rtl .swiper-button-prev{
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='26' viewBox='0 0 14 26' fill='none'%3E%3Cpath d='M1.25 24.5L12.75 13L1.25 1.5' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}

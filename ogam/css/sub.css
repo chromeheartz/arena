@@ -1,0 +1,35 @@
+
+
+.og_sub_container.footer_menu{
+}
+
+.og_sub_container.footer_menu .titleArea h2{
+    font-size: 32px;
+    line-height: var(--lh-narrow);
+    text-align: center;
+}
+
+.og_sub_container.footer_menu .ec-base-box{
+    border: none;
+    background: var(--color-bg1-base);
+    padding: 50px;
+}
+
+.og_sub_container.footer_menu .ec-base-box *{
+    font-size: var(--fs-xsmall);
+    line-height: var(--lh-narrow);
+}
+
+html .titleArea{
+    margin-top: 0;
+    padding-top: 80px;
+}
+
+@media screen and (max-width: 1366px) {
+    html .titleArea{
+        padding-top: 30px;
+    }
+    .og_sub_container.footer_menu .ec-base-box{
+        padding: 15px;
+    }
+}

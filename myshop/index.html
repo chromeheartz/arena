@@ -1,0 +1,802 @@
+<!--@layout(/layout/basic/layout.html)-->
+<!--@css(/ogam/css/myshop.css)-->
+<div module="layout_logincheck" data-ez="contents-04w3slw-1">
+    <!--
+$url = /member/login.html
+-->
+</div>
+
+<div class="mypage-main-wrapper mypage-wrapper mypage-myshop-main-wrapper">
+    <div class="mypage-inner mypage-main-inner">
+        <div class="mypage-contents-wrapper">
+            <!--@import(/myshop/myshop_main.html)-->
+            <div class="myshopArea myshopMain flex-1 flex-col mypage-main-wrap mypage-common-contents-wrapper"
+                data-ez="contents-0z1plus-1">
+                <div class="page-top-nav-wrap">
+                    <dl>
+                        <dt>홈<span>/</span></dt>
+                        <dd>마이페이지</dd>
+                    </dl>
+                    <h6>마이페이지</h6>
+                </div>
+
+                <div class="section benefit" data-ez="contents-0uzq1s1-1" style="display: none;">
+                    <div module="myshop_asyncbankbook">
+
+                        <ul>
+                            <li module="myshop_asyncbenefit" class="{$display_benefit}">
+
+                                <div class="user">
+                                    <span class="user__thumb"><img src="{$group_image}" alt
+                                            onerror="this.src='//img.echosting.cafe24.com/skin/base_ko_KR/member/img_member_default.gif';"
+                                            width="42" class="{$group_image_tag_class}" loading="lazy"
+                                            ez-prevent="img"></span>
+                                    <div class="user__info">
+                                        <div class="user__data">
+                                            <div class="{$displayGroupIcon|display}"><img src="{$group_icon}"
+                                                    class="{$group_icon_tag_class}" loading="lazy" ez-prevent="img">
+                                            </div><span>{$group_name}</span>
+                                        </div>
+                                        <span class="txtEm1">{$member_name} 님</span>
+                                        <div class="user__data">
+                                            <div class="{$displayGroupIcon|display}"><img src="{$group_icon}"
+                                                    class="{$group_icon_tag_class}" loading="lazy" ez-prevent="img">
+                                            </div>고객님의 회원등급은 <span>{$group_name}</span> 입니다.
+                                        </div>
+                                        <p class="{$display_no_benefit|display} {$display_no_benefit_class}"><strong
+                                                class="txtEm">{$dc_pay} {$dc_min_price}</strong> 구매시 <strong
+                                                class="txtEm">{$dc_price}{$dc_type}</strong>을 {$use_dc} 받으실 수 있습니다.
+                                            {$dc_max_percent}</p>
+                                        <p class="{$display_with_all|display} {$display_with_all_class}"><strong
+                                                class="txtEm">{$dc_pay} {$dc_min_price_mileage}</strong> 구매시 <strong
+                                                class="txtEm">{$dc_price_mileage}{$dc_type_mileage}</strong>을
+                                            {$use_dc_mileage} 받으실 수 있습니다. {$dc_max_mileage_percent}</p>
+                                        <div class="{$bGradeAutoDisplay|display} gBlank5" id="{$sGradeAutoDisplayId}">
+                                            <p class="{$bChangeTypePrice|display} {$sAutoGradeDisplay}"><strong>[<span
+                                                        class="{$bDisplayNextGroupIcon|display} {$sNextGroupIconClass}"><img
+                                                            src="{$group_icon}" alt class="{$next_group_icon_tag_class}"
+                                                            loading="lazy"
+                                                            ez-prevent="img"></span>{$sNextGrade}]</strong> 까지 남은 구매금액은
+                                                <strong>{$sGradeIncreasePrice}</strong> 입니다. ({$sApplyPeriod}
+                                                {$sGradePeriod} 구매금액 : {$sPeriodOrderPrice})
+                                            </p>
+                                            <p class="{$bChangeTypeCount|display} {$sAutoGradeDisplay}"><strong>[<span
+                                                        class="{$bDisplayNextGroupIcon|display} {$sNextGroupIconClass}"><img
+                                                            src="{$group_icon}" alt class="{$next_group_icon_tag_class}"
+                                                            loading="lazy"
+                                                            ez-prevent="img"></span>{$sNextGrade}]</strong> 까지 남은 구매건수는
+                                                <strong>{$sGradeIncreaseCount}</strong> 입니다. ({$sApplyPeriod}
+                                                {$sGradePeriod} 구매건수 : {$sPeriodOrderCount})
+                                            </p>
+                                            <p class="{$bChangeTypePriceAndCount|display} {$sAutoGradeDisplay}">
+                                                <strong>[<span
+                                                        class="{$bDisplayNextGroupIcon|display} {$sNextGroupIconClass}"><img
+                                                            src="{$group_icon}" alt class="{$next_group_icon_tag_class}"
+                                                            loading="lazy"
+                                                            ez-prevent="img"></span>{$sNextGrade}]</strong> 까지 남은 구매금액은
+                                                <strong>{$sGradeIncreasePrice}</strong>, 남은 구매건수는
+                                                <strong>{$sGradeIncreaseCount}</strong> 입니다. ({$sApplyPeriod}
+                                                {$sGradePeriod} 구매금액 : {$sPeriodOrderPrice}｜구매건수 : {$sPeriodOrderCount})
+                                            </p>
+                                            <p class="{$bChangeTypePriceOrCount|display} {$sAutoGradeDisplay}">
+                                                <strong>[<span
+                                                        class="{$bDisplayNextGroupIcon|display} {$sNextGroupIconClass}"><img
+                                                            src="{$group_icon}" alt class="{$next_group_icon_tag_class}"
+                                                            loading="lazy"
+                                                            ez-prevent="img"></span>{$sNextGrade}]</strong> 까지 남은 구매금액은
+                                                <strong>{$sGradeIncreasePrice}</strong>, 또는 남은 구매건수
+                                                <strong>{$sGradeIncreaseCount}</strong> 입니다. ({$sApplyPeriod}
+                                                {$sGradePeriod} 구매금액 : {$sPeriodOrderPrice}｜구매건수 : {$sPeriodOrderCount})
+                                            </p>
+                                            <p class="{$bChangeMaxTypePrice|display}" id="{$sChangeMaxTypePriceId}">
+                                                <strong>[<span
+                                                        class="{$bDisplayNextGroupIcon|display} {$sNextGroupIconClass}"><img
+                                                            src="{$group_icon}" alt class="{$next_group_icon_tag_class}"
+                                                            loading="lazy"
+                                                            ez-prevent="img"></span>{$sNextGrade}]</strong> 등급을 유지하기 위해
+                                                남은 구매금액은 <strong>{$sGradeIncreasePrice}</strong> 입니다. ({$sApplyPeriod}
+                                                {$sGradePeriod} 구매금액 : {$sPeriodOrderPrice})
+                                            </p>
+                                            <p class="{$bChangeMaxTypeCount|display}" id="{$sChangeMaxTypeCountId}">
+                                                <strong>[<span
+                                                        class="{$bDisplayNextGroupIcon|display} {$sNextGroupIconClass}"><img
+                                                            src="{$group_icon}" alt class="{$next_group_icon_tag_class}"
+                                                            loading="lazy"
+                                                            ez-prevent="img"></span>{$sNextGrade}]</strong> 등급을 유지하기 위해
+                                                남은 구매건수는 <strong>{$sGradeIncreaseCount}</strong> 입니다. ({$sApplyPeriod}
+                                                {$sGradePeriod} 구매건수 : {$sPeriodOrderCount})
+                                            </p>
+                                            <p class="{$bChangeMaxTypePriceAndCount|display}"
+                                                id="{$sChangeMaxTypePriceAndCountId}"><strong>[<span
+                                                        class="{$bDisplayNextGroupIcon|display} {$sNextGroupIconClass}"><img
+                                                            src="{$group_icon}" alt class="{$next_group_icon_tag_class}"
+                                                            loading="lazy"
+                                                            ez-prevent="img"></span>{$sNextGrade}]</strong> 등급을 유지하기 위해
+                                                남은 구매금액은 <strong>{$sGradeIncreasePrice}</strong>, 남은 구매건수는
+                                                <strong>{$sGradeIncreaseCount}</strong> 입니다. ({$sApplyPeriod}
+                                                {$sGradePeriod} 구매금액 : {$sPeriodOrderPrice}｜구매건수 : {$sPeriodOrderCount})
+                                            </p>
+                                            <p class="{$bChangeMaxTypePriceOrCount|display}"
+                                                id="{$sChangeMaxTypePriceOrCountId}"><strong>[<span
+                                                        class="{$bDisplayNextGroupIcon|display} {$sNextGroupIconClass}"><img
+                                                            src="{$group_icon}" alt class="{$next_group_icon_tag_class}"
+                                                            loading="lazy"
+                                                            ez-prevent="img"></span>{$sNextGrade}]</strong> 등급을 유지하기 위해
+                                                남은 구매금액은 <strong>{$sGradeIncreasePrice}</strong>, 또는 남은 구매건수
+                                                <strong>{$sGradeIncreaseCount}</strong> 입니다. ({$sApplyPeriod}
+                                                {$sGradePeriod} 구매금액 : {$sPeriodOrderPrice}｜구매건수 : {$sPeriodOrderCount})
+                                            </p>
+                                            <p class="txtInfo txt11">승급 기준에 따른 예상 금액이므로 총주문 금액과 다를 수 있습니다.</p>
+                                        </div>
+                                    </div>
+                                    <a href="/shopinfo/intro_membership.html" class="btn_beneinfo">등급별 혜택 안내</a>
+                                </div>
+                                <div class="group">
+
+                                    <span class="data"><span class="{$displayGroupIcon|display}"><img
+                                                src="{$group_icon}" alt class="{$group_icon_tag_class}" loading="lazy"
+                                                ez-prevent="img"></span>{$group_name}</span>
+                                    <span class="title">회원등급</span>
+                                </div>
+                            </li>
+
+                            <div>
+                                <li>
+                                    <a href="/myshop/mileage/historyList.html">
+
+                                        <span class="title">{$mileage_name}</span>
+                                        <span class="data">{$avail_mileage}</span>
+                                    </a>
+                                </li>
+                                <li class="{$display_coupon|display}">
+                                    <a href="/myshop/coupon/coupon.html">
+
+                                        <span class="title">쿠폰</span>
+                                        <span class="data">{$coupon_cnt}장</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/myshop/order/list.html">
+
+                                        <span class="title">총주문</span>
+                                        <span class="data">{$total_order_price} ({$total_order_count}회)</span>
+                                    </a>
+                                </li>
+                            </div>
+
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="mypage-info-wrapper ">
+
+                    <div class="mypage-user-wrap">
+                        <div class="user-wrap">
+                            <div class="user-info" module="myshop_benefit">
+                                <p>{$group_name}</p>
+                                <h6>{$member_name}<span> 님</span></h6>
+                            </div>
+                            <div class="user-period-wrap" module="myshop_bankbook">
+                                <dl>
+                                    <dt>멤버십 산정 기간</dt>
+                                    <dd></dd>
+                                </dl>
+                                <dl>
+                                    <dt>구매 금액</dt>
+                                    <dd class="total-order-price">{$total_order_price}원</dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="coupon-review-wrap" module="myshop_bankbook">
+                            <dl>
+                                <dt>사용 가능 쿠폰</dt>
+                                <dd>{$coupon_cnt}개</dd>
+                            </dl>
+                            <dl>
+                                <dt>사용 가능 적립금</dt>
+                                <dd>{$total_mileage}</dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="mypage-membership-wrapper" module="myshop_asyncbenefit">
+
+                        <div class="mypage-membership-wrap">
+                            <div class="membership-progress-container">
+                                <div class="raw-data-area" style="display:none;">
+                                    <span class="raw-current">{$sPeriodOrderPrice}</span>
+                                    <span class="raw-remain">{$sGradeIncreasePrice}</span>
+                                    <span class="raw-next">{$sNextGrade}</span>
+                                </div>
+
+                                <div class="progress-bar-main">
+                                    <div class="progress-track"></div>
+                                    <div class="progress-fill" id="dynamic_fill"></div>
+
+                                    <div class="next-grade-tooltip" id="next_grade_tooltip">
+                                        다음해 예상 등급: <span id="tooltip_grade_name">{$sNextGrade}</span>
+                                    </div>
+
+                                    <div class="step-marker is-first" data-grade="FREESTYLE" style="left: 4px;">
+                                        <span>Freestyle</span>
+                                    </div>
+                                    <div class="step-marker" data-grade="BACKSTROKE" style="left: 33%;">
+                                        <span>Backstroke</span>
+                                    </div>
+                                    <div class="step-marker" data-grade="BREASTSTROKE" style="left: 66%;">
+                                        <span>Breaststroke</span>
+                                    </div>
+                                    <div class="step-marker is-last" data-grade="BUTTERFLY" style="right: 4px;">
+                                        <span>Butterfly</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="membership-accordion-wrapper">
+                                <div class="membership-accordion">
+
+                                    <button class="membership-accordion-header">
+                                        <p>
+                                            <span class="light">{$sGradeIncreasePrice} 더 구매하시면</span> <br
+                                                class="tablet-br" /><span class="highlight">{$sNextGrade}</span>로 승급할 수
+                                            있어요!
+                                        </p>
+                                        <span class="arrow"></span>
+                                    </button>
+
+                                    <div class="membership-accordion-body">
+
+                                        <div class="membership-benefit-table">
+
+
+                                            <div class="grade-col">
+                                                <div class="grade-title">
+                                                    <p>Fresstyle</p>
+                                                    <span>가입 고객</span>
+                                                    <i></i>
+                                                </div>
+                                                <ul>
+                                                    <li>
+                                                        <dl>
+                                                            <dt>생일 바우처</dt>
+                                                            <dd>5%</dd>
+                                                        </dl>
+                                                    </li>
+                                                    <li>
+                                                        <dl>
+                                                            <dt>일반배송</dt>
+                                                            <dd>3만원 이상 구매 시 무료배송</dd>
+                                                        </dl>
+                                                    </li>
+                                                </ul>
+                                            </div>
+
+                                            <div class="grade-col">
+                                                <div class="grade-title">
+                                                    <p>Backstroke</p>
+                                                    <span>연간 50만원 이상 100만원 미만</span>
+                                                    <i></i>
+                                                </div>
+                                                <ul>
+                                                    <li>
+                                                        <dl>
+                                                            <dt>온/오프라인 즉시 할인</dt>
+                                                            <dd>3%</dd>
+                                                        </dl>
+                                                    </li>
+                                                    <li>
+                                                        <dl>
+                                                            <dt>생일 바우처</dt>
+                                                            <dd>10%</dd>
+                                                        </dl>
+                                                    </li>
+                                                    <li>
+                                                        <dl>
+                                                            <dt>일반배송</dt>
+                                                            <dd>3만원 이상 구매 시 무료배송</dd>
+                                                        </dl>
+                                                    </li>
+                                                    <li>
+                                                        <dl>
+                                                            <dt>재구매 바우처</dt>
+                                                            <dd>1만원 (5만원 이상 구매 시)</dd>
+                                                        </dl>
+                                                    </li>
+                                                    <li>
+                                                        <dl>
+                                                            <dt>포인트 적립</dt>
+                                                            <dd>1%</dd>
+                                                        </dl>
+                                                    </li>
+                                                    <li>
+                                                        <dl>
+                                                            <dt>등급 업그레이드 축하 바우처</dt>
+                                                            <dd>3만원 (20만원 이상 구매 시)</dd>
+                                                        </dl>
+                                                    </li>
+                                                </ul>
+                                            </div>
+
+                                            <div class="grade-col">
+                                                <div class="grade-title">
+                                                    <p>Breatstroke</p>
+                                                    <span>연간 100만원 이상 200만원 미만</span>
+                                                    <i></i>
+                                                </div>
+                                                <ul>
+                                                    <li>
+                                                        <dl>
+                                                            <dt>온/오프라인 즉시 할인</dt>
+                                                            <dd>5%</dd>
+                                                        </dl>
+                                                    </li>
+                                                    <li>
+                                                        <dl>
+                                                            <dt>생일 바우처</dt>
+                                                            <dd>15%</dd>
+                                                        </dl>
+                                                    </li>
+                                                    <li>
+                                                        <dl>
+                                                            <dt>일반배송</dt>
+                                                            <dd>3만원 이상 구매 시 무료배송</dd>
+                                                        </dl>
+                                                    </li>
+                                                    <li>
+                                                        <dl>
+                                                            <dt>재구매 바우처</dt>
+                                                            <dd>2만원 (10만원 이상 구매 시)</dd>
+                                                        </dl>
+                                                    </li>
+                                                    <li>
+                                                        <dl>
+                                                            <dt>포인트 적립</dt>
+                                                            <dd>2%</dd>
+                                                        </dl>
+                                                    </li>
+                                                    <li>
+                                                        <dl>
+                                                            <dt>등급 업그레이드 축하 바우처</dt>
+                                                            <dd>5만원 (20만원 이상 구매 시)</dd>
+                                                        </dl>
+                                                    </li>
+                                                </ul>
+                                            </div>
+
+                                            <div class="grade-col">
+                                                <div class="grade-title">
+                                                    <p>Butterfly</p>
+                                                    <span>연간 200만원 이상</span>
+                                                    <i></i>
+                                                </div>
+                                                <ul>
+                                                    <li>
+                                                        <dl>
+                                                            <dt>온/오프라인 즉시 할인</dt>
+                                                            <dd>10%</dd>
+                                                        </dl>
+                                                    </li>
+                                                    <li>
+                                                        <dl>
+                                                            <dt>생일 바우처</dt>
+                                                            <dd>20%</dd>
+                                                        </dl>
+                                                    </li>
+                                                    <li>
+                                                        <dl>
+                                                            <dt>일반배송</dt>
+                                                            <dd>상시 무료</dd>
+                                                        </dl>
+                                                    </li>
+                                                    <li>
+                                                        <dl>
+                                                            <dt>당일배송</dt>
+                                                            <dd>상시 무료</dd>
+                                                        </dl>
+                                                    </li>
+                                                    <li>
+                                                        <dl>
+                                                            <dt>재구매 바우처</dt>
+                                                            <dd>3만원 (15만원 이상 구매 시)</dd>
+                                                        </dl>
+                                                    </li>
+                                                    <li>
+                                                        <dl>
+                                                            <dt>포인트 적립</dt>
+                                                            <dd>3%</dd>
+                                                        </dl>
+                                                    </li>
+                                                    <li>
+                                                        <dl>
+                                                            <dt>등급 업그레이드 축하 바우처</dt>
+                                                            <dd>10만원 (20만원 이상 구매 시)</dd>
+                                                        </dl>
+                                                    </li>
+                                                </ul>
+                                            </div>
+
+
+
+
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="membership-detail-wrap">
+                            <a href="/shopinfo/intro_membership.html" class="membership-btn">등급 혜택 자세히 보기
+                                <i></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mypage-delivery-wrap" module="myshop_orderstate">
+                    <p>주문처리 현황 (최근 3개월 기준)</p>
+                    <div class="delivery-wrap">
+                        <div class="order-wrap">
+                            <dl>
+                                <dt>입금전</dt>
+                                <dd>
+                                    <a href="{$shppiedBeforeUrl}"> {$shppiedBeforeCount} </a>
+                                </dd>
+                            </dl>
+                            <span />
+                            <dl>
+                                <dt>배송준비중</dt>
+                                <dd>
+                                    <a href="{$shppiedStandbyUrl}"> {$shppiedStandbyCount} </a>
+                                </dd>
+                            </dl>
+                            <span />
+                            <dl>
+                                <dt>배송중</dt>
+                                <dd><a href="{$shppiedBeginUrl}"> {$shppiedBeginCount} </a></dd>
+                            </dl>
+                            <span />
+                            <dl>
+                                <dt>배송완료</dt>
+                                <dd>
+                                    <a href="{$shppiedComplateUrl}"> {$shppiedComplateCount} </a>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="cs-wrap">
+                            <dl>
+                                <dt>취소</dt>
+                                <dd>
+                                    <a href="{$orderCancelUrl}"> {$orderCancelCount} </a>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>교환</dt>
+                                <dd>
+                                    <a href="{$orderExchangeUrl}"> {$orderExchangeCount} </a>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>반품</dt>
+                                <dd>
+                                    <a href="{$orderReturnUrl}"> {$orderReturnCount} </a>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="myshopMain" module="myshop_main" class="mo-sub-menu">
+
+
+                    <div class="menu-wrapper">
+                        <div class="menu-wrap">
+                            <div class="subTitle">
+                                <h3>나의 쇼핑 정보</h3>
+                            </div>
+                            <ul class="menu">
+                                <li>
+                                    <a href="/myshop/order/list.html">주문내역조회</a>
+                                </li>
+                                <li>
+                                    <a href="/myshop/mileage/historyList.html">{$mileage_name} 내역</a>
+                                </li>
+                                <li class="{$deposit_display|display}">
+                                    <a href="/myshop/deposits/historyList.html">{$deposit_name} 내역</a>
+                                </li>
+                                <li class="{$coupon_display|display}">
+                                    <a href="/myshop/coupon/coupon.html">쿠폰 내역</a>
+                                </li>
+                                <li>
+                                    <a href="/myshop/addr/list.html">배송 주소록 관리</a>
+                                </li>
+                                <li module="Myshop_InquiryDash">
+                                    <a href="/board/inquiry/list.html">대량구매 문의 관리</a>
+                                </li>
+                                <!--<li class="{$regular_delivery_display|display}">
+<a href="/myshop/regular_delivery.html">정기배송 관리</a>
+</li>-->
+                                <!--
+<li class="shoplusMembershipDisplay" style="display:none;">
+-->
+                                <li class="">
+                                    <a href="javascript:void(0)" onclick="manageOpen()">멤버십 관리</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="menu-wrap">
+                            <div class="subTitle">
+                                <h3>활동 정보</h3>
+                            </div>
+                            <ul class="menu">
+                                <li>
+                                    <a href="/product/recent_view_product.html">최근 본 상품</a>
+                                </li>
+                                <li>
+                                    <a href="/myshop/wish_list.html">나의 위시리스트</a>
+                                </li>
+                                <li class="{$myLike_display|display}">
+                                    <a href="{$myLike_href}">좋아요</a>
+                                </li>
+                                <li class="{$board_display|display}">
+                                    <a href="/myshop/board_list.html">나의 게시글</a>
+                                </li>
+                                <li class="displaynone {$board_display|display}">
+                                    <a href="/board/notice/list.html?board_no=1">고객센터</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="menu-wrap">
+                            <div class="subTitle">
+                                <h3>나의 정보</h3>
+                            </div>
+
+                            <ul class="menu">
+                                <li>
+                                    <a href="/member/modify.html">회원 정보 수정</a>
+                                </li>
+                                <!--<li>
+<a href="/member/change_passwd.html">비밀번호 변경</a>
+</li>-->
+                                <li module="Layout_stateLogon">
+                                    <a href="{$action_logout}">로그아웃</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="logout-wrap">
+                            <a href="{$action_logout}">로그아웃</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--#ez="1/1"-->
+
+<!--mambership_wrap-->
+<script src="https://membership-api.cafe24.shoplus.store/static/membership.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.26.0/polyfill.min.js"></script>
+<script src="/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+    window.ShoplusMemeberShipJQuery = jQuery.noConflict(true);
+</script>
+<script src="https://membership.cafe24.shoplus.store/membership/js/new_membership.js"></script>
+<script>
+    const searchShoplusMembershipUseStatus = async () => {
+        try {
+            let get_member_use_status = await isShoplusMembershipUseStatus();
+            if (get_member_use_status !== true) {
+                ShoplusMemeberShipJQuery(".shoplusMembershipDisplay").hide();
+            } else {
+                ShoplusMemeberShipJQuery(".shoplusMembershipDisplay").show();
+            }
+        } catch (e) {
+            ShoplusMemeberShipJQuery(".shoplusMembershipDisplay").hide();
+        }
+    };
+    window.addEventListener(
+        "load",
+        function (event) {
+            (function (CAFE24API) {
+                setTimeout(function () {
+                    if (CAFE24API.MALL_ID) {
+                        localStorage.shoplus_membership_mall_id = CAFE24API.MALL_ID;
+                    }
+                    CAFE24API.getCustomerIDInfo(function (err, res) {
+                        if (err) {
+                        } else {
+                            localStorage.shoplus_membership_member_id = res.id.member_id;
+                        }
+                    });
+
+                    localStorage.shoplus_membership_url = shoplus_membership_url;
+                    localStorage.shoplus_membership_app_code =
+                        shoplus_membership_app_code;
+
+                    // 멤버십 이용 여부 조회
+                    searchShoplusMembershipUseStatus();
+                }, 100);
+            })(
+                CAFE24API.init({
+                    client_id: "kUutIKDxMteStFRZImh1pB",
+                    version: "2020-12-01",
+                })
+            );
+        },
+        false
+    );
+</script>
+<script>
+    var sAuthSSLDomain = "https://login2.cafe24ssl.com";
+</script>
+<script type="text/javascript" src="https://login2.cafe24ssl.com/crypt/AuthSSLManager.js"></script>
+<script type="text/javascript" src="https://login2.cafe24ssl.com/crypt/AuthSSLManager.plugin.js"></script>
+
+
+<script>
+    var child;
+    function childClose() {
+        child.close();
+    }
+    function manageOpen() {
+        child = window.open(
+            "/shoplus/membership/src/membership_manage.html",
+            "_blank"
+        );
+    }
+
+    // 아코디언
+    const header = document.querySelector('.membership-accordion-header');
+    const body = document.querySelector('.membership-accordion-body');
+
+    header.addEventListener('click', () => {
+        header.classList.toggle('active');
+        body.style.display = body.style.display === 'block' ? 'none' : 'block';
+    });
+
+    // 모바일 아코디언
+    const gradeTitles = document.querySelectorAll('.membership-benefit-table .grade-title');
+
+    gradeTitles.forEach(title => {
+        title.addEventListener('click', () => {
+            // 1024px 이상이면 아무것도 안 함
+            if (window.innerWidth >= 1024) return;
+
+            const gradeCol = title.closest('.grade-col');
+
+            gradeCol.classList.toggle('active');
+        });
+    });
+
+    // 탭
+    const tabs = document.querySelectorAll('.tab');
+    const cols = document.querySelectorAll('.grade-col');
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            tabs.forEach(t => t.classList.remove('active'));
+            cols.forEach(c => c.classList.remove('active'));
+
+            tab.classList.add('active');
+            document.getElementById(tab.dataset.target).classList.add('active');
+        });
+    });
+
+    // 멤버십 산정 기간을 올해 기준으로 자동 설정하는 함수
+    const updateMembershipPeriod = () => {
+        const currentYear = new Date().getFullYear(); // 현재 연도 가져오기 (예: 2026)
+        const startDate = `${currentYear}.01.01`;
+        const endDate = `${currentYear}.12.31`;
+        const periodText = `${startDate} ~ ${endDate}`;
+
+        // '멤버십 산정 기간'이라는 글자를 포함한 dt 다음에 오는 dd를 찾습니다.
+        const periodElement = document.querySelector('.user-period-wrap dl dd');
+
+        if (periodElement) {
+            periodElement.textContent = periodText;
+        }
+    };
+
+    // 1. 소수점 이하를 완전히 버리고 정수만 반환하는 함수
+    const getNumber = (selector) => {
+        const el = document.querySelector(selector);
+        if (!el) return 0;
+
+        let text = el.textContent.trim();
+
+        // [핵심] 소수점(.)이 있다면 그 앞부분만 가져옵니다 (예: 123,000.00 -> 123,000)
+        let beforeDecimal = text.split('.')[0];
+
+        // 숫자와 콤마 외의 문자를 제거한 후 정수로 변환
+        let cleaned = beforeDecimal.replace(/[^0-9]/g, "");
+
+        // 숫자로 변환 (10진수 정수)
+        const result = parseInt(cleaned, 10) || 0;
+
+        // 화면의 텍스트를 정수형으로 즉시 변경
+        el.textContent = result.toLocaleString() + "원"; 
+
+        return result;
+    };
+
+    // 2. 프로그래스 바 초기화 로직
+    const initProgressBar = () => {
+
+        // --- 기간 업데이트 실행 ---
+        updateMembershipPeriod();
+
+        // 등급 확인
+        const gradeEl = document.querySelector('.user-info p');
+        const gradeName = gradeEl ? gradeEl.textContent.trim() : "";
+        const isElite = gradeName.indexOf('ELITE') !== -1;
+
+        // 이제 정수로만 계산됩니다.
+        const currentPrice = getNumber('.total-order-price');
+        const rawPrice = getNumber('.raw-current');
+
+        const priceSteps = [0, 500000, 1000000, 2000000];
+        const posSteps = [0, 33, 66, 100];
+
+        function getProgressPercent(price) {
+            if (isElite) return 100;
+            if (price <= priceSteps[0]) return posSteps[0];
+            if (price >= priceSteps[3]) return posSteps[3];
+
+            for (let i = 0; i < priceSteps.length - 1; i++) {
+                if (price >= priceSteps[i] && price < priceSteps[i + 1]) {
+                    const segmentProgress = (price - priceSteps[i]) / (priceSteps[i + 1] - priceSteps[i]);
+                    return posSteps[i] + (segmentProgress * (posSteps[i + 1] - posSteps[i]));
+                }
+            }
+            return 0;
+        }
+
+        const fillPercent = getProgressPercent(currentPrice);
+
+        // 툴팁 및 프로그래스바 UI 반영
+        const fillBar = document.getElementById('dynamic_fill');
+        const tooltip = document.getElementById('next_grade_tooltip');
+        const markers = document.querySelectorAll('.step-marker');
+
+        // ELITE 등급일 때 툴팁 위치 강제 조정
+        let tooltipPos = isElite ? 100 : 0;
+        if (!isElite) {
+            if (currentPrice < 500000) tooltipPos = posSteps[0];
+            else if (currentPrice < 1000000) tooltipPos = posSteps[1];
+            else if (currentPrice < 2000000) tooltipPos = posSteps[2];
+            else tooltipPos = posSteps[3];
+        }
+
+        if (fillBar) fillBar.style.width = fillPercent + '%';
+
+        if (tooltip) {
+            tooltip.style.left = tooltipPos + '%';
+            tooltip.classList.remove('is-first', 'is-last');
+
+            if (tooltipPos >= 100) {
+                tooltip.classList.add('is-last');
+            } else if (tooltipPos <= 0) {
+                tooltip.classList.add('is-first');
+            }
+
+            if (isElite) {
+                tooltip.innerHTML = '<span>ELITE(선수)</span> 등급입니다';
+            }
+        }
+
+        markers.forEach((marker, i) => {
+            const markerThreshold = posSteps[i];
+            if (isElite || (currentPrice > 0 && fillPercent >= markerThreshold)) {
+                marker.classList.add('active');
+            } else {
+                marker.classList.remove('active');
+            }
+        });
+    };
+
+    setTimeout(initProgressBar, 800);
+
+</script>

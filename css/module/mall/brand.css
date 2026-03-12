@@ -1,0 +1,116 @@
+.titleArea{margin: 70px 0 55px;text-align: center;}
+.titleArea h2{font-size: 60px !important;line-height: 76px; text-align: center;}
+.brandTab{width: 100vw; background: #F9F9F9;}
+.brandTab ul.tab{display: flex;align-items: center;justify-content: center;flex-wrap: wrap;height: 60px;}
+.brandTab ul.tab li{ display: flex;align-items: center;padding: 0 25px;color: #606060;font-weight: 500;font-size: 14px;line-height: 18px; width: auto; border-bottom: none}
+.brandTab ul.tab li.on{ border-bottom: none; color: #009FE3;}
+.brandSection .tabpanel{display: none;}
+.brandSection .tabpanel.on{display: block; max-height: fit-content;}
+.brandSection .tabpanel > div{ width: auto;}
+
+/*****Brand Story*****/
+.brandSection .story picture{overflow: hidden;width: 100%;height: 100%;font-size: 0;position: relative;}
+.brandSection .story picture img{display: block;width: 100%;height: 100%;object-fit: cover;}
+.brandSection .story .section-center{max-width: 1520px;width: 100%; margin: 0px auto 120px;}
+.brandSection .story .section-center .txt_side{padding-bottom: 150px;}
+.brandSection .story .section-center .txt_side ul{display: flex;justify-content: center;flex-wrap: wrap;width: 100%;height: auto;padding-left: 100px;}
+.brandSection .story .section-center .txt_side ul li{padding-bottom:100px;margin-top: 100px;}
+.brandSection .story .section-center .txt_side ul li:first-child{font-size: 38px;line-height: 50px;font-weight: lighter;width: 60%;}
+.brandSection .story .section-center .txt_side ul li:first-child strong{font-weight: bold;margin-bottom: 30px; display: block;}
+.brandSection .story .section-center .txt_side ul li:first-child p{font-size: 18px;line-height: 28px;font-weight: 500;}
+.brandSection .story .section-center .txt_side ul li:last-child{font-size: 18px;line-height: 28px;font-weight: 200;width: 40%;}
+
+.brandSection .story .section-full{max-width: 1920px;width: 100%; margin: 0px auto 120px;}
+.brandSection .story .section-full .bsSection{padding-bottom: 150px;}
+.brandSection .story .section-full .bsSection ul{display: flex;justify-content: center;flex-wrap: wrap;}
+.brandSection .story .section-full .bsSection ul li{width: 50%;height: auto;}
+.brandSection .story .section-full .bsSection ul li strong{font-size: 30px;  line-height: 40px;  font-weight: bold;margin-bottom: 27px;}
+.brandSection .story .section-full .bsSection ul li p{font-size: 16px;  line-height: 26px;  font-weight: 200;}
+.brandSection .story .section-full .bsSection ul li.left{text-align: left;display: flex;flex-direction: column;justify-content: end;}
+/*left*/
+.bsSection ul li.left strong,.bsSection ul li.left p{padding-left: 80px;}
+.brandSection .story .section-full .bsSection ul li.right{text-align: right;display: flex;flex-direction: column;justify-content: center;}
+/*right*/
+.brandSection .story .section-full .bsSection ul li img{width: 100%;}
+/*bs_02section*/
+.brandSection .story .section-full .bs_02section{ max-width: 1520px;margin: 0 auto; text-align: right;}
+.brandSection .story .section-full .bs_02section ul li img{max-width: 682px;}
+/*bs_03section*/
+.brandSection .story .section-full .bs_03section{ max-width: 1520px;margin: 0 auto; text-align: left;}
+.brandSection .story .section-full .bs_03section ul li img{max-width: 750px;}
+/*bottomBanner*/
+.brandSection .story picture.bottomBanner img{margin: 50px 0 120px; }
+
+
+
+/*****Brand IDENTITY*****/
+.brandSection .identity .identityBanner01{ max-width: 1720px; margin-left: auto;display: block; width: 92%;}
+.brandSection .identity .titleArea{margin: 100px auto 55px;text-align: left;max-width: 1520px;}
+.brandSection .identity .titleArea h2{font-size: 60px;line-height: 76px; font-weight: 200; padding: 0 130px;}
+.brandSection .identity .titleArea h2 strong{font-weight: bold;}
+
+.brandSection .identity .section_middle{max-width: 1520px; margin: 0 auto;}
+.brandSection .identity .subtitle{ margin: 30px auto 100px;text-align: left;max-width: 1520px;padding: 0 130px;}
+.brandSection .identity .subtitle:nth-child(1)::after{content: ""; display: block; border-bottom: 1px solid #EAEAEA; width: 100%; margin: 0 auto;}
+.brandSection .identity .subtitle h3{font-size: 30px;line-height: 40px; font-weight: 600; margin-bottom: 30px;}
+.brandSection .identity .subtitle h2{font-size: 46px;line-height: 50px; font-weight: bold; margin-bottom: 30px;}
+.brandSection .identity .subtitle p{font-size: 20px;line-height: 30px; font-weight: 200; margin-bottom: 100px;}
+
+.brandSection .identity .logoGrid{ margin: 30px auto 380px;text-align: left;max-width: 1520px;padding: 0 130px;}
+.brandSection .identity .logoGrid ul{display: flex; gap: 10px; flex-wrap: wrap;}
+.brandSection .identity .logoGrid ul li{ width: 49%; height: 300px;}
+.brandSection .identity .logoGrid ul li span{ font-size: 18px;padding-bottom: 16px;font-weight: bold;display: inline-block;}
+.brandSection .identity .logoGrid ul li.marginBottom{margin-bottom: 50px;}
+
+
+/*****Brand HISTORY*****/
+.brandSection .history .history_top{position: relative;}
+.brandSection .history .titleArea{position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%); margin: 0;}
+.brandSection .history .titleArea > span,.brandSection .history .titleArea > h2{color: #fff;display: block; text-align: center;}
+.brandSection .history .titleArea > span{font-size: 24px; line-height: 30px; padding-bottom: 20px;font-family: "Montserrat", "Noto Sans KR", Arial, sans-serif; font-weight: 300;}
+.brandSection .history .titleArea > h2{font-size: 60px; line-height: 78px;}
+
+.brandSection .history .historyNav{ position: absolute;bottom: 20px; left: 50%;transform: translateX(-50%); height: 80px; max-width: 1520px;width: 100%;}
+.brandSection .history .historyNav ul{display: flex; justify-content: center;align-items: center;flex-wrap: wrap;height: 80px;}
+.brandSection .history .historyNav ul li{ height: 80px;display: flex;align-items: center; justify-content: center;color: #fff;font-size: 24px;font-weight: 500;width: 20%;}
+.brandSection .history .historyNav ul li.on{color:#009FE3; position: relative;}
+.brandSection .history .historyNav ul li.on::before{content:""; display:block; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); height: 3px; background-color: #009FE3; width: 50%;}
+
+.hsYearSection .historyYear{height: auto;padding: 100px 0;opacity: 0;transition: all 0.5s;}
+.historyYear .historySwiper{width: 100%;height: 100%;padding: 50px 0px;}
+.historyYear .historySwiper .swiper-wrapper{height: auto;gap: 20px;}
+.historyYear .historySwiper .swiper-slide{text-align: left;font-size: 18px;display: -webkit-box;display: -ms-flexbox;display: -webkit-flex;display: flex;-webkit-box-pack: center;-ms-flex-pack: center;-webkit-justify-content: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;-webkit-align-items: center;
+    align-items: center; flex-direction: column;width:25%;}
+.historyYear .historySwiper .swiper-slide:first-child{margin-left: 200px;}
+.historyYear .historySwiper .swiper-slide:last-child{margin-right: 200px;}
+.hsYearSection .historyYear:nth-child(even){background-color: #F9F9F9;}
+.hsYearSection .historyYear h2{text-align: center;font-size: 50px;font-weight: bold;line-height: 55px;margin: 0 0 100px;}
+.historyYear .historySwiper .swiper-slide .hsImg{width: 100%; height: 60%;}
+.historyYear .historySwiper .swiper-slide .hsTxt{width: 100%; height: 40%;}
+.historySwiper .swiper-slide .hsTxt h3{padding-top: 40px;font-size: 28px;}
+.historySwiper .swiper-slide .hsTxt h4{padding-top: 16px;font-size: 20px;line-height: 28px;}
+.historySwiper .swiper-slide .hsTxt p{padding-top: 10px;font-size: 14px; color: #424242;line-height: 24px;}
+
+
+/*****채용안내*****/
+.hire_cnt{ margin-bottom: 226px;}
+.step_wrap{ max-width: 1640px; padding: 0 60px; margin: 120px auto 0;}
+.step_wrap h4{ font-size: 24px; font-weight: 700; margin-bottom: 10px}
+.step_wrap p{ font-size: 18px;}
+.benefit .step_cnt{display: grid;  grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 50px}
+.hire_step h4{ margin-bottom: 50px;}
+
+
+
+/*****채용공고*****/
+.brandContainer .xans-board-title p.imgArea{ padding: 0;}
+.brandContainer .xans-board-title p.imgArea img{ margin: 0;}
+.brandContainer .board-section > div:not(.xans-board-title){ max-width: 1517px; margin: 0 auto;}
+.brandContainer .board-section div.ec-base-table{ margin: 120px auto 50px}
+.brandContainer .xans-board-listpackage table tr{ cursor: pointer}
+.brandContainer .xans-board-listpackage table tr:hover{ background-color: #F9F9F9 !important;}
+.brandContainer .ec-base-table.typeList td{ padding: 30px 20px;}
+.brandContainer .ec-base-table.typeList td:nth-of-type(5){color: #606060; font-size: 14px;}
+.brandContainer .xans-board-listpackage .ec-base-table.typeList table td.chk{ color: #AEAEAE}
+
+.xans-board-paging{ position: relative}

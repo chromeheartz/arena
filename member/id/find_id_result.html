@@ -1,0 +1,49 @@
+<!--@layout(/layout/basic/layout.html)-->
+
+<!--@css(/ogam/css/member.css)-->
+<!--@js(/ogam/js/member.js)-->
+
+<div class="find-contents-wrapper">
+    <div class="page-top-nav-wrap">
+        <dl>
+            <dt>홈<span>/</span>로그인<span>/</span></dt>
+            <dd>아이디 찾기</dd>
+        </dl>
+        <h6>아이디 찾기</h6>
+    </div>
+
+
+
+    <div class="og_member_inner find-member-wrap" id="og_member_find_id_result">
+
+
+        <div class="section titleArea og_member_title displaynone">
+            <h2>아이디 찾기</h2>
+        </div>
+
+        <div module="member_findidresult" class="memberArea">
+            <!--@css(/css/module/member/find_id_result.css)-->
+            <div class="ec-base-help">
+                <ul>
+                    <li>고객님 아이디 찾기가 완료 되었습니다.</li>
+                    <li>가입된 아이디가 총 {$idCnt}개 있습니다.</li>
+                </ul>
+            </div>
+            <div class="ec-base-box typeMember">
+                <div class="complete">
+                    <div class="description">
+                        <ul class="ec-base-desc og_find_result_box">
+                            <li><strong class="term">이름</strong><div class="desc">{$name}</div></li>
+                            <li><strong class="term">{$searchType}</strong><div class="desc">{$searchInfo}</div></li>
+                        </ul>
+                        {$searchIds}
+                    </div>
+                </div>
+            </div>
+            <div class="find-btn-wrap">
+                <a href="javascript:go_findlogin('{$id}');" class="grey-btn">로그인</a>
+                <a href="javascript:go_findpwd('{$id}','{$mtype}');" class="black-btn">비밀번호 찾기</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,142 @@
+<!--@layout(/layout/basic/layout.html)-->
+<style>
+    #wrap {overflow: unset; }
+</style>
+
+<div class="testProject">
+    <!-- 기획전 pc 배너 -->
+    <div df-banner-code="event-470--pc" hidden class="banner pcBanner">
+        <div df-banner-clone>{#item}</div>
+    </div>
+
+    
+    <!-- 기획전 mobile 배너 -->
+    <div df-banner-code="event-470--mo" hidden class="banner mobBanner">
+        <div df-banner-clone>{#item}</div>
+    </div>
+
+    <div class="projectCategory">
+        <ul class="inner"></ul>
+    </div>
+
+
+    <div class="projectList">
+        <!-- 메인진열 1 시작 -->
+        <div class="list">
+            <div class="anchoroffset " id="list1"></div>
+            <div module="product_listmain_37">
+                <!--@css(/css/module/product/listmain_1.css)-->
+                <!--
+                    $count = 8
+                    $moreview = yes
+                    $basket_result = /product/add_basket.html
+                    $basket_option = /product/basket_option.html
+                -->
+                <div class="inner">
+                    <h3 class="title"><span>{$category_title_text}</span></h3>
+                </div>
+                <ul class="prdList column4 inner">
+                    <li class="item" id="anchorBoxId_{$product_no}">
+                        <div class="box">
+                            <div class="imgArea">
+                                <a href="/product/detail.html{$param}" name="anchorBoxName_{$product_no}"><img src="{$image_medium}" onmouseover="this.src='{$image_tiny}'" onmouseout="this.src='{$image_medium}'" alt="" class="thumb"></a>
+                                <div class="wishIcon">{$list_wish_icon}</div>
+                            </div>
+
+                            <div class="description">
+                                <span class="category_name"></span>
+
+                                <p class="name">
+                                    <a href="/product/detail.html{$param}" class="{$product_name_display|display}">{$product_name}</a>
+                                </p>
+
+                                <ul module="product_ListItem" class="listItem">
+                                    <li class="{$item_display|display} {$column_name}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
+                                    <li class="{$item_display|display} {$column_name}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
+                                </ul>
+
+                                <div class="colorChips">{$product_icons}</div>
+
+                                <div class="statusIcons">{$stock_icon}{$recommend_icon}{$new_icon}{$today_arrival_icon}{$pickup_icon}{$benefit_icons}{$soldout_icon}</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="item" id="anchorBoxId_{$product_no}">
+                        <div class="box">
+                            <div class="imgArea">
+                                <a href="/product/detail.html{$param}" name="anchorBoxName_{$product_no}"><img src="{$image_medium}" onmouseover="this.src='{$image_tiny}'" onmouseout="this.src='{$image_medium}'" alt="" class="thumb"></a>
+                                <div class="wishIcon">{$list_wish_icon}</div>
+                            </div>
+
+                            <div class="description">
+                                <span class="category_name"></span>
+
+                                <p class="name">
+                                    <a href="/product/detail.html{$param}" class="{$product_name_display|display}">{$product_name}</a>
+                                </p>
+
+                                <ul module="product_ListItem" class="listItem">
+                                    <li class="{$item_display|display} {$column_name}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
+                                    <li class="{$item_display|display} {$column_name}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
+                                </ul>
+
+                                <div class="colorChips">{$product_icons}</div>
+
+                                <div class="statusIcons">{$stock_icon}{$recommend_icon}{$new_icon}{$today_arrival_icon}{$pickup_icon}{$benefit_icons}{$soldout_icon}</div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div module="product_listmore_37" class="btn_moreview">
+                    <a href="#none" onclick="{$more_action}">
+                        더보기(<span id="more_current_page_{$display_group}">{$current_page}</span>/<span id="more_total_page_{$display_group}">{$total_page}</span>)
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- 메인진열 1 끝 -->
+
+        
+       
+        
+        
+    </div>
+</div>
+
+<script>
+    // 기획전 카테고리명 입력
+    function categoryName()
+    {
+        const category = document.querySelectorAll('.category_name');
+
+        category.forEach(function(cate)
+        {
+            cate.textContent = `SPECIAL BENEFIT`;
+        })
+    }
+
+
+    function setCategory()
+    {
+        const lists = document.querySelectorAll('.list');
+        const categoryList = document.querySelector('.projectCategory .inner');
+
+        lists.forEach(function(list)
+        {
+            const li = document.createElement('li');
+            const a = document.createElement('a');
+            const id = list.children[0].id;
+            const text = list.children[1].children[0].textContent;
+
+            a.href = `#${id}`;
+            a.classList.add('category');
+            a.textContent = `${text}`;
+
+            li.appendChild(a);
+            categoryList.appendChild(li);
+        })
+    }
+
+    categoryName();
+    setCategory();
+</script>

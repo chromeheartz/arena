@@ -1,0 +1,46 @@
+<!--@layout(/layout/basic/layout.html)-->
+
+
+<!--@css(/ogam/css/member.css)-->
+<!--@js(/ogam/js/member.js)-->
+
+<div class="section path">
+    <span>location</span>
+    <ol>
+        <li><a href="/">HOME</a></li>
+        <li title="현재 위치"><strong>FIND ID</strong></li>
+    </ol>
+</div>
+
+<div class="og_member_inner" id="og_member_find_id">
+
+
+    <div class="section titleArea og_member_title">
+        <h2>FIND ID</h2>
+    </div>
+
+    <div module="member_findid" class="memberArea">
+        <!--@css(/css/module/member/find_id.css)-->
+        <!--
+            $returnURL = /member/id/find_id_result.html
+         -->
+        <div class="ec-base-help">
+            <ul>
+                <li>Please provide your email address to find your ID.</li>
+            </ul>
+        </div>
+        <div class="ec-base-box typeMember">
+            <fieldset class="content">
+                <legend>FIND ID</legend>
+                <ul class="ec-base-desc gVer">
+                    <li class="check displaynone">{$form.check_method}</li>
+                    <li id="name_view" class="name"><strong id="name_lable">Name</strong> {$form.name}</li>
+                    <li id="email_view" class="email" style="display:none;"><strong>E-Mail</strong> {$form.email|replace:placeholder,placeholder="Enter Email address"}</li>
+                </ul>
+            </fieldset>
+        </div>
+        <div class="ec-base-button gBottom" style="margin-top: 48px;">
+            <a href="#none" class="btnSubmitFix sizeM gFull" onclick="{$action_func_find_id}">NEXT</a>
+        </div>
+    </div>
+</div>

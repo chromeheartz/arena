@@ -1,0 +1,33 @@
+<div module="member_certification" class="ec-base-layer og_base_layer">
+    <!--@css(/layout/basic/css/common.css)--><!-- 해당 CSS는 쇼핑몰 전체 페이지에 영향을 줍니다. 삭제와 수정에 주의해주세요. -->
+    <!--@css(/layout/basic/css/ec-base-ui.css)-->
+    <!--@css(/layout/basic/css/ec-base-button.css)-->
+    <!--@css(/layout/basic/css/ec-base-tab.css)-->
+    <!--@css(/layout/basic/css/ec-base-table.css)-->
+    <!--@css(/layout/basic/css/ec-base-tooltip.css)-->
+    <!--@css(/layout/basic/css/ec-base-help.css)-->
+    <!--@css(/layout/basic/css/ec-base-box.css)-->
+    <!--@css(/layout/basic/css/ec-base-desc.css)-->
+    <!--@css(/layout/basic/css/ec-base-paginate.css)-->
+    <!--@css(/layout/basic/css/ec-base-layer.css)-->
+    <!--@css(/ogam/css/common/layer.css)-->
+    <div class="header">
+        <h3><!--본인인증 알림--></h3>
+    </div>
+    <div class="content">
+        <h3><!--img src="//img.echosting.cafe24.com/skin/base_ko_KR/member/h3_certification_layer.png" alt="회원 본인인증을 해주세요!" /-->
+            회원 본인인증 필요
+        </h3>
+        <p><strong>{$member_name}</strong> 회원님. <br>
+            2013년 정보통신망법 개정에 따라 주민등록번호를 이용한 실명인증 대신 다른 본인인증 수단을 제공하고 있습니다.
+            원활한 이벤트 참여 및 아이디/비밀번호 찾기를 위하여 본인인증을 완료하여 주시기 바랍니다.
+        </p>
+        <div>
+            <a href="/member/modify.html" class="btnSubmit btnCertification sizeL"><!--img src="//img.echosting.cafe24.com/skin/base_ko_KR/member/btn_certification.png" alt="본인인증 하러가기" /-->
+                본인인증 하러가기
+            </a>
+        </div>
+        <label><input type="checkbox" id="{$checkbox_today_open}" /> 오늘 하루 열지않음</label>
+    </div>
+    <a class="btnClose" onclick="$('.xans-member-certification').hide();">닫기</a>
+</div>

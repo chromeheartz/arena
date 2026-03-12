@@ -1,0 +1,193 @@
+<!--@layout(/layout/basic/layout.html)-->
+<!--@js(/ogam/js/board.js)-->
+<!--@css(/ogam/css/board.css)-->
+
+
+<div class="renewal-list-wrapper">
+    <div class="renewal-inner">
+        <div class="renewal-container">
+            <div class="sub-side-menu">
+
+                <div class="menu-wrapper">
+                    <div class="menu-wrap">
+                        <div class="subTitle">
+                            <h3>고객센터</h3>
+                        </div>
+                        <ul class="menu">
+                            <li><a href="/board/notice/list.html">공지사항</a></li>
+                            <li><a href="/board/FAQ/list.html">자주 묻는 질문</a></li>
+                            <li class="on"><a href="/board/consult/list.html">1:1 문의</a></li>
+                            <li><a href="/shopinfo/intro_membership.html">멤버십</a></li>
+
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="renewal-contents-wrapper consult-write-contents-wrapper">
+
+
+
+                <div class="page-top-nav-wrap">
+                    <dl>
+                        <dt>홈<span>/</span>고객센터<span>/</span></dt>
+                        <dd>
+                            1:1 문의
+                            <i class="mo-arrow"><img src="https://arenakorea1.cafe24.com/web/2026-renewal/img/grey-down-arrow.png" alt="grey down arrow" /></i>
+                        </dd>
+                    </dl>
+                    <h6>1:1 문의</h6>
+                    <ul class="mo-dropdown-list">
+                        <li><a href="/board/notice/list.html">공지사항</a></li>
+                        <li><a href="/board/FAQ/list.html">자주 묻는 질문</a></li>
+                        <li class="on"><a href="/board/consult/list.html">1:1 문의</a></li>
+                        <li><a href="/shopinfo/intro_membership.html">멤버십</a></li>
+                    </ul>
+
+                </div>
+
+                <div class="section board-section write_board_type1" module="board_writePackage_9">
+                    <!--css(/css/module/board/writePackage_9.css)-->
+                    <!--css(/css/module/board/boardPackage.css)-->
+
+
+                    <div module="board_write_9">
+                        <!--
+$write_success_url = /board/consult/list.html
+$login_page_url = /member/login.html
+-->
+                        <div class="ec-base-table typeWrite">
+
+                            <div class="form-wrap">
+                                <dl>
+                                    <dt><span class="blue-dot">문의 유형</span></dt>
+                                    <dd>{$form.board_category}</dd>
+                                </dl>
+                                <dl class="subject">
+                                    <dt><span class="blue-dot">제목</span></dt>
+                                    <dd>
+                                        <div style="display: flex;">{$form.subject}<span class="ec-base-label">{$form.notice}</span>
+                                            <span class="ec-base-label">{$form.is_post}</span></div>
+                                    </dd>
+                                </dl>
+                                <dl class="email">
+                                    <dt><span class="blue-dot">이메일</span></dt>
+                                    <dd class="email-dd">
+                                        <div class="email_box">{$form.email}</div>
+                                        <span class="email-consent"><span>답변여부 메일로 받기</span>{$form.cons_re}</span></dd>
+                                </dl>
+                                <dl>
+                                    <dt class=""><span class="blue-dot">내용</span></dt>
+                                    <dd>
+                                        {$form.content}
+                                    </dd>
+                                </dl>
+                                <dl class="captcha {$config.use_captcha_write|display}">
+                                    <dt>보안문자</dt>
+                                    <dd>
+                                        {$captcha_image} {$captcha_refresh} {$form.captcha} <span class="ec-base-help">영문, 숫자 조합을 공백없이
+                                        입력하세요(대소문자구분)</span>
+                                    </dd>
+                                </dl>
+                                <div class="file-wrap">
+                                    <dl class="file {$config.use_attach|display}">
+                                        <dt>첨부파일</dt>
+                                        <dd>{$form.attach_file}</dd>
+                                    </dl>
+                                    <dl class="file {$config.use_attach|display}">
+                                        <dt>첨부파일</dt>
+                                        <dd>{$form.attach_file}</dd>
+                                    </dl>
+                                    <div class="file-msg-wrap">
+                                        <p>첨부파일은 최대 2장까지 등록가능합니다.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+
+                        <div class="renewal-btn-wrap">
+                            <a href="/board/consult/list.html" class="grey-btn">취소</a>
+                            <a href="#none" onclick="{$action_write}" class="black-btn">등록하기</a>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const MAX_LENGTH = 1000;
+        let editorBody = null;
+        let counter = null;
+
+        function getEditorBody() {
+            const iframe = document.querySelector(".fr-iframe");
+            if (iframe && iframe.contentDocument) {
+                return iframe.contentDocument.body;
+            }
+            return document.querySelector(".fr-element");
+        }
+
+        function updateCounterForce() {
+            if (!editorBody || !counter) return;
+
+            let text = editorBody.innerText.replace(/\n/g, "");
+            let length = text.length;
+
+            // 글자수 제한
+            if (length > MAX_LENGTH) {
+                editorBody.innerText = text.substring(0, MAX_LENGTH);
+                length = MAX_LENGTH;
+
+            }
+
+            // 내용 문자수 텍스트 강제 덮어쓰기
+            counter.textContent = `${length} / ${MAX_LENGTH}`;
+        }
+
+        // 에디터 로딩 감지
+        const readyTimer = setInterval(() => {
+            editorBody = getEditorBody();
+            counter = document.querySelector(".fr-counter");
+
+            if (editorBody && counter) {
+                updateCounterForce();
+
+                // 모든 입력 케이스 커버
+                editorBody.addEventListener("input", updateCounterForce);
+                editorBody.addEventListener("keyup", updateCounterForce);
+                editorBody.addEventListener("paste", () => {
+                    setTimeout(updateCounterForce, 0);
+                });
+
+                clearInterval(readyTimer);
+            }
+        }, 200);
+
+        // 내용 문자수 내부에서 다시 바꿔도 우리가 다시 덮어씀
+        setInterval(updateCounterForce, 150);
+
+
+        /* 제목 input */
+        const subjectInput = document.querySelector(".form-wrapper input[name='subject']");
+        if (subjectInput) {
+            subjectInput.setAttribute("placeholder", "제목을 입력해주세요");
+        }
+    });
+</script>

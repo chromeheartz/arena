@@ -1,0 +1,245 @@
+<!--@layout(/layout/basic/layout.html)-->
+<!--@css(/ogam/css/board.css)-->
+<!--@js(/ogam/js/board.js)-->
+
+<div class="renewal-list-wrapper">
+    <div class="renewal-inner">
+        <div class="renewal-container">
+
+            <!-- 사이드 메뉴 -->
+            <div class="sub-side-menu">
+                <div class="menu-wrapper">
+                    <div class="menu-wrap">
+                        <div class="subTitle">
+                            <h3>매장안내</h3>
+                        </div>
+                        <ul class="menu">
+                            <li><a href="list.html">매장찾기</a></li>
+                            <li class="on"><a href="list2.html">도수 수경 매장 찾기</a></li>
+                            <li><a href="list3.html">파트너 매장</a></li>
+                            <li><a href="guide.html">대리점 개설 안내</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="renewal-contents-wrapper store-contents-wrapper">
+                <div class="page-top-nav-wrap">
+                    <dl>
+                        <dt>홈<span>/</span>매장안내<span>/</span></dt>
+                        <dd>
+                            도수 수경 매장 찾기
+                            <i class="mo-arrow"><img src="https://arenakorea1.cafe24.com/web/2026-renewal/img/grey-down-arrow.png" alt="grey down arrow" /></i>
+                        </dd>
+                    </dl>
+                    <h6>도수 수경 매장 찾기</h6>
+                    <ul class="mo-dropdown-list">
+                        <li><a href="list.html">매장찾기</a></li>
+                        <li class="on"><a href="list2.html">도수 수경 매장 찾기</a></li>
+                        <li><a href="list3.html">파트너 매장</a></li>
+                        <li><a href="guide.html">대리점 개설 안내</a></li>
+                    </ul>
+
+                </div>
+
+
+                <div class="section board-section board_type2" module="Board_ListPackage_1002">
+                    <!--@css(/css/module/board/listPackage.css)-->
+                    <div module="board_title_1002" class="displaynone">
+                        <!--        <div class="path">-->
+                        <!--            <span>현재 위치</span>-->
+                        <!--            <ol>-->
+                        <!--                <li><a href="/">홈</a></li>-->
+                        <!--                <li><a href="#">게시판</a></li>-->
+                        <!--                <li title="현재 위치"><strong>{$board_name}</strong></li>-->
+                        <!--            </ol>-->
+                        <!--        </div>-->
+
+                        <div class="titleArea">
+                            <h2>{$board_title} {$board_adult_icon}</h2>
+                        </div>
+                        <p class="imgArea">{$board_top_image}</p>
+                    </div>
+                    <div class="store-contents-wrap">
+                        <div module="Layout_BoardInfo" class="ec-base-tab typeMenu gScroll">
+                            <ul class="menu">
+                                <li><a href="{$board_list_url}" class="button">{$board_name}</a></li>
+                                <li><a href="{$board_list_url}" class="button">{$board_name}</a></li>
+                            </ul>
+                        </div>
+                        <div class="boardSort layout_hidden">
+                            <span module="board_category_1002">{$form.board_category}</span>
+                            <span module="board_ReplySort_1002">{$reply_sort}</span>
+                        </div>
+                        <div module="board_search_1002">
+                            <!--@css(/css/module/board/search.css)-->
+                            <fieldset class="boardSearch">
+                                <legend>게시물 검색</legend>
+                                <div class="form">{$form.search_key} {$form.search|replace:placeholder,placeholder="검색"} <a href="#none" class="btnNormal" onclick="{$action_search}">검색</a></div>
+                            </fieldset>
+                        </div>
+                        <div class="ec-base-table typeList renewal-board-table">
+                            <table border="1" >
+                                <caption>게시판 목록</caption>
+                                <colgroup module="board_listheader_1002">
+                                    <!--<col style="width:100px;" />-->
+                                    <col style="width:140px;" />
+                                    <col style="width:200px;" class="{$config.is_category|display}" />
+                                    <col style="width:auto;" />
+                                    <col style="width:200px;" />
+                                    <col style="width:120px;" class="{$config.use_date|display}" />
+                                    <col style="width:74px;" class="{$config.use_cnt|display}" />
+                                    <col style="width:140px;" class="{$config.is_use_point|display}" />
+
+                                </colgroup>
+                                <thead module="board_listheader_1002">
+                                    <tr style="{$list_bg_color} {$list_char_color}">
+                                        <!--<th scope="col" class="chk">{$checkbox} 번호</th>-->
+                                        <th scope="col" class="{$config.is_category|display}">위치</th>
+                                        <th scope="col" class="left">지점</th>
+                                        <th scope="col" class="left">주소</th>
+                                        <th scope="col">전화번호</th>
+                                        <th scope="col" class="displaynone">작성자</th>
+                                        <th scope="col" class="{$config.use_date|display}">작성일</th>
+                                        <th scope="col" class="{$config.use_cnt|display}">조회</th>
+                                        <th scope="col" class="{$config.is_use_point|display}">평점</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody module="board_notice_1002" class="center">
+                                    <!--
+$count = 6
+$login_page_url = /member/login.html
+$deny_access_url = /index.html
+-->
+
+                                    <tr style="{$list_bg_color} {$list_char_color}">
+                                        <!--<td class="chk">{$checkbox}<span class="RW">{$notice_icon}</span></td>-->
+                                        <td class="store-category {$category_display|display}" style="color: #AEAEAE; font-weight: 700;">{$category_name}</td>
+                                        <td class="left store-title">
+                                            <span class="badge">{$notice_icon}</span> <strong>{$icon_re}{$icon_lock}<a href="/board/store/read.html{$param_read}&listpage=/board/store/list2.html">{$subject}</a>{$icon_file}<span class="comment">{$comment_count}</span></strong>
+                                        </td>
+                                        <td class="displaynone">{$member_icon}{$writer}</td>
+                                        <td class="add store-text left" style="color: #606060"><a href="/board/store/read.html{$param_read}&listpage=/board/store/list2.html">{$content}</a></td>
+                                        <td class="phone store-phone" style="color: #AEAEAE">{$content}</td>
+                                        <td class="{$date_display|display}">{$write_date}</td>
+                                        <td class="{$hit_display|display}"><span class="RTMI">조회</span> {$hit_count}</span></td>
+                            <td class="{$point_display|display}"><img src="//img.echosting.cafe24.com/skin/skin/board/icon-star-rating{$point_count}.svg" alt="{$point_count}점" /></td>
+
+                            </tr>
+                        <tr style="{$list_bg_color} {$list_char_color}">
+                            <!--<td class="chk">{$checkbox}<span class="RW">{$notice_icon}</span></td>-->
+                            <td class="store-category {$category_display|display}" style="color: #AEAEAE; font-weight: 700;">{$category_name}</td>
+                            <td class="left store-title">
+                                <span class="badge">{$notice_icon}</span> <strong>{$icon_re}{$icon_lock}<a href="/board/store/read.html{$param_read}&listpage=/board/store/list2.html">{$subject}</a>{$icon_file}<span class="comment">{$comment_count}</span></strong>
+                            </td>
+                            <td class="displaynone">{$member_icon}{$writer}</td>
+                            <td class="add store-text left" style="color: #606060"><a href="/board/store/read.html{$param_read}&listpage=/board/store/list2.html">{$content}</a></td>
+                            <td class="phone store-phone" style="color: #AEAEAE">{$content}</td>
+                            <td class="{$date_display|display}" style="color: #606060">{$write_date}</td>
+                            <td class="{$hit_display|display}"><span class="RTMI">조회</span> {$hit_count}</td>
+                            <td class="{$point_display|display}"><img src="//img.echosting.cafe24.com/skin/skin/board/icon-star-rating{$point_count}.svg" alt="{$point_count}점" /></td>
+
+                        </tr>
+                        </tbody>
+                    <tbody module="board_fixed_1002" class="center">
+                        <!--
+$count = 10
+$login_page_url = /member/login.html
+$deny_access_url = /index.html
+-->
+                        <tr style="{$list_bg_color} {$list_char_color}">
+                            <!--<td class="chk">{$checkbox}<span class="RW">{$fixed_icon}</span></td>-->
+                            <td class="store-category {$category_display|display}" style="color: #AEAEAE; font-weight: 700;">{$category_name}</td>
+                            <td class="left store-title">
+                                <span class="badge">{$fixed_icon}</span> <strong>{$icon_re}{$icon_lock}<a href="/board/store/read.html{$param_read}&listpage=/board/store/list2.html">{$subject}</a>{$icon_file}<span class="comment">{$comment_count}</span></strong>
+                            </td>
+                            <td class="displaynone">{$member_icon}{$writer}</td>
+                            <td class="add store-text left" style="color: #606060"><a href="/board/store/read.html{$param_read}&listpage=/board/store/list2.html">{$content}</a></td>
+                            <td class="phone store-phone" style="color: #AEAEAE">{$content}</td>
+                            <td class="{$date_display|display}" style="color: #606060">{$write_date}</td>
+                            <td class="{$hit_display|display}"><span class="RTMI">조회</span> {$hit_count}</td>
+                            <td class="{$point_display|display}"><img src="//img.echosting.cafe24.com/skin/skin/board/icon-star-rating{$point_count}.svg" alt="{$point_count}점" /></td>
+
+                        </tr>
+                        <tr style="{$list_bg_color} {$list_char_color}">
+                            <!--<td class="chk">{$checkbox}<span class="RW">{$fixed_icon}</span></td>-->
+                            <td class="store-category {$category_display|display}" style="color: #AEAEAE; font-weight: 700;">{$category_name}</td>
+                            <td class="left store-title">
+                                <span class="badge">{$fixed_icon}</span> <strong>{$icon_re}{$icon_lock}<a href="/board/store/read.html{$param_read}&listpage=/board/store/list2.html">{$subject}</a>{$icon_file}<span class="comment">{$comment_count}</span>}</strong>
+                            </td>
+                            <td class="displaynone">{$member_icon}{$writer}</td>
+                            <td class="add store-text left" style="color: #606060"><a href="/board/store/read.html{$param_read}&listpage=/board/store/list2.html">{$content}</a></td>
+                            <td class="phone store-phone" style="color: #AEAEAE">{$content}</td>
+                            <td class="{$date_display|display}" style="color: #606060">{$write_date}</td>
+                            <td class="{$hit_display|display}"><span class="RTMI">조회</span> {$hit_count}</td>
+                            <td class="{$point_display|display}"><img src="//img.echosting.cafe24.com/skin/skin/board/icon-star-rating{$point_count}.svg" alt="{$point_count}점" /></td>
+
+                        </tr>
+                    </tbody>
+                    <tbody module="board_list_1002" class="center">
+                        <!--
+$login_page_url = /member/login.html
+$deny_access_url = /index.html
+-->
+                        <tr style="{$list_bg_color} {$list_char_color}">
+                            <!--<td class="chk no">{$checkbox}<span class="RW">{$no}</span></td>-->
+                            <td class="store-category {$category_display|display}" style="color: #AEAEAE; font-weight: 700;">{$category_name}</td>
+                            <td class="left store-title">
+                                {$icon_re}{$icon_lock}<a href="/board/store/read.html{$param_read}&listpage=/board/store/list2.html">{$subject}</a>{$icon_file}<span class="comment">{$comment_count}</span>
+                            </td>
+                            <td class="displaynone">{$member_icon}{$writer}</td>
+                            <td class="add store-text left" style="color: #606060"><a href="/board/store/read.html{$param_read}&listpage=/board/store/list2.html">{$content}</a></td>
+                            <td class="phone store-phone" style="color: #AEAEAE">{$content}</td>
+                            <td class="{$date_display|display}" style="color: #606060">{$write_date}</td>
+                            <td class="{$hit_display|display}"><span class="RTMI">조회</span> {$hit_count}</td>
+                            <td class="{$point_display|display}"><img src="//img.echosting.cafe24.com/skin/skin/board/icon-star-rating{$point_count}.svg" alt="{$point_count}점" /></td>
+
+                        </tr>
+                        <tr style="{$list_bg_color} {$list_char_color}">
+                            <!--<td class="chk no">{$checkbox}<span class="RW">{$no}</span></td>-->
+                            <td class="store-category {$category_display|display}" style="color: #AEAEAE; font-weight: 700;">{$category_name}</td>
+                            <td class="left store-title">
+                                {$icon_re}{$icon_lock}<a href="/board/store/read.html{$param_read}&listpage=/board/store/list2.html">{$subject}</a>{$icon_file}<span class="comment">{$comment_count}</span>
+                            </td>
+                            <td class="displaynone">{$member_icon}{$writer}</td>
+                            <td class="add store-text left" style="color: #606060"><a href="/board/store/read.html{$param_read}&listpage=/board/store/list2.html">{$content}</a></td>
+                            <td class="phone store-phone" style="color: #AEAEAE">{$content}</td>
+                            <td class="{$date_display|display}" style="color: #606060">{$write_date}</td>
+                            <td class="{$hit_display|display}"><span class="RTMI">조회</span> {$hit_count}</td>
+                            <td class="{$point_display|display}"><img src="//img.echosting.cafe24.com/skin/skin/board/icon-star-rating{$point_count}.svg" alt="{$point_count}점" /></td>
+
+                        </tr>
+                    </tbody>
+                    </table>
+                <p class="message {$empty_display|display}" module="board_empty_1002">{$empty_message}</p>
+            </div>
+            <div class="renewal-pagination-btn-wrap">
+                <div module="board_paging_1002" class="section ec-base-paginate typeList custom-pagination-wrap">
+                    <a href="{$param_prev}">이전 페이지</a>
+                    <ol>
+                        <li><a href="{$param_num}" class="{$param_class}">{$page_num}</a></li>
+                        <li><a href="{$param_num}" class="{$param_class}">{$page_num}</a></li>
+                    </ol>
+                    <a href="{$param_next}">다음 페이지</a>
+                </div>
+                <div module="board_ButtonList_1002" class="renewal-btn-wrap w-100 {$write_display|display} gAbsol">
+
+                    <a href="/board/store/write.html" class="black-btn {$write_display|display}">글쓰기</a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+

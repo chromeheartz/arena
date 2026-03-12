@@ -1,0 +1,730 @@
+<style>
+
+.dalue_css_keywordPromotion {
+    line-height: 2;
+}
+.dalue-navigation-container {
+  /* box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.175); */
+  border-radius: 10px;
+  border: 0px solid #fff;
+  
+}
+
+.dalue-navigation-tab {
+  height: 24px;
+  line-height: 24px;
+  width: 100%;
+  background-color: #fff;
+  overflow-x: auto;
+  overflow-y: hidden;
+  display: flex;
+  position: relative;
+  flex-shrink: 0;
+  margin-bottom: 5px;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.dalue-navigation-tab::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+}
+
+.dalue-navigation-tab-item {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: 0.3s;
+  position: relative;
+  z-index: 2;
+  margin-right: 15px;
+}
+
+.dalue-navigation-tab-item2 {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: 0.3s;
+  position: relative;
+  z-index: 2;
+  margin-right: 10px;
+}
+.dalue-navigation-tab-item.active {
+  min-width: 40px;
+}
+.dalue-navigation-tab-item.active .dalue-navigation-tab__icon {
+  /* transform: translate(0px, -10px); */
+}
+.dalue-navigation-tab-item.active .dalue-navigation-tab__txt {
+  opacity: 1;
+  transform: translate(0, 0px);
+  color: #FFFFFF;
+  background-color: #000000;
+  border-radius: 10px 10px 10px 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+  font-size: var(--fs-small); font-weight: var(--fw-medium); line-height: var(--lh-base);
+}
+.dalue-navigation-tab-overlay {
+  border-radius: 20px;
+  background-color: #EAEAEA;
+  height: 100%;
+  width: 210px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: 0.3s;
+}
+.dalue-navigation-tab__icon {
+  display: block;
+  color: #000;
+  transition-duration: 0.3s;
+  line-height: 1;
+  transform: translate(0, 11px);
+}
+.dalue-navigation-tab__txt {
+  display: block;
+  font-weight: 400;
+  color: #000;
+  opacity: 0.8;
+  transition-duration: 0.3s;
+  /* transform: translate(0, 5px); */
+  user-select: none;
+  font-size: var(--fs-small); font-weight: var(--fw-medium); line-height: var(--lh-base); color: var(--color-gray1-base);
+}
+    
+.dalue_css_input_price {
+    height: 20px;
+    position: relative;
+}
+.dalue_css_price_btn {
+    position: relative;
+    top: 0px;
+}
+
+.dalue_css_autocomplete_list::-webkit-scrollbar {
+   width: 10px;
+}
+.dalue_css_autocomplete_list::-webkit-scrollbar-thumb {
+    background-color: #aaacaa;
+    border-radius: 10px;
+}
+.dalue_css_autocomplete_list::-webkit-scrollbar-track {
+    background-color: #FFF;
+    border-radius: 10px;
+    /*  box-shadow: inset 0px 0px 5px black; */
+}
+    
+@media screen and (min-width: 768px) {
+    .dalue-navigation-more, #dalue-navigation-tab-overlay-category-more {
+        
+    }
+}
+    
+@media screen and (min-width: 1px) and (max-width: 767px) {
+    .dalue-navigation-more, #dalue-navigation-tab-overlay-category-more {
+        display: none;
+        height: 0px;
+	}
+}
+
+
+</style>
+
+
+<div id="dalue_search_autocomplete_layer_0" style="display: none;">
+		<div class="dalue_css_autocomplete_wrap" style="">
+			<div class="dalue_css_autocomplete_header" style="background-color: white; margin-top: 20px; display: none;">
+				<div class="dalue_css_autocomplete_title" style="top: 50px;">
+					<img src="https://api.dalue.io/dalue-ecms/contrib/imgs/title_ac_b.svg" style="width: auto; height: 16px;">
+				</div>
+				<div class="dalue_css_autocomplete_option">
+				</div>
+			</div>
+			<div class="dalue_css_autocomplete_list">
+				<ul id="dalue_search_autocomplete_list_0">
+					<div id="dalue_search_autocomplete_item_0" style="display: none;">
+						<li id="dalue_search_autocomplete_item_0_{$autoComplete_index}" query="{$autoComplete_query}">
+							<a href="{$autoComplete_url}" class="dalue_css_autocomplete_item"><img src="https://api.dalue.io/dalue-ecms/contrib/imgs/search.png" class="dalue_css_image_vcenter" style="width: 12px; height: auto;"> {$autoComplete_query_view}</a>
+							<span class="dalue_css_autocomplete_list_right" id="dalue_autocomplete_recent_date_0">
+							</span>
+						</li>
+					</div>
+
+				</ul>
+			</div>
+		</div>
+	</div> <!-- dalue_search_autocomplete_layer -->
+
+	<div id="dalue_search_recentQuery_layer_0" style="display: none;">
+		<div class="dalue_css_autocomplete_wrap" style="">
+            <div class="dalue_css_autocomplete_title dalue_promotion_keyword_wrap" style="text-align: center; margin-top: 12px; color: #94c38e; border-bottom: solid 1px #FAFAFA; padding-bottom: 12px;">
+                <ul class="dalue_promotion_keyword">
+
+                </ul>
+            </div>
+
+			<div class="dalue_css_autocomplete_header" style="background-color: white;  margin-top: 20px; " >
+				<div class="dalue_css_autocomplete_title" style="top: 50px;">
+					<img src="https://api.dalue.io/dalue-ecms/contrib/imgs/title_recent_b.svg" style="width: auto; height: 16px;">
+				</div>
+				<div class="dalue_css_autocomplete_option dalue_search_recentQuery_delAll">
+					<a href="javascript:;" onclick="DalueSearch.removeJsonCookie(null); $('#dalue_search_recentQuery_list_0').html('<center style=\'font-size: 12px; color: #b3b7c5;\' no=\'true\'>최근 검색어가 없습니다.</center>');">전체삭제</a>
+				</div>
+			</div>
+			<div class="dalue_css_autocomplete_list"  style="max-height: 150px; overflow-y: auto;">
+				<ul id="dalue_search_recentQuery_list_0">
+
+				</ul>
+			</div>
+
+            <div style="display: none;">
+                <div id="dalue_search_recentQuery_item_0" style="">
+                    <li id="dalue_search_recentQuery_item_0_{$recentQuery_index}" query="{$recentQuery_query}">
+                        <span style="max-width: 10px; text-overflow: ellipsis;"><a href="{$recentQuery_url}" class="dalue_css_autocomplete_item"  style="width: 220px;"><img src="https://api.dalue.io/dalue-ecms/contrib/imgs/clock.png" class="dalue_css_image_vcenter" style="width: 12px; height: auto;"> {$recentQuery_query}</a></span>
+                        <span class="dalue_css_autocomplete_list_right">
+                            <span class="dalue_css_autocomplete_list_right_date">{$recentQuery_date}</span>
+                            <a href="javascript:;" onclick="DalueSearch.removeJsonCookie('{$recentQuery_query}');">X</a>
+                        </span>
+                    </li>
+                </div>
+            </div>
+
+			<div class="dalue_css_autocomplete_header" style="background-color: white; margin-top: 20px;">
+				<div class="dalue_css_autocomplete_title">
+					<img src="https://api.dalue.io/dalue-ecms/contrib/imgs/title_hk_b.svg" style="width: auto; height: 16px;">
+				</div>
+				<div class="dalue_css_autocomplete_option">
+
+				</div>
+			</div>
+			<div class="dalue_css_autocomplete_list">
+				<ul id="dalue_search_hotKeyword_list_0">
+					<div id="dalue_search_hotKeyword_item_0" style="display: none;">
+						<li id="dalue_search_hotKeyword_item_0_{$hotKeyword_index}" query="{$hotKeyword_query}">
+							<a href="{$hotKeyword_url}" class="dalue_css_autocomplete_item"><span style="width: 12px; height: auto;"><b>{$hotKeyword_rank}</b></span> {$hotKeyword_query}</a>
+							<span class="dalue_css_autocomplete_list_right">
+								
+							</span>
+						</li>
+					</div>
+
+				</ul>
+			</div>
+
+		</div>
+	</div> <!-- dalue_search_autocomplete_layer -->
+
+
+
+<div id="dalue_search_autocomplete_layer_1-" style="display: none;">
+		<div class="dalue_css_autocomplete_wrap" style="">
+			<div class="dalue_css_autocomplete_header" style="background-color: white; display: none;">
+				<div class="dalue_css_autocomplete_title">
+					<img src="https://api.dalue.io/dalue-ecms/contrib/imgs/title_ac_b.svg" style="width: auto; height: 16px;">
+				</div>
+				<div class="dalue_css_autocomplete_option">
+				</div>
+			</div>
+			<div class="dalue_css_autocomplete_list">
+				<ul id="dalue_search_autocomplete_list_1">
+					<div id="dalue_search_autocomplete_item_1" style="display: none;">
+						<li id="dalue_search_autocomplete_item_1_{$autoComplete_index}" query="{$autoComplete_query}">
+							<a href="{$autoComplete_url}" class="dalue_css_autocomplete_item"><img src="https://api.dalue.io/dalue-ecms/contrib/imgs/search.png" class="dalue_css_image_vcenter" style="width: 12px; height: auto;"> {$autoComplete_query_view}</a>
+							<span class="dalue_css_autocomplete_list_right" id="dalue_autocomplete_recent_date_1">
+							</span>
+						</li>
+					</div>
+
+				</ul>
+			</div>
+		</div>
+	</div> <!-- dalue_search_autocomplete_layer -->
+
+	<div id="dalue_search_recentQuery_layer_1-" style="display: none;">
+
+		<div class="dalue_css_autocomplete_wrap" style="">
+            <div class="dalue_css_autocomplete_title dalue_promotion_keyword_wrap" style="text-align: center; margin-top: 12px; color: #94c38e; border-bottom: solid 1px #FAFAFA; padding-bottom: 12px;">
+                <ul class="dalue_promotion_keyword">
+
+                </ul>
+            </div>
+
+			<div class="dalue_css_autocomplete_header" style="background-color: white; margin-top: 20px;">
+				<div class="dalue_css_autocomplete_title">
+					<img src="https://api.dalue.io/dalue-ecms/contrib/imgs/title_recent_b.svg" style="width: auto; height: 16px;">
+				</div>
+				<div class="dalue_css_autocomplete_option dalue_search_recentQuery_delAll">
+					<a href="javascript:;" onclick="DalueSearch.removeJsonCookie(null);">전체삭제</a>
+				</div>
+			</div>
+			<div class="dalue_css_autocomplete_list"  style="">
+				<ul id="dalue_search_recentQuery_list_1">
+
+				</ul>
+			</div>
+            <div style="display: none;">
+                <div id="dalue_search_recentQuery_item_1" style="">
+                    <li id="dalue_search_recentQuery_item_1_{$recentQuery_index}" query="{$recentQuery_query}">
+                        <span style="max-width: 10px; text-overflow: ellipsis;"><a href="{$recentQuery_url}" class="dalue_css_autocomplete_item" style="width: 120px;"><img src="https://api.dalue.io/dalue-ecms/contrib/imgs/clock.png" class="dalue_css_image_vcenter" style="width: 12px; height: auto;"> {$recentQuery_query}</a></span>
+                        <span class="dalue_css_autocomplete_list_right">
+                            <span class="dalue_css_autocomplete_list_right_date">{$recentQuery_date}</span>
+                            <a href="javascript:;" onclick="DalueSearch.removeJsonCookie('{$recentQuery_query}');">X</a>
+                        </span>
+                    </li>
+                </div>
+            </div>
+
+			<div class="dalue_css_autocomplete_header" style="background-color: white; margin-top: 20px;">
+				<div class="dalue_css_autocomplete_title">
+					<img src="https://api.dalue.io/dalue-ecms/contrib/imgs/title_hk_b.svg" style="width: auto; height: 16px;">
+				</div>
+				<div class="dalue_css_autocomplete_option">
+
+				</div>
+			</div>
+			<div class="dalue_css_autocomplete_list">
+				<ul id="dalue_search_hotKeyword_list_1">
+					<div id="dalue_search_hotKeyword_item_1" style="display: none;">
+						<li id="dalue_search_hotKeyword_item_1_{$hotKeyword_index}" query="{$hotKeyword_query}">
+							<a href="{$hotKeyword_url}" class="dalue_css_autocomplete_item"><span style="width: 12px; height: auto;"><b>{$hotKeyword_rank}</b></span> {$hotKeyword_query}</a>
+							<span class="dalue_css_autocomplete_list_right">
+								
+							</span>
+						</li>
+					</div>
+
+				</ul>
+			</div>
+
+		</div>
+	</div> <!-- dalue_search_autocomplete_layer -->
+
+<div id="dalue_search_autocomplete_layer_2-" style="display: none;">
+		<div class="dalue_css_autocomplete_wrap" style="">
+			<div class="dalue_css_autocomplete_header" style="background-color: white; display: none;">
+				<div class="dalue_css_autocomplete_title">
+					<img src="https://api.dalue.io/dalue-ecms/contrib/imgs/title_ac_b.svg" style="width: auto; height: 16px;">
+				</div>
+				<div class="dalue_css_autocomplete_option">
+				</div>
+			</div>
+			<div class="dalue_css_autocomplete_list">
+				<ul id="dalue_search_autocomplete_list_2">
+					<div id="dalue_search_autocomplete_item_2" style="display: none;">
+						<li id="dalue_search_autocomplete_item_2_{$autoComplete_index}" query="{$autoComplete_query}">
+							<a href="{$autoComplete_url}" class="dalue_css_autocomplete_item"><img src="https://api.dalue.io/dalue-ecms/contrib/imgs/search.png" class="dalue_css_image_vcenter" style="width: 12px; height: auto;"> {$autoComplete_query_view}</a>
+							<span class="dalue_css_autocomplete_list_right" id="dalue_autocomplete_recent_date_2">
+							</span>
+						</li>
+					</div>
+
+				</ul>
+			</div>
+		</div>
+	</div> <!-- dalue_search_autocomplete_layer -->
+
+	<div id="dalue_search_recentQuery_layer_2-" style="display: none;">
+		<div class="dalue_css_autocomplete_wrap" style="">
+            <div class="dalue_css_autocomplete_title dalue_promotion_keyword_wrap" style="text-align: center; margin-top: 12px; color: #94c38e; border-bottom: solid 1px #FAFAFA; padding-bottom: 12px;">
+                <ul class="dalue_promotion_keyword">
+
+                </ul>
+            </div>
+
+			<div class="dalue_css_autocomplete_header" style="background-color: white; margin-top: 20px;">
+				<div class="dalue_css_autocomplete_title">
+					<img src="https://api.dalue.io/dalue-ecms/contrib/imgs/title_recent_b.svg" style="width: auto; height: 16px;">
+				</div>
+				<div class="dalue_css_autocomplete_option dalue_search_recentQuery_delAll">
+					<a href="javascript:;" onclick="DalueSearch.removeJsonCookie(null);">전체삭제</a>
+				</div>
+			</div>
+            <div class="dalue_css_autocomplete_list" style="justify-content: unset; display: flex !important; white-space: nowrap; scroll-direction: horizontal; overflow-y: hidden; overflow-x: auto;">
+                <ul id="dalue_search_recentQuery_list_2" style="display: flex !important; overflow-y: hidden; overflow-x: auto; width: 100vw;">
+
+                </ul>
+        	</div>
+            <!--
+			<div class="dalue_css_autocomplete_list"  style="">
+				<ul id="dalue_search_recentQuery_list_2">
+
+				</ul>
+			</div>
+			-->
+            <div style="display: none;">
+                <div id="dalue_search_recentQuery_item_2" style="">
+
+                    <li id="dalue_search_recentQuery_item_2_{$recentQuery_index}" query="{$recentQuery_query}" style="padding-bottom: 12px !important; display: inline-block; vertical-align: middle; text-align: center; background-color: #F2F2F2; text-align: center; border-radius: 8px; margin: 4px 2px !important; padding-right: 18px !important; height: 30px; margin-left: 18px !important;">
+                        <a href="/shopSearch/search.html?query={$recentQuery_query}" class="dalue_css_autocomplete_item" style="border: 1px; display: unset !important; overflow: initial !important; padding-right: 5px !important;  top: 0px; position: absolute;">{$recentQuery_query}</a>
+                        <a href="javascript:;" onclick="DalueSearch.removeJsonCookie('{$recentQuery_query}'); DalueSearch.recentQueryView();" style="color: #333 !important; font-size: 8px; top: 2px; position: absolute;">X</a>
+                    </li>
+
+                </div>
+            </div>
+
+			<div class="dalue_css_autocomplete_header" style="background-color: white; margin-top: 20px;">
+				<div class="dalue_css_autocomplete_title">
+					<img src="https://api.dalue.io/dalue-ecms/contrib/imgs/title_hk_b.svg" style="width: auto; height: 16px;">
+				</div>
+				<div class="dalue_css_autocomplete_option">
+
+				</div>
+			</div>
+			<div class="dalue_css_autocomplete_list">
+				<ul id="dalue_search_hotKeyword_list_2">
+					<div id="dalue_search_hotKeyword_item_2" style="display: none;">
+						<li id="dalue_search_hotKeyword_item_2_{$hotKeyword_index}" query="{$hotKeyword_query}">
+							<a href="{$hotKeyword_url}" class="dalue_css_autocomplete_item"><span style="width: 12px; height: auto;"><b>{$hotKeyword_rank}</b></span> {$hotKeyword_query}</a>
+							<span class="dalue_css_autocomplete_list_right">
+								
+							</span>
+						</li>
+					</div>
+
+				</ul>
+			</div>
+
+		</div>
+	</div> <!-- dalue_search_autocomplete_layer -->
+
+
+
+<div id="dalue_promotion_keyword_item"  style="display: none;">
+    <li id="">
+        <a href="{$url}" style="color: #1d6755; font-weight: 700;">{$title}</a>
+    </li>
+</div>
+
+<div id="dalue_search_filter_item_category" style="display: none;" sel="active" nosel="">
+    <li class="  xans-record-" style="margin-right: 20px;" onclick="{$category_action}">
+        <div class="dalue-navigation-tab-item {$category_selected}" >
+            <span class="dalue-navigation-tab__txt">{$categoryName}</span>
+        </div>
+    </li>
+
+</div>
+
+<div id="dalue_search_filter_item_brand" style="display: none;" sel="active" nosel="">
+    <li class="  xans-record-" style="margin-right: 20px;" onclick="{$brand_action}">
+	<div class="dalue-navigation-tab-item {$brand_selected}" onclick="{$brand_action}">
+		<span class="dalue-navigation-tab__txt">{$brandName}</span>
+	</div>
+    </li>
+</div>
+
+<div id="dalue_search_filter_item_price" style="display: none;" sel="active" nosel="">
+    <li class="  xans-record-" style="margin-right: 20px;" onclick="{$price_action}">
+	<div class="dalue-navigation-tab-item {$price_selected}" onclick="{$price_action}">
+		<span class="dalue-navigation-tab__txt">{$priceName}</span>
+	</div>
+    </li>
+</div>
+
+<!--
+<div id="dalue_search_filter_item_category" style="display: none;" sel="active" nosel="">
+	<div class="dalue-navigation-tab-item {$category_selected}" onclick="{$category_action}">
+		<span class="dalue-navigation-tab__txt">{$categoryName}</span>
+	</div>
+</div>
+
+<div id="dalue_search_filter_item_brand" style="display: none;" sel="active" nosel="">
+	<div class="dalue-navigation-tab-item {$brand_selected}" onclick="{$brand_action}">
+		<span class="dalue-navigation-tab__txt">{$brandName}</span>
+	</div>
+</div>
+
+<div id="dalue_search_filter_item_price" style="display: none;" sel="active" nosel="">
+	<div class="dalue-navigation-tab-item {$price_selected}" onclick="{$price_action}">
+		<span class="dalue-navigation-tab__txt">{$priceName}</span>
+	</div>
+</div>
+-->
+
+<!--
+<div id="dalue_search_filter_item_category" style="display: none;" sel="dalue_css_btn dalue_css_btn-light" nosel="dalue_css_btn dalue_css_btn-outline-none">
+	<a href="javascript:{$category_action};" class="{$category_selected}" onclick="{$category_action}">{$categoryName}</a>
+</div>
+
+
+<div id="dalue_search_filter_item_brand" style="display: none;" sel="dalue_css_btn dalue_css_btn-light" nosel="dalue_css_btn dalue_css_btn-outline-none">
+	<a href="javascript:{$brand_action};" class="{$brand_selected}" onclick="{$brand_action}">{$brandName}</a>
+</div>
+<div id="dalue_search_filter_item_price" style="display: none;" sel="dalue_css_btn dalue_css_btn-light" nosel="dalue_css_btn dalue_css_btn-outline-none">
+	<a href="javascript:{$price_action};" class="{$price_selected}" onclick="{$price_action}">{$priceName}</a>
+</div>
+-->
+<style>
+.productName img {
+    width: 100px !important;
+    padding: 0px 0px 0px 0px !important;
+}
+    
+.xans-product-1 ul.prdList .name img {
+    padding: 0;
+}
+    
+</style>
+
+<div id="dalue_search_item" style="display: none;">
+        <li id="anchorBoxId_{$productNo}" data-prd="{$productNo}" class="each_product xans-record- done">
+                                <!-- 썸네일 영역 -->
+    <div class="thumbnail">
+        <!-- 상품 이미지 -->
+        <div class="prdImg">
+            <div class="soldout_chk dd displaynone soldout_{$productNo}"></div>
+            <a href="{$url}" name="anchorBoxName_{$productNo}">
+                <div class="thumb_img_box">
+    				<div class="basic_img"><img class=" dalue_css_search_thumbnail_img" src1="{$image}" orig="{$image}" id="eListPrdImage{$productNo}_" alt="{$productName}"></div>
+					<div class="hover_img"><img class=" dalue_css_search_thumbnail_img" src2="{$image}" orig="{$image}" alt="{$productName}"></div>
+					<div class="hover_img"><img class=" dalue_css_search_thumbnail_img" src3="{$tinyImage}" orig="{$tinyImage}" alt="{$productName}"></div>
+                </div>
+                <!-- 상품 이미지 꾸미기 -->
+                            <!-- //상품 이미지 꾸미기 -->
+            </a>
+            <!-- 기능 버튼 -->
+            <div class="button_wrap">
+                <div class="og_button_area" data-type="inherit">
+                    <!-- 좋아요 버튼-->
+                    <div class="og_button displaynone og_button_basic3_sizeS like_button">
+                        <button type="button"><span class="layout-hidden"></span><span>좋아요 </span></button>
+                    </div>
+                    <!-- //좋아요 버튼 -->
+                    <!-- 관심상품 등록 -->
+                    <div class="og_button wish_button og_button_basic3_sizeS">
+                        <img src="/web/upload/icon_202302171735480600.png" class="icon_img ec-product-listwishicon" alt="관심상품 등록 전" productno="{$productNo}" categoryno="{$categoryRoot1No}" icon_status="off" login_status="T" individual-set="F">                </div>
+                    <!-- //관심상품 등록 -->
+                    <!-- 재고보기 아이콘 -->
+                    <div class="og_button option_button og_button_basic3_sizeS og_base_tooltip_area displaynone"></div>
+                    <!-- //재고보기 아이콘 -->
+                    <!-- 확대 보기 아이콘 -->
+                    <div class="og_button zoom_button og_button_basic3_sizeS displaynone"><span>확대보기 <img src="/web/upload/icon_202302151620076200.png" onclick="zoom('{$productNo}', '{$categoryRoot1No}', '1','', '');" style="cursor:pointer" alt="상품 큰 이미지 보기"></span></div>
+                    <!-- //확대 보기 아이콘 -->
+                    <!-- 품절 아이콘 -->
+                    <div class="og_button soldout_button og_button_basic3_sizeS displaynone" onclick="set_sms_restock({$productNo})" data-disabled="disabled"><span>품절</span></div>
+                    <!-- 품절 아이콘 -->
+                    <!-- 장바구니 아이콘 -->
+                    <div class="og_button basket_button og_button_basic3_sizeS displaynone" onclick="basketConfirmShow();"></div>
+                    <!-- //장바구니 아이콘 -->
+                </div>
+            </div>
+            <!-- //기능 버튼 -->
+        </div>
+        <!-- //상품 이미지 -->
+    </div>
+    <!-- 썸네일 영역 -->
+    <!-- 상품 설명 -->
+    <div class="description">
+        <div class="img-wrap">
+        <i>
+            <img class="dalue_css_search_thumbnail_img" src1={$image} orig="{$tinyImage}"  id="eListPrdImage{$productNo}_" alt="{$productName}">
+        </i>
+        <i>
+            <img class="dalue_css_search_thumbnail_img" src1={$tinyImage} orig="{$tinyImage}" alt="{$productName}">
+        </i>
+    </div>
+    <div class="promotion og_promotion_icons">
+    <!----></div>
+        <span class="category_name"></span>
+        <strong class="name"><label class="compare_chk displaynone"><input type="checkbox" class=""></label><a href="{$url}" class=""><span style="font-size:18px;color:#000000;">{$productName}</span></a></strong>
+        <p class="summary_desc displaynone"></p>
+        <ul class="price_wrap">
+    <li id="product_prc_promo_{$productNo}" class="og_prc_item displaynone" data-prc="{$price}"><span class="og_prc_promo desc"></span></li>
+            <li id="product_prc_sell_{$productNo}" class="og_prc_item" data-prc="{$price}"><span class="og_prc_sell desc">{$price}</span></li>
+            <li id="product_prc_custom_{$productNo}" class="og_prc_item discount" data-prc="{$retailPrice_raw}" style="{$IF_retailPrice}"><span class="og_prc_custom desc">{$retailPrice}</span></li>
+        <li class="discount_ratio og_prc_item" style="{$IF_retailPrice}"><span class="desc">{$discountPriceRatio}%</span></li></ul>
+    </div>
+    <!-- 상품 설명 -->
+    <!-- 프로모션 아이콘 -->
+    <div class="og_color_chips">{$listIcon}{$icon}</div>
+    
+    <!-- //프로모션 아이콘 -->
+                                <ul class="xans-element- xans-search xans-search-listitem spec"><li data-name="소비자가" class=" xans-record-">
+            <strong class="title displaynone">소비자가</strong>
+            <span><span style="font-size:16px;color:#888888;text-decoration:line-through;">{$retailPrice}원</span></span>
+        </li>
+    <li data-name="판매가" class=" xans-record-">
+            <strong class="title displaynone">판매가</strong>
+            <span><span style="font-size:16px;color:#000000;">{$price}원</span><span id="span_product_tax_type_text" style=""> </span></span>
+        </li>
+    </ul>
+    </li>
+</div>
+
+<style>
+.dalue_page_no {
+    display: inline-block;
+    width: 25px;
+    height: 27px;
+    border: 1px solid #d9d9d9;
+    border-radius: 2px;
+    font-size: 15px;
+    line-height: 27px;
+    color: #1b1b1b;
+    vertical-align: middle;
+    background: #fff;
+    padding-bottom: 0px !important;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+#dalue_search_pagination > .active {
+    border-color: #2d3d5a;
+    color: #2d3d5a;
+}
+</style>
+<div style="display: none;">
+	<div id="dalue_search_pagination_first">
+		<a href="javascript:{$paginationAction};" onclick="{$paginationAction}">&laquo;</a>
+	</div>
+	<div id="dalue_search_pagination_prev">
+		<a href="javascript:{$paginationAction};" onclick="{$paginationAction}">이전</a>
+	</div>
+	<div id="dalue_search_pagination_item">
+		<a href="javascript:{$paginationAction};" onclick="{$paginationAction}" class="{$paginationActive}">{$paginationNo}</a>
+	</div>
+	<div id="dalue_search_pagination_next">
+		<a href="javascript:{$paginationAction};" onclick="{$paginationAction}">다음</a>
+	</div>
+	<div id="dalue_search_pagination_last">
+		<a href="javascript:{$paginationAction};" onclick="{$paginationAction}">&raquo;</a>
+	</div>
+</div>
+
+
+<div style="display: none;" id="dalue_search_relativeTerm_item">
+<li class="xans-record-" style="display: inline; margin-right: 12px; font-size: var(--fs-small); font-weight: var(--fw-medium); line-height: var(--lh-base); color: var(--color-gray1-base);">
+    <a href="{$relativeTerm_url}">{$relativeTerm_term}</a>
+</li>
+</div>
+
+<div style="display: none;" id="dalue_search_hotKeyword_item">
+<li class="xans-record-" style="display: inline-block; margin: 0 0 0 17px;">
+    <a href="{$hotKeyword_url}">{$hotKeyword_query}</a>
+</li>
+</div>
+
+
+<script>
+var CAPP_SHOP_NEW_PRODUCT_OPTIONSELECT = {
+    sLayerID: 'capp-shop-new-product-optionselect-layer',
+    sBackLayerID: 'capp-shop-new-product-optionselect-backlayer',
+    sIframeID: 'capp-shop-new-product-optionselect-iframe',
+    iProductNo: 0,
+    iCategoryNo: 0,
+    sActionType: '',
+    sIsMobile: '',
+    selectOptionCommon: function(iProductNo, iCategoryNo, sActionType, sIsMobile)
+    {
+        this.iProductNo = iProductNo;
+        this.sActionType = sActionType;
+        this.iCategoryNo = iCategoryNo;
+        this.sIsMobile = sIsMobile;
+        this.createLayer();
+    },
+
+    createLayer: function()
+    {
+        if (this.sIsMobile) {
+            // 모바일 옵션 선택 레이어 중복 생성 방지
+            // PC 버전은 투명 배경 레이어(this.sBackLayerID - 클릭 시 닫힘)가 깔리기 때문에 별도로 처리할 필요 없음
+            EC$('#' + this.sLayerID).remove();
+
+            var container = '<div id="'+this.sLayerID+'" style="position:fixed;z-index:10001;display:block;top:50px;left:0px;width:100%;height:630px;"><iframe id="'+this.sIframeID+'" scroll="0" scrolling="no" frameBorder="0"  style="height:100%;width:100%;"></iframe></div>';
+            EC$('body').append(EC$(container));
+        } else {
+            var container = '<div id="'+this.sLayerID+'" style="position:absolute;z-index:10001;display:block;width:600px;height:630px;"><iframe id="'+this.sIframeID+'" scroll="0" scrolling="no" frameBorder="0" style="height:100%;width:100%;background: transparent;" allowtransparency="true"></iframe></div>';
+            EC$('body').append(EC$('<div id="' + this.sBackLayerID +'" style="position:absolute;top:0px;left:0px;z-index:10000;"></div>')).append(EC$(container));
+
+            EC$('#' + this.sBackLayerID).on('click', function() {
+                CAPP_SHOP_NEW_PRODUCT_OPTIONSELECT.closeOptionCommon();
+            });
+
+            EC$('#' + this.sBackLayerID).css({width: EC$("body").width(),height: EC$("body").height(),opacity: .4}).show();
+        }
+
+        var url = '/product/basket_option.html?product_no=' + this.iProductNo + '&sActionType=' + this.sActionType + '&cate_no=' + this.iCategoryNo;
+
+        EC$('#' + this.sIframeID).attr('src', url);
+        EC$('#' + this.sIframeID).on("load",function() {
+            EC$(".close",this.contentWindow.document.body).on("click", function() {
+                CAPP_SHOP_NEW_PRODUCT_OPTIONSELECT.closeOptionCommon();
+            });
+        });
+
+        CAPP_SHOP_NEW_PRODUCT_OPTIONSELECT.centerLayer();
+        EC$('#' + this.sLayerID).show();
+    },
+
+    closeOptionCommon: function()
+    {
+        EC$('div').remove('#' + this.sBackLayerID);
+        EC$('#' + this.sIframeID).remove();
+        EC$('div').remove('#' + this.sLayerID);
+    },
+
+    centerLayer: function() {
+        var oThis = EC$('#' + this.sLayerID);
+        var oWindow = EC$(window);
+        oThis.css({
+            position: "absolute",
+            top: ~~((oWindow.height() - oThis.outerHeight()) / 2) + oWindow.scrollTop() + "px",
+            left: '50%',
+            'margin-left': ((oThis.outerWidth() / 2) * -1)+'px'
+        });
+        return this;
+    }
+};
+var sOptionType = 'T';
+var iProductNo;
+// var add_option_name = undefined;
+                                                        
+function isNewProductSkin() {
+    return false;
+}
+    
+function wish_btn_click(elm, prdNo, cateNo) {
+	// item_code = itemCode;
+    //product_no=3022&display_group=1
+    const currentState = history.state
+    
+    var pushData = {
+    };
+    
+    console.log(JSON.stringify(currentState));
+    iProductNo = prdNo;
+    
+    // history.replaceState(pushData, '', 'search.html?' + 'product_no=' + prdNo + '&cate_no=' + cateNo + '&display_group=1');
+    try {
+    	add_wishlist(elm, true);
+    } catch(e) {
+        console.log(e);
+    }
+    
+    var u = "";
+    if(typeof URLSearchParams == "function") {
+        u = new URLSearchParams(currentState).toString();
+    } else {
+        var keys = Object.keys(currentState);
+        for(var i = 0; i < keys.length; i++) {
+            if(i != 0) {
+                u += '&';
+            }
+            u += keys[i] + '=' + encodeURIComponent(pushData[keys[i]]);
+        }
+    }
+    
+    // history.replaceState(currentState, '', 'search.html?' + u);
+}
+
+</script>

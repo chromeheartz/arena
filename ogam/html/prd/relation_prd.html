@@ -1,0 +1,32 @@
+<!-- 썸네일 영역 -->
+<div class="thumbnail">
+    <!-- 상품 이미지 -->
+    <div class="prdImg">
+        <div class="soldout_chk displaynone">{$soldout_icon}</div>
+        <a href="/product/detail.html{$param}" name="anchorBoxName_{$product_no}">
+            <div class="thumb_img_box"><img class="basic_img" src="{$img_medium}" id="{$image_medium_id}" alt="{$seo_alt_tag}" /><img class="hover_img" src="{$img_medium}" alt="{$seo_alt_tag}" /></div>
+        </a>
+        <!-- 기능 버튼 -->
+        <!-- //기능 버튼 -->
+    </div>
+    <!-- //상품 이미지 -->
+</div>
+<!-- 썸네일 영역 -->
+<!-- 상품 설명 -->
+<div class="description">
+    <span class="category_name">{$custom_option2}</span>
+    <strong class="name"><a href="/product/detail.html{$param}" class="">{$name}</a></strong>
+    <ul class="price_wrap">
+        <li id="product_prc_promo_{$product_no}" class="og_prc_item" data-prc="{$origin_prd_price_sale}"><span class="og_prc_promo desc">{$origin_prd_price_sale}</span></li>
+        <li id="product_prc_sell_{$product_no}" class="og_prc_item" data-prc="{$disp_product_price}"><span class="og_prc_sell desc">{$disp_product_price}</span></li>
+        <li id="product_prc_custom_{$product_no}" class="og_prc_item" data-prc="{$disp_product_custom}"><span class="og_prc_custom desc">{$disp_product_custom}</span></li>
+    </ul>
+</div>
+<!-- 상품 설명 -->
+<!-- 프로모션 아이콘 -->
+<div class="promotion og_promotion_icons"><!--{$soldout_icon}-->{$stock_icon}{$recommend_icon}{$new_icon}{$today_arrival_icon}{$pickup_icon}{$product_icons}{$benefit_icons}</div>
+<!-- //프로모션 아이콘 -->
+
+<!--browser-image-compression 스크립트 -->
+<script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/browser-image-compression@1.0.15/dist/browser-image-compression.js"></script>
+<!--@js(/ogam/js/common/og_img_compress.js)-->

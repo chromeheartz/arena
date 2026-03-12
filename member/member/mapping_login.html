@@ -1,0 +1,75 @@
+<!--@layout(/layout/basic/layout.html)-->
+
+<!--css(/css/module/member/mapping_login_kakao.css)-->
+<!--@css(/ogam/css/member.css)-->
+<!--@js(/ogam/js/member.js)-->
+
+
+
+<div class="section path">
+    <span>현재 위치</span>
+    <ol>
+        <li><a href="/">홈</a></li>
+        <li title="현재 위치"><strong>카카오싱크 매핑방법 선택 화면</strong></li>
+    </ol>
+</div>
+
+<div class="og_member_inner" id="og_member_mapping_login" module="member_loginMapping">
+    <div class="section titleArea og_member_title">
+        <h2>카카오 계정 연동</h2>
+    </div>
+
+    <div class="memberArea">
+        <div class="ec-base-help">
+            <ul>
+                <li><strong>{$provider_member_email}</strong>로 가입된 아이디가 {$member_id_exists_desc}<br />{$mapping_login_kakao_desc}</li>
+            </ul>
+        </div>
+        <div class="kakao_login">
+            <div class="inner">
+                <div class="item">
+                    <div class="box">
+                        <p class="summary">
+                        <div class="selectBox {$display_member_id|display}">
+                            <ul>
+                                <li><label class="label"><input type="radio" name="login_mapping_info" value="{$member_id}" class="radio"> {$masking_member_id} (가입일 {$regist_date})</label></li>
+                                <li><label class="label"><input type="radio" name="login_mapping_info" value="{$member_id}" class="radio"> {$masking_member_id} (가입일 {$regist_date})</label></li>
+                                <li><label class="label"><input type="radio" name="login_mapping_info" value="{$member_id}" class="radio"> {$masking_member_id} (가입일 {$regist_date})</label></li>
+                                <li><label class="label"><input type="radio" name="login_mapping_info" value="{$member_id}" class="radio"> {$masking_member_id} (가입일 {$regist_date})</label></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="button ec-base-button og_find_sesult_button">
+                        <a href="#none" onclick="{$kakao_func_login_checked_mapping}" class="btnSubmit sizeM btnKakaoSubmit {$display_member_id|display}">선택한 아이디로 카카오 연동하기</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="section titleArea og_member_title">
+                        <h2>LOG IN</h2>
+                    </div>
+                    <div class="ec-base-help">
+                        <ul>
+                            <li>사용 중인 아이디가 리스트에 표시되지 않나요?<br />직접 로그인하고 카카오계정을 연동해보세요.</li>
+                        </ul>
+                    </div>
+                    <div class="button ec-base-button og_find_sesult_button">
+                        <a href="#none" onclick="{$kakao_func_login_mapping}" class="btnNormal sizeM btnKakaoSubmit">로그인하고 카카오 연동하기</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="section titleArea og_member_title">
+                        <h2>SIGN IN</h2>
+                    </div>
+                    <div class="ec-base-help">
+                        <ul>
+                            <li>아직 회원이 아니라면 원클릭으로 가입하세요.</li>
+                        </ul>
+                    </div>
+                    <div class="button ec-base-button og_find_sesult_button">
+                        <a href="#none" onclick="{$kakao_func_login}" class="btnNormal sizeM btnKakaoJoin">카카오계정으로 신규 가입하기</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

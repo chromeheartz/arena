@@ -1,0 +1,77 @@
+<!--@layout(/layout/basic/layout.html)-->
+<!--@js(/ogam/js/shopinfo.js)-->
+<!--@css(/ogam/css/shopinfo.css)-->
+
+
+<div class="intro_area bigandsmall">
+
+    <!--div class="top_area">
+        <div class="section titleArea">
+            <div class="logo_box"><img src="../SkinImg/img/nudelogo.svg"></div>
+            <h2>NUDE RACER</h2>
+            <p>마치 입지 않은 듯한 자유로움</p>
+        </div>
+    </div-->
+
+    <div class="middle_area">
+        <div class="og_sub_container">
+            <div class="og_pc_view" df-banner-code="customorder--pc" hidden>
+                <div class="" df-banner-clone>{#item}{#href}</div>
+            </div>
+            <div class="og_t_view" df-banner-code="customorder--tablet" hidden>
+                <div class="" df-banner-clone>{#item}{#href}</div>
+            </div>
+            <div class="og_m_view" df-banner-code="customorder--mo" hidden>
+                <div class="" df-banner-clone>{#item}{#href}</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom_area">
+        <h2>아레나 커스텀오더 상품</h2>
+        <div class="cate_num">
+            <div class="cate_num">
+                <div module="product_listmain_15" class="ec-base-product og_base_product">
+                    <!--
+                    $count = 200
+                    $moreview = yes
+                    $basket_result = /product/add_basket.html
+                    $basket_option = /product/basket_option.html
+                    -->
+                    <ul class="prdList grid4">
+                        <li id="anchorBoxId_{$product_no}" data-prd="{$product_no}" class="each_product">
+                            <!--@import(/ogam/html/prd/common_prd.html)-->
+                            <!--@import(/ogam/html/prd/product_ListItem.html)-->
+                        </li>
+                        <li id="anchorBoxId_{$product_no}" data-prd="{$product_no}" class="each_product">
+                            <!--@import(/ogam/html/prd/common_prd.html)-->
+                            <!--@import(/ogam/html/prd/product_ListItem.html)-->
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- 배너매니저 스크립트 코드 -->
+<style>[df-banner-code][hidden] { display:none !important }</style>
+<script>
+    var ord=Math.random();
+    document.write('<script async src="/web/upload/appfiles/ZaReJam3QiELznoZeGGkMG/c82bb8ca66a4bdb6f088d6c9f61edaaf.js?v='+ord+'"><\/script>');
+</script>
+<script>
+	function categoryName()
+    {
+        const category = document.querySelectorAll('.category_name');
+
+        category.forEach(function(cate)
+        {
+            cate.textContent = `CUSTOMIZE`;
+        })
+        console.log('적용');
+    }
+    categoryName();
+    //setInterval(categoryName, 1000);
+</script>

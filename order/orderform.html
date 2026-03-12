@@ -1,0 +1,334 @@
+<!--@layout(/layout/basic/layout.html)-->
+<!--@css(/css/module/order/ec_orderform/form_onetouch.css)-->
+<!--@css(/layout/basic/css/form_onetouch.css)-->
+<!--@css(/ogam/css/order.css)-->
+<!-- 사용자 스타일 수정이 필요한 경우, 신규 CSS 파일을 추가하여 #userStyle #mCafe24Order { } 셀렉터로 처리 가능합니다. -->
+
+<!-- 스마트디자인에서는 JQuery 1.4.4 버전이 내장되어있습니다. 추가로 호출하면 충돌이 생길 수 있습니다. -->
+<!--@js(/layout/basic/js/common.js)-->
+<!--@js(/ogam/js/order.js)-->
+<!--@js(/js/module/order/ec_orderform/orders.js)-->
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+
+
+<style>
+    .logoffBox {padding: 50px 0 0;}
+    .titleArea {padding: 50px 0;}
+    .notUserText {max-width: 560px; display: flex; width: 100%; justify-content: center; margin: 0 auto; border: 1px solid #000; padding: 10px 0; box-sizing: border-box;}
+    .xans-member {margin-top: 0;}
+    .login__sns {margin: 20px auto 0; max-width: 560px;}
+    .xans-member-login .login__sns .wrap_sns_log {width: calc(100% + 10px); flex-wrap: nowrap;}
+    .xans-member-login .login__sns .wrap_sns_log a {width: calc(50% - 10px); margin: 0 10px 0 0; display: flex; justify-content: center; align-items: center; height: 50px; font-size: 13px; border-radius: 2px; font-weight: 500; box-sizing: border-box; background-image: none; padding: 0; border: 0; line-height: 14px; padding: 0 10px; word-break: keep-all; }
+    .xans-member-login .login__sns .wrap_sns_log a.btnNaver {color: #fff; background-color: #1EC800;}
+    .xans-member-login .login__sns .wrap_sns_log a.btnKakao {color: #000; background-color: #FEE500;}
+    .xans-member-login .login__sns .wrap_sns_log a.btnApple { border: 1px solid #eee; }
+    .xans-member-login .login__sns .wrap_sns_log a::before {display: flex; align-items: center; height: 14px; width: 14px; min-width: 14px; margin-right: 9px; content: ""; background-size: cover; }
+    .xans-member-login .login__sns .wrap_sns_log a.btnNaver::before{background-image: url("/skin-skin42/SkinImg/img/icon_naver.svg");}
+    .xans-member-login .login__sns .wrap_sns_log a.btnKakao::before {background-image: url("/skin-skin42/SkinImg/img/icon_kakao.svg");}
+    .xans-member-login .login__sns .wrap_sns_log a.btnApple::before {background-image: url('/SkinImg/img/icon_sns_apple.svg');}
+
+    @media (max-width: 1024px) {
+        .xans-member-login .login__sns {max-width: 560px;}
+        .xans-member-login .login__sns .wrap_sns_log {width: 100%; flex-direction: column;}
+        .xans-member-login .login__sns .wrap_sns_log a {width: 100%; margin: 3px 0;}
+    }
+
+    @media (max-width: 768px){
+        .logoffBox {padding: 50px 20px 0;}
+        .notUserText {padding: 10px;}
+    }
+</style>
+
+<div class="order-form-contents-wrapper">
+
+    <div class="order-form-inner">
+
+        <div class="order-form-wrap">
+            <div class="page-top-nav-wrap">
+                <dl>
+                    <dt>홈<span>/</span>장바구니<span>/</span></dt>
+                    <dd>주문결제</dd>
+                </dl>
+                <h6>주문결제</h6>
+            </div>
+
+            <div id="userStyle">
+                <!-- [상단영역] -->
+                <!--import(/order/ec_orderform/header.html)-->
+
+
+
+                <div class="titleArea orderTit displaynone">
+                    <h2>주문결제</h2>
+                </div>
+
+                <div id="mCafe24Order" class="typeHeader" module="Order_form" unroll="1">
+                    <!-- 이값은 지우면 안되는 값입니다. ($move_order_after 주문완료페이지 주소 / $move_basket 장바구니페이지 주소)
+$move_order_after=/order/order_result.html
+$move_basket=/order/basket.html
+$paymethod_selector = textButton
+$email_type=emailcompact
+$product_weight_display=F
+-->
+
+                    <div class="form-order-wrap">
+
+                        <div class="left-order-wrap">
+
+                            <div module="Layout_statelogoff" class="logoffBox">
+                                <a href="/shopinfo/intro_membership.html" class="membership-btn">
+                                    <p>
+                                        신규 회원가입 하시면<br />
+                                        바로 사용하실 수 있는 <span>1만원</span> 쿠폰을 드려요!
+                                    </p>
+                                    <i><img src="https://arenakorea1.cafe24.com/web/2026-renewal/img/white-right-arrow.png" alt="white arrow"></i>
+                                </a>
+
+                                <div module="member_login" id="{$member_login_module_id}" class="notUserLoginBox">
+                                    <!--@css(/css/module/member/login.css)-->
+                                    <!--@js(/js/module/member/login.js)-->
+                                    <h6>간편 로그인/회원가입</h6>
+                                    <div class="login__sns">
+                                        <div class="wrap_sns_log">
+                                            <a href="#none" class="btnNaver {$display_naver|display}" onclick="{$naver_func_login}">네이버</a>
+                                            <a href="#none" class="btnKakao {$display_kakao|display}" onclick="{$kakao_func_login}">카카오</a>
+                                            <!--					<a href="#none" class="btnFacebook {$display_facebook|display}" onclick="{$facebook_func_login}">페이스북 로그인</a>-->
+                                            <a href="#none" class="btnLine {$display_line|display}" onclick="{$line_func_login}">라인</a>
+                                            <a href="#none" class="btnGoogle {$display_google|display}" onclick="{$google_func_login}">구글</a>
+                                            <a href="#none" class="btnApple {$display_apple|display}" onclick="{$apple_func_login}">애플</a>
+                                            <a href="#none" class="yahoojp {$display_yahoojp|display}" onclick="{$yahoojp_func_login}">Yahoo! JAPAN<br>ID로 로그인</a>
+                                        </div>
+                                        <!--div class="sns_h">SNS 계정으로 로그인</div-->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- [바로구매 주문상품] -->
+                            <!--@import(/order/ec_orderform/product_detail.html)-->
+
+                            <!-- [주문배송정보] 주문자정보, 배송지정보, 배송정보 -->
+                            <!--@import(/order/ec_orderform/billingNshipping.html)-->
+
+                            <!-- [추가정보입력] 추가입력, 기타문의사항 -->
+                            <!--@import(/order/ec_orderform/additionalInput.html)-->
+
+                            <!-- [주문상품] -->
+                            <!--@import(/order/ec_orderform/orderProduct.html)-->
+
+                            <!-- [사은품] -->
+                            <div id="{$gift_orderform_id}">
+                                <!--@import(/order/ec_orderform/gift.html)-->
+                            </div>
+
+                            <!-- [할인/부가결제] 할인/부가결제, 자동 할인내역 레이어 팝업 -->
+                            <!--@import(/order/ec_orderform/discount.html)-->
+
+
+
+                            <!-- [결제수단] -->
+                            <!--@import(/order/ec_orderform/paymethod.html)-->
+
+
+                            <!-- [약관동의] -->
+                            <!--@import(/order/ec_orderform/agreement.html)-->
+
+
+                            <div class="helpArea">
+                                <ul class="ec-base-help typeDash">
+                                    <li class="{$subscription_show_display|display}"><span class="txtEm">상기 금액은 결제 시점의 금액과 다를 수 있습니다.</span></li>
+                                    <li>무이자할부가 적용되지 않은 상품과 무이자할부가 가능한 상품을 동시에 구매할 경우 전체 주문 상품 금액에 대해 무이자할부가 적용되지 않습니다. 무이자할부를 원하시는 경우 장바구니에서 무이자할부 상품만 선택하여 주문하여 주시기 바랍니다.</li>
+                                    <li>최소 결제 가능 금액은 결제금액에서 배송비를 제외한 금액입니다.</li>
+                                </ul>
+                            </div>
+
+                            <!-- [주문 정보 확인 레이어팝업] -->
+                            <!--@import(/order/ec_orderform/confirm.html)-->
+
+                            <iframe id="{$payment_proc_id}" name="h_payment" width="0" height="0" src="" title="" style="border:none;"></iframe>
+                            <input type="hidden" id="sPrdName" name="sPrdName" value="{$sPrdName}">
+                        </div>
+
+                        <div class="right-order-wrap">
+                            <div class="sticky-wrap">
+
+                                <!-- [결제정보] -->
+                                <!--@import(/order/ec_orderform/payment.html)-->
+                                
+                                <!-- [적립 혜택] -->
+                            	<!--@import(/order/ec_orderform/benefit.html)-->
+
+                                <div class="ec-base-button gFull" id="orderFixItem">
+                                    <button type="button" class="btnSubmit" id="{$btn_payment_id}">
+                                        {$total_order_price_front_head}<span id="{$total_order_price_front_id}">{$total_order_price_front}</span>{$total_order_price_front_tail} <span class="{$subscription_hide_display|display}">결제하기</span><span class="{$subscription_show_display|display}">정기배송 신청하기</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div id="progressPaybar" style="display:none;">
+                    <div id="progressPaybarBackground" class="layerProgress"></div>
+                    <div id="progressPaybarView">
+                        <p class="graph">현재 결제가 진행중입니다.</p>
+                        <p class="txt">
+                            본 결제 창은 결제완료 후 자동으로 닫히며, <br />
+                            결제 진행 중에 본 결제 창을 닫으시면<br />
+                            주문이 되지 않으니 <br />
+                            결제 완료 될 때 까지 닫지 마시기 바랍니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="https://membership-api.cafe24.shoplus.store/static/membership.js"></script>
+<script src="https://membership.cafe24.shoplus.store/membership/js/new_membership.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.4/dayjs.min.js" integrity="sha512-0fcCRl828lBlrSCa8QJY51mtNqTcHxabaXVLPgw/jPA5Nutujh6CbTdDgRzl9aSPYW/uuE7c4SffFUQFBAy6lg==" crossorigin="anonymous"></script>
+<script src="/js/jquery-1.11.1.min.js"></script>
+<script>
+    window.ShoplusMemeberShipJQuery = jQuery.noConflict(true);
+</script>
+<script>
+    window.addEventListener(
+        "load",
+        function(event) {
+            (function(CAFE24API) {
+                setTimeout(function() {
+                    if (CAFE24API.MALL_ID) { 
+                        localStorage.shoplus_membership_mall_id = CAFE24API.MALL_ID;
+                    }
+
+                    CAFE24API.getCustomerIDInfo(function(err, res) {
+                        if (err) {
+                            //console.log(err);
+                        } else {
+                            localStorage.shoplus_membership_member_id = res.id.member_id;
+                        }
+                    });
+
+                    // 멤버십 상품 조회
+                    let shoplus_membership_products =
+                        MembershipProducts[CAFE24API.MALL_ID];
+
+                    const shoplus_membersip_product_no = String(aBasketProductOrderData[0].product_no);
+
+                    // 멤버십 상품이 아니면 진행하지 않음
+                    if (
+                        !shoplus_membership_products || shoplus_membership_products.indexOf(shoplus_membersip_product_no) < 0
+                    ) {
+                        return false;
+                    }
+
+                    // 상품 수령 히든
+                    ShoplusMemeberShipJQuery(".ec-area-shipping-companies").css("visibility", "hidden");
+                    ShoplusMemeberShipJQuery(".ec-area-shipping-companies").css("height", "0px");
+
+                    // 할인/부가결제 히든
+                    ShoplusMemeberShipJQuery(".ec-jigsawWrapper").hide();
+
+                    // 적립금 히든
+                    ShoplusMemeberShipJQuery("#ec-jigsaw-area-benefit").hide();
+
+                    // 쿠폰 히든
+                    ShoplusMemeberShipJQuery("#mCouponModify").hide();
+                    ShoplusMemeberShipJQuery("#mCouponSelect").hide();
+
+                    // 정기배송 일자 선택 영역 히든
+                    ShoplusMemeberShipJQuery("#ec-jigsaw-area-subscriptionStartDate").css("visibility", "hidden");
+                    ShoplusMemeberShipJQuery("#ec-jigsaw-area-subscriptionStartDate").css("height", "0px");
+                    ShoplusMemeberShipJQuery("#ec-jigsaw-area-subscriptionStartDate").css("margin-bottom", "0px");
+
+                    // 무통장 입금 히든
+                    // ShoplusMemeberShipJQuery("#addr_paymethod1").parent().hide();
+
+                }, 0);
+            })(
+                CAFE24API.init({
+                    client_id: "kUutIKDxMteStFRZImh1pB",
+                    version: "2020-12-01",
+                })
+            );
+        },
+        false
+    );
+
+    console.log($('#rzipcode1').val());
+    $('#rzipcode1').on('change', function(){
+        console.log('배송지 우편번호 등록 완료');
+    });
+
+    /* 스마트 픽업 없이 일반 결제 시 옵션 선택 오류 발생 금지 코드 */
+    /*function cafe24InitData(func)
+        {
+            if (CAPP_ASYNC_METHODS.STATUS !== 'complete')
+            {
+                setTimeout(() => cafe24InitData(func), 10);
+            }
+            else
+            {
+                console.log("cafe24InitData");
+                func();
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded',()=>
+        {
+            cafe24InitData(()=>
+            {
+                EC$('#delivstore').val(EC$('#delivstore option').eq(0).val());
+            });
+        });*/
+</script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        let initialValue = EC$('#og_delivstore').val(); // 초기 값 저장
+        console.log("#og_delivstore initial value:", initialValue); // 초기 값 확인
+
+        let checkInterval = setInterval(() => {
+            let currentValue = EC$('#og_delivstore').val(); // 현재 값 확인
+
+            console.log("#og_delivstore current value:", currentValue); // 값 확인
+
+            if (currentValue !== initialValue) {
+                // TODO 임시 현대김포아울렛 가림 start
+                let selectElement = document.getElementById('og_delivstore');
+                let optionToDisable = selectElement.querySelector('option[value="78"]');
+                if (optionToDisable) {
+                    optionToDisable.style.display = 'none';
+                }
+                // 임시 end
+
+                clearInterval(checkInterval); // 값이 변경되면 interval을 종료하고 setTimeout 실행하지 않음
+                console.log("Value changed, no need to run setTimeout");
+            }
+        }, 100); // 100ms = 0.1초마다 값 확인
+
+        setTimeout(() => {
+            // 3초 후에 실행될 코드
+            let currentValue = EC$('#og_delivstore').val(); // 값이 변경되지 않은 경우에만 실행
+            if (currentValue === initialValue || currentValue === '선택불가') {
+                EC$('#delivstore').val(EC$('#delivstore option').eq(0).val());
+                console.log("setTimeout executed, value unchanged");
+            }
+        }, 3000); // 3000ms = 3초
+
+
+
+        const sticky = document.querySelector('.sticky-wrap');
+        const start = sticky.offsetTop;
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > start) {
+                sticky.classList.add('is-fixed');
+            } else {
+                sticky.classList.remove('is-fixed');
+            }
+        });
+    });
+</script>
+

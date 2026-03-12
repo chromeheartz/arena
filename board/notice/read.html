@@ -1,0 +1,119 @@
+<!--@layout(/layout/basic/layout.html)-->
+<!--@js(/ogam/js/board.js)-->
+<!--@css(/ogam/css/board.css)-->
+
+<div class="renewal-list-wrapper">
+    <div class="renewal-inner">
+        <div class="renewal-container">
+
+            <!-- 사이드 메뉴 -->
+            <div class="sub-side-menu">
+                <div class="menu-wrapper">
+                    <div class="menu-wrap">
+                        <div class="subTitle">
+                            <h3>고객센터</h3>
+                        </div>
+                        <ul class="menu">
+                            <li class="on"><a href="/board/notice/list.html">공지사항</a></li>
+                            <li><a href="/board/FAQ/list.html">자주 묻는 질문</a></li>
+                            <li><a href="/board/consult/list.html">1:1 문의</a></li>
+                            <li><a href="/shopinfo/intro_membership.html">멤버십</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="renewal-contents-wrapper notice-detail-contents-wrapper">
+                <div class="page-top-nav-wrap">
+                    <dl>
+                        <dt>홈<span>/</span>고객센터<span>/</span></dt>
+                        <dd>
+                            공지사항
+                            <i class="mo-arrow"><img src="https://arenakorea1.cafe24.com/web/2026-renewal/img/grey-down-arrow.png" alt="grey down arrow" /></i>
+                        </dd>
+                    </dl>
+                    <h6>공지사항</h6>
+                    <ul class="mo-dropdown-list">
+                        <li  class="on"><a href="/board/notice/list.html">공지사항</a></li>
+                        <li><a href="/board/FAQ/list.html">자주 묻는 질문</a></li>
+                        <li><a href="/board/consult/list.html">1:1 문의</a></li>
+                        <li><a href="/shopinfo/intro_membership.html">멤버십</a></li>
+                    </ul>
+
+                </div>
+
+                <!-- 콘텐츠 -->
+                <div class="section board-section read_board_type1" module="board_ReadPackage_1">
+                    <!--css(/css/module/board/readPackage_1.css)-->
+                    <!--css(/css/module/board/boardPackage.css)-->
+
+                    <div module="Board_Read_1">
+                        <!--
+$login_page_url = /member/login.html
+$deny_access_url = /board/notice/list.html
+-->
+                        <div class="ec-base-table typeWrite notice-detail-table">
+                            <table border="1">
+                                <colgroup module="board_listheader_1">
+                                    <col style="width:90px;"/>
+                                    <col style="width:100%;" class="{$config.use_date|display}"/>
+                                </colgroup>
+                                <tbody>
+                                    <tr class="title">
+
+                                        <td colspan="3">{$subject}</td>
+                                    </tr>
+                                    <tr class="{$config.use_date|display} date">
+
+                                        <td colspan="3">{$write_date}</td>
+                                    </tr>
+                                    <tr class="view">
+                                        <td colspan="4">
+                                            <div class="detail">{$content}{$content_image}</div>
+                                        </td>
+                                    </tr>
+                                    <tr class="attach {$config.use_attach|display}">
+                                        <th scope="row">첨부파일</th>
+                                        <td colspan="3">{$attach_file}</td>
+                                    </tr>
+                                    <tr class="{$delete_button_auth|display} {$config.use_password|display}">
+                                        <th scope="row">비밀번호</th>
+                                        <td colspan="3">{$form.password}<span class="ec-base-help txtInfo">삭제하려면 비밀번호를 입력하세요.</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        
+
+                        <div class="ec-base-button gBottom">
+                            <span class="gLeft">
+                                <span class="{$config.is_admin|display}">
+                                    <a href="#none" onclick="{$action_post}" class="btnNormalFix sizeM admin {$config.is_post|display}">{$admin_publish_message}</a>
+                                    <a href="#none" onclick="{$action_post}"
+                                       class="btnNormalFix sizeM admin {$config.not_post|display}">{$not_publish_message}</a>
+                                    <a href="#none" onclick="{$action_spam}" class="btnNormalFix sizeM {$is_global_display|display}">스팸신고</a>
+                                    <a href="#none" onclick="{$action_spam_cancle}"
+                                       class="btnNormalFix sizeM {$is_global_display|display}">스팸해제</a>
+                                    <a href="#none" onclick="{$action_delete}" class="btnNormalFix sizeM {$delete_button_auth|display}">삭제</a>
+                                    <a href="/board/notice/modify.html{$param_modify}"
+                                       class="btnNormalFix sizeM {$modify_button_auth|display}">수정</a>
+                                </span>
+                            </span>
+                            <div class="renewal-btn-wrap">
+                                <a href="{$link_board_list}" class="grey-btn">공지사항 목록</a>
+                                <a href="/board/notice/reply.html{$param_reply}" class="black-btn {$reply_button_auth|display}">답변쓰기</a>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+

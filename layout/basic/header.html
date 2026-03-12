@@ -1,0 +1,844 @@
+<div data-ez-module="user-defined/1" data-ez-name="USER DEFINED" data-ez-type="plain" data-ez="module-07r74d8-1"><style>
+    .not-yet {
+        display: none !important;
+    }
+</style></div>
+<div module="Layout_stateLogon" class="logoncheck" style="display: none;" data-ez="contents-0kn9cfl-1">
+    <i id="crema-login-username" style="display: none;">{$id}</i>
+    <i id="crema-login-name" style="display: none;">{$name}</i>
+</div>
+<div id="og_memberChk_nomember" class="displaynone" module="Layout_statelogoff" data-ez="contents-09qznad-1"></div>
+<div id="og_memberChk_member" class="displaynone" module="Layout_statelogon" data-ez="contents-1w39fgy-1"></div>
+<div class="main_top_banner ez-align-left displaynone" data-ez-module="top-banner" data-ez-align="left" data-ez-role="style.color" data-ez-display="visible" data-ez="contents-00w56gk-1">
+    <div class="top_banner_box_inner">
+        <div class="top_banner_text"><!-- 최상단 배너 수정하는곳 -->
+            <a data-ez-role="a" href="#" data-href="#" target="_self" style="color: black;">첫 쇼핑을 지원하는 3,000원 할인 회원가입
+                쿠폰</a>
+        </div><!-- //top_banner_text -->
+
+        <div class="top_banner_close" data-ez-role="close">
+            <input type="checkbox" name="chkbox" id="top_banner_box_cloase" value="1" data-ez-role="disable-term"><label for="top_banner_box_cloase" data-ez-role="disable-text">오늘 하루 보지 않기</label>
+            <i aria-hidden="true" class="icon icoClose">닫기</i>
+        </div><!-- //top_banner_close -->
+    </div><!-- //top_banner_box_inner -->
+</div>
+<header data-ez="contents-035d6nx-1" class="renewal-header sub">
+    <!--@import(/mainTopBanner.html)-->
+    <div class="header_logo">
+        <a href="/">
+            <i class="pc-logo">
+                <!--@import(/SkinImg/svg/white-logo.html)-->
+                <!--@import(/SkinImg/svg/logo.html)-->
+            </i>
+            <i class="mo-logo">
+                <!--@import(/SkinImg/svg/logo2.html)-->
+            </i>
+        </a>
+        <span module="Layout_MobileAction" class="go_back_btn">
+            <a href="javascript:void(0);" onclick="{$go_back}"><!--@import(/SkinImg/svg/leftArrow.html)--><i class="layout_hidden">뒤로 가기</i></a>
+        </span>
+    </div>
+    <!-- 메뉴 출력 -->
+
+    <div class="header_navi" module="Layout_category" data-ogcate-type="allView_hover" data-ogcate-event="true">
+        <ul class="menu_1ul">
+            <!-- 자동 호출 메뉴 : 이 부분은 수정하시면 안됩니다. -->
+            <li class="menu_1li" data-cate="{$cate_no}" data-depth="1" data-over-img="{$img_over}" data-img="{$img}">
+                <a href="/{$design_page_url|replace:list2.html,list.html}{$param}">{$name}</a>
+            </li>
+            <li class="menu_1li" data-cate="{$cate_no}" data-depth="1" data-over-img="{$img_over}" data-img="{$img}">
+                <a href="/{$design_page_url|replace:list2.html,list.html}{$param}">{$name}</a>
+            </li>
+            <!-- //자동 호출 메뉴 : 이 부분은 수정하시면 안됩니다. -->
+        </ul>
+    </div>
+    <div class="header_mypage">
+        <ul class="menu_1ul">
+            <li class="menu_1li home">
+                <a href="/">
+                    <!--@import(/SkinImg/svg/home.html)-->
+
+                </a>
+            </li>
+            <li class="menu_1li search">
+                <a href="javascript:;" class="eSearch">
+                    <i class="black-logo">
+                        <!--@import(/SkinImg/svg/search.html)-->
+                    </i>
+                    <i class="white-logo">
+                        <!--@import(/SkinImg/svg/white-search.html)-->
+                    </i>
+
+
+                </a>
+            </li>
+            <li class="menu_1li basket">
+                <a href="/order/basket.html" module="Layout_orderBasketcount">
+
+                    <i class="black-logo">
+                        <!--@import(/SkinImg/svg/basket.html)-->
+                    </i>
+                    <i class="white-logo">
+                        <!--@import(/SkinImg/svg/white-basket.html)-->
+                    </i>
+                    <span class="count *{$basket_count_display|display} {$basket_count_display_class}"><span class="{$basket_count_class}">{$basket_count}</span></span>
+                </a>
+            </li>
+            <li class="menu_1li mypage submenu">
+                <a href="/myshop/index.html">
+                    <i class="black-logo">
+                        <!--@import(/SkinImg/svg/mypage.html)-->
+                    </i>
+                    <i class="white-logo">
+                        <!--@import(/SkinImg/svg/white-mypage.html)-->
+                    </i>
+
+                </a>
+                <ul class="menu_2ul">
+                    <li class="menu_2li">
+                        <a module="Layout_statelogoff" href="/member/login.html">LOGIN</a>
+                        <a module="Layout_stateLogon" href="{$action_logout}">LOGOUT</a>
+                    </li>
+                    <li class="menu_2li">
+                        <a href="/myshop/index.html">MYPAGE</a>
+                    </li>
+
+                    <li class="menu_2li">
+                        <a href="/myshop/order/list.html">ORDER</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="menu_1li sitemap">
+                <a href="javascript:void(0);">
+                    <i class="black-logo">
+                        <!--@import(/SkinImg/svg/menu.html)-->
+                    </i>
+                    <i class="white-logo">
+                        <!--@import(/SkinImg/svg/white-menu.html)-->
+                    </i>
+
+                    <!--@import(/SkinImg/svg/close.html)-->
+                </a>
+            </li>
+            <li class="menu_1li menu">
+                <a href="javascript:void(0);">
+                    <i class="black-logo">
+                        <!--@import(/SkinImg/svg/menu.html)-->
+                    </i>
+                    <i class="white-logo">
+                        <!--@import(/SkinImg/svg/white-menu.html)-->
+                    </i>
+                    <!--@import(/SkinImg/svg/close.html)-->
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- //메뉴 출력 -->
+
+    <div class="header_sitemap og_mcustomScrollbar header_dim">
+
+        <div class="mo-dim"></div>
+        <div class="pc-dim"></div>
+        <div module="Layout_category" data-ogcate-type="allView_custom_sitemap" data-ogcate-event="false" class="renewal-header-dim">
+            <div class="mo-menu-wrap">
+                <div class="menu-title-wrap">
+                    <h6>메뉴</h6>
+                    <i class="mo-menu-close"></i>
+                </div>
+                <div class="mo-log" module="layout_slidePackage">
+                    <ul>
+                        <li>
+                            <a module="Layout_statelogoff" href="/member/login.html">로그인 / 회원가입<i></i></a>
+                            <!-- <a module="Layout_stateLogon" href="{$action_logout}">로그아웃</a> -->
+                            <a module="Layout_stateLogon" href="/myshop/index.html">{$name}님<i></i></a>
+                        </li>
+                        <!-- <span>/</span>
+                        <li module="Layout_statelogoff">
+                            <a href="/member/mobJoin.html">회원가입</a>
+                        </li> -->
+                    </ul>
+                </div>
+            </div>
+            <div class="one-deps-wrap">
+                <ul class="menu_1ul list">
+                    <!-- 자동 호출 메뉴 : 이 부분은 수정하시면 안됩니다. -->
+                    <li class="menu_1li" data-cate="{$cate_no}" data-depth="1" data-over-img="{$img_over}" data-img="{$img}">
+                        <a href="/{$design_page_url|replace:list2.html,list.html}{$param}">{$name}</a>
+                    </li>
+                    <li class="menu_1li" data-cate="{$cate_no}" data-depth="1" data-over-img="{$img_over}" data-img="{$img}">
+                        <a href="/{$design_page_url|replace:list2.html,list.html}{$param}">{$name}</a>
+                    </li>
+                    <!-- //자동 호출 메뉴 : 이 부분은 수정하시면 안됩니다. -->
+                    <li class="menu_1li mobile-menu">
+                        <a href="/product/기획전/list.html">기획전</a>
+                    </li>
+                    <li class="menu_1li mobile-menu">
+                        <a href="/board/event/list.html?board_no=8&amp;category_no=1">이벤트</a>
+
+                    </li>
+                    <li class="menu_1li mobile-menu">
+                        <a href="/board/product/list.html">리뷰</a>
+
+                    </li>
+
+                    <li class="menu_1li mobile-menu">
+                        <a href="/board/catalog/13">매거진</a>
+
+                    </li>
+                    <li class="menu_1li mobile-menu">
+                        <a href="/board/style/list2.html">룩북</a>
+
+                    </li>
+                    <li class="menu_1li mobile-menu">
+                        <a href="/board/style/snap.html">스냅</a>
+
+                    </li>
+                </ul>
+
+                <div class="sub-menu-wrapper">
+                    <ul class="menu_1ul sub">
+                        <!--@import(/ogam/html/common/menu1.html)-->
+                    </ul>
+                    <div class="aside_util">
+                        <ul>
+                            <li>
+                                <a href="/order/basket.html">
+                                    장바구니
+                                </a>
+                            </li>
+                            <li class="menu_2li">
+                                <a href="/myshop/index.html">마이페이지</a>
+                            </li>
+                            <li class="menu_2li search">
+                                <a href="javascript:;" class="eSearch">
+                                    검색
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- <div class df-banner-code="sitemap-banner" hidden>
+                    <div class>
+                        <ul class>
+                            <li df-banner-clone><a href="{#href}" target="{#target}">{#item}</a></li>
+                        </ul>
+                    </div>
+                </div> -->
+            </div>
+
+            <div class="two-deps-wrap">
+
+                <ul class="menu_2ul" data-cate="24">
+                    <div class="mo-only"><a href="/product/list.html?cate_no=24">WOMEN</a></div>
+                    <li class="menu_2li submenu" data-cate="29" data-depth="2"><a href="/product/list.html?cate_no=29">퍼포먼스</a>
+                        <ul class="menu_3ul">
+                            <li class="menu_3li" data-cate="247" data-depth="3"><a href="/product/list.html?cate_no=247">레이싱</a></li>
+                            <li class="menu_3li" data-cate="1007" data-depth="3"><a href="/product/list.html?cate_no=1007">프로페셔널</a></li>
+                            <li class="menu_3li" data-cate="1008" data-depth="3"><a href="/product/list.html?cate_no=1008">엘리트</a></li>
+                            <li class="menu_3li" data-cate="213" data-depth="3"><a href="/product/list.html?cate_no=213">트레이닝</a></li>
+                            <li class="menu_3li" data-cate="62" data-depth="3"><a href="/product/list.html?cate_no=62">아쿠아</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu_2li submenu" data-cate="227" data-depth="2"><a href="/product/list.html?cate_no=227">레저</a>
+                        <ul class="menu_3ul">
+                            <li class="menu_3li" data-cate="228" data-depth="3"><a href="/product/list.html?cate_no=228">원피스</a></li>
+                            <li class="menu_3li" data-cate="241" data-depth="3"><a href="/product/list.html?cate_no=241">비키니</a></li>
+                            <li class="menu_3li" data-cate="229" data-depth="3"><a href="/product/list.html?cate_no=229">래쉬가드 / 커버업</a></li>
+                            <li class="menu_3li" data-cate="230" data-depth="3"><a href="/product/list.html?cate_no=230">워터 레깅스 / 팬츠</a></li>
+                            <li class="menu_3li" data-cate="989" data-depth="3"><a href="/product/list.html?cate_no=989">세트</a></li>
+                            <li class="menu_3li not-yet" data-cate="992" data-depth="3"><a href="/product/list.html?cate_no=992">스윔수트</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu_2li submenu" data-cate="224" data-depth="2"><a href="/product/list.html?cate_no=224">스포츠</a>
+                        <ul class="menu_3ul">
+                            <li class="menu_3li not-yet" data-cate="426" data-depth="3"><a href="/product/list.html?cate_no=426">웻수트</a></li>
+                            <li class="menu_3li" data-cate="70" data-depth="3"><a href="/product/list.html?cate_no=70">상의</a></li>
+                            <li class="menu_3li" data-cate="71" data-depth="3"><a href="/product/list.html?cate_no=71">하의</a></li>
+                            <li class="menu_3li" data-cate="72" data-depth="3"><a href="/product/list.html?cate_no=72">아우터</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu_2li submenu" data-cate="405" data-depth="2"><a href="/product/list.html?cate_no=405">이너웨어</a>
+                        <ul class="menu_3ul">
+                            <li class="menu_3li" data-cate="120" data-depth="3"><a href="/product/list.html?cate_no=120">브라컵</a></li>
+                            <li class="menu_3li" data-cate="990" data-depth="3"><a href="/product/list.html?cate_no=990">브라탑</a></li>
+                            <li class="menu_3li not-yet" data-cate="991" data-depth="3"><a href="/product/list.html?cate_no=991">이너팬티</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <ul class="menu_2ul" data-cate="25">
+                    <div class="mo-only"><a href="/product/list.html?cate_no=25">MEN</a></div>
+                    <li class="menu_2li submenu" data-cate="32" data-depth="2"><a href="/product/list.html?cate_no=32">퍼포먼스</a>
+                        <ul class="menu_3ul">
+                            <li class="menu_3li" data-cate="995" data-depth="3"><a href="/product/list.html?cate_no=995">4부</a></li>
+                            <li class="menu_3li" data-cate="996" data-depth="3"><a href="/product/list.html?cate_no=996">2,3부</a></li>
+                            <li class="menu_3li" data-cate="997" data-depth="3"><a href="/product/list.html?cate_no=997">숏사각/삼각</a></li>
+                            <li class="menu_3li" data-cate="248" data-depth="3"><a href="/product/list.html?cate_no=248">레이싱</a></li>
+                            <li class="menu_3li" data-cate="1009" data-depth="3"><a href="/product/list.html?cate_no=1009">프로페셔널</a></li>
+                            <li class="menu_3li" data-cate="1010" data-depth="3"><a href="/product/list.html?cate_no=1010">엘리트</a></li>
+                            <li class="menu_3li" data-cate="211" data-depth="3"><a href="/product/list.html?cate_no=211">트레이닝</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu_2li submenu" data-cate="220" data-depth="2"><a href="/product/list.html?cate_no=220">레저</a>
+                        <ul class="menu_3ul">
+                            <li class="menu_3li" data-cate="221" data-depth="3"><a href="/product/list.html?cate_no=221">래쉬가드 / 커버업</a></li>
+                            <li class="menu_3li" data-cate="236" data-depth="3"><a href="/product/list.html?cate_no=236">워터 레깅스 / 팬츠</a></li>
+                            <li class="menu_3li" data-cate="993" data-depth="3"><a href="/product/list.html?cate_no=993">이너웨어</a></li>
+                            <li class="menu_3li" data-cate="428" data-depth="3"><a href="/product/list.html?cate_no=428">세트</a></li>
+                            <li class="menu_3li not-yet" data-cate="427" data-depth="3"><a href="/product/list.html?cate_no=427">스윔수트</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu_2li submenu" data-cate="218" data-depth="2"><a href="/product/list.html?cate_no=218">스포츠</a>
+                        <ul class="menu_3ul">
+                            <li class="menu_3li not-yet" data-cate="994" data-depth="3"><a href="/product/list.html?cate_no=994">웻수트</a></li>
+                            <li class="menu_3li" data-cate="78" data-depth="3"><a href="/product/list.html?cate_no=78">상의</a></li>
+                            <li class="menu_3li" data-cate="79" data-depth="3"><a href="/product/list.html?cate_no=79">하의</a></li>
+                            <li class="menu_3li" data-cate="232" data-depth="3"><a href="/product/list.html?cate_no=232">아우터</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <ul class="menu_2ul" data-cate="1011">
+                    <div class="mo-only"><a href="/product/list.html?cate_no=1011">KIDS</a></div>
+                    <li class="menu_2li submenu" data-cate="1012" data-depth="2"><a href="/product/list.html?cate_no=1012">퍼포먼스</a>
+                        <ul class="menu_3ul">
+                            <li class="menu_3li" data-cate="1013" data-depth="3"><a href="/product/list.html?cate_no=1013">여아동</a></li>
+                            <li class="menu_3li" data-cate="1014" data-depth="3"><a href="/product/list.html?cate_no=1014">남아동</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu_2li submenu" data-cate="1019" data-depth="2"><a href="/product/list.html?cate_no=1019">레저</a>
+                        <ul class="menu_3ul">
+                            <li class="menu_3li" data-cate="1020" data-depth="3"><a href="/product/list.html?cate_no=1020">래쉬가드</a></li>
+                            <li class="menu_3li" data-cate="1021" data-depth="3"><a href="/product/list.html?cate_no=1021">팬츠 / 레깅스</a></li>
+                            <li class="menu_3li" data-cate="1023" data-depth="3"><a href="/product/list.html?cate_no=1023">원피스 / 비키니</a></li>
+                            <li class="menu_3li" data-cate="1024" data-depth="3"><a href="/product/list.html?cate_no=1024">세트</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu_2li submenu" data-cate="501" data-depth="2"><a href="/product/list.html?cate_no=501">키트</a>
+                        <!-- <ul class="menu_3ul">
+                            <li class="menu_3li" data-cate="1020" data-depth="3"><a
+                                    href="/product/list.html?cate_no=1020">래쉬가드</a></li>
+                        </ul> -->
+                    </li>
+
+                    <li class="menu_2li textmenu not-yet" data-cate="1018" data-depth="2"><a href="/product/list.html?cate_no=1018">이너웨어</a>
+                    </li>
+                </ul>
+
+                <ul class="menu_2ul" data-cate="999">
+                    <div class="mo-only"><a href="/product/list.html?cate_no=999">EQUIPMENT</a></div>
+                    <li class="menu_2li submenu" data-cate="239" data-depth="2"><a href="/product/list.html?cate_no=239">수경</a>
+                        <ul class="menu_3ul">
+                            <li class="menu_3li" data-cate="245" data-depth="3"><a href="/product/list.html?cate_no=245">COBRA</a></li>
+                            <li class="menu_3li" data-cate="243" data-depth="3"><a href="/product/list.html?cate_no=243">레이싱</a></li>
+                            <li class="menu_3li" data-cate="240" data-depth="3"><a href="/product/list.html?cate_no=240">트레이닝</a></li>
+                            <li class="menu_3li" data-cate="242" data-depth="3"><a href="/product/list.html?cate_no=242">아동</a></li>
+                            <li class="menu_3li" data-cate="998" data-depth="3"><a href="/product/list.html?cate_no=998">레저</a></li>
+                            <li class="menu_3li" data-cate="408" data-depth="3"><a href="/product/list.html?cate_no=408">액세서리</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu_2li submenu" data-cate="380" data-depth="2"><a href="/product/list.html?cate_no=380">수모 / 모자</a>
+                        <ul class="menu_3ul">
+                            <li class="menu_3li" data-cate="101" data-depth="3"><a href="/product/list.html?cate_no=101">실리콘</a></li>
+                            <li class="menu_3li" data-cate="102" data-depth="3"><a href="/product/list.html?cate_no=102">실리코팅</a></li>
+                            <li class="menu_3li" data-cate="103" data-depth="3"><a href="/product/list.html?cate_no=103">코팅</a></li>
+                            <li class="menu_3li" data-cate="237" data-depth="3"><a href="/product/list.html?cate_no=237">스판 / 매쉬</a></li>
+                            <li class="menu_3li" data-cate="1005" data-depth="3"><a href="/product/list.html?cate_no=1005">아쿠아로빅</a></li>
+                            <li class="menu_3li" data-cate="105" data-depth="3"><a href="/product/list.html?cate_no=105">아동수모</a></li>
+                            <li class="menu_3li not-yet" data-cate="1001" data-depth="3"><a href="/product/list.html?cate_no=1001">캡모자</a></li>
+                            <li class="menu_3li" data-cate="410" data-depth="3"><a href="/product/list.html?cate_no=410">비치모자</a></li>
+                            <li class="menu_3li" data-cate="411" data-depth="3"><a href="/product/list.html?cate_no=411">아동 비치모자</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu_2li submenu" data-cate="96" data-depth="2"><a href="/product/list.html?cate_no=96">가방</a>
+                        <ul class="menu_3ul">
+                            <li class="menu_3li" data-cate="106" data-depth="3"><a href="/product/list.html?cate_no=106">손가방 / 파우치</a></li>
+                            <li class="menu_3li" data-cate="107" data-depth="3"><a href="/product/list.html?cate_no=107">숄더팩</a></li>
+                            <li class="menu_3li" data-cate="1000" data-depth="3"><a href="/product/list.html?cate_no=1000">메쉬백</a></li>
+                            <li class="menu_3li" data-cate="238" data-depth="3"><a href="/product/list.html?cate_no=238">드라이백 / 방수팩</a></li>
+                            <li class="menu_3li" data-cate="246" data-depth="3"><a href="/product/list.html?cate_no=246">더블 / 백팩</a></li>
+                            <li class="menu_3li" data-cate="110" data-depth="3"><a href="/product/list.html?cate_no=110">오리발가방</a></li>
+                        </ul>
+                    </li>
+
+                    <div class="text-wrap-menu">
+                        <li class="menu_2li textmenu" data-cate="97" data-depth="2"><a href="/product/list.html?cate_no=97">오리발</a>
+                            <ul class="menu_3ul">
+                                <li class="menu_3li" data-cate="112" data-depth="3"><a href="/product/list.html?cate_no=112">숏핀</a></li>
+                                <li class="menu_3li" data-cate="111" data-depth="3"><a href="/product/list.html?cate_no=111">숏핀</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="menu_2li textmenu" data-cate="117" data-depth="2"><a href="/product/list.html?cate_no=117">훈련용품</a>
+                            <ul class="menu_3ul">
+                                <li class="menu_3li" data-cate="179" data-depth="3"><a href="/product/list.html?cate_no=179">센터스노클</a></li>
+                                <li class="menu_3li" data-cate="180" data-depth="3"><a href="/product/list.html?cate_no=180">킥보드 / 헬퍼</a></li>
+                                <li class="menu_3li" data-cate="182" data-depth="3"><a href="/product/list.html?cate_no=182">풀부이</a></li>
+                                <li class="menu_3li" data-cate="183" data-depth="3"><a href="/product/list.html?cate_no=183">핸드패들</a></li>
+                                <li class="menu_3li" data-cate="188" data-depth="3"><a href="/product/list.html?cate_no=188">귀마개 / 코마개</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="menu_2li textmenu" data-cate="1002" data-depth="2"><a href="/product/list.html?cate_no=1002">타월</a>
+                            <ul class="menu_3ul">
+                                <li class="menu_3li" data-cate="186" data-depth="3"><a href="/product/list.html?cate_no=186">습식타월</a></li>
+                                <li class="menu_3li" data-cate="412" data-depth="3"><a href="/product/list.html?cate_no=412">건식타월</a></li>
+                                <li class="menu_3li" data-cate="1003" data-depth="3"><a href="/product/list.html?cate_no=1003">비치 / 판초 타월</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="menu_2li textmenu" data-cate="1004" data-depth="2"><a href="/product/list.html?cate_no=1004">레저</a>
+                            <ul class="menu_3ul">
+                                <li class="menu_3li" data-cate="413" data-depth="3"><a href="/product/list.html?cate_no=413">부력복</a></li>
+                                <li class="menu_3li" data-cate="178" data-depth="3"><a href="/product/list.html?cate_no=178">스노클링</a></li>
+                                <li class="menu_3li" data-cate="817" data-depth="3"><a href="/product/list.html?cate_no=817">튜브</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="menu_2li textmenu" data-cate="100" data-depth="2"><a href="/product/list.html?cate_no=100">슈즈</a>
+                            <ul class="menu_3ul">
+                                <li class="menu_3li" data-cate="121" data-depth="3"><a href="/product/list.html?cate_no=121">아쿠아슈즈</a></li>
+                                <li class="menu_3li" data-cate="569" data-depth="3"><a href="/product/list.html?cate_no=569">슬라이드</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="menu_2li textmenu not-yet" data-cate="184" data-depth="2"><a href="/product/list.html?cate_no=184">기타</a>
+                            <ul class="menu_3ul">
+                                <li class="menu_3li" data-cate="121" data-depth="3"><a href="/product/list.html?cate_no=121">스킨케어</a></li>
+                            </ul>
+                        </li>
+                    </div>
+                </ul>
+
+
+                <ul class="menu_2ul sale-menu" data-cate="43">
+                    <div class="mo-only"><a href="/product/list.html?cate_no=43">SALE</a></div>
+                    <li class="menu_2li submenu" data-cate="128" data-depth="2"><a href="/product/list.html?cate_no=128">여성</a>
+
+                        <ul class="menu_3ul">
+                            <li class="menu_3li" data-cate="131" data-depth="3"><a href="/product/list.html?cate_no=131">퍼포먼스</a></li>
+                            <li class="menu_3li" data-cate="132" data-depth="3"><a href="/product/list.html?cate_no=132">레저</a></li>
+                            <li class="menu_3li" data-cate="217" data-depth="3"><a href="/product/list.html?cate_no=217">어패럴</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu_2li submenu" data-cate="129" data-depth="2"><a href="/product/list.html?cate_no=129">남성</a>
+
+                        <ul class="menu_3ul">
+                            <li class="menu_3li" data-cate="134" data-depth="3"><a href="/product/list.html?cate_no=134">퍼포먼스</a></li>
+                            <li class="menu_3li" data-cate="135" data-depth="3"><a href="/product/list.html?cate_no=135">레저</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu_2li submenu" data-cate="138" data-depth="2"><a href="/product/list.html?cate_no=138">여아동</a>
+
+                        <ul class="menu_3ul">
+                            <li class="menu_3li" data-cate="190" data-depth="3"><a href="/product/list.html?cate_no=190">퍼포먼스</a></li>
+                            <li class="menu_3li" data-cate="191" data-depth="3"><a href="/product/list.html?cate_no=191">레저</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu_2li submenu" data-cate="137" data-depth="2"><a href="/product/list.html?cate_no=137">남아동</a>
+
+                        <ul class="menu_3ul">
+                            <li class="menu_3li" data-cate="192" data-depth="3"><a href="/product/list.html?cate_no=192">퍼포먼스</a></li>
+                            <li class="menu_3li" data-cate="193" data-depth="3"><a href="/product/list.html?cate_no=193">레저</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu_2li submenu" data-cate="744" data-depth="2"><a href="/product/list.html?cate_no=744">수모 / 모자</a></li>
+                    <li class="menu_2li submenu" data-cate="745" data-depth="2"><a href="/product/list.html?cate_no=745">수경</a></li>
+                    <li class="menu_2li submenu" data-cate="746" data-depth="2"><a href="/product/list.html?cate_no=746">액세서리</a></li>
+                </ul>
+
+                <ul class="menu_2ul" data-cate="1034">
+                    <div class="mo-only"><a href="/product/list.html?cate_no=1034">COLLECTIONS</a></div>
+                    <li class="menu_2li submenu" data-cate="1029" data-depth="2"><a href="/product/list.html?cate_no=1029">미스터레이</a></li>
+                    <li class="menu_2li submenu" data-cate="969" data-depth="2"><a href="/product/list.html?cate_no=969">셔레이드쇼</a></li>
+                    <li class="menu_2li submenu" data-cate="945" data-depth="2"><a href="/product/list.html?cate_no=945">지오볼트</a></li>
+                </ul>
+
+                <ul class="menu_2ul" data-cate="259">
+                    <div class="mo-only"><a href="/product/list.html?cate_no=259">CROCS</a></div>
+                    <li class="menu_2li submenu" data-cate="675" data-depth="2"><a href="/product/list.html?cate_no=675">성인</a></li>
+                    <li class="menu_2li submenu" data-cate="676" data-depth="2"><a href="/product/list.html?cate_no=676">지비츠</a></li>
+                </ul>
+            </div>
+        </div>
+
+
+
+        <div class="header_bg"></div>
+
+        <!-- HEADER CATEGORY IMAGE -->
+        <!-- <div class="header-category-image displaynone" data-section-type="mainCategoryCircle">
+
+            <ul class="header-category-image-list" df-banner-code="header-cate-img" hidden>
+                <li class df-banner-clone onclick="window.location.href('{#href}')">
+
+                    {#item}
+                </li>
+            </ul>
+        </div> -->
+        <!-- HEADER CATEGORY IMAGE -->
+
+    </div>
+</header>
+<div module="Layout_SearchHeader" data-ez="contents-0clk6ix-1" class="renewal-search">
+    <!--
+$product_page=/product/detail.html
+$category_page=/product/list.html
+-->
+    <div class="search-title-wrap">
+        <h6>검색</h6>
+        <button type="button" class="btnClose"><i aria-hidden="true" class="icon icoClose"></i></button>
+    </div>
+    <fieldset>
+        <legend>검색</legend>
+        <input id="keyword" name="keyword" type="hidden" value="11"><input id="query" name="query" btn="dssBtn" class="inputTypeText query" placeholder="나이대, 색상, 가격대, 스타일" autocomplete="off" value type="text" style="width: 100%; height: 58px; padding: 19px 0; flex: 1; font-size: 15px; box-sizing: border-box; border: 0; background: #fff;"><button type="button" class="btnDelete">삭제</button><button type="button" id="dssBtn" class="btnSearch" onclick="{$action_search_submit}"><!--@import(/SkinImg/svg/search.html)-->검색</button>
+        <ul class="autoDrop" id="{$search_auto_id}"></ul>
+    </fieldset>
+    <div class="popular" module="search_hotkeyword" style="margin:0 auto;">
+        <strong>아레나 추천 검색어</strong>
+        <p>
+            <a href="{$hot_keyword_url}">{$hot_keyword_name}</a>
+            <a href="{$hot_keyword_url}">{$hot_keyword_name}</a>
+        </p>
+
+    </div>
+
+
+
+</div>
+<div data-ez-module="user-defined/1" data-ez-name="USER DEFINED" data-ez-type="plain" data-ez="module-09fggpa-1">
+    <script>
+        // elle, crocs 카테고리 임직원, 관리자에게만 보이기
+        function checkMemberGrade() {
+            const logon = document.querySelector('.logoncheck');
+            const menus = document.querySelectorAll('.header_navi .menu_1li');
+            const groupEl = document.querySelector('.groupName');
+
+            let group = '';
+            if (groupEl) {
+                group = groupEl.textContent;
+            }
+
+            if (!logon || !(group == '임직원' || group == '관리자')) {
+                menus.forEach(function (menu) {
+                    const category = menu.getAttribute('data-cate');
+
+                    if (category == 257 || category == 259) {
+                        menu.style.display = `none`;
+                    }
+                })
+            }
+        }
+
+        // checkMemberGrade();
+    </script>
+</div>
+<div data-ez-module="user-defined/1" data-ez-name="USER DEFINED" data-ez-type="plain" data-ez="module-10zx3uf-1">
+
+
+
+
+
+    <script>
+        if (!document.getElementById('dfbm-script-26113')) {
+            var dfbm_src = '/web/upload/appfiles/ZaReJam3QiELznoZeGGkMG/bc3f8586ac568c57bd6deb0d1f4cef8a.js';
+            document.write('<script id="dfbm-script-26113" src="' + dfbm_src + '?v=' + Date.now() + '"><\/script>');
+        }
+    </script>
+</div>
+<div data-ez-module="user-defined/1" data-ez-name="USER DEFINED" data-ez-type="plain" data-ez="module-09bzn6q-1">
+
+    <script>
+        $(function () {
+            const $deps2Wrap = $('.two-deps-wrap');
+
+            /* =================================================
+               상태 변수
+            ================================================= */
+            let openByGnbCate = null;
+
+            function isDesktop() {
+                return window.innerWidth > 1180;
+            }
+
+            /* =================================================
+               기본 스코프
+            ================================================= */
+            const $scope = $('.header_dim');
+            if (!$scope.length) return;
+
+            const $deps1Wrap = $scope.find('.one-deps-wrap');
+
+
+            /* =================================================
+            [수정] 정적 이미지 매칭 로직 (파일명 규칙 기반)
+            ================================================= */
+            function applyCategoryImages() {
+                // 1. 파일이 업로드된 기본 경로 (마지막에 / 포함)
+                const basePath = 'https://arenakorea1.cafe24.com/web/2026-renewal/header/';
+
+                // 2. 현재 활성화된 1차 카테고리 텍스트 (예: WOMEN, EXCLUSIVE)
+                // 대문자로 통일하여 파일명과 매칭률을 높입니다.
+                const activeCateName = $('.one-deps-wrap .menu_1li > a.active').text().trim().toUpperCase();
+
+                if (!activeCateName) return;
+
+                // 3. 현재 보이는 2차 메뉴(menu_2li)들만 순회
+                $deps2Wrap.find('.menu_2ul.active .menu_2li').each(function (index) {
+                    const $a = $(this).find('> a');
+
+                    // 규칙: 순번 생성 (01, 02, 03...)
+                    const fileNo = (index + 1).toString().padStart(2, '0');
+
+                    // 최종 파일명 조립 (예: WOMEN-02.jpg)
+                    const fileName = `${activeCateName}-${fileNo}.jpg`;
+
+                    $a.css({
+                        'background-image': `url('${basePath}${fileName}')`,
+                        'background-size': 'cover',
+                        'background-position': 'center',
+                        'background-repeat': 'no-repeat',
+                        'background-color': '#f4f4f4' // 이미지 없을 때 대비 기본 배경색
+                    });
+
+                    // [디버깅] 이미지가 안 나올 경우 콘솔에서 경로를 확인해보세요.
+                    // console.log("매칭된 이미지 경로:", basePath + fileName);
+                });
+            }
+
+            /* =================================================
+               header active
+            ================================================= */
+            function setHeaderActive(cate) {
+                const $gnb = $('header .header_navi .menu_1li');
+                $gnb.removeClass('active hover');
+                $gnb.filter('[data-cate="' + cate + '"]').addClass('active hover');
+            }
+
+            function clearHeaderActive() {
+                $('header .header_navi .menu_1li').removeClass('active hover');
+            }
+
+            /* =================================================
+               activate depth1
+            ================================================= */
+            function activate1DepthByCate(cate) {
+                const $menu1 = $scope.find('.menu_1ul.list');
+                const $targetLi = $menu1.find('.menu_1li[data-cate="' + cate + '"]');
+                if (!$targetLi.length) return;
+
+                const $a = $targetLi.children('a');
+
+                // 1차 메뉴 active 처리
+                $menu1.find('.menu_1li > a').removeClass('active');
+                $a.addClass('active');
+
+                setHeaderActive(cate);
+
+                // [중요] 하드코딩된 서브메뉴(ul) 중 해당 카테고리만 보여주기
+                $deps2Wrap.find('.menu_2ul').removeClass('active'); // 일단 다 숨김
+                const $targetUl = $deps2Wrap.find('.menu_2ul[data-cate="' + cate + '"]');
+
+                if ($targetUl.length) {
+                    $targetUl.addClass('active');
+                    applyCategoryImages(); // 이미지가 있다면 입히기
+                }
+            }
+
+            /* =================================================
+            ✅ 사이트맵 오픈 시 첫 번째 카테고리 자동 활성화
+            ================================================= */
+            function activateDefaultWhenOpen() {
+                let count = 0;
+
+                const tryActivate = setInterval(() => {
+                    const $menu1 = $scope.find('.menu_1ul.list');
+                    const $items = $menu1.find('.menu_1li[data-cate]');
+
+                    // 1. 아직 메뉴 DOM이 생성되지 않았다면 대기 (최대 2초)
+                    if (!$items.length) {
+                        count++;
+                        if (count > 40) clearInterval(tryActivate);
+                        return;
+                    }
+
+                    // 2. 이미 active가 있다면 중복 실행 방지하고 중단
+                    if ($menu1.find('.menu_1li > a.active').length) {
+                        clearInterval(tryActivate);
+                        return;
+                    }
+
+                    // 3. 활성화할 카테고리 결정
+                    // GNB에서 마우스 호버로 들어온 게 있다면(openByGnbCate) 그것을 사용,
+                    // 아니면 그냥 DOM상 첫 번째 아이템의 data-cate를 가져옴
+                    let cate = openByGnbCate || $items.first().data('cate');
+
+                    if (cate) {
+                        activate1DepthByCate(cate); // 1차 메뉴 활성화 + 2차 메뉴 노출 + 이미지 로드 실행
+                    }
+
+                    clearInterval(tryActivate); // 성공했으므로 타이머 종료
+                }, 50); // 0.05초 간격으로 체크
+            }
+
+            /* =================================================
+               sitemap OPEN / CLOSE
+            ================================================= */
+            function openSitemap() {
+                $('.header_sitemap').addClass('on');
+                $('header .menu_1li.sitemap').addClass('on');
+
+                // ✅ 열리는 순간 기본 선택 세팅
+                activateDefaultWhenOpen();
+            }
+
+            function closeSitemap() {
+                $('.header_sitemap').removeClass('on');
+                $('header .menu_1li.sitemap').removeClass('on');
+            }
+
+            function resetSitemapState() {
+                closeSitemap();
+                openByGnbCate = null;
+                clearHeaderActive();
+                $scope.find('.menu_1ul.list .menu_1li > a.active').removeClass('active');
+                $deps2Wrap.find('.menu_2ul').removeClass('active'); // 서브메뉴 모두 숨김
+
+                $('body').css({
+                    'overflow': '',
+                    'touch-action': ''
+                });
+            }
+
+            /* =================================================
+               sitemap depth1 event
+            ================================================= */
+            function bindSitemapDepth1Event() {
+                $scope.off('.depth1');
+
+                if (isDesktop()) {
+                    $scope.on('mouseenter.depth1', '.menu_1ul.list .menu_1li > a', function () {
+                        const cate = $(this).closest('.menu_1li').data('cate');
+                        if (!cate) return;
+                        activate1DepthByCate(cate);
+                    });
+                } else {
+                    $scope.on('click.depth1', '.menu_1ul.list .menu_1li > a', function (e) {
+                        e.preventDefault();
+                        e.stopImmediatePropagation();
+
+                        const cate = $(this).closest('.menu_1li').data('cate');
+                        if (!cate) return;
+                        activate1DepthByCate(cate);
+                    });
+                }
+            }
+
+            /* =================================================
+               GNB event
+            ================================================= */
+            function bindGnbEvent() {
+                const $gnb = $('header .header_navi .menu_1li');
+                $gnb.off('.gnb');
+
+                if (isDesktop()) {
+                    $gnb.on('mouseenter.gnb', function () {
+                        const cate = $(this).data('cate');
+                        if (!cate) return;
+
+                        openByGnbCate = cate;
+                        openSitemap();
+                        activate1DepthByCate(cate);
+                    });
+                } else {
+                    $gnb.on('click.gnb', function (e) {
+                        e.preventDefault();
+                        e.stopImmediatePropagation();
+
+                        const cate = $(this).data('cate');
+                        if (!cate) return;
+
+                        openByGnbCate = cate;
+                        openSitemap();
+                        activate1DepthByCate(cate);
+                    });
+                }
+            }
+
+            /* =================================================
+               header mouseleave (PC ONLY)
+            ================================================= */
+            function bindHeaderMouseLeave() {
+                const $header = $('header');
+                $header.off('mouseleave.headerLeave');
+
+                if (!isDesktop()) return;
+
+                $header.on('mouseleave.headerLeave', function () {
+                    resetSitemapState();
+                });
+            }
+
+            /* =================================================
+               MOBILE : X 버튼 닫기
+            ================================================= */
+            $(document).on('click', '.mo-menu-close', function () {
+                resetSitemapState();
+            });
+
+            /* =================================================
+               ✅ 외부(햄버거 버튼 등)에서 sitemap이 열리는 경우도 대비
+               - .header_sitemap on 변화 감지해서 기본 세팅 실행
+            ================================================= */
+            const sitemapEl = document.querySelector('.header_sitemap');
+            if (sitemapEl) {
+                const observer = new MutationObserver(function (mutations) {
+                    mutations.forEach(function (m) {
+                        if (m.attributeName !== 'class') return;
+
+                        if (sitemapEl.classList.contains('on')) {
+                            activateDefaultWhenOpen();
+                        }
+                    });
+                });
+                observer.observe(sitemapEl, { attributes: true });
+            }
+
+            /* =================================================
+               init + resize
+            ================================================= */
+            bindSitemapDepth1Event();
+            bindGnbEvent();
+            bindHeaderMouseLeave();
+
+            $(window).on('resize', function () {
+                bindSitemapDepth1Event();
+                bindGnbEvent();
+                bindHeaderMouseLeave();
+            });
+
+        });
+    </script>
+
+
+
+</div>
+<div data-ez-module="user-defined/1" data-ez-name="USER DEFINED" data-ez-type="plain" data-ez="module-1p144fa-1">
+    <script>
+        $(function () {
+            const path = location.pathname;
+
+            const isMain =
+                path === '/' ||
+                path === '/index.html' ||
+                /^\/skin-[^\/]+$/.test(path);
+
+            if (isMain) {
+                $('.renewal-header').removeClass('sub');
+            }
+        });
+
+    </script>
+</div>
+<!--#ez="1/2"-->

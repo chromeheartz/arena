@@ -1,0 +1,45 @@
+<!--@layout(/layout/basic/layout.html)-->
+<!--@css(/css/module/mall/company.css)-->
+<!--@css(/ogam/css/sub.css)-->
+
+<div class="renewal-list-wrapper">
+    <div class="renewal-inner">
+        <div class="renewal-container">
+
+            <div class="renewal-contents-wrapper privacy-contents-wrapper">
+                <div class="page-top-nav-wrap">
+                    <dl>
+                        <dt></dt>
+                        <dd >개인정보 처리방침</dd>
+                    </dl>
+                    <h6>개인정보 처리방침</h6>
+                </div>
+
+
+
+                <div class="og_sub_container og_inner footer_menu">
+
+                    <div module="mall_privacy" class="section gInnerMargin">
+                        <!--@css(/css/module/mall/privacy.css)-->
+                        <p class="date {$displayEnforce|display}">{$enforce_date}</p>
+                        <div class="ec-base-box">
+                            <div class="agree">
+                                {$privacy_agreement}
+                            </div>
+                        </div>
+                        <div class="ec-base-button {$displayBeforeEnforce|display}">
+                            <span class="gLeft">
+                                <a href="{$before_enforce_link}" class="btnDate" target="_blank">{$before_enforce_date}</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

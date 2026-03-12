@@ -1,0 +1,16 @@
+{
+    "applinks": {
+        "apps": [],
+        "details": [
+            {
+                "appID": "Q9G43N3XBX.com.cafe24.ec.plusarenakorea1",
+                "paths": [
+                    "\/",
+                    "\/category\/*",
+                    "\/board\/*",
+                    "\/article\/*"
+                ]
+            }
+        ]
+    }
+}

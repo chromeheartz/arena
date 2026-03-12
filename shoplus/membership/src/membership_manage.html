@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="euc-kr" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes"
+    />
+    <title></title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://membership.cafe24.shoplus.store/membership/style/membership.css"
+      rel="stylesheet"
+    />
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript">
+      window.ShoplusMemeberShipJQuery = jQuery.noConflict(true);
+    </script>
+
+    <!--본고딕 폰트-->
+    <!--@css(/layout/basic/css/common.css)-->
+    <!--@js(/layout/basic/js/basic.js)-->
+    <!--@js(/js/common.js)-->
+    <!--@js(/js/module/layout/quick_view.js)-->
+  </head>
+  <body style="display:none;">
+    <div id="membership_container" class="membership_sub_container">
+      <div class="membership_dum2"></div>
+
+      <div class="membership_detail">
+        <div class="membership_top">
+          <span class="top_icon"
+            ><img
+              id="shoplus_membership_product_image"
+              src="https://membership.cafe24.shoplus.store/membership/image/235056c36a7d12df6e6eaacc24193907.png"
+              alt="멤버쉽아이콘"
+          /></span>
+          <strong id="shoplus_membership_product_name" class="top_tit"
+            >멤버십명</strong
+          >
+          <p class="top_desc">다음 결제 예정일은 2020년 11월 30일입니다.</p>
+          <a
+            href="/myshop/regular_delivery.html"
+            class="membership_btn membership_btn1"
+            >결제수단 관리</a
+          >
+        </div>
+        <div class="membership_list1">
+          <strong id="shoplus_membership_benefit_title"
+            >회원님이 누리고 있는 혜택</strong
+          >
+          <ul id="shoplus_benefit_item_list">
+            <li>
+              <a href="#">
+                <img
+                  src="https://membership.cafe24.shoplus.store/membership/image/4f7ea12f714ce97d934bf470f10140c7.png"
+                  alt="혜택아이콘"
+                />
+                <p>주문시 무조건 무료배송</p>
+              </a>
+              <p style="display: none;">123123</p>
+            </li>
+            <li>
+              <a href="#">
+                <img
+                  src="https://membership.cafe24.shoplus.store/membership/image/4f7ea12f714ce97d934bf470f10140c7.png"
+                  alt="혜택아이콘"
+                />
+                <p>구매시 00% 할인</p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img
+                  src="https://membership.cafe24.shoplus.store/membership/image/4f7ea12f714ce97d934bf470f10140c7.png"
+                  alt="혜택아이콘"
+                />
+                <p>모바일에서 구매시 추가로 00% 할인</p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img
+                  src="https://membership.cafe24.shoplus.store/membership/image/4f7ea12f714ce97d934bf470f10140c7.png"
+                  alt="혜택아이콘"
+                />
+                <p>구매시 적립금 00% 지급</p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img
+                  src="https://membership.cafe24.shoplus.store/membership/image/4f7ea12f714ce97d934bf470f10140c7.png"
+                  alt="혜택아이콘"
+                />
+                <p>모바일에서 구매시 적립금 추가 00% 지급</p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img
+                  src="https://membership.cafe24.shoplus.store/membership/image/4f7ea12f714ce97d934bf470f10140c7.png"
+                  alt="혜택아이콘"
+                />
+                <p>멤버십 회원 전용 특별 쿠폰 제공</p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img
+                  src="https://membership.cafe24.shoplus.store/membership/image/4f7ea12f714ce97d934bf470f10140c7.png"
+                  alt="혜택아이콘"
+                />
+                <p>멤버십 회원 전용 추가 적립금 지급</p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img
+                  src="https://membership.cafe24.shoplus.store/membership/image/4f7ea12f714ce97d934bf470f10140c7.png"
+                  alt="혜택아이콘"
+                />
+                <p>멤버십 회원 전용 특가상품</p>
+              </a>
+            </li>
+          </ul>
+          <a
+            href="javascript:void(0);"
+            class="membership_btn membership_btn2"
+            id="membership_end"
+            >해지하기</a
+          >
+        </div>
+        <a href="javascript:void(0);" class="membership_detail_close"
+          ><img
+            src="https://membership.cafe24.shoplus.store/membership/image/b8297f9236d39a40fa65279906faed3e.png"
+            alt="멤버쉽 상세 닫기"
+        /></a>
+      </div>
+
+      <div id="membership_detail_detail">
+        <strong>혜택설명</strong>
+        <div class="membership_detail_detail_box">
+          <strong>혜택 설명 타이틀 입니다.</strong>
+          <div class="membership_detail_detail_box_inner">
+            혜택 설명 내용입니다.<br />
+            설정 페이지에서 입력한 내용을 출력합니다.
+          </div>
+        </div>
+        <a href="#" class="membership_detail_detail_close"
+          ><img
+            src="https://membership.cafe24.shoplus.store/membership/image/b8297f9236d39a40fa65279906faed3e.png"
+            alt="혜택설명 닫기"
+        /></a>
+      </div>
+      <!-- membership_detail_detail -->
+
+      <!-- 멤버쉽 해지하기 창 -->
+      <div id="membership_end_con">
+        <div class="membership_top">
+          <span class="top_icon"
+            ><img
+              id="shoplus_membership_cancel_image"
+              src="https://membership.cafe24.shoplus.store/membership/image/235056c36a7d12df6e6eaacc24193907.png"
+              alt="멤버쉽아이콘"
+          /></span>
+          <strong id="shoplus_membership_cancel_title" class="top_tit"
+            >000님 이렇게 좋은<br />멤버십 혜택을 포기하시려구요?</strong
+          >
+        </div>
+        <div class="membership_list2">
+          <ul id="shoplus_benefit_item_list2">
+            <li>
+              <a href="#">
+                <img
+                  src="https://membership.cafe24.shoplus.store/membership/image/4f7ea12f714ce97d934bf470f10140c7.png"
+                  alt="혜택아이콘"
+                />
+                <p>주문시 무조건 무료배송</p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img
+                  src="https://membership.cafe24.shoplus.store/membership/image/4f7ea12f714ce97d934bf470f10140c7.png"
+                  alt="혜택아이콘"
+                />
+                <p>구매시 00% 할인</p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img
+                  src="https://membership.cafe24.shoplus.store/membership/image/4f7ea12f714ce97d934bf470f10140c7.png"
+                  alt="혜택아이콘"
+                />
+                <p>모바일에서 구매시 추가로 00% 할인</p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img
+                  src="https://membership.cafe24.shoplus.store/membership/image/4f7ea12f714ce97d934bf470f10140c7.png"
+                  alt="혜택아이콘"
+                />
+                <p>구매시 적립금 00% 지급</p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img
+                  src="https://membership.cafe24.shoplus.store/membership/image/4f7ea12f714ce97d934bf470f10140c7.png"
+                  alt="혜택아이콘"
+                />
+                <p>모바일에서 구매시 적립금 추가 00% 지급</p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img
+                  src="https://membership.cafe24.shoplus.store/membership/image/4f7ea12f714ce97d934bf470f10140c7.png"
+                  alt="혜택아이콘"
+                />
+                <p>멤버십 회원 전용 특별 쿠폰 제공</p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img
+                  src="https://membership.cafe24.shoplus.store/membership/image/4f7ea12f714ce97d934bf470f10140c7.png"
+                  alt="혜택아이콘"
+                />
+                <p>멤버십 회원 전용 추가 적립금 지급</p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img
+                  src="https://membership.cafe24.shoplus.store/membership/image/4f7ea12f714ce97d934bf470f10140c7.png"
+                  alt="혜택아이콘"
+                />
+                <p>멤버십 회원 전용 특가상품</p>
+              </a>
+            </li>
+          </ul>
+          <a href="#" class="membership_end_close"
+            ><img
+              src="https://membership.cafe24.shoplus.store/membership/image/b8297f9236d39a40fa65279906faed3e.png"
+              alt="멤버쉽 해지 닫기"
+          /></a>
+        </div>
+
+        <div class="membership_bottom">
+          <p>그래도 해지하실건가요?</p>
+          <a href="#" id="end_no">멤버십 유지하기</a>
+          <a href="#" id="end_go">멤버십 해지하기</a>
+          <div class="membership_bottom_list">
+            <small id="shoplus_membership_cancel_guide_title">멤버십 해지시 정책 안내</small>
+            <ul id="shoplus_membership_cancel_guide_content">
+              <li>멤버십 가입 후 주문 이력이 없는 경우 전액 환불처리됩니다.</li>
+              <li>
+                멤버십 가입 후 주문 이력이 있는 경우 혜택 지급처리로 환불처리가
+                되지 않습니다.
+              </li>
+              <li>
+                멤버십 해지시 혜택으로 지급된 쿠폰과 포인트는 운영 정책에 따라
+                회수 처리될 수 있습니다.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- membership_end_con -->
+    </div>
+    <!--membership_container-->
+
+    <!--mambership_wrap-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.26.0/polyfill.min.js"></script>      
+    <script src="https://membership.cafe24.shoplus.store/membership/js/new_membership.js"></script>      
+    <script src="https://membership.cafe24.shoplus.store/membership/js/mobile_membership.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.4/dayjs.min.js" integrity="sha512-0fcCRl828lBlrSCa8QJY51mtNqTcHxabaXVLPgw/jPA5Nutujh6CbTdDgRzl9aSPYW/uuE7c4SffFUQFBAy6lg==" crossorigin="anonymous"></script>
+    <script>
+      const searchShoplusMembershipManage = async () => {
+        //멤버십 상품 조회
+        let shoplus_product = await shoplusMembershipOrderformGetProduct(
+          localStorage.shoplus_membership_product_no
+        );
+
+        //멤버십 해지 버튼 노출 체크
+        let shoplus_cancel_button_display = await shoplusMembershipCancelButtonDisplay(
+          shoplus_product,
+          localStorage.shoplus_membership_joined_at
+        );
+        if (shoplus_cancel_button_display === false) {
+          ShoplusMemeberShipJQuery("#membership_end").hide();
+        }
+      };
+
+      window.addEventListener(
+        "load",
+        function(event) {
+          (function(CAFE24API) {
+            setTimeout(async function() {
+              if (CAFE24API.MALL_ID) {
+                localStorage.shoplus_membership_mall_id = CAFE24API.MALL_ID;
+              }
+              CAFE24API.getCustomerIDInfo(function(err, res) {
+                if (err) {
+                } else {
+                  localStorage.shoplus_membership_member_id = res.id.member_id;
+                }
+              });
+
+              localStorage.shoplus_membership_url = shoplus_membership_url;
+              localStorage.shoplus_membership_app_code = shoplus_membership_app_code;
+
+              await shoplusGetShipments();
+
+              // 멤버십 혜택 조회
+              let get_member_status_result = shoplusMembershipGetMemberStatusBenefits();
+              setTimeout(function() {
+              	searchShoplusMembershipManage();
+              }, 300);
+            }, 700);
+          })(
+            CAFE24API.init({
+              client_id: "kUutIKDxMteStFRZImh1pB",
+              version: "2020-12-01",
+            })
+          );
+        },
+        false
+      );
+    </script>
+    <script>
+      var sAuthSSLDomain = "https://login2.cafe24ssl.com";
+    </script>
+    <script
+      type="text/javascript"
+      src="https://login2.cafe24ssl.com/crypt/AuthSSLManager.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://login2.cafe24ssl.com/crypt/AuthSSLManager.plugin.js"
+    ></script>
+  </body>
+</html>
+<div module="Layout_Dummy"></div>

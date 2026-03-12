@@ -1,0 +1,180 @@
+<!--@layout(/layout/basic/layout.html)-->
+<!--@js(/ogam/js/board.js)-->
+<!--@css(/ogam/css/board.css)-->
+
+
+<div class="renewal-list-wrapper">
+    <div class="renewal-inner">
+        <div class="renewal-container">
+            <div class="sub-side-menu">
+
+                <div class="menu-wrapper">
+                    <div class="menu-wrap">
+                        <div class="subTitle">
+                            <h3>고객센터</h3>
+                        </div>
+                        <ul class="menu">
+                            <li><a href="/board/notice/list.html">공지사항</a></li>
+                            <li><a href="/board/FAQ/list.html">자주 묻는 질문</a></li>
+                            <li class="on"><a href="/board/consult/list.html">1:1 문의</a></li>
+                            <li><a href="/shopinfo/intro_membership.html">멤버십</a></li>
+
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="renewal-contents-wrapper renewal-board-detail-contents-wrapper">
+
+
+
+                <div class="page-top-nav-wrap">
+                    <dl>
+                        <dt>홈<span>/</span>고객센터<span>/</span></dt>
+                        <dd>
+                            1:1 문의
+                            <i class="mo-arrow"><img src="https://arenakorea1.cafe24.com/web/2026-renewal/img/grey-down-arrow.png" alt="grey down arrow" /></i>
+                        </dd>
+                    </dl>
+                    <h6>1:1 문의</h6>
+                    <ul class="mo-dropdown-list">
+                        <li><a href="/board/notice/list.html">공지사항</a></li>
+                        <li><a href="/board/FAQ/list.html">자주 묻는 질문</a></li>
+                        <li class="on"><a href="/board/consult/list.html">1:1 문의</a></li>
+                        <li><a href="/shopinfo/intro_membership.html">멤버십</a></li>
+                    </ul>
+
+                </div>
+
+
+                <div class="section board-section read_board_type1" module="board_ReadPackage_9">
+                    <!--css(/css/module/board/readPackage_9.css)-->
+                    <!--css(/css/module/board/boardPackage.css)-->
+
+
+                    <div module="Board_Read_9">
+                        <!--
+$delete_success_url = /board/consult/list.html
+$login_page_url = /member/login.html
+-->
+                        <div class="ec-base-table gLayoutFixed renewal-board-detail-user-table">
+
+
+                            <table border="1" >
+                                <colgroup module="board_listheader_9">
+
+                                    <col style="width:100%;" class="{$config.use_date|display}" />
+                                </colgroup>
+                                <tbody>
+
+                                    <tr class="category">
+                                        <td>[{$category_name}]</td>
+                                    </tr>
+                                    <tr class="title">
+                                        <td colspan="3">{$subject}</td>
+                                    </tr>
+                                    <tr class="{$config.use_date|display} date">
+                                        <td colspan="3">
+                                            <div class="date-user-wrap">
+                                                <div class="user-wrap">
+                                                    <span class="state">{$consult}</span>
+                                                    {$write_date}
+
+                                                </div>
+                                                <div class="click-wrap">
+                                                    <a href="/board/consult/modify.html{$param_modify}" class="{$modify_button_auth|display}">수정</a>
+                                                    <span></span>
+                                                    <a href="#none" onclick="{$action_delete}"  class="{$delete_button_auth|display}">삭제</a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="view">
+                                        <td colspan="4">
+                                            <div class="detail">{$content}{$content_image}</div>
+                                        </td>
+                                    </tr>
+                                    <tr class="attach {$config.use_attach|display} displaynone" >
+                                        <th scope="row">첨부파일</th>
+                                        <td colspan="3">{$attach_file}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                              <div class="mo-click-wrap">
+                                        <a href="/board/consult/modify.html{$param_modify}" class="{$modify_button_auth|display}">수정</a>
+                                        <a href="#none" onclick="{$action_delete}"  class="{$delete_button_auth|display}">삭제</a>
+                                    </div>
+                        </div>
+
+                        <div class="{$display_consult_reply} reply-contents-wrap">
+                            <div class="title-wrap">
+                                <h6>문의 답변드립니다</h6>
+                                <div class="view">{$reply_content}</div>
+                            </div>
+                            <div class="date">{$reply_date}</div>
+
+                        </div>
+
+                        <div class="displaynone ec-base-box typeThinBg gBlank30 {$display_consult_noreply}">
+                            <p>빠른시간내에 답변드리겠습니다. 잠시만 기다려 주세요!</p>
+                        </div>
+
+                        <div class="renewal-btn-wrap">
+
+                            <a href="{$link_board_list}" class="grey-btn">목록</a>
+
+
+                            <a href="/board/consult/reply.html{$param_reply}" class="black-btn {$reply_button_auth|display} {$config.is_admin|display}">답변쓰기</a>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<script>
+    const urlParams = new URL(location.href).searchParams;
+
+    const cateNo = urlParams.get('category_no');
+    if(cateNo=='8'){
+        $('.oriThis').removeClass('this');
+        $('.oriOn').removeClass('on');
+
+        $('.newThis').addClass('this');
+        $('.newOn').addClass('on');
+    }
+
+</script>
+
+
+
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const states = document.querySelectorAll(".state");
+
+        states.forEach(state => {
+            const value = state.textContent.trim();
+
+            if (value === "O") {
+                state.textContent = "답변완료";
+                state.classList.add("is-complete");
+            }
+            else if (value === "X") {
+                state.textContent = "답변대기";
+                state.classList.add("is-waiting");
+            }
+        });
+    });
+</script>

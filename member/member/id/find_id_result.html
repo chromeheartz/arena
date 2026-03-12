@@ -1,0 +1,48 @@
+<!--@layout(/layout/basic/layout.html)-->
+
+<!--@css(/ogam/css/member.css)-->
+<!--@js(/ogam/js/member.js)-->
+
+
+
+
+<div class="section path">
+    <span>location</span>
+    <ol>
+        <li><a href="/">HOME</a></li>
+        <li title="현재 위치"><strong>FIND ID</strong></li>
+    </ol>
+</div>
+
+<div class="og_member_inner" id="og_member_find_id_result">
+
+
+    <div class="section titleArea og_member_title">
+        <h2>FIND ID</h2>
+    </div>
+
+    <div module="member_findidresult" class="memberArea">
+        <!--@css(/css/module/member/find_id_result.css)-->
+        <div class="ec-base-help">
+            <ul>
+                <li>You have successfully recovered your ID.<br>
+                    The following 1 ID was found with the information you have provided us.</li>
+                <!--li>가입된 아이디가 총 {$idCnt}개 있습니다.</li-->
+            </ul>
+        </div>
+        <div class="ec-base-box typeMember">
+            <div class="complete">
+                <div class="description">
+                    <ul class="ec-base-desc og_find_result_box">
+                        <li><strong class="term">{$searchType}</strong><div class="desc">{$searchInfo}</div></li>
+                    </ul>
+                    {$searchIds}
+                </div>
+            </div>
+        </div>
+        <div class="ec-base-button og_find_sesult_button">
+            <a href="javascript:go_findlogin('{$id}');" class="btnSubmit sizeM">LOG IN</a>
+            <a href="javascript:go_findpwd('{$id}','{$mtype}');" class="btnNormal  sizeM">FORGOT PASSWORD</a>
+        </div>
+    </div>
+</div>

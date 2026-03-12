@@ -1,0 +1,40 @@
+<!--@layout(/layout/basic/layout.html)-->
+
+<!--@css(/ogam/css/member.css)-->
+<!--@js(/ogam/js/member.js)-->
+
+<div class="section path">
+    <span>location</span>
+    <ol>
+        <li><a href="/">HOME</a></li>
+        <li title="현재 위치"><strong>FIND PASSWORD</strong></li>
+    </ol>
+</div>
+
+<div class="og_member_inner" id="og_member_find_id_result">
+
+    <div class="section titleArea og_member_title" style="margin-bottom: 12px;">
+        <h2>FIND PASSWORD</h2>
+    </div>
+
+    <div module="member_findpasswdresult" class="memberArea">
+        <!--@css(/css/module/member/find_passwd_result.css)-->
+        <!--div class="ec-base-help">
+            <ul>
+                <li class="{$display_email_method|display}">임시 비밀번호가 고객님의 <br class="RMB">메일로 전송되었습니다.</li>
+                <li class="{$display_mobile_method|display}">임시 비밀번호가 고객님의 <br class="RMB">휴대폰 번호로 전송되었습니다.</li>
+            </ul>
+        </div-->
+        <div class="ec-base-box typeMember">
+            <div class="complete">
+                <p class="description">
+                    <span class="{$display_id_method|display}">Dear <strong class="txtEm">{$id}</strong>,</span>Thank you for shopping with us.<br>
+                    Temporary password is sent to <strong class="txtEm"><span class="{$display_email_method|display}">{$email}</span><span class="{$display_mobile_method|display}">{$mobile}</span></strong>
+                </p>
+            </div>
+        </div>
+        <div class="ec-base-button og_find_sesult_button">
+            <a href="/member/login.html" class="btnSubmitFix sizeM gFull">LOG IN</a>
+        </div>
+    </div>
+</div>

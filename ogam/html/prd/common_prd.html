@@ -1,0 +1,114 @@
+
+
+<!-- 썸네일 영역 -->
+<div class="thumbnail">
+    <!-- 상품 이미지 -->
+    <div class="prdImg">
+        <div class="soldout_chk displaynone">{$soldout_icon}</div>
+        <a href="/product/detail.html{$param}" name="anchorBoxName_{$product_no}">
+            <div class="thumb_img_box">
+                <div class="basic_img" ><img src="{$image_medium}" id="{$image_medium_id}" alt="{$seo_alt_tag}" /></div>
+                <div class="hover_img" ><img src="{$image_tiny}" alt="{$seo_alt_tag}" /></div>
+                <!-- <div class="basic_img" ><img src="{$image_medium}" id="{$image_medium_id}" alt="{$seo_alt_tag}" onmouseover="this.src='{$image_tiny}'" onmouseout="this.src='{$image_medium}'" ontouchstart="this.src='{$image_tiny}'" ontouchend="this.src='{$image_medium}'" /></div>
+<div class="hover_img" ><img src="{$image_tiny}" alt="{$seo_alt_tag}" /></div>-->
+            </div>
+
+            <!-- 상품 이미지 꾸미기 -->
+            <span module="product_Imagestyle" class="prd_image_style"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span>
+            <!-- //상품 이미지 꾸미기 -->
+        </a>
+        <!-- 기능 버튼 -->
+        <div class="button_wrap">
+            <div class="og_button_area" data-type="inherit">
+                <!-- 좋아요 버튼-->
+                <div class="og_button {$disp_likeprd_class} og_button_basic3_sizeS like_button">
+                    <button type="button"><span class="layout-hidden">{$disp_likeprd_icon}</span><span>좋아요 {$disp_likeprd_count}</span></button>
+                </div>
+                <!-- //좋아요 버튼 -->
+                <!-- 관심상품 등록 -->
+                <div class="og_button wish_button og_button_basic3_sizeS">
+                    {$list_wish_icon}
+                </div>
+                <!-- //관심상품 등록 -->
+                <!-- 재고보기 아이콘 -->
+                <div class="og_button option_button og_button_basic3_sizeS og_base_tooltip_area displaynone">{$option_preview_icon}</div>
+                <!-- //재고보기 아이콘 -->
+                <!-- 확대 보기 아이콘 -->
+                <div class="og_button zoom_button og_button_basic3_sizeS displaynone"><span>확대보기 {$zoom_icon}</span></div>
+                <!-- //확대 보기 아이콘 -->
+                <!-- 품절 아이콘 -->
+                <div class="og_button soldout_button og_button_basic3_sizeS displaynone" onClick="set_sms_restock({$product_no})" data-disabled="disabled"><span>품절</span></div>
+                <!-- 품절 아이콘 -->
+            </div>
+
+        </div>
+        <!-- //기능 버튼 -->
+           <!-- 장바구니 아이콘 -->
+                <div class="og_button basket_button og_button_basic3_sizeS" onClick="basketConfirmShow();">{$basket_icon}</div>
+                <!-- //장바구니 아이콘 -->
+    </div>
+    <!-- //상품 이미지 -->
+</div>
+<!-- 썸네일 영역 -->
+<!-- 상품 설명 -->
+<div class="description">
+    <div class="img-wrap">
+        <i>
+            <img src="{$image_medium}" id="{$image_medium_id}" alt="{$seo_alt_tag}" />
+        </i>
+        <i>
+            <img src="{$image_tiny}" alt="{$seo_alt_tag}" />
+        </i>
+    </div>
+    <div class="promotion og_promotion_icons"><!--{$soldout_icon}-->{$stock_icon}{$recommend_icon}{$new_icon}{$today_arrival_icon}{$pickup_icon}{$product_icons}{$benefit_icons}</div>
+    
+    <strong class="name"><label class="compare_chk {$product_compare_display|display}"><input type="checkbox" class="{$product_compare_class}" /></label><a href="/product/detail.html{$param}" class="">{$product_name}</a></strong>
+    <p class="summary_desc displaynone">{$simple_desc}</p>
+    <ul module="product_ListItem" class="spec forAdd">
+        <li class="{$item_display|display} forAddIcon"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
+        <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
+    </ul>
+    
+    <ul class="price_wrap">
+        <li id="product_prc_promo_{$product_no}" class="og_prc_item" data-prc="{$origin_prd_price_sale}"><span class="og_prc_promo desc">{$origin_prd_price_sale}</span></li>
+        <li id="product_prc_sell_{$product_no}" class="og_prc_item w_full" data-prc="{$disp_product_price}"><span class="og_prc_sell desc">{$disp_product_price}</span></li>
+        <li id="product_prc_custom_{$product_no}" class="og_prc_item" data-prc="{$disp_product_custom}"><span class="og_prc_custom desc">{$disp_product_custom}</span></li>
+    </ul>
+</div>
+<!-- 상품 설명 -->
+<!-- 프로모션 아이콘 -->
+
+<!-- //프로모션 아이콘 -->
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+
+  setTimeout(function () {
+        document.querySelectorAll('.promotion').forEach(function (promo) {
+            if (promo.querySelectorAll('img').length === 0) {
+                promo.classList.add('displaynone');
+            }
+        });
+    }, 300); // 200~500 사이면 충분
+
+        // URL에서 cate_no 값을 가져오기
+        const urlParams = new URLSearchParams(window.location.search);
+        const cateNo = urlParams.get('cate_no');
+
+        // cate_no가 882일 경우에만 실행
+        if (['882', '903'].includes(cateNo?.trim())) {
+                                    document.querySelectorAll('.price_wrap').forEach(el =>
+                                    el.classList.add('exclusive_wrap')
+                                   );
+                                    }
+
+
+
+                                    });
+
+</script>
+
+<!--browser-image-compression 스크립트 -->
+<script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/browser-image-compression@1.0.15/dist/browser-image-compression.js"></script>
+<!--@js(/ogam/js/common/og_img_compress.js)-->
+

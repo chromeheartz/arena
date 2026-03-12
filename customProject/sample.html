@@ -1,0 +1,85 @@
+<!--@layout(/layout/basic/layout.html)-->
+
+<!--@css(/ogam/css/prdproject.css)-->
+<!--@js(/ogam/js/prdproject.js)-->
+
+<style>
+    .container {
+        max-width: 1920px;
+        margin: 0 auto;
+        overflow: hidden;
+        padding: 0;
+    }
+    .container .view-header {
+        width: 1180px;
+        margin: 0 auto;
+    }
+    .container > section {
+        width: 1180px;
+        margin: 0 auto;
+    }
+
+    .inner_sp {
+        position: relative;
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .inner_sp img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+    .inner_sp map area {
+        outline-color: transparent;
+    }
+
+    .nuderacer-video {
+        position: absolute;
+        top: 31%; /* 화면 높이의 19.5% */
+        left: 75%;
+        transform: translate(-50%, -50%);
+        width: 80%; /* 부모 요소의 너비를 기준으로 100% 설정 */
+    }
+
+    .nuderacer-video::before {
+        content: "";
+        display: block;
+        padding-top: 56.25%; /* 16:9 비율을 유지하기 위해 높이 설정 (9/16 = 0.5625) */
+    }
+
+    .nuderacer-video iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+
+    .link-overlay {
+        background-color: rgba(0, 0, 0, 0); /* rgba(255, 0, 0, 0.5); 불투명빨강*/
+        position: absolute;
+        z-index: 2;
+        width: 38%;
+        height: 1%;
+        top: 5%; /* 이미지 기준으로 2770픽셀 아래 */
+        left: 50%;
+        transform: translateX(-50%);
+}
+    @media (max-width: 1200px) {
+        .link-overlay {
+            width: 100vw; /* 화면 너비의 60% */
+            height: auto; /* 높이는 자동 조정 */
+        }
+    }
+</style>
+
+<div class="inner_sp">
+    <img src="http://multi-sports.co.kr/arena/EVENT/2024/0814/promotion_pc.jpg" alt="">
+    <a class="link-overlay" href="https://youtu.be/sL2jkuo99r4?si=bWxVfwfGm90"></a>
+    <div class='nuderacer-video'>
+        <iframe src="https://www.youtube.com/embed/bWxVfwfGm90?autoplay=1&mute=1"          style="border:none; position:absolute; top:0; left:0; width:100%; height:100%;"          allow="autoplay; fullscreen" loading="lazy"></iframe>
+    </div>
+</div>
+

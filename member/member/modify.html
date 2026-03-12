@@ -1,0 +1,464 @@
+<!--@layout(/layout/basic/layout.html)-->
+
+<!--@css(/ogam/css/member.css)-->
+<!--@js(/ogam/js/member.js)-->
+
+
+<div class="section path">
+    <span>location</span>
+    <ol>
+        <li><a href="/">HOME</a></li>
+        <li title="현재 위치"><strong>EDIT ACCOUNT DETAILS</strong></li>
+    </ol>
+</div>
+<div class="og_member_inner" id="og_member_join_form">
+    <div class="section titleArea og_member_title">
+        <h2>EDIT ACCOUNT DETAILS</h2>
+    </div>
+
+    <div module="myshop_asyncbenefit" class="section">
+        <!--@css(/css/module/myshop/benefit.css)-->
+
+        <div class="ec-base-help {$display_benefit|display}">
+            <ul>
+                <li>Thank you for shopping at SUPRA.</li>
+                <!--li><strong>{$member_name}</strong>님은 <strong>[{$group_name}]</strong> 회원이십니다.</li-->
+            </ul>
+        </div>
+    </div>
+
+    <div module="member_updateeventlogon" class="section {$display_updateevent|display} og_member_inner">
+        <!--@css(/css/module/member/updateeventlogon.css)-->
+        <strong class="title">회원정보 수정 시 {$update_event_reward_type}을 지급하는 이벤트를 진행중입니다.</strong>
+        <ul>
+            <li>이벤트 기간 : {$update_event_period}</li>
+            <li>아래의 조건을 충족한 경우 {$update_event_reward_by_modify} 지급됩니다.<br />{$update_event_selected_option}<</li>
+        </ul>
+    </div>
+
+    <div module="member_edit" class="memberArea">
+        <!--
+            $login_page = /member/login.html
+            $isRuleBasedAddrForm = T
+         -->
+        <!--@css(/css/module/member/edit.css)-->
+
+        <div class="titleArea titleArea--middle *{$display_base_column_title|display}">
+            <h3>BASIC INFORMATION</h3>
+            <p class="required *{$display_base_column_title|display}"><img src="/SkinImg/img/ico_required.svg" class="icon icoRequired" alt="필수" />Required field</p>
+        </div>
+        <div class="ec-base-table typeWrite">
+            <table border="1" >
+            <caption>회원 기본정보</caption>
+            <colgroup>
+                <col style="width:190px;" />
+                <col style="width:auto;" />
+            </colgroup>
+            <tbody>
+                <tr class="{$display_use_id|display}">
+                    <th scope="row" class="member_id">ID<img src="/SkinImg/img/ico_required.svg" class="icon icoRequired" alt="필수" /></th>
+                    <td>{$form.member_id} <span class="txtInfo">{$form.user_id_dupl} The ID must be composed of 4 to 16 characters in lowercase.</span></td>
+                </tr>
+                <tr>
+                    <th scope="row">CURRENT PASSWORD<!--{$display_passwd_title}--><img src="/SkinImg/img/ico_required.svg" class="icon icoRequired {$display_is_none_certification|display}" alt="필수" /></th>
+                    <td>
+                        <!--div class="eTooltip">
+                            <div class="ec-base-tooltip typeUpper {$display_is_passwd_speech_bubble|display}">
+                                <div class="content">
+                                    <strong class="txtWarn">※ {$passwd_terms}</strong>
+                                    <ul class="ec-base-help typeDash gBlank10 txtWarn">
+                                        {$passwd_chk_info}
+                                    </ul>
+                                </div>
+                                <a href="#none" class="btnClose">닫기</a>
+                                <span class="edge"></span>
+                            </div>
+                        </div-->
+                        {$form.passwd|replace:value,value placeholder="Type your current password"}
+                        <span class="txtInfo">{$passwd_type_desc}</span>
+                    </td>
+                </tr>
+                <tr class="{$display_is_none_certification|display}">
+                    <th scope="row">CONFIRM PASSWORD<img src="/SkinImg/img/ico_required.svg" class="icon icoRequired" alt="필수" /></th>
+                    <td>{$form.user_passwd_confirm|replace:value,value placeholder="Confirm your password"}<p class="txtInfo" id="{$pwConfirmMsg_id}"></p></td>
+                </tr>
+                <tr class="{$display_is_certification|display}">
+                    <th scope="row">NEW PASSWORD</th>
+                    <td>
+                        <!--div class="eTooltip">
+                            <div class="ec-base-tooltip typeUpper">
+                                <div class="content">
+                                    <strong>※ {$passwd_terms}</strong>
+                                    <ul class="ec-base-help typeDash txtInfo">
+                                        {$passwd_chk_info}
+                                    </ul>
+                                </div>
+                                <a href="#none" class="btnClose">닫기</a>
+                                <span class="edge"></span>
+                            </div>
+                        </div-->
+                        {$form.new_passwd|replace:value,value placeholder="Type your new password"}
+                        <span class="txtInfo">{$passwd_type_desc}</span>
+                    </td>
+                </tr>
+                <tr class="{$display_is_certification|display}">
+                    <th scope="row">CONFIRM NEW PASSWORD</th>
+                    <td>{$form.new_passwd_confirm|replace:value,value placeholder="Confirm your password"} <p class="txtInfo" id="{$newPwConfirmMsg_id}"></p></td>
+                </tr>
+                <tr class="{$display_name|display}">
+                    <th scope="row" id="{$name_title}">Name<img src="/SkinImg/img/ico_required.svg" class="icon icoRequired" alt="필수" /></th>
+                    <td class="formGroup code">
+                        {$form.name}{$form.last_name}
+                    </td>
+                </tr>
+                <tr class="{$display_eng_name|display}">
+                    <th scope="row">Name<img src="/SkinImg/img/ico_required.svg" class="icon icoRequired {$display_required_name_en|display}" alt="필수" /></th>
+                    <td>{$form.name_en} {$form.last_name_en}</td>
+                </tr>
+                <tr class="{$display_pron_name|display}">
+                    <th scope="row">Phonetics <img src="/SkinImg/img/ico_required.svg" class="{$display_required_name_phonetic|display}" alt="Required Field" /></th>
+                    <td>{$form.name_phonetic} {$form.last_name_phonetic}</td>
+                </tr>
+                <tr class="{$display_addr|display}">
+                    <th scope="row">address<img src="/SkinImg/img/ico_required.svg" class="icon icoRequired {$display_required_address|display}" alt="필수" /></th>
+                    <td class="formMultiple">{$form.address}</td>
+                </tr>
+                <tr class="{$display_phone|display}">
+                    <th scope="row"><img src="/SkinImg/img/ico_required.svg" class="icon icoRequired {$display_required_phone|display}" alt="필수" />Phone</th>
+                    <td class="formGroup code">{$form.nation_phone}{$form.phone}</td>
+                </tr>
+                <tr class="{$display_mobile|display}">
+                    <th scope="row">Mobile<img src="/SkinImg/img/ico_required.svg" class="{$display_required_cell|display}" alt="Required Field" /></th>
+                    <td>
+                        <div class="formGroup code mobile">
+                            {$form.mobile}
+                            <p class="txtInfo">Please enter numbers only</p>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="{$display_is_sms|display}">
+                    <th scope="row">SMS RECEIVE<img src="/SkinImg/img/ico_required.svg" alt="Required Field" /></th>
+                    <td>{$form.is_sms}<ul class="txtInfo"><li>You can receive useful event news by SMS.</li></ul></td>
+                </tr>
+                <tr>
+                    <th scope="row">E-MAIL <img src="/SkinImg/img/ico_required.svg" alt="Required Field" /></th>
+                    <td>{$form.email|replace:value,value placeholder="Type your e-mail"}<p class="txtInfo" id="{$emailMsg_id}"></p></td>
+                </tr>
+                <tr class="{$display_is_news_mail|display}">
+                    <th scope="row">E-MAIL RECEIVE<img src="/SkinImg/img/ico_required.svg" alt="Required Field" /></th>
+                    <td>{$form.is_news_mail}<ul class="txtInfo"><li>You can receive useful event news by E-MAIL.</li></ul></td>
+                </tr>
+            </tbody>
+            </table>
+        </div>
+
+        <div class="titleArea titleArea--middle {$display_add_title|display}">
+            <h3>ADDITIONAL INFORMATION</h3>
+        </div>
+        <div class="ec-base-table typeWrite {$display_add_title|display}">
+            <table border="1" >
+            <caption>회원 추가정보</caption>
+            <colgroup>
+                <col style="width:190px;" />
+                <col style="width:auto;" />
+            </colgroup>
+            <tbody>
+                <tr class="{$display_nick|display}">
+                    <th scope="row">별명<img src="/SkinImg/img/ico_required.svg" class="icon icoRequired {$display_required_nick_name_flag|display}" alt="필수" /></th>
+                    <td>{$form.nick_name} <span class="txtInfo">(한글2~10자/영문 대소문자4~20자/숫자 혼용가능)</span></td>
+                </tr>
+                <tr class="{$display_is_sex|display}">
+                    <th scope="row">GENDER<img src="/SkinImg/img/ico_required.svg" class="icon icoRequired {$display_required_sex|display}" alt="필수" /></th>
+                    <td>{$form.is_sex}</td>
+                </tr>
+                <tr class="{$display_birthday|display}">
+                    <th scope="row">DATE OF BIRTH<img src="/SkinImg/img/ico_required.svg" class="icon icoRequired {$display_required_is_birthday|display}" alt="필수"></th>
+                    <td>
+                        <div class="formGroup date">
+                            {$form.birth_year}{$form.birth_month}{$form.birth_day}
+                        </div>
+                        <span class="gFlow layout_hidden {$display_calendar_type|display}">{$form.is_solar_calendar}</span>
+                    </td>
+                </tr>
+                <tr class="{$display_marry|display}">
+                    <th scope="row"><img src="/SkinImg/img/ico_required.svg" class="icon icoRequired {$display_required_is_wedding_anniversary|display}" alt="필수" />결혼기념일</th>
+                    <td class="formGroup date">{$form.marry_year} 년 {$form.marry_month} 월 {$form.marry_day} 일</td>
+                </tr>
+                <tr class="{$display_partner|display}">
+                    <th scope="row"><img src="/SkinImg/img/ico_required.svg" class="icon icoRequired {$display_required_is_life_partner|display}" alt="필수" />배우자생일</th>
+                    <td class="formGroup date">{$form.partner_year} 년 {$form.partner_month} 월 {$form.partner_day} 일</td>
+                </tr>
+                <tr class="{$display_child|display}">
+                    <th scope="row"><img src="/SkinImg/img/ico_required.svg" class="icon icoRequired {$display_required_child|display}" alt="필수" />자녀 </th>
+                    <td>{$form.child}</td>
+                </tr>
+                <tr class="{$display_school|display}">
+                    <th scope="row"><img src="/SkinImg/img/ico_required.svg" class="icon icoRequired {$display_required_school|display}" alt="필수" />최종학력</th>
+                    <td>{$form.school}</td>
+                </tr>
+                <tr class="{$display_job_class|display}">
+                    <th scope="row"><img src="/SkinImg/img/ico_required.svg" class="icon icoRequired {$display_required_job_class|display}" alt="필수" />직종</th>
+                    <td>{$form.job_class}</td>
+                </tr>
+                <tr class="{$display_job|display}">
+                    <th scope="row"><img src="/SkinImg/img/ico_required.svg" class="icon icoRequired {$display_required_job|display}" alt="필수" />직업</th>
+                    <td>{$form.job}</td>
+                </tr>
+                <tr class="{$display_earning|display}">
+                    <th scope="row"><img src="/SkinImg/img/ico_required.svg" class="icon icoRequired {$display_required_earning|display}" alt="필수" />연소득</th>
+                    <td>{$form.earning}</td>
+                </tr>
+                <tr class="{$display_car|display}">
+                    <th scope="row"><img src="/SkinImg/img/ico_required.svg" class="icon icoRequired {$display_required_car|display}" alt="필수" />자동차</th>
+                    <td>{$form.car}</td>
+                </tr>
+                <tr class="{$display_region|display}">
+                    <th scope="row"><img src="/SkinImg/img/ico_required.svg" class="icon icoRequired {$display_required_region|display}" alt="필수" />지역</th>
+                    <td>{$form.region}</td>
+                </tr>
+                <tr class="{$display_internet|display}">
+                    <th scope="row"><img src="/SkinImg/img/ico_required.svg" class="icon icoRequired {$display_required_internet|display}" alt="필수" />인터넷 이용장소</th>
+                    <td>{$form.internet}</td>
+                </tr>
+                <tr class="{$display_inter|display}">
+                    <th scope="row"><img src="/SkinImg/img/ico_required.svg" class="icon icoRequired {$display_required_interest|display}" alt="필수" />관심분야</th>
+                    <td><div class="interest">{$form.inter_check}</div></td>
+                </tr>
+                <tr class="{$display_add1|display}">
+                    <th scope="row"><img src="/SkinImg/img/ico_required.svg" class="icon icoRequired {$display_required_add1|display}" alt="필수" />{$title_add1}</th>
+                    <td>{$form.add1}</td>
+                </tr>
+                <tr class="{$display_add2|display}">
+                    <th scope="row"><img src="/SkinImg/img/ico_required.svg" class="icon icoRequired {$display_required_add2|display}" alt="필수" />{$title_add2}</th>
+                    <td>{$form.add2}</td>
+                </tr>
+                <tr class="{$display_add3|display}">
+                    <th scope="row"><img src="/SkinImg/img/ico_required.svg" class="icon icoRequired {$display_required_add3|display}" alt="필수" />{$title_add3}</th>
+                    <td>{$form.add3}</td>
+                </tr>
+                <tr class="{$display_add4|display}">
+                    <th scope="row"><img src="/SkinImg/img/ico_required.svg" class="icon icoRequired {$display_required_add4|display}" alt="필수" />{$title_add4}</th>
+                    <td>{$form.add4}</td>
+                </tr>
+                <tr class="{$display_add5|display}">
+                    <th scope="row"><img src="/SkinImg/img/ico_required.svg" class="icon icoRequired {$display_required_add5|display}" alt="필수" />{$title_add5}</th>
+                    <td>{$form.add5}</td>
+                </tr>
+                <tr class="{$display_add6|display}">
+                    <th scope="row"><img src="/SkinImg/img/ico_required.svg" class="icon icoRequired {$display_required_add6|display}" alt="필수" />{$title_add6}</th>
+                    <td>{$form.add6}</td>
+                </tr>
+                <tr class="{$display_add7|display}">
+                    <th scope="row"><img src="/SkinImg/img/ico_required.svg" class="icon icoRequired {$display_required_add7|display}" alt="필수" />{$title_add7}</th>
+                    <td>{$form.add7}</td>
+                </tr>
+                <tr class="{$display_add8|display}">
+                    <th scope="row"><img src="/SkinImg/img/ico_required.svg" class="icon icoRequired {$display_required_add8|display}" alt="필수" />{$title_add8}</th>
+                    <td>{$form.add8}</td>
+                </tr>
+                <tr class="{$display_add9|display}">
+                    <th scope="row"><img src="/SkinImg/img/ico_required.svg" class="icon icoRequired {$display_required_add9|display}" alt="필수" />{$title_add9}</th>
+                    <td>{$form.add9}</td>
+                </tr>
+                <tr class="{$display_add10|display}">
+                    <th scope="row"><img src="/SkinImg/img/ico_required.svg" class="icon icoRequired {$display_required_add10|display}" alt="필수" />{$title_add10}</th>
+                    <td>{$form.add10}</td>
+                </tr>
+                <tr class="{$display_add11|display}">
+                    <th scope="row"><img src="/SkinImg/img/ico_required.svg" class="icon icoRequired {$display_required_add11|display}" alt="필수" />{$title_add11} </th>
+                    <td>{$form.add11}</td>
+                </tr>
+                <tr class="{$display_add12|display}">
+                    <th scope="row"><img src="/SkinImg/img/ico_required.svg" class="icon icoRequired {$display_required_add12|display}" alt="필수" />{$title_add12}</th>
+                    <td>{$form.add12}</td>
+                </tr>
+                <tr class="{$display_add13|display}">
+                    <th scope="row"><img src="/SkinImg/img/ico_required.svg" class="icon icoRequired {$display_required_add13|display}" alt="필수" />{$title_add13}</th>
+                    <td>{$form.add13}</td>
+                </tr>
+                <tr class="{$display_add14|display}">
+                    <th scope="row"><img src="/SkinImg/img/ico_required.svg" class="icon icoRequired {$display_required_add14|display}" alt="필수" />{$title_add14}</th>
+                    <td>{$form.add14}</td>
+                </tr>
+                <tr class="{$display_add15|display}">
+                    <th scope="row"><img src="/SkinImg/img/ico_required.svg" class="icon icoRequired {$display_required_add15|display}" alt="필수" />{$title_add15}</th>
+                    <td>{$form.add15}</td>
+                </tr>
+                <tr class="{$display_reco_id|display}">
+                    <th scope="row"><img src="/SkinImg/img/ico_required.svg" class="icon icoRequired {$display_required_reco_id|display}" alt="필수" />추천인 아이디</th>
+                    <td>{$form.reco_id}</td>
+                </tr>
+            </tbody>
+            </table>
+        </div>
+
+        <div module="member_editInformation">
+            <h3>제3자 정보제공 동의현황</h3>
+            <div class="ec-base-table">
+                <table border="1" >
+                    <caption>제3자 정보제공 동의현황</caption>
+                    <colgroup>
+                        <col style="width:auto;" />
+                        <col style="width:15%;" />
+                        <col style="width:25%;" />
+                        <col style="width:15%;" />
+                        <col style="width:12%;" />
+                        <col style="width:12%;" />
+                        <col style="width:12%;" />
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col">제공서비스</th>
+                            <th scope="col">제공받는 자</th>
+                            <th scope="col">개인정보 이용 목적</th>
+                            <th scope="col">제공하는<br />개인정보 항목</th>
+                            <th scope="col">보유기간</th>
+                            <th scope="col">동의여부</th>
+                            <th scope="col">동의/철회</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{$app_name}<br /><span class="line">({$sa_av_version})</span></td>
+                            <td>{$perinfo_offer}</td>
+                            <td>{$perinfo_purpose}</td>
+                            <td>{$perinfo_item}</td>
+                            <td class="center">{$perinfo_retain}</td>
+                            <td class="center">{$perinfo_status}</td>
+                            <td class="center">{$perinfo_button}</td>
+                        </tr>
+                        <tr>
+                            <td>{$app_name}<br /><span class="line">({$sa_av_version})</span></td>
+                            <td>{$perinfo_offer}</td>
+                            <td>{$perinfo_purpose}</td>
+                            <td>{$perinfo_item}</td>
+                            <td class="center">{$perinfo_retain}</td>
+                            <td class="center">{$perinfo_status}</td>
+                            <td class="center">{$perinfo_button}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="info">- 정보제공에 대한 동의여부를 변경할 수 있으며, 철회 시 일부 서비스 사용이 불가할 수 있습니다.</p>
+        </div>
+
+        <div module="member_editConsignment">
+            <h3>처리위탁 동의현황</h3>
+            <div class="ec-base-table">
+                <table border="1" >
+                    <caption>처리위탁 동의현황</caption>
+                    <colgroup>
+                        <col style="width:auto;" />
+                        <col style="width:20%;" />
+                        <col style="width:30%;" />
+                        <col style="width:12%;" />
+                        <col style="width:12%;" />
+                        <col style="width:12%;" />
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col">제공서비스</th>
+                            <th scope="col">위탁받은 자</th>
+                            <th scope="col">위탁업무의 내용</th>
+                            <th scope="col">보유기간</th>
+                            <th scope="col">동의여부</th>
+                            <th scope="col">동의/철회</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{$app_name}<br /><span class="line">({$sa_av_version})</span></td>
+                            <td>{$trust_target}</td>
+                            <td>{$trust_work}</td>
+                            <td class="center">{$trust_retain}</td>
+                            <td class="center">{$trust_status}</td>
+                            <td class="center">{$trust_button}</td>
+                        </tr>
+                        <tr>
+                            <td>{$app_name}<br /><span class="line">({$sa_av_version})</span></td>
+                            <td>{$trust_target}</td>
+                            <td>{$trust_work}</td>
+                            <td class="center">{$trust_retain}</td>
+                            <td class="center">{$trust_status}</td>
+                            <td class="center">{$trust_button}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="info">- 처리위탁에 대한 동의여부를 변경할 수 있으며, 철회 시 일부 서비스 사용이 불가할 수 있습니다.</p>
+        </div>
+
+        <div>
+            <div class="{$display_privacy_optional|display} agreeArea">
+                <div class="title">
+                    <h3>{$form.agree_privacy_optional_check} <label for="agree_privacy_optional_check0" class="check">개인정보 수집 및 이용 동의 (선택)</label></h3>
+                </div>
+                <div class="contents">
+                    {$privacy_optional_desc}
+                </div>
+            </div>
+
+            <div class="{$display_information|display} agreeArea">
+                <div class="title">
+                    <h3>{$form.agree_information_check} <label for="agree_information_check0" class="check">개인정보 제3자 제공 동의(선택)</label></h3>
+                </div>
+                <div class="contents">
+                    {$information_desc}
+                </div>
+            </div>
+        </div>
+
+        <div class="ec-base-button og_find_sesult_button" style="margin-top: calc(56px - 16px - 10px);">
+            <a href="#none" class="btnSubmit sizeM" onclick="{$action_func_join}">CHANGE</a>
+            <a href="/index.html" class="btnNormal sizeM">CANCEL</a>
+            <a href="#none" class="" onclick="{$action_func_del}">MEMBERSHIP WITHDRAWAL</a>
+        </div>
+
+        <div class="layerLeave ec-base-layer typeModal" id="{$leave_layer_id}">
+           <!--@css(/layout/basic/css/ec-base-layer.css)-->
+            <div class="header layout_hidden">
+                <h3>회원탈퇴</h3>
+            </div>
+            <div class="content">
+                <div class="ec-base-box">
+                    <div class="information">
+                        <strong class="title">혜택 내역</strong>
+                        <div class="description">
+                            <ul>
+                                <li id="{$leave_layer_text_id}">탈퇴시 보유하고 있는 적립금은 모두 삭제됩니다.</li>
+                                <li>현재 적립금 : <strong id="{$leave_layer_mileage}" class="txtEm">0</strong></li>
+                                <li id="{$leave_layer_deposit_id}">현재 예치금 : <strong id="{$leave_layer_deposit}" class="txtEm">0</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <h4>회원탈퇴 사유</h4>
+                <div class="ec-base-table typeWrite">
+                    <table border="1" >
+                        <caption>회원탈퇴 사유</caption>
+                        <colgroup>
+                            <col style="width:140px;" />
+                            <col style="width:auto;" />
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th scope="row">선택</th>
+                                <td>{$form.leave_reason}</td>
+                            </tr>
+                            <tr id="{$leave_layer_etc_reason_id}">
+                                <th scope="row">기타</th>
+                                <td>{$form.subjective_leave_reason}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="ec-base-button og_find_sesult_button">
+                    <a href="#none" class="btnSubmit sizeM" id="{$leave_layer_submit_btn_id}">탈퇴</a>
+                    <a href="#none" class="btnNormal sizeM" onclick="$('#{$leave_layer_id}').hide();">취소</a>
+                </div>
+            </div>
+            <a href="#none" class="btnClose" onclick="$('#{$leave_layer_id}').hide();">닫기</a>
+        </div>
+
+    </div>
+</div>
