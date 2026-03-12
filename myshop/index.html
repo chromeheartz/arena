@@ -194,7 +194,7 @@ $url = /member/login.html
                                 <dd>{$coupon_cnt}개</dd>
                             </dl>
                             <dl>
-                                <dt>사용 가능 적립금</dt>
+                                <dt>총 적립금</dt>
                                 <dd>{$total_mileage}</dd>
                             </dl>
                         </div>
@@ -691,6 +691,7 @@ $url = /member/login.html
         const startDate = `${currentYear}.01.01`;
         const endDate = `${currentYear}.12.31`;
         const periodText = `${startDate} ~ ${endDate}`;
+        // const periodText = ``;
 
         // '멤버십 산정 기간'이라는 글자를 포함한 dt 다음에 오는 dd를 찾습니다.
         const periodElement = document.querySelector('.user-period-wrap dl dd');
