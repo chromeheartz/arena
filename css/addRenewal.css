@@ -53,7 +53,7 @@
         height: 500px;
     }
 
-    @media all and (max-width: 768px) {
+    @media all and (max-width: 500px) {
         position: fixed !important;
         top: unset !important;
         bottom: 0;
@@ -62,23 +62,16 @@
         width: 100%;
 
         .smart-popup-img {
+            height: 100%;
+
             img {
                 height: 100% !important;
                 width: 100%;
             }
 
             a {
-                width: 100%;
-                aspect-ratio: 5 / 6;
-            }
-        }
-    }
-
-    @media all and (max-width: 480px) {
-
-        .smart-popup-img {
-            a {
-                height: 300px;
+                aspect-ratio: 500 / 360;
+                height: 100%;
             }
         }
     }
